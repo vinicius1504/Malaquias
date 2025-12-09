@@ -16,11 +16,11 @@ function LogoModel({ scrollProgress }: LogoModelProps) {
 
   // Rotacoes alvo para cada secao (em radianos)
   const rotationTargets = {
-    hero: { x: 0.3, y: -0.5, z: 0.15 },         // Diagonal apontando para texto esquerdo
-    porque: { x: 0.2, y: 0.5, z: -0.1 },        // Apontando para direita (texto)
-    middle: { x: 0, y: 0, z: 0 },               // Centro neutro
-    faq: { x: 0.2, y: -0.5, z: 0.1 },           // Apontando para esquerda (texto)
-    footer: { x: 0.4, y: 0, z: 0 },             // Ligeiramente inclinado
+    hero: { x: 0.3, y: 2.9, z: 0 },       // Virada pro texto
+    porque: { x: 0.3, y: 0.3, z: 0 },     // Virada pro texto
+    middle: { x: 0.3, y: 0, z: 0 },     // Virada pro texto
+    faq: { x: 0.3, y: 2.9, z: 0 },        // Virada pro texto
+    footer: { x: 0.3, y: 0, z: 0 },     // Virada pro texto
   };
 
   useFrame((state) => {
@@ -33,34 +33,34 @@ function LogoModel({ scrollProgress }: LogoModelProps) {
       // Hero - parada na posicao inicial
       targetRotation = rotationTargets.hero;
     } else if (scroll < 0.20) {
-      // Transicao Hero -> Por que (rotaciona durante)
+      // Transicao Hero -> Por que (rotaciona inclinada)
       const t = (scroll - 0.12) / 0.08;
-      const spinY = t * Math.PI * 2; // Uma volta completa
+      const spinY = t * Math.PI * 2; // Uma volta completa no eixo Y
       targetRotation = {
-        x: THREE.MathUtils.lerp(rotationTargets.hero.x, rotationTargets.porque.x, t),
-        y: rotationTargets.hero.y + spinY,
-        z: THREE.MathUtils.lerp(rotationTargets.hero.z, rotationTargets.porque.z, t),
+        x: 0.5, // Virada pro texto
+        y: spinY,
+        z: 0,
       };
     } else if (scroll < 0.38) {
       // Parado na secao "Por que"
       targetRotation = rotationTargets.porque;
     } else if (scroll < 0.75) {
-      // Secoes intermediarias - rotacao continua baseada no scroll
+      // Secoes intermediarias - rotacao continua inclinada
       const progress = (scroll - 0.38) / 0.37;
-      const spinY = progress * Math.PI * 4; // Varias voltas
+      const spinY = progress * Math.PI * 4; // Varias voltas no eixo Y
       targetRotation = {
-        x: rotationTargets.middle.x + Math.sin(spinY * 0.5) * 0.15,
+        x: 0.5, // Virada pro texto
         y: spinY,
-        z: rotationTargets.middle.z,
+        z: 0,
       };
     } else if (scroll < 0.82) {
-      // Transicao para FAQ
-      const t = (scroll - 0.75) / 0.07;
-      const baseY = ((scroll - 0.38) / 0.37) * Math.PI * 4;
+      // Transicao para FAQ - continua rotacao inclinada
+      const progress = (scroll - 0.38) / (0.82 - 0.38);
+      const spinY = progress * Math.PI * 4;
       targetRotation = {
-        x: THREE.MathUtils.lerp(rotationTargets.middle.x, rotationTargets.faq.x, t),
-        y: THREE.MathUtils.lerp(baseY % (Math.PI * 2), rotationTargets.faq.y, t),
-        z: THREE.MathUtils.lerp(rotationTargets.middle.z, rotationTargets.faq.z, t),
+        x: 0.5, // Virada pro texto
+        y: spinY,
+        z: 0,
       };
     } else if (scroll < 0.92) {
       // Parado no FAQ
@@ -88,7 +88,7 @@ function LogoModel({ scrollProgress }: LogoModelProps) {
     <group ref={meshRef}>
       <primitive
         object={scene}
-        scale={35}
+        scale={20}
         position={[0, 0, 0]}
       />
     </group>
@@ -102,7 +102,7 @@ export default function ScrollingLogo3D() {
   const x = useTransform(
     scrollYProgress,
     [0, 0.12, 0.18, 0.38, 0.42, 0.75, 0.80, 0.92, 0.95, 1], //ajuste de acordo com a visibilidade
-    ['70%', '62%', '28%', '28%', '50%', '50%', '72%', '72%', '50%', '40%'] //AJUSTE DE POSIÇÃO PROS LADOS
+    ['70%', '62%', '28%', '28%', '50%', '50%', '72%', '72%', '50%', '40%'] //AJUSTE DE POSIÇÃO PROS LADOS - centralizada no footer
   );
 
   // Mapeamento de scroll para posicao Y (em %)
@@ -110,27 +110,27 @@ export default function ScrollingLogo3D() {
   const y = useTransform(
     scrollYProgress,
     [0, 0.12, 0.18, 0.38, 0.75, 0.82, 0.92, 1],
-    ['75%', '60%', '110%', '65%', '55%', '55%', '80%', '75%']
+    ['75%', '60%', '110%', '65%', '55%', '55%', '80%', '90%'] // Footer centralizado verticalmente
   );
 
   // Mapeamento de scroll para escala
   const scale = useTransform(
     scrollYProgress,
     [0, 0.12, 0.38, 0.75, 0.92, 1],
-    [1, 1, 1, 0.9, 0.9, 1.5]
+    [1, 1, 1, 0.9, 0.9, 1.2] // Maior no footer
   );
 
   // Mapeamento de scroll para opacidade
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.92, 1],
-    [1, 1, 0.3]
+    [1, 1, 0.4] // Marca d'água sutil no footer
   );
 
   return (
     <motion.div
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 9 }}
+      style={{ zIndex: 1 }}
     >
       <motion.div
         className="absolute w-[1100px] h-[1100px]"
