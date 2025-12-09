@@ -88,7 +88,7 @@ function LogoModel({ scrollProgress }: LogoModelProps) {
     <group ref={meshRef}>
       <primitive
         object={scene}
-        scale={45}
+        scale={35}
         position={[0, 0, 0]}
       />
     </group>
@@ -110,7 +110,7 @@ export default function ScrollingLogo3D() {
   const y = useTransform(
     scrollYProgress,
     [0, 0.12, 0.18, 0.38, 0.75, 0.82, 0.92, 1],
-    ['75%', '60%', '150%', '65%', '55%', '55%', '80%', '75%']
+    ['75%', '60%', '110%', '65%', '55%', '55%', '80%', '75%']
   );
 
   // Mapeamento de scroll para escala
