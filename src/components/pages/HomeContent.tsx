@@ -46,25 +46,27 @@ export default function HomeContent() {
 
       {/* Por que a Malaquias Contabilidade? */}
       <section id="porque" className="min-h-screen relative py-24">
-        <div className="bg-[#1a1a2e]/60 backdrop-blur-md rounded-2xl mx-6 p-8 border border-white/10">
-          {/* Title */}
+        <div className="mx-6">
+          {/* Title com glassmorphism */}
           <AnimatedSection className="container mx-auto mb-12">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">
-              {sectionTitles.whyPart1}
-            </h2>
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-gold-500">
-              {sectionTitles.whyPart2}
-            </h2>
-            <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+            <div className="bg-[#1a1a2e]/60 backdrop-blur-md rounded-2xl p-6 border border-white/10 inline-block">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">
+                {sectionTitles.whyPart1}
+              </h2>
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-gold-500">
+                {sectionTitles.whyPart2}
+              </h2>
+              <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+            </div>
           </AnimatedSection>
 
-          {/* Benefits List - Logo 3D global aparece à esquerda */}
+          {/* Benefits List - Logo 3D global aparece à esquerda (área vazia) */}
           <div className="container mx-auto">
-            <div className="lg:ml-auto lg:max-w-xl space-y-10">
+            <div className="lg:ml-auto lg:max-w-xl space-y-6">
               {whyMalaquias.items.map((item, index) => (
                 <motion.div
                   key={index}
-                  className={itemMargins[index] || ''}
+                  className={`bg-[#1a1a2e]/60 backdrop-blur-md rounded-xl p-5 border border-white/10 ${itemMargins[index] || ''}`}
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-50px' }}

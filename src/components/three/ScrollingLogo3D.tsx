@@ -102,7 +102,7 @@ export default function ScrollingLogo3D() {
   const x = useTransform(
     scrollYProgress,
     [0, 0.12, 0.18, 0.38, 0.42, 0.75, 0.80, 0.92, 0.95, 1], //ajuste de acordo com a visibilidade
-    ['70%', '62%', '28%', '28%', '50%', '50%', '72%', '72%', '50%', '50%'] //AJUSTE DE POSIÇÃO PROS LADOS
+    ['70%', '62%', '28%', '28%', '50%', '50%', '72%', '72%', '50%', '40%'] //AJUSTE DE POSIÇÃO PROS LADOS
   );
 
   // Mapeamento de scroll para posicao Y (em %)
@@ -110,7 +110,7 @@ export default function ScrollingLogo3D() {
   const y = useTransform(
     scrollYProgress,
     [0, 0.12, 0.18, 0.38, 0.75, 0.82, 0.92, 1],
-    ['70%', '60%', '105%', '55%', '55%', '55%', '55%', '60%']
+    ['75%', '60%', '150%', '65%', '55%', '55%', '80%', '75%']
   );
 
   // Mapeamento de scroll para escala
@@ -130,10 +130,10 @@ export default function ScrollingLogo3D() {
   return (
     <motion.div
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 5 }}
+      style={{ zIndex: 9 }}
     >
       <motion.div
-        className="absolute w-[700px] h-[700px]"
+        className="absolute w-[1100px] h-[1100px]"
         style={{
           left: x,
           top: y,
@@ -144,7 +144,7 @@ export default function ScrollingLogo3D() {
         }}
       >
         <Canvas
-          camera={{ position: [0, 0, 12], fov: 40 }}
+          camera={{ position: [0, 0, 15], fov: 20 }}
           gl={{ antialias: true, alpha: true }}
           style={{ background: 'transparent' }}
         >
