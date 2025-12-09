@@ -5,9 +5,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 
 const languages = [
-  { code: 'pt' as const, flag: '/images/brasil.png' },
-  { code: 'en' as const, flag: '/images/estados-unidos-da-america.png' },
-  { code: 'es' as const, flag: '/images/espanha.png' },
+  { code: 'pt' as const, flag: '/images/idiomas/brasil.png' },
+  { code: 'en' as const, flag: '/images/idiomas/estados-unidos-da-america.png' },
+  { code: 'es' as const, flag: '/images/idiomas/espanha.png' },
 ];
 
 export default function LanguageSelector() {
