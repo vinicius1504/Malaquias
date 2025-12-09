@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "whyUs": "¿Por qué Malaquias?",
+    "segments": "Segmentos",
+    "testimonials": "Testimonios",
+    "faq": "FAQ",
+    "contact": "Contacto",
+    "cta": "Hablar con nosotros",
+    "changeLanguage": "Cambiar idioma"
+  },
+  "footer": {
+    "description": "Transformamos la contabilidad en estrategia para el crecimiento de su negocio. Planificación tributaria, gestión empresarial y dashboards inteligentes.",
+    "services": "Servicios",
+    "company": "Empresa",
+    "contact": "Contacto",
+    "links": {
+      "accounting": "Contabilidad",
+      "taxPlanning": "Planificación Tributaria",
+      "consulting": "Consultoría",
+      "powerbi": "Dashboards Power BI",
+      "about": "Sobre nosotros",
+      "segments": "Segmentos",
+      "testimonials": "Testimonios",
+      "faq": "Preguntas Frecuentes"
+    },
+    "copyright": "© {{year}} {{name}}. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Uso"
+  },
+  "buttons": {
+    "learnMore": "Saber más",
+    "getStarted": "Comenzar",
+    "contactUs": "Contactar",
+    "scheduleCall": "Agendar llamada"
+  },
+  "forms": {
+    "required": "Campo obligatorio",
+    "invalidEmail": "Correo electrónico inválido",
+    "success": "¡Enviado con éxito!",
+    "error": "Error al enviar. Intente nuevamente."
+  }
+}

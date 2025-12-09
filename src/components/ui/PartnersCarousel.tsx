@@ -1,0 +1,89 @@
+'use client';
+
+import Image from 'next/image';
+
+interface PartnerLogo {
+  src: string;
+  alt: string;
+}
+
+// Logos dos parceiros (usando logos de clientes para teste - substituir depois)
+const partnerLogos: PartnerLogo[] = [
+  { src: '/images/clientes/logo (1).png', alt: 'Parceiro 1' },
+  { src: '/images/clientes/logo (2).png', alt: 'Parceiro 2' },
+  { src: '/images/clientes/logo (3).png', alt: 'Parceiro 3' },
+  { src: '/images/clientes/logo (4).png', alt: 'Parceiro 4' },
+  { src: '/images/clientes/logo (5).png', alt: 'Parceiro 5' },
+  { src: '/images/clientes/logo (6).png', alt: 'Parceiro 6' },
+  { src: '/images/clientes/logo (7).png', alt: 'Parceiro 7' },
+  { src: '/images/clientes/logo (8).png', alt: 'Parceiro 8' },
+];
+
+function HorizontalRow({ logos, direction, speed = 25 }: { logos: PartnerLogo[]; direction: 'left' | 'right'; speed?: number }) {
+  // Duplica os logos para criar efeito infinito
+  const duplicatedLogos = [...logos, ...logos, ...logos];
+
+  return (
+    <div className="relative w-full overflow-hidden">
+      <div
+        className="flex gap-6 items-center"
+        style={{
+          animation: `${direction === 'left' ? 'scrollLeft' : 'scrollRight'} ${speed}s linear infinite`,
+          width: 'fit-content',
+        }}
+      >
+        {duplicatedLogos.map((logo, index) => (
+          <div
+            key={index}
+            className="w-36 h-24 md:w-44 md:h-28 bg-white rounded-lg shadow-md flex items-center justify-center p-4 flex-shrink-0"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={160}
+              height={100}
+              className="object-contain w-full h-full"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function PartnersCarousel() {
+  // Divide os logos em 2 linhas
+  const row1 = partnerLogos.slice(0, 4);
+  const row2 = partnerLogos.slice(4, 8);
+
+  return (
+    <>
+      {/* CSS Keyframes */}
+      <style jsx global>{`
+        @keyframes scrollLeft {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.33%);
+          }
+        }
+        @keyframes scrollRight {
+          0% {
+            transform: translateX(-33.33%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+      `}</style>
+
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col gap-6 overflow-hidden">
+          <HorizontalRow logos={row1} direction="left" speed={20} />
+          <HorizontalRow logos={row2} direction="right" speed={25} />
+        </div>
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================
+   CSS Variables / Design Tokens
+   =========================== */
+:root {
+  /* Brand Colors - Malaquias Gold Theme */
+  --color-gold: 201 152 58; /* #C9983A */
+  --color-gold-light: 212 168 75; /* #D4A84B */
+  --color-gold-dark: 184 135 46; /* #B8872E */
+  --color-dark: 26 26 46; /* #1a1a2e */
+  --color-dark-light: 45 45 70; /* #2d2d46 */
+
+  /* Legacy colors */
+  --color-primary: 201 152 58; /* gold */
+  --color-secondary: 26 26 46; /* dark */
+  --color-accent: 212 168 75; /* gold-light */
+
+  /* Typography */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-poppins), system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --header-height: 72px;
+
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+}
+
+/* ===========================
+   Base Styles
+   =========================== */
+@layer base {
+  * {
+    @apply border-secondary-800;
+  }
+
+  html {
+    @apply scroll-smooth;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #C9983A #1a1a2e;
+  }
+
+  /* Scrollbar global - Webkit (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1a1a2e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #C9983A;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4A84B;
+  }
+
+  body {
+    @apply bg-secondary-950 text-secondary-100 antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    @apply bg-primary-500/30 text-white;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold text-white;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Paragraphs */
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+/* ===========================
+   Component Styles
+   =========================== */
+@layer components {
+  /* Container */
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1280px;
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-secondary-900/80 backdrop-blur-md border border-secondary-800;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary-500/10;
+  }
+
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-secondary-900;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-700 text-white hover:bg-secondary-600 active:bg-secondary-800 focus:ring-secondary-500;
+  }
+
+  .btn-outline {
+    @apply btn bg-transparent border-2 border-primary-500 text-primary-500;
+    @apply hover:bg-primary-500/10 active:bg-primary-500/20 focus:ring-primary-500;
+  }
+
+  /* Input base */
+  .input {
+    @apply w-full px-4 py-3 bg-secondary-800 border border-secondary-700 rounded-lg;
+    @apply text-white placeholder-secondary-500;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply transition-colors duration-200;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider;
+    @apply text-primary-400 bg-primary-500/10 border border-primary-500/20 rounded-full;
+  }
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.secondary.700') theme('colors.secondary.900');
+  }
+
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: theme('colors.secondary.900');
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: theme('colors.secondary.700');
+    border-radius: 4px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.secondary.600');
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animated gradient background */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 20px theme('colors.primary.500/30'),
+                0 0 40px theme('colors.primary.500/20'),
+                0 0 60px theme('colors.primary.500/10');
+  }
+
+  /* Noise texture overlay */
+  .noise {
+    position: relative;
+  }
+
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+  }
+}
+
+/* ===========================
+   Animations
+   =========================== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===========================
+   Three.js Canvas Styles
+   =========================== */
+.three-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.three-canvas canvas {
+  display: block;
+}

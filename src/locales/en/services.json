@@ -1,0 +1,42 @@
+{
+  "badge": "Servicios",
+  "title": "Soluciones completas para su empresa",
+  "subtitle": "Ofrecemos servicios contables modernos y estratégicos para impulsar el crecimiento de su negocio.",
+  "items": [
+    {
+      "icon": "calculator",
+      "title": "Contabilidad Empresarial",
+      "description": "Gestión contable completa con escrituración, balances y demostraciones financieras."
+    },
+    {
+      "icon": "chart",
+      "title": "Planificación Tributaria",
+      "description": "Análisis y estrategias para la reducción legal de la carga tributaria de su empresa."
+    },
+    {
+      "icon": "document",
+      "title": "Apertura de Empresas",
+      "description": "Asesoría completa para la constitución y legalización de su negocio."
+    },
+    {
+      "icon": "shield",
+      "title": "Consultoría Fiscal",
+      "description": "Orientación especializada en cuestiones fiscales y tributarias."
+    },
+    {
+      "icon": "users",
+      "title": "Departamento de Personal",
+      "description": "Gestión de nómina, admisiones, despidos y obligaciones laborales."
+    },
+    {
+      "icon": "lightbulb",
+      "title": "Dashboards en Power BI",
+      "description": "Informes visuales e inteligentes para acompañar la salud financiera de la empresa."
+    }
+  ],
+  "cta": {
+    "title": "¿Necesita ayuda especializada?",
+    "description": "Agende una conversación gratuita y descubra cómo podemos ayudar.",
+    "button": "Agendar conversación"
+  }
+}

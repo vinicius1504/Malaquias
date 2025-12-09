@@ -1,0 +1,36 @@
+{
+  "badge": "FAQ",
+  "title": "Perguntas Frequentes",
+  "subtitle": "Encontre respostas para as dúvidas mais comuns sobre nossos serviços.",
+  "items": [
+    {
+      "question": "Como funciona o atendimento 100% digital?",
+      "answer": "Todo o nosso atendimento é realizado de forma digital, através de WhatsApp, e-mail e videoconferências. Você não precisa sair de casa ou do escritório para resolver questões contábeis. Todos os documentos são enviados e assinados digitalmente."
+    },
+    {
+      "question": "Quanto posso economizar com o planejamento tributário?",
+      "answer": "A economia varia de acordo com o perfil da empresa, mas em média nossos clientes conseguem reduzir entre 20% a 40% da carga tributária de forma totalmente legal. Fazemos uma análise gratuita para estimar o potencial de economia do seu negócio."
+    },
+    {
+      "question": "O que são os dashboards em Power BI?",
+      "answer": "São painéis visuais e interativos que mostram em tempo real os principais indicadores financeiros da sua empresa. Você consegue acompanhar faturamento, despesas, lucro, impostos e muito mais de forma clara e intuitiva."
+    },
+    {
+      "question": "Vocês atendem empresas de qualquer tamanho?",
+      "answer": "Sim! Atendemos desde MEIs e profissionais liberais até empresas de médio porte. Nossos planos são flexíveis e adaptados às necessidades de cada tipo de negócio."
+    },
+    {
+      "question": "Como faço para trocar de contador?",
+      "answer": "O processo é simples e nós cuidamos de tudo. Basta entrar em contato que nossa equipe solicita os documentos ao contador anterior e faz toda a transição sem que você precise se preocupar."
+    },
+    {
+      "question": "Qual o prazo para abertura de uma empresa?",
+      "answer": "O prazo varia conforme o tipo de empresa e a cidade, mas em geral conseguimos abrir uma empresa em 7 a 15 dias úteis. Empresas mais simples, como MEI, podem ser abertas no mesmo dia."
+    }
+  ],
+  "cta": {
+    "title": "Não encontrou sua resposta?",
+    "description": "Entre em contato com nossa equipe que teremos prazer em ajudar.",
+    "button": "Falar com especialista"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "badge": "Preguntas Frecuentes",
+  "title": "Preguntas Frecuentes",
+  "subtitle": "Encuentre respuestas a las dudas más comunes sobre nuestros servicios.",
+  "items": [
+    {
+      "question": "¿Cómo funciona la atención 100% digital?",
+      "answer": "Toda nuestra atención se realiza de forma digital, a través de WhatsApp, correo electrónico y videoconferencias. No necesita salir de casa u oficina para resolver cuestiones contables. Todos los documentos se envían y firman digitalmente."
+    },
+    {
+      "question": "¿Cuánto puedo ahorrar con la planificación tributaria?",
+      "answer": "El ahorro varía según el perfil de la empresa, pero en promedio nuestros clientes logran reducir entre un 20% y un 40% de la carga tributaria de forma totalmente legal. Realizamos un análisis gratuito para estimar el potencial de ahorro de su negocio."
+    },
+    {
+      "question": "¿Qué son los dashboards en Power BI?",
+      "answer": "Son paneles visuales e interactivos que muestran en tiempo real los principales indicadores financieros de su empresa. Puede acompañar facturación, gastos, ganancias, impuestos y mucho más de forma clara e intuitiva."
+    },
+    {
+      "question": "¿Atienden empresas de cualquier tamaño?",
+      "answer": "¡Sí! Atendemos desde MEIs y profesionales independientes hasta empresas medianas. Nuestros planes son flexibles y adaptados a las necesidades de cada tipo de negocio."
+    },
+    {
+      "question": "¿Cómo hago para cambiar de contador?",
+      "answer": "El proceso es simple y nosotros nos encargamos de todo. Solo necesita contactarnos y nuestro equipo solicita los documentos al contador anterior y realiza toda la transición sin que usted tenga que preocuparse."
+    },
+    {
+      "question": "¿Cuál es el plazo para abrir una empresa?",
+      "answer": "El plazo varía según el tipo de empresa y la ciudad, pero generalmente logramos abrir una empresa entre 7 y 15 días hábiles. Empresas más simples, como MEI, pueden abrirse el mismo día."
+    }
+  ],
+  "cta": {
+    "title": "¿No encontró su respuesta?",
+    "description": "Póngase en contacto con nuestro equipo y estaremos encantados de ayudarle.",
+    "button": "Hablar con un especialista"
+  }
+}

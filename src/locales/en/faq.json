@@ -1,0 +1,36 @@
+{
+  "badge": "FAQ",
+  "title": "Frequently Asked Questions",
+  "subtitle": "Find answers to the most common questions about our services.",
+  "items": [
+    {
+      "question": "How does 100% digital service work?",
+      "answer": "All our service is provided digitally, through WhatsApp, email, and video conferences. You don't need to leave home or office to resolve accounting matters. All documents are sent and signed digitally."
+    },
+    {
+      "question": "How much can I save with tax planning?",
+      "answer": "Savings vary according to the company's profile, but on average our clients manage to reduce between 20% to 40% of their tax burden completely legally. We provide a free analysis to estimate your business's savings potential."
+    },
+    {
+      "question": "What are Power BI dashboards?",
+      "answer": "They are visual and interactive panels that show your company's main financial indicators in real-time. You can track revenue, expenses, profit, taxes, and much more in a clear and intuitive way."
+    },
+    {
+      "question": "Do you serve companies of any size?",
+      "answer": "Yes! We serve everyone from sole proprietors and freelancers to medium-sized companies. Our plans are flexible and adapted to the needs of each type of business."
+    },
+    {
+      "question": "How do I switch accountants?",
+      "answer": "The process is simple and we take care of everything. Just contact us and our team will request documents from the previous accountant and handle the entire transition without you having to worry."
+    },
+    {
+      "question": "What is the timeframe for opening a company?",
+      "answer": "The timeframe varies depending on the type of company and location, but generally we can open a company in 7 to 15 business days. Simpler entities can be opened on the same day."
+    }
+  ],
+  "cta": {
+    "title": "Didn't find your answer?",
+    "description": "Contact our team and we'll be happy to help.",
+    "button": "Talk to a specialist"
+  }
+}
