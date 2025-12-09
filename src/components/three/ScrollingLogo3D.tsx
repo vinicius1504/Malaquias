@@ -88,7 +88,7 @@ function LogoModel({ scrollProgress }: LogoModelProps) {
     <group ref={meshRef}>
       <primitive
         object={scene}
-        scale={30}
+        scale={45}
         position={[0, 0, 0]}
       />
     </group>
@@ -101,8 +101,8 @@ export default function ScrollingLogo3D() {
   // Mapeamento de scroll para posicao X (em %)
   const x = useTransform(
     scrollYProgress,
-    [0, 0.12, 0.18, 0.38, 0.42, 0.75, 0.80, 0.92, 0.95, 1],
-    ['62%', '62%', '28%', '28%', '50%', '50%', '72%', '72%', '50%', '50%']
+    [0, 0.12, 0.18, 0.38, 0.42, 0.75, 0.80, 0.92, 0.95, 1], //ajuste de acordo com a visibilidade
+    ['70%', '62%', '28%', '28%', '50%', '50%', '72%', '72%', '50%', '50%'] //AJUSTE DE POSIÇÃO PROS LADOS
   );
 
   // Mapeamento de scroll para posicao Y (em %)
@@ -110,7 +110,7 @@ export default function ScrollingLogo3D() {
   const y = useTransform(
     scrollYProgress,
     [0, 0.12, 0.18, 0.38, 0.75, 0.82, 0.92, 1],
-    ['55%', '55%', '45%', '45%', '50%', '45%', '45%', '55%']
+    ['70%', '60%', '105%', '55%', '55%', '55%', '55%', '60%']
   );
 
   // Mapeamento de scroll para escala
@@ -130,7 +130,7 @@ export default function ScrollingLogo3D() {
   return (
     <motion.div
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 1 }}
+      style={{ zIndex: 5 }}
     >
       <motion.div
         className="absolute w-[700px] h-[700px]"
