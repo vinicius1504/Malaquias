@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 interface ClientLogo {
   src: string;
@@ -71,6 +73,9 @@ function VerticalColumn({ logos, direction, speed = 20 }: { logos: ClientLogo[];
 }
 
 export default function ClientsCarousel() {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+
   // 6 colunas com logos distribuídas
   const columns = [
     { logos: clientLogos.slice(0, 5), direction: 'up' as const, speed: 18 },
@@ -103,15 +108,25 @@ export default function ClientsCarousel() {
         }
       `}</style>
 
-      <div className="container mx-auto px-6">
+      <div ref={containerRef} className="container mx-auto px-6">
         <div className="flex justify-between gap-4 overflow-hidden">
           {columns.map((col, index) => (
-            <VerticalColumn
+            <motion.div
               key={index}
-              logos={col.logos}
-              direction={col.direction}
-              speed={col.speed}
-            />
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: 'easeOut'
+              }}
+            >
+              <VerticalColumn
+                logos={col.logos}
+                direction={col.direction}
+                speed={col.speed}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

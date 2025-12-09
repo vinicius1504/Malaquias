@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 interface BlogPost {
   id: number;
@@ -21,6 +23,9 @@ interface BlogSectionProps {
 }
 
 export default function BlogSection({ title, posts, readMore, viewAll }: BlogSectionProps) {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('pt-BR', {
@@ -31,22 +36,34 @@ export default function BlogSection({ title, posts, readMore, viewAll }: BlogSec
   };
 
   return (
-    <section id="blog">
+    <section id="blog" ref={containerRef}>
       <div className="container mx-auto px-6">
         {/* Title */}
-        <div className="mb-12">
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {title}
           </h2>
           <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
-        </div>
+        </motion.div>
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <article
+          {posts.map((post, index) => (
+            <motion.article
               key={post.id}
               className="relative h-80 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.15,
+                ease: 'easeOut'
+              }}
             >
               {/* Image - Full card */}
               <Image
@@ -99,12 +116,17 @@ export default function BlogSection({ title, posts, readMore, viewAll }: BlogSec
                   </svg>
                 </Link>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: 'easeOut' }}
+        >
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gold-500 text-gold-600 font-semibold rounded-lg hover:bg-gold-500 hover:text-white transition-all duration-300"
@@ -124,7 +146,7 @@ export default function BlogSection({ title, posts, readMore, viewAll }: BlogSec
               />
             </svg>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import StarfieldCanvas from '../ui/StarfieldCanvas';
 import Logoquestion3D from '../three/Logo_question3D';
 import Footer from './Footer';
@@ -17,6 +18,10 @@ interface FAQSectionProps {
 
 export default function FAQSection({ title, items }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const titleRef = useRef(null);
+  const contentRef = useRef(null);
+  const isTitleInView = useInView(titleRef, { once: true, margin: '-100px' });
+  const isContentInView = useInView(contentRef, { once: true, margin: '-100px' });
 
   const toggleItem = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -25,17 +30,23 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
   return (
     <>
       {/* Title - Outside blue area */}
-      <section className="pt-24 bg-[#f5f5f5]">
+      <section className="pt-24 bg-[#f5f5f5]" ref={titleRef}>
         <div className="container mx-auto px-6 pb-12">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
-            {title}
-          </h2>
-          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
+              {title}
+            </h2>
+            <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+          </motion.div>
         </div>
       </section>
 
       {/* FAQ Content + Footer - Blue area with starfield (continuous) */}
-      <section className="relative bg-[#1a1a2e] overflow-hidden">
+      <section className="relative bg-[#1a1a2e] overflow-hidden" ref={contentRef}>
         {/* Starfield background - covers both FAQ and Footer */}
         <StarfieldCanvas />
 
@@ -45,9 +56,16 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
             {/* Left - FAQ Items */}
             <div className="space-y-4 min-h-[500px]">
               {items.map((item, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={isContentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    ease: 'easeOut'
+                  }}
                 >
                   {/* Question */}
                   <button
@@ -82,14 +100,23 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
                       {item.answer}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
             {/* Right - 3D Logo */}
-            <div className="relative h-[400px] w-full flex items-center justify-center">
+            <motion.div
+              className="relative h-[400px] w-full flex items-center justify-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isContentInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.3,
+                ease: 'easeOut'
+              }}
+            >
               <Logoquestion3D />
-            </div>
+            </motion.div>
           </div>
         </div>
 

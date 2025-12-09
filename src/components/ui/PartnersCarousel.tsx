@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 interface PartnerLogo {
   src: string;
@@ -52,6 +54,9 @@ function HorizontalRow({ logos, direction, speed = 25 }: { logos: PartnerLogo[];
 }
 
 export default function PartnersCarousel() {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+
   // Divide os logos em 2 linhas
   const row1 = partnerLogos.slice(0, 4);
   const row2 = partnerLogos.slice(4, 8);
@@ -78,10 +83,22 @@ export default function PartnersCarousel() {
         }
       `}</style>
 
-      <div className="container mx-auto px-6">
+      <div ref={containerRef} className="container mx-auto px-6">
         <div className="flex flex-col gap-6 overflow-hidden">
-          <HorizontalRow logos={row1} direction="left" speed={20} />
-          <HorizontalRow logos={row2} direction="right" speed={25} />
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            <HorizontalRow logos={row1} direction="left" speed={20} />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+          >
+            <HorizontalRow logos={row2} direction="right" speed={25} />
+          </motion.div>
         </div>
       </div>
     </>

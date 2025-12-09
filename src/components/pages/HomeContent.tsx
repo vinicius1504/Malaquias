@@ -107,34 +107,34 @@ export default function HomeContent() {
 
       {/* Nossos Clientes */}
       <section id="clientes" className="min-h-screen flex flex-col justify-center py-24 bg-[#f5f5f5]">
-        <div className="container mx-auto px-6 mb-12">
+        <AnimatedSection className="container mx-auto px-6 mb-12">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {sectionTitles.clients}
           </h2>
           <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
-        </div>
+        </AnimatedSection>
         <ClientsCarousel />
       </section>
 
       {/* Nossos Parceiros */}
       <section id="parceiros" className="py-24 bg-[#f5f5f5]">
-        <div className="container mx-auto px-6 mb-12">
+        <AnimatedSection className="container mx-auto px-6 mb-12">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {sectionTitles.partners}
           </h2>
           <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
-        </div>
+        </AnimatedSection>
         <PartnersCarousel />
       </section>
 
       {/* Depoimentos - Title fora da área azul */}
       <section id="depoimentos" className="pt-24 bg-[#f5f5f5]">
-        <div className="container mx-auto px-6 pb-12">
+        <AnimatedSection className="container mx-auto px-6 pb-12">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {sectionTitles.testimonials}
           </h2>
           <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* Depoimentos - Área azul */}
@@ -142,10 +142,16 @@ export default function HomeContent() {
         {/* Fundo de estrelas */}
         <StarfieldCanvas />
 
-        <div className="relative z-10 container mx-auto px-4 w-full">
+        <motion.div
+          className="relative z-10 container mx-auto px-4 w-full"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
           {/* Testimonials Carousel */}
           <TestimonialsCarousel testimonials={testimonials.items} />
-        </div>
+        </motion.div>
       </section>
 
       {/* Blog / Últimas Notícias */}
