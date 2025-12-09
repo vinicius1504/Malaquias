@@ -21,6 +21,13 @@ export const metadata: Metadata = {
   title: 'Malaquias Contabilidade | Planejamento Tributário e Gestão Empresarial',
   description: 'A Malaquias Contabilidade combina planejamento tributário, tecnologia e dashboards em Power BI para transformar contabilidade em gestão real do seu negócio.',
 
+  // Favicon / Ícone do navegador
+  icons: {
+    icon: '/images/logos/Vector.svg',
+    shortcut: '/images/logos/Vector.svg',
+    apple: '/images/logos/Vector.svg',
+  },
+
   // Meta tags de segurança e SEO
   robots: {
     index: true,
