@@ -30,9 +30,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative pt-44 z-10">
-      {/* Glassmorphism container */}
-      <div className="bg-[rgba(0,61,125,0.19)] backdrop-blur-[2px] border-t border-white/10">
+    <footer className="relative pt-24 z-10">
+      {/* Glassmorphism container - Logo 3D aparece atrás como marca d'água */}
+      <div className="bg-[#1a1a2e]/70 backdrop-blur-md border-t border-white/10 rounded-t-2xl mx-6">
         {/* CTA Section */}
         <div className="container mx-auto px-6 md:px-12 py-12 md:py-16">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">

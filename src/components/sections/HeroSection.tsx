@@ -122,44 +122,28 @@ export default function HeroSection({
 
   return (
     <section className="relative min-h-screen flex items-center">
-      {/* ==================== BACKGROUND VIDEO ==================== */}
-      {/* Vídeo de fundo com fallback para imagem poster */}
-      <div className="absolute inset-0 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/header.png"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/images/videos/video1.mp4" type="video/mp4" />
-        </video>
-        {/* Overlay com gradiente escuro da esquerda para transparente à direita */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e]/95 via-[#1a1a2e]/70 to-transparent" />
-      </div>
-
-      {/* ==================== CONTEÚDO PRINCIPAL ==================== */}
+      {/* ==================== CONTEUDO PRINCIPAL ==================== */}
+      {/* Container com glassmorphism apenas no lado esquerdo */}
       <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="max-w-2xl">
-          {/* Título principal com efeito de digitação */}
+        <div className="max-w-2xl bg-[#1a1a2e]/60 backdrop-blur-md rounded-2xl p-8 border border-white/10">
+          {/* Titulo principal com efeito de digitacao */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
-            {/* Primeira parte do título */}
+            {/* Primeira parte do titulo */}
             <span>{displayedTexts.title1}</span>
             {showCursor(0) && <Cursor />}
-            {/* Espaço aparece quando title1 está completo */}
+            {/* Espaco aparece quando title1 esta completo */}
             {displayedTexts.title1.length === title1.length && ' '}
 
             {/* Primeiro highlight em dourado */}
             <span className="text-gold-500">{displayedTexts.highlight1}</span>
             {showCursor(1) && <Cursor />}
-            {/* Vírgula aparece quando highlight1 está completo */}
+            {/* Virgula aparece quando highlight1 esta completo */}
             {displayedTexts.highlight1.length === highlight1.length && ', '}
 
-            {/* Segunda parte do título */}
+            {/* Segunda parte do titulo */}
             <span>{displayedTexts.title2}</span>
             {showCursor(2) && <Cursor />}
-            {/* Espaço aparece quando title2 está completo */}
+            {/* Espaco aparece quando title2 esta completo */}
             {displayedTexts.title2.length === title2.length && ' '}
 
             {/* Segundo highlight em dourado */}
@@ -167,67 +151,45 @@ export default function HeroSection({
             {showCursor(3) && <Cursor />}
           </h1>
 
-          {/* Subtítulo com efeito de digitação */}
+          {/* Subtitulo com efeito de digitacao */}
           <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-10">
             {displayedTexts.subtitle}
             {showCursor(4) && <Cursor />}
           </p>
+
+          {/* ==================== BOTAO CTA ==================== */}
+          {/* Agora dentro do container de texto */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={showButton ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            <a
+              href="#contato"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold text-sm uppercase tracking-wider rounded hover:from-gold-400 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-500/20"
+            >
+              {ctaText}
+            </a>
+          </motion.div>
         </div>
       </div>
 
-      {/* ==================== BOTÃO CTA ==================== */}
-      {/* Posicionado no canto inferior direito, aparece após a digitação */}
-      <motion.div
-        className="absolute bottom-32 right-20 z-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={showButton ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-      >
-        <a
-          href="#contato"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold text-sm uppercase tracking-wider rounded hover:from-gold-400 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-500/20"
-        >
-          {ctaText}
-        </a>
-      </motion.div>
-
-      {/* ==================== TRIÂNGULO DECORATIVO ==================== */}
-      {/* Elemento visual no canto inferior direito */}
-      <div className="absolute bottom-0 right-0 w-1/2 h-32">
+      {/* ==================== SETA SCROLL ==================== */}
+      {/* Seta animada indicando scroll para baixo */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 z-10">
         <svg
-          viewBox="0 0 500 100"
-          preserveAspectRatio="none"
-          className="w-full h-full"
+          className="w-8 h-8 animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
         >
-          {/* Triângulo de fundo (marrom mais escuro) */}
-          <polygon
-            points="500,100 500,0 0,100"
-            fill="#8B7355"
-            fillOpacity="0.6"
-          />
-          {/* Triângulo de frente (dourado) */}
-          <polygon
-            points="500,100 500,30 100,100"
-            fill="#C9983A"
-            fillOpacity="0.8"
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
           />
         </svg>
-        {/* Seta animada indicando scroll para baixo */}
-        <div className="absolute bottom-4 right-1/4 text-white">
-          <svg
-            className="w-8 h-8 animate-bounce"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
       </div>
     </section>
   );

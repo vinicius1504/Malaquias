@@ -2,8 +2,6 @@
 
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import StarfieldCanvas from '../ui/StarfieldCanvas';
-import Logoquestion3D from '../three/Logo_question3D';
 import Footer from './Footer';
 
 interface FAQItem {
@@ -29,32 +27,26 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
 
   return (
     <>
-      {/* Title - Outside blue area */}
-      <section className="pt-24 bg-[#f5f5f5]" ref={titleRef}>
-        <div className="container mx-auto px-6 pb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
-              {title}
-            </h2>
-            <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
-          </motion.div>
-        </div>
-      </section>
+      {/* FAQ Section */}
+      <section className="py-24" ref={titleRef}>
+        <div className="bg-[#1a1a2e]/60 backdrop-blur-md rounded-2xl mx-6 p-8 border border-white/10">
+          {/* Title */}
+          <div className="container mx-auto mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+            >
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">
+                {title}
+              </h2>
+              <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+            </motion.div>
+          </div>
 
-      {/* FAQ Content + Footer - Blue area with starfield (continuous) */}
-      <section className="relative bg-[#1a1a2e] overflow-hidden" ref={contentRef}>
-        {/* Starfield background - covers both FAQ and Footer */}
-        <StarfieldCanvas />
-
-        {/* FAQ Content */}
-        <div className="relative z-10 container mx-auto px-6 py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 items-center">
-            {/* Left - FAQ Items */}
-            <div className="space-y-4 min-h-[500px]">
+          {/* FAQ Content - Logo 3D global aparece à direita */}
+          <div className="container mx-auto" ref={contentRef}>
+            <div className="lg:max-w-xl space-y-4">
               {items.map((item, index) => (
                 <motion.div
                   key={index}
@@ -103,26 +95,12 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
                 </motion.div>
               ))}
             </div>
-
-            {/* Right - 3D Logo */}
-            <motion.div
-              className="relative h-[400px] w-full flex items-center justify-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isContentInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{
-                duration: 0.6,
-                delay: 0.3,
-                ease: 'easeOut'
-              }}
-            >
-              <Logoquestion3D />
-            </motion.div>
           </div>
         </div>
-
-        {/* Footer - Inside the same starfield area */}
-        <Footer />
       </section>
+
+      {/* Footer */}
+      <Footer />
     </>
   );
 }
