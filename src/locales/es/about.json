@@ -1,0 +1,31 @@
+{
+  "pageTitle": "Quiénes Somos",
+  "history": {
+    "title": "Nuestra Historia",
+    "content": "Malaquias Contabilidad nació del sueño de transformar la forma en que las empresas ven la contabilidad. Fundada con el propósito de ofrecer mucho más que números y declaraciones, nuestra misión es ser un socio estratégico en el crecimiento de nuestros clientes.\n\nCon un equipo especializado y apasionado por lo que hace, combinamos conocimiento técnico con tecnología de punta para entregar soluciones que marcan la diferencia. Nuestros dashboards en Power BI, planificación tributaria personalizada y atención 100% digital reflejan nuestro compromiso con la excelencia e innovación.\n\nHoy, atendemos empresas de diversos segmentos en todo Brasil, siempre con el mismo propósito: transformar la contabilidad en gestión real, generando ahorro, claridad y tranquilidad para nuestros clientes."
+  },
+  "accordion": {
+    "items": [
+      {
+        "title": "Nuestra Misión",
+        "content": "Ofrecer soluciones contables estratégicas y personalizadas, combinando tecnología y experiencia para impulsar el crecimiento sostenible de nuestros clientes, con transparencia, eficiencia y compromiso con los resultados."
+      },
+      {
+        "title": "Nuestra Visión",
+        "content": "Ser referencia nacional en contabilidad digital y consultiva, reconocida por la excelencia en el servicio, innovación tecnológica y capacidad de transformar datos en decisiones inteligentes para nuestros clientes."
+      },
+      {
+        "title": "Nuestros Valores",
+        "content": "Ética y transparencia en todas las relaciones. Compromiso con la excelencia y calidad. Innovación constante y adaptación a los cambios. Enfoque en el cliente y sus necesidades. Trabajo en equipo y colaboración."
+      },
+      {
+        "title": "Eficiencia",
+        "content": "Procesos optimizados y automatizados para garantizar agilidad en las entregas. Utilizamos las mejores herramientas del mercado para reducir la burocracia y maximizar resultados, permitiéndole enfocarse en lo que realmente importa: el crecimiento de su negocio."
+      },
+      {
+        "title": "Actualización",
+        "content": "Equipo en constante capacitación y actualización sobre los cambios en la legislación tributaria y fiscal. Seguimos de cerca todas las novedades del mercado para garantizar que nuestros clientes estén siempre en conformidad y aprovechando las mejores oportunidades."
+      }
+    ]
+  }
+}
