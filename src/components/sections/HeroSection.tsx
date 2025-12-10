@@ -59,7 +59,7 @@ export default function HeroSection({
         >
           {/* Titulo principal com animação de aparecer */}
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-5xl font-heading font-bold text-white leading-tight mb-6"
             variants={itemVariants}
           >
             <span>{title1} </span>

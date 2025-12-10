@@ -6,11 +6,11 @@
     "testimonials": "Depoimentos",
     "faq": "FAQ",
     "contact": "Contato",
-    "cta": "Fale Conosco",
+    "cta": "Fale com um especialista",
     "changeLanguage": "Mudar idioma"
   },
   "footer": {
-    "description": "Transformamos contabilidade em estratégia para o crescimento do seu negócio. Planejamento tributário, gestão empresarial e dashboards inteligentes.",
+    "description": "A Malaquias Contabilidade transforma obrigações fiscais em estratégia de crescimento. Planejamento tributário, gestão financeira e dashboards inteligentes para você pagar menos impostos, com segurança, e ter mais lucro no seu bolso.",
     "services": "Serviços",
     "company": "Empresa",
     "contact": "Contato",
@@ -19,7 +19,7 @@
       "taxPlanning": "Planejamento Tributário",
       "consulting": "Consultoria",
       "powerbi": "Dashboards Power BI",
-      "about": "Sobre nós",
+      "about": "Quem somos",
       "segments": "Segmentos",
       "testimonials": "Depoimentos",
       "faq": "Perguntas Frequentes"
@@ -30,14 +30,14 @@
   },
   "buttons": {
     "learnMore": "Saiba mais",
-    "getStarted": "Começar",
+    "getStarted": "Começar agora",
     "contactUs": "Fale conosco",
-    "scheduleCall": "Agendar ligação"
+    "scheduleCall": "Agendar análise gratuita"
   },
   "forms": {
     "required": "Campo obrigatório",
     "invalidEmail": "E-mail inválido",
-    "success": "Enviado com sucesso!",
-    "error": "Erro ao enviar. Tente novamente."
+    "success": "Enviado com sucesso! Em breve entraremos em contato.",
+    "error": "Erro ao enviar. Tente novamente ou fale conosco pelo WhatsApp."
   }
 }
