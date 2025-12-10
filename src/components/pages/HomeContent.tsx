@@ -15,7 +15,8 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 
 export default function HomeContent() {
   const { t } = useLanguage();
-  const { hero, whyMalaquias, sectionTitles, testimonials, blog, faq } = t.home;
+  const { hero, whyMalaquias, sectionTitles, testimonials, blog } = t.home;
+  const faq = t.faq; // Usa o faq.json completo com 10 perguntas
 
   // Margens escalonadas para os itens
   const itemMargins = ['', 'ml-4', 'ml-8', 'ml-4', ''];

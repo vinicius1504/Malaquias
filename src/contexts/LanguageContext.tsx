@@ -6,17 +6,25 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 import ptHome from '@/locales/pt/home.json';
 import enHome from '@/locales/en/home.json';
 import esHome from '@/locales/es/home.json';
+import ptServices from '@/locales/pt/services.json';
+import enServices from '@/locales/en/services.json';
+import esServices from '@/locales/es/services.json';
+import ptFaq from '@/locales/pt/faq.json';
+import enFaq from '@/locales/en/faq.json';
+import esFaq from '@/locales/es/faq.json';
 
 type Locale = 'pt' | 'en'| 'es';
 
 interface Translations {
   home: typeof ptHome;
+  services: typeof ptServices;
+  faq: typeof ptFaq;
 }
 
 const translations: Record<Locale, Translations> = {
-  pt: { home: ptHome },
-  en: { home: enHome },
-  es: { home: esHome },
+  pt: { home: ptHome, services: ptServices, faq: ptFaq },
+  en: { home: enHome, services: enServices, faq: enFaq },
+  es: { home: esHome, services: esServices, faq: esFaq },
 };
 
 interface LanguageContextType {

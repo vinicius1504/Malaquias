@@ -11,14 +11,10 @@ interface PartnerLogo {
 
 // Logos dos parceiros (usando logos de clientes para teste - substituir depois)
 const partnerLogos: PartnerLogo[] = [
-  { src: '/images/clientes/logo (1).png', alt: 'Parceiro 1' },
-  { src: '/images/clientes/logo (2).png', alt: 'Parceiro 2' },
-  { src: '/images/clientes/logo (3).png', alt: 'Parceiro 3' },
-  { src: '/images/clientes/logo (4).png', alt: 'Parceiro 4' },
-  { src: '/images/clientes/logo (5).png', alt: 'Parceiro 5' },
-  { src: '/images/clientes/logo (6).png', alt: 'Parceiro 6' },
-  { src: '/images/clientes/logo (7).png', alt: 'Parceiro 7' },
-  { src: '/images/clientes/logo (8).png', alt: 'Parceiro 8' },
+  { src: '/images/parceiros/ec.png', alt: 'Parceiro 1' },
+  { src: '/images/parceiros/solides.jpg', alt: 'Parceiro 2' },
+  { src: '/images/parceiros/tr.png', alt: 'Parceiro 3' },
+  { src: '/images/parceiros/uc.png', alt: 'Parceiro 4' },
 ];
 
 function HorizontalRow({ logos, direction, speed = 25 }: { logos: PartnerLogo[]; direction: 'left' | 'right'; speed?: number }) {

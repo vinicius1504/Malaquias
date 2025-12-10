@@ -1,42 +1,47 @@
 {
   "badge": "Serviços",
-  "title": "Soluções completas para sua empresa",
-  "subtitle": "Oferecemos serviços contábeis modernos e estratégicos para impulsionar o crescimento do seu negócio.",
+  "title": "Serviços especializados em contabilidade e gestão",
+  "subtitle": "Uma estrutura completa para reduzir impostos, organizar as finanças e garantir segurança fiscal para a sua empresa.",
   "items": [
     {
-      "icon": "calculator",
-      "title": "Contabilidade Empresarial",
-      "description": "Gestão contábil completa com escrituração, balancetes e demonstrações financeiras."
+      "icon": "building",
+      "title": "Abertura e Reestruturação de Empresa",
+      "description": "Análise do modelo de negócio, escolha do regime tributário, elaboração de contrato social e regularização completa da empresa, além de reestruturações societárias e tributárias quando necessário."
     },
     {
       "icon": "chart",
-      "title": "Planejamento Tributário",
-      "description": "Análise e estratégias para redução legal da carga tributária da sua empresa."
+      "title": "Consultoria em Gestão Financeira",
+      "description": "Apoio estratégico na organização do fluxo de caixa, formação de preço, análise de resultados e construção de indicadores financeiros, sempre com relatórios gerenciais e dashboards em Power BI."
+    },
+    {
+      "icon": "shieldCheck",
+      "title": "Auditoria, Revisão Fiscal e Recuperação Tributária",
+      "description": "Revisão detalhada de apurações e obrigações para identificar créditos e oportunidades de recuperação de tributos pagos a maior, com segurança jurídica e foco em reduzir custos fiscais."
     },
     {
       "icon": "document",
-      "title": "Abertura de Empresas",
-      "description": "Assessoria completa para constituição e legalização do seu negócio."
-    },
-    {
-      "icon": "shield",
-      "title": "Consultoria Fiscal",
-      "description": "Orientação especializada em questões fiscais e tributárias."
+      "title": "Escrita Contábil e Fiscal",
+      "description": "Escrituração contábil e fiscal completa, emissão de demonstrações financeiras, apurações de tributos e cumprimento de todas as obrigações acessórias exigidas pelo Fisco."
     },
     {
       "icon": "users",
       "title": "Departamento Pessoal",
-      "description": "Gestão de folha de pagamento, admissões, rescisões e obrigações trabalhistas."
+      "description": "Gestão de folha de pagamento, admissões, rescisões, férias, eSocial e demais rotinas trabalhistas, garantindo conformidade com a legislação e segurança para empresa e colaboradores."
     },
     {
-      "icon": "lightbulb",
-      "title": "Dashboards em Power BI",
-      "description": "Relatórios visuais e inteligentes para acompanhar a saúde financeira da empresa."
+      "icon": "userTax",
+      "title": "Imposto de Renda Pessoa Física",
+      "description": "Atendimento especializado para declarações de IRPF, situações complexas, ganho de capital, investimentos, carnê-leão e regularização de pendências junto à Receita Federal."
+    },
+    {
+      "icon": "certificate",
+      "title": "Certificação Digital",
+      "description": "Orientação e intermediação na emissão de certificados digitais para pessoas físicas e jurídicas, garantindo agilidade para assinar documentos e cumprir obrigações eletrônicas."
     }
   ],
   "cta": {
-    "title": "Precisa de ajuda especializada?",
-    "description": "Agende uma conversa gratuita e descubra como podemos ajudar.",
-    "button": "Agendar conversa"
+    "title": "Precisa de um atendimento sob medida?",
+    "description": "Entre em contato e descubra como estruturar a contabilidade e a gestão financeira da sua empresa com a Malaquias.",
+    "button": "Falar com um especialista"
   }
 }

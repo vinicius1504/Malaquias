@@ -1,39 +1,39 @@
 {
   "sectionTitles": {
-    "areas": "Áreas de atuação",
+    "areas": "Serviços",
     "whyPart1": "Por que a",
     "whyPart2": "Malaquias Contabilidade?",
     "clients": "Nossos Clientes",
     "partners": "Nossos Parceiros",
     "testimonials": "Depoimentos",
-    "blog": "Últimas Notícias",
+    "blog": "Notícias",
     "faq": "Perguntas Frequentes",
     "heroTitle1": "Menos",
-    "heroHighlight1": "imposto",
+    "heroHighlight1": "impostos",
     "heroTitle2": "mais",
-    "heroHighlight2": "lucro"
+    "heroHighlight2": "lucro no seu bolso"
   },
   "faq": {
     "items": [
       {
         "question": "Quanto custa os serviços da Malaquias Contabilidade?",
-        "answer": "Os valores variam de acordo com o porte da empresa e os serviços contratados. Oferecemos planos a partir de R$ 299/mês para MEI e valores personalizados para empresas maiores. Entre em contato para um orçamento personalizado."
+        "answer": "Os honorários são definidos de acordo com o porte, o regime tributário e a complexidade da operação da sua empresa. Em geral, os valores são muito inferiores à economia tributária que a estrutura correta pode gerar. O primeiro passo é uma análise gratuita para entender sua realidade e montar uma proposta sob medida."
       },
       {
         "question": "Vocês atendem empresas de todo o Brasil?",
-        "answer": "Sim! Somos 100% digitais e atendemos empresas de qualquer estado brasileiro. Todo o processo é feito online, de forma prática e segura."
+        "answer": "Sim. O escritório atua de forma 100% digital, atendendo clientes em diversos estados, com foco especial em varejo, e-commerce, indústria e clínicas médicas. Toda a comunicação é feita por canais online, sem perder a proximidade no atendimento."
       },
       {
         "question": "Como funciona o planejamento tributário?",
-        "answer": "Analisamos detalhadamente sua empresa para identificar oportunidades legais de redução de impostos. Avaliamos o melhor regime tributário, benefícios fiscais aplicáveis e estratégias para otimizar sua carga tributária."
+        "answer": "Realizamos um estudo do faturamento, margens, despesas e enquadramento atual para identificar oportunidades de economia. Comparamos regimes tributários, analisamos benefícios legais aplicáveis ao seu segmento e sugerimos ajustes estruturais sempre com segurança jurídica."
       },
       {
         "question": "Qual o prazo para abertura de empresa?",
-        "answer": "O prazo médio é de 7 a 15 dias úteis, dependendo do tipo de empresa e da localidade. Cuidamos de toda a burocracia para você."
+        "answer": "O prazo varia conforme o tipo de empresa e o município, mas em muitos casos conseguimos concluir o processo em poucos dias úteis, desde que toda a documentação seja enviada corretamente. Você acompanha o andamento com o suporte da nossa equipe."
       },
       {
-        "question": "Como acesso os dashboards em Power BI?",
-        "answer": "Após a contratação, você recebe acesso a uma plataforma exclusiva onde pode visualizar todos os relatórios e indicadores da sua empresa em tempo real, de qualquer dispositivo."
+        "question": "Como acesso relatórios e dashboards?",
+        "answer": "Após a implantação, você passa a contar com relatórios periódicos e dashboards em Power BI, acessíveis pela internet, que mostram os principais indicadores do negócio em tempo quase real. Assim, fica mais fácil acompanhar resultados e tomar decisões."
       }
     ]
   },
@@ -43,144 +43,144 @@
     "items": [
       {
         "id": 1,
-        "title": "Reforma Tributária 2025: O que muda para sua empresa",
-        "excerpt": "Entenda as principais mudanças da reforma tributária e como se preparar para as novas regras fiscais que entram em vigor.",
-        "image": "/images/noticia-exemplo.png",
-        "date": "2024-12-05",
-        "category": "Tributário",
-        "slug": "reforma-tributaria-2025"
+        "title": "Planejamento Tributário para Clínicas Médicas: o poder da equiparação hospitalar",
+        "excerpt": "Veja como clínicas e serviços de saúde podem reduzir a carga tributária de forma significativa por meio da equiparação hospitalar, com segurança e planejamento.",
+        "image": "/images/noticia-clinicas-medicas.png",
+        "date": "2025-09-28",
+        "category": "Saúde",
+        "slug": "planejamento-tributario-clinicas-medicas-equiparacao-hospitalar"
       },
       {
         "id": 2,
-        "title": "5 Estratégias para Reduzir Impostos Legalmente",
-        "excerpt": "Descubra como o planejamento tributário pode ajudar sua empresa a economizar e aumentar a lucratividade de forma legal.",
-        "image": "/images/noticia-exemplo.png",
-        "date": "2024-12-01",
-        "category": "Planejamento",
-        "slug": "estrategias-reduzir-impostos"
+        "title": "Planejamento Tributário para Varejo e E-commerce: como pagar menos impostos",
+        "excerpt": "Entenda os principais pontos de atenção para lojas físicas e e-commerces que desejam estruturar o planejamento tributário e reduzir custos com impostos.",
+        "image": "/images/noticia-varejo-ecommerce.png",
+        "date": "2025-09-28",
+        "category": "Varejo e E-commerce",
+        "slug": "planejamento-tributario-varejo-e-ecommerce"
       },
       {
         "id": 3,
-        "title": "MEI 2025: Novo Limite de Faturamento",
-        "excerpt": "Governo anuncia aumento no teto de faturamento do MEI. Saiba se você pode se beneficiar dessa mudança.",
-        "image": "/images/noticia-exemplo.png",
-        "date": "2024-11-28",
-        "category": "MEI",
-        "slug": "mei-2025-novo-limite"
+        "title": "Entenda o PL 1.087/2025: nova tributação sobre lucros e altas rendas",
+        "excerpt": "Resumo das principais mudanças propostas pelo PL 1.087/2025 e seus impactos para empresários e pessoas físicas de alta renda.",
+        "image": "/images/noticia-pl-1087-2025.png",
+        "date": "2025-09-28",
+        "category": "Legislação",
+        "slug": "pl-1087-2025-lucros-e-altas-rendas"
       }
     ]
   },
   "hero": {
-    "badge": "Contabilidade Digital",
-    "title": "Menos imposto. Mais lucro e controle para sua empresa.",
-    "subtitle": "A Malaquias Contabilidade combina planejamento tributário, tecnologia e dashboards em Power BI para transformar contabilidade em gestão real do seu negócio.",
-    "ctaPrimary": "Agendar análise gratuita",
-    "ctaSecondary": "Ver serviços",
-    "trustLabel": "Empresas que confiam em nós",
-    "trustItem1": "+500 empresas atendidas",
-    "trustItem2": "R$ 2M+ em economia tributária",
-    "trustItem3": "98% de satisfação"
+    "badge": "Sua referência em contabilidade",
+    "title": "Aqui, contabilidade é menos impostos e mais lucro no seu bolso.",
+    "subtitle": "A Malaquias Contabilidade une planejamento tributário, gestão financeira e tecnologia para que você pague o que é devido — nem a mais, nem a menos — e tenha total controle dos números do negócio.",
+    "ctaPrimary": "Falar com um especialista",
+    "ctaSecondary": "Conhecer serviços",
+    "trustLabel": "Empresas de todo o Brasil confiam na Malaquias",
+    "trustItem1": "+500 clientes atendidos",
+    "trustItem2": "Especialista em clínicas, varejo e e-commerce",
+    "trustItem3": "Atendimento 100% digital com suporte humano"
   },
   "whyMalaquias": {
     "badge": "Diferenciais",
-    "title": "Por que a Malaquias?",
-    "subtitle": "Contabilidade estratégica focada em resultado para sua empresa.",
+    "title": "Por que escolher a Malaquias Contabilidade?",
+    "subtitle": "Não entregamos apenas guias. Entregamos informação, economia tributária e gestão em tempo real.",
     "items": [
       {
         "icon": "digital",
-        "title": "100% Digital",
-        "description": "Atendimento em todo o Brasil, com processos automatizados e sem burocracia."
+        "title": "Atendimento 100% digital",
+        "description": "Processos digitais, integração com sistemas oficiais e canais de comunicação ágeis, mantendo a proximidade no atendimento."
       },
       {
         "icon": "strategy",
-        "title": "Planejamento Tributário",
-        "description": "Análise personalizada para reduzir legalmente a carga tributária da sua empresa."
+        "title": "Foco em planejamento tributário",
+        "description": "Estudos recorrentes para reduzir legalmente a carga tributária, com olhar especial para segmentos como saúde, varejo e e-commerce."
       },
       {
         "icon": "dashboard",
         "title": "Dashboards em Power BI",
-        "description": "Visualize a saúde financeira da sua empresa em tempo real com relatórios inteligentes."
+        "description": "Indicadores de faturamento, margem, impostos e resultado consolidados em painéis visuais para direção e gestão financeira."
       },
       {
         "icon": "support",
-        "title": "Suporte Dedicado",
-        "description": "Equipe especializada disponível para atender suas dúvidas e necessidades."
+        "title": "Equipe especializada",
+        "description": "Profissionais com experiência prática em diferentes regimes e setores, prontos para orientar decisões estratégicas do seu negócio."
       }
     ]
   },
   "segments": {
     "badge": "Segmentos",
-    "title": "Atendemos diversos segmentos",
-    "subtitle": "Experiência comprovada em diferentes setores da economia.",
+    "title": "Experiência em diversos segmentos",
+    "subtitle": "Atuação forte em saúde, varejo físico e digital, serviços e indústria.",
     "items": [
       {
-        "icon": "store",
-        "title": "Comércio",
-        "description": "Varejo, atacado e e-commerce com gestão tributária otimizada."
-      },
-      {
         "icon": "medical",
-        "title": "Saúde",
-        "description": "Clínicas, consultórios e profissionais da área de saúde."
+        "title": "Clínicas e Saúde",
+        "description": "Estruturação tributária para clínicas, consultórios e serviços de saúde, incluindo estratégias como equiparação hospitalar."
       },
       {
-        "icon": "tech",
-        "title": "Tecnologia",
-        "description": "Startups, SaaS e empresas de desenvolvimento de software."
-      },
-      {
-        "icon": "industry",
-        "title": "Indústria",
-        "description": "Manufatura e produção com controle fiscal especializado."
+        "icon": "store",
+        "title": "Varejo e E-commerce",
+        "description": "Planejamento para lojas físicas e online, com foco em redução de PIS, COFINS, ICMS e ICMS-ST e melhor formação de preços."
       },
       {
         "icon": "services",
         "title": "Prestadores de Serviço",
-        "description": "Profissionais liberais e empresas de serviços diversos."
+        "description": "Profissionais liberais e empresas de serviços com acompanhamento de fluxo de caixa, faturamento e carga tributária."
       },
       {
-        "icon": "startup",
-        "title": "Startups",
-        "description": "Apoio contábil para empresas em fase de crescimento acelerado."
+        "icon": "industry",
+        "title": "Indústria",
+        "description": "Suporte na apuração de tributos e no controle fiscal para empresas industriais que precisam de organização e previsibilidade."
+      },
+      {
+        "icon": "tech",
+        "title": "Tecnologia e Startups",
+        "description": "Startups e empresas de tecnologia com foco em escalabilidade, compliance e indicadores para investidores."
+      },
+      {
+        "icon": "other",
+        "title": "Outros Setores",
+        "description": "Comércio, serviços e negócios de diferentes portes que buscam contabilidade parceira do crescimento."
       }
     ]
   },
   "testimonials": {
     "badge": "Depoimentos",
-    "title": "O que nossos clientes dizem",
-    "subtitle": "Histórias reais de empresários que transformaram sua gestão com a Malaquias.",
+    "title": "O que dizem nossos clientes",
+    "subtitle": "Empresários que transformaram a relação com a contabilidade.",
     "items": [
       {
-        "name": "Carlos Silva",
-        "role": "CEO",
-        "company": "TechStart",
-        "content": "A Malaquias transformou nossa visão sobre contabilidade. Os dashboards em Power BI nos dão clareza total sobre a saúde financeira da empresa."
+        "name": "Luciana Schneider",
+        "role": "Empresária",
+        "company": null,
+        "content": "Equipe atenciosa, prazos cumpridos e comunicação rápida. A sensação é de ter um time de apoio olhando de perto para a empresa o tempo todo."
       },
       {
-        "name": "Ana Santos",
-        "role": "Diretora Financeira",
-        "company": "Clínica Vida",
-        "content": "Reduzimos nossa carga tributária em 30% com o planejamento da Malaquias. O retorno sobre o investimento foi imediato."
+        "name": "Dra. Marina Araujo",
+        "role": "Médica",
+        "company": null,
+        "content": "Desde a primeira conversa, o atendimento foi muito esclarecedor. Hoje consigo entender exatamente quanto pago de impostos e por quê."
       },
       {
-        "name": "Roberto Oliveira",
-        "role": "Fundador",
-        "company": "E-commerce Plus",
-        "content": "Atendimento excepcional e 100% digital. Consigo resolver tudo pelo WhatsApp e acompanhar meus números em tempo real."
+        "name": "Dr. Flavio Cavalcanti",
+        "role": "Empresário",
+        "company": null,
+        "content": "O suporte é ágil e o sistema utilizado é simples de usar. As informações estão sempre atualizadas, o que traz segurança na tomada de decisão."
       }
     ]
   },
   "contact": {
     "badge": "Contato",
-    "title": "Vamos conversar?",
-    "subtitle": "Entre em contato e descubra como podemos ajudar sua empresa a crescer.",
+    "title": "Fale com a Malaquias Contabilidade",
+    "subtitle": "Envie uma mensagem ou fale diretamente pelo WhatsApp com nossa equipe especializada.",
     "email": "E-mail",
     "phone": "Telefone",
     "whatsapp": "WhatsApp",
-    "whatsappCta": "Chamar no WhatsApp",
-    "infoTitle": "Fale com a gente",
-    "infoDescription": "Nossa equipe está pronta para atender você. Escolha o canal de sua preferência ou preencha o formulário ao lado.",
-    "mapPlaceholder": "Mapa será carregado aqui",
+    "whatsappCta": "Falar com um especialista no WhatsApp",
+    "infoTitle": "Entre em contato",
+    "infoDescription": "Conte um pouco sobre a sua empresa, o segmento em que atua e quais são as suas principais dores hoje. Vamos analisar seu caso e indicar os próximos passos.",
+    "mapPlaceholder": "Mapa das unidades de Campo Grande/MS e São Paulo/SP",
     "form": {
       "name": "Nome completo",
       "namePlaceholder": "Seu nome",
@@ -189,13 +189,13 @@
       "company": "Empresa (opcional)",
       "companyPlaceholder": "Nome da sua empresa",
       "message": "Mensagem",
-      "messagePlaceholder": "Como podemos ajudar?",
+      "messagePlaceholder": "Descreva brevemente sua necessidade ou dúvida",
       "submit": "Enviar mensagem"
     }
   },
   "footer": {
-    "cta": "Entre em contato e faça uma simulação",
-    "ctaButton": "Entre em Contato",
+    "cta": "Quer pagar menos impostos com segurança?",
+    "ctaButton": "Fale com um especialista",
     "locations": {
       "title": "Onde estamos",
       "matriz": {
@@ -205,10 +205,10 @@
         "address": { "icon": "mapPin", "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS" }
       },
       "filial": {
-        "title": "Filial - Campo Grande/MS",
-        "phone": { "icon": "phone", "text": "(67) 99661-7549" },
+        "title": "Filial - São Paulo/SP",
+        "phone": { "icon": "phone", "text": "(11) 91939-7549" },
         "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS" }
+        "address": { "icon": "mapPin", "text": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP" }
       }
     },
     "registrations": {

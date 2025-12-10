@@ -1,36 +1,52 @@
 {
   "badge": "FAQ",
   "title": "Perguntas Frequentes",
-  "subtitle": "Encontre respostas para as dúvidas mais comuns sobre nossos serviços.",
+  "subtitle": "Entenda como a Malaquias Contabilidade pode ajudar sua empresa a pagar menos impostos com segurança.",
   "items": [
     {
-      "question": "Como funciona o atendimento 100% digital?",
-      "answer": "Todo o nosso atendimento é realizado de forma digital, através de WhatsApp, e-mail e videoconferências. Você não precisa sair de casa ou do escritório para resolver questões contábeis. Todos os documentos são enviados e assinados digitalmente."
+      "question": "Como abrir uma empresa? Quais documentos, prazos e custos?",
+      "answer": "A abertura é feita de forma guiada pela equipe da Malaquias. Você envia os dados e documentos básicos dos sócios (RG, CPF, comprovantes, IPTU/contrato do ponto, entre outros) e nós cuidamos de contrato social, CNPJ, inscrições e licenças. Em casos simples, o processo costuma levar de 3 a 5 dias úteis e os custos envolvem principalmente taxas públicas. O objetivo é que você comece a operar rapidamente, com o enquadramento tributário correto."
     },
     {
-      "question": "Quanto posso economizar com o planejamento tributário?",
-      "answer": "A economia varia de acordo com o perfil da empresa, mas em média nossos clientes conseguem reduzir entre 20% a 40% da carga tributária de forma totalmente legal. Fazemos uma análise gratuita para estimar o potencial de economia do seu negócio."
+      "question": "É verdade que posso pagar menos imposto mudando de contador?",
+      "answer": "Sim. Em muitas análises identificamos empresas pagando muito mais tributos do que o necessário por falta de planejamento. Ao migrar para a Malaquias, revisamos CNAE, regime tributário e estrutura fiscal, aplicando estratégias 100% legais para reduzir impostos e aumentar o lucro líquido. Em vários casos, a economia chega a ser expressiva quando comparada ao modelo anterior."
     },
     {
-      "question": "O que são os dashboards em Power BI?",
-      "answer": "São painéis visuais e interativos que mostram em tempo real os principais indicadores financeiros da sua empresa. Você consegue acompanhar faturamento, despesas, lucro, impostos e muito mais de forma clara e intuitiva."
+      "question": "O que diferencia a Malaquias Contabilidade de outros escritórios?",
+      "answer": "Nosso foco não é apenas entregar guias e obrigações acessórias, mas gerar resultado. Utilizamos tecnologia, automação e dashboards em Power BI para que você acompanhe faturamento, margem, impostos, folha e lucro em tempo real. Assim, a contabilidade deixa de ser apenas obrigação fiscal e se torna um instrumento de gestão e tomada de decisão."
     },
     {
-      "question": "Vocês atendem empresas de qualquer tamanho?",
-      "answer": "Sim! Atendemos desde MEIs e profissionais liberais até empresas de médio porte. Nossos planos são flexíveis e adaptados às necessidades de cada tipo de negócio."
+      "question": "Vocês atendem apenas grandes empresas?",
+      "answer": "Não. Atendemos desde MEI e profissionais liberais até clínicas, comércios, e-commerces e empresas de médio porte. O padrão de atendimento é o mesmo para todos: clareza, economia tributária e segurança nas obrigações fiscais."
     },
     {
-      "question": "Como faço para trocar de contador?",
-      "answer": "O processo é simples e nós cuidamos de tudo. Basta entrar em contato que nossa equipe solicita os documentos ao contador anterior e faz toda a transição sem que você precise se preocupar."
+      "question": "Vocês atendem empresas de outros estados?",
+      "answer": "Sim. O escritório atua de forma 100% digital e atende clientes em todo o Brasil. Temos forte presença em segmentos de comércio e indústria em estados como MS, MT, MG, RS, SP e RJ, além de atender empresas de serviços em qualquer região do país, sempre com suporte próximo e canais digitais de comunicação."
     },
     {
-      "question": "Qual o prazo para abertura de uma empresa?",
-      "answer": "O prazo varia conforme o tipo de empresa e a cidade, mas em geral conseguimos abrir uma empresa em 7 a 15 dias úteis. Empresas mais simples, como MEI, podem ser abertas no mesmo dia."
+      "question": "São especialistas em clínicas médicas, varejo e e-commerce?",
+      "answer": "Sim. Na área da saúde, trabalhamos com estratégias como equiparação hospitalar, que podem reduzir de forma relevante tributos como IRPJ e CSLL. Para varejo físico e digital, estruturamos o planejamento para otimizar PIS, COFINS, ICMS e ICMS-ST, além de apoiar na formação de preço e no fluxo de caixa, sempre com base em legislação atualizada."
+    },
+    {
+      "question": "Como funciona a assessoria em gestão financeira?",
+      "answer": "Transformamos os números da sua empresa em informações gerenciais objetivas. Montamos relatórios, indicadores personalizados e dashboards em Power BI que mostram desempenho, fluxo de caixa, DRE, margem e rentabilidade. A partir disso, nossa equipe faz análises recorrentes, ajudando você a decidir com base em dados, e não em achismos."
+    },
+    {
+      "question": "Como é a migração do meu contador atual para a Malaquias?",
+      "answer": "O processo é simples. Após a sua decisão, nossa equipe entra em contato com o escritório anterior para solicitar toda a documentação necessária, conferindo as informações antes de iniciar os trabalhos. Você acompanha a transição com segurança e, em seguida, passa a receber relatórios comparativos e dashboards que mostram o impacto real da nova estrutura tributária."
+    },
+    {
+      "question": "Como funciona o envio e recebimento de documentos?",
+      "answer": "Trabalhamos com integração digital. As NF-es, NFS-es e CT-es são importadas diretamente das bases oficiais, e a documentação complementar é enviada por canais eletrônicos. A partir disso, fiscal, contábil e folha de pagamento são tratados em um fluxo integrado, e os resultados são apresentados em relatórios e painéis de Power BI."
+    },
+    {
+      "question": "Como saber qual é o melhor regime tributário para minha empresa?",
+      "answer": "Realizamos simulações comparando Simples Nacional, Lucro Presumido e Lucro Real, considerando faturamento, margem, despesas dedutíveis e particularidades do seu segmento. Os cenários são apresentados em relatórios técnicos e dashboards, mostrando quanto você pagaria em cada regime e qual gera maior economia com segurança."
     }
   ],
   "cta": {
-    "title": "Não encontrou sua resposta?",
-    "description": "Entre em contato com nossa equipe que teremos prazer em ajudar.",
-    "button": "Falar com especialista"
+    "title": "Ainda ficou com alguma dúvida?",
+    "description": "Fale com um especialista da Malaquias Contabilidade e receba uma análise personalizada da sua empresa.",
+    "button": "Falar com um especialista"
   }
 }

@@ -6,7 +6,7 @@ import Image from 'next/image';
 interface Testimonial {
   name: string;
   role: string;
-  company: string;
+  company: string | null;
   content: string;
   avatar?: string;
 }
@@ -109,7 +109,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
             <div className="text-[#1a1a2e]/80 text-sm">
               <span className="font-semibold">{currentTestimonial.name}</span>
               <span className="mx-2">-</span>
-              <span>{currentTestimonial.role}, {currentTestimonial.company}</span>
+              <span>{currentTestimonial.role}{currentTestimonial.company ? `, ${currentTestimonial.company}` : ''}</span>
             </div>
           </div>
         </div>
