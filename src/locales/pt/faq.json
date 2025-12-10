@@ -26,6 +26,22 @@
     {
       "question": "Qual o prazo para abertura de uma empresa?",
       "answer": "O prazo varia conforme o tipo de empresa e a cidade, mas em geral conseguimos abrir uma empresa em 7 a 15 dias úteis. Empresas mais simples, como MEI, podem ser abertas no mesmo dia."
+    },
+    {
+      "question": "Quanto custa os serviços da Malaquias Contabilidade?",
+      "answer": "Os valores variam de acordo com o porte da empresa e os serviços contratados. Oferecemos planos a partir de R$ 299/mês para MEI e valores personalizados para empresas maiores. Entre em contato para um orçamento personalizado."
+    },
+    {
+      "question": "Vocês atendem empresas de todo o Brasil?",
+      "answer": "Sim! Somos 100% digitais e atendemos empresas de qualquer estado brasileiro. Todo o processo é feito online, de forma prática e segura."
+    },
+    {
+      "question": "Como funciona o suporte ao cliente?",
+      "answer": "Oferecemos suporte via WhatsApp, e-mail e telefone em horário comercial. Você terá um contador dedicado que conhece sua empresa e pode responder suas dúvidas rapidamente."
+    },
+    {
+      "question": "É possível migrar minha contabilidade atual?",
+      "answer": "Sim! Fazemos todo o processo de migração de forma simples e sem burocracia. Nossa equipe cuida de solicitar os documentos ao seu contador anterior e garante uma transição tranquila."
     }
   ],
   "cta": {
