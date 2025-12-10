@@ -153,19 +153,19 @@
       {
         "name": "Luciana Schneider",
         "role": "Empresária",
-        "company": null,
+        "company": "",
         "content": "Equipe atenciosa, prazos cumpridos e comunicação rápida. A sensação é de ter um time de apoio olhando de perto para a empresa o tempo todo."
       },
       {
         "name": "Dra. Marina Araujo",
         "role": "Médica",
-        "company": null,
+        "company": "",
         "content": "Desde a primeira conversa, o atendimento foi muito esclarecedor. Hoje consigo entender exatamente quanto pago de impostos e por quê."
       },
       {
         "name": "Dr. Flavio Cavalcanti",
         "role": "Empresário",
-        "company": null,
+        "company": "",
         "content": "O suporte é ágil e o sistema utilizado é simples de usar. As informações estão sempre atualizadas, o que traz segurança na tomada de decisão."
       }
     ]
