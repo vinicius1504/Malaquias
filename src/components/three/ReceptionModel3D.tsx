@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, memo, useEffect } from 'react';
+import { useRef, memo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, OrbitControls, Center } from '@react-three/drei';
 import * as THREE from 'three';
@@ -8,17 +8,8 @@ import * as THREE from 'three';
 // Componente do modelo 3D da recepção
 const ReceptionModel = memo(function ReceptionModel() {
   const groupRef = useRef<THREE.Group>(null);
-  const { scene } = useGLTF('/models/model_recepcao.glb');
+  const { scene } = useGLTF('/models/model_recepcao2.glb');
 
-  // Habilitar sombras em todos os meshes do modelo
-  useEffect(() => {
-    scene.traverse((child) => {
-      if (child instanceof THREE.Mesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-  }, [scene]);
 
   useFrame((state) => {
     if (!groupRef.current) return;
@@ -42,7 +33,6 @@ const ReceptionModel3D = memo(function ReceptionModel3D() {
   return (
     <div className="w-full h-full min-h-[400px]">
       <Canvas
-        shadows
         camera={{ position: [5, 3, 5], fov: 25 }}
         gl={{
           antialias: true,
@@ -52,43 +42,14 @@ const ReceptionModel3D = memo(function ReceptionModel3D() {
         dpr={[1, 2]}
         style={{ background: 'transparent' }}
       >
-        {/* Iluminação ambiente */}
-        <ambientLight intensity={0.3} />
+        {/* Luz ambiente para iluminação base */}
+        <ambientLight intensity={0.4} />
 
-        {/* Luz principal de cima iluminando a mesa - com sombra */}
-        <directionalLight
-          position={[0, 8, 0]}
-          intensity={1.2}
-          color="#ffffff"
-          castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-          shadow-camera-far={20}
-          shadow-camera-near={0.5}
-          shadow-camera-left={-5}
-          shadow-camera-right={5}
-          shadow-camera-top={5}
-          shadow-camera-bottom={-5}
-        />
+        {/* Luz frontal fixa - acompanha a câmera */}
+        <directionalLight position={[5, 3, 5]} intensity={1.2} color="#ffffff" />
 
-        {/* Luz frontal iluminando a logo da empresa */}
-        <spotLight
-          position={[-4, 3, 4]}
-          intensity={2}
-          color="#D8B87D"
-          angle={0.5}
-          penumbra={0.5}
-          castShadow
-        />
-
-        {/* Luz de preenchimento lateral */}
-        <directionalLight position={[5, 3, 5]} intensity={0.6} color="#ffffff" />
-
-        {/* Luz de contorno traseira */}
-        <directionalLight position={[0, 2, -5]} intensity={0.4} color="#C9983A" />
-
-        {/* Luz pontual dourada para realçar detalhes */}
-        <pointLight position={[-2, 1, 2]} intensity={0.8} color="#D8B87D" />
+        {/* Luz frontal secundária */}
+        <directionalLight position={[-5, 3, 5]} intensity={0.8} color="#ffffff" />
 
         {/* Modelo */}
         <ReceptionModel />
@@ -107,6 +68,6 @@ const ReceptionModel3D = memo(function ReceptionModel3D() {
 });
 
 // Pre-load do modelo
-useGLTF.preload('/models/model_recepcao.glb');
+useGLTF.preload('/models/model_recepcao2.glb');
 
 export default ReceptionModel3D;

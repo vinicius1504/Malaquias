@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import dynamic from 'next/dynamic';
+import ClientsCarousel from '../ui/ClientsCarousel';
+import Footer from '../sections/Footer';
+
 
 // Carrega o modelo 3D sem SSR
 const ReceptionModel3D = dynamic(() => import('../three/ReceptionModel3D'), {
@@ -63,7 +66,7 @@ export default function AboutContent() {
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Coluna do Modelo 3D da Recepção - flutuando no espaço */}
           <motion.div
-            className="relative w-full aspect-[4/3]"
+            className="relative w-full h-full"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -91,9 +94,8 @@ export default function AboutContent() {
                   {/* Ícone de seta */}
                   <span className="flex-shrink-0">
                     <svg
-                      className={`w-5 h-5 text-gold-500 transition-transform duration-300 ${
-                        openIndex === index ? 'rotate-90' : ''
-                      }`}
+                      className={`w-5 h-5 text-gold-500 transition-transform duration-300 ${openIndex === index ? 'rotate-90' : ''
+                        }`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -111,9 +113,8 @@ export default function AboutContent() {
 
                 {/* Conteúdo do Accordion */}
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? 'max-h-96' : 'max-h-0'
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96' : 'max-h-0'
+                    }`}
                 >
                   <div className="px-6 pb-5 pl-14 text-white/70 leading-relaxed">
                     {item.content}
@@ -123,6 +124,28 @@ export default function AboutContent() {
             ))}
           </motion.div>
         </div>
+
+        {/* Seção Nossos Clientes */}
+        <motion.div
+          className="mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          {/* Título Nossos Clientes */}
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+              {t.home.sectionTitles.clients}
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-gold-500 to-gold-600 mx-auto rounded-full" />
+          </div>
+          <ClientsCarousel />
+        </motion.div>
+      </div>
+
+      {/* Footer */}
+      <div className="mt-20">
+        <Footer />
       </div>
     </div>
   );
