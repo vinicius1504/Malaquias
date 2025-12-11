@@ -1,13 +1,38 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, Suspense } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
-function LogoModel({ isReturning }: { isReturning: boolean }) {
+// Fallback animado enquanto o modelo carrega
+function LoadingFallback() {
+  const meshRef = useRef<THREE.Mesh>(null);
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += 0.01;
+      meshRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
+    }
+  });
+
+  return (
+    <mesh ref={meshRef}>
+      <boxGeometry args={[2, 2, 0.3]} />
+      <meshStandardMaterial color="#D8B87D" wireframe />
+    </mesh>
+  );
+}
+
+function LogoModel({ isReturning, onLoaded }: { isReturning: boolean; onLoaded: () => void }) {
   const meshRef = useRef<THREE.Group>(null);
   const { scene } = useGLTF('/images/logos/logo_3d2.glb');
+
+  useEffect(() => {
+    if (scene) {
+      onLoaded();
+    }
+  }, [scene, onLoaded]);
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -93,6 +118,7 @@ function DragControls({
 
 export default function Logo3D() {
   const [isReturning, setIsReturning] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const handleDragStart = () => {
     setIsReturning(false);
@@ -102,6 +128,10 @@ export default function Logo3D() {
     setIsReturning(true);
     // Para de retornar após a animação completar
     setTimeout(() => setIsReturning(false), 3000);
+  };
+
+  const handleLoaded = () => {
+    setIsLoaded(true);
   };
 
   return (
@@ -149,11 +179,14 @@ export default function Logo3D() {
           color="#9C7A4A"
         />
 
-        {/* Modelo 3D */}
-        <LogoModel isReturning={isReturning} />
+        {/* Fallback enquanto carrega */}
+        <Suspense fallback={<LoadingFallback />}>
+          {/* Modelo 3D */}
+          <LogoModel isReturning={isReturning} onLoaded={handleLoaded} />
+        </Suspense>
 
-        {/* Controles de arrasto */}
-        <DragControls onDragStart={handleDragStart} onDragEnd={handleDragEnd} />
+        {/* Controles de arrasto - só ativa depois de carregado */}
+        {isLoaded && <DragControls onDragStart={handleDragStart} onDragEnd={handleDragEnd} />}
       </Canvas>
     </div>
   );
