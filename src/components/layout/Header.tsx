@@ -1,13 +1,18 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import LanguageSelector from '@/components/ui/LanguageSelector';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,15 +23,29 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Fecha o dropdown ao clicar fora
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/sobre', label: 'Sobre' },
-    { href: '/servicos', label: 'Serviços' },
-    { href: '/noticias', label: 'Notícias' },
-    { href: '/contato', label: 'Contato' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/trabalhe-conosco', label: 'Trabalhe Conosco' },
+    { href: '/', label: t.home.nav.home },
+    { href: '/sobre', label: t.home.nav.about },
+    { href: '/noticias', label: t.home.nav.news },
+    { href: '/contato', label: t.home.nav.contact },
+    { href: '/blog', label: t.home.nav.blog },
+    { href: '/trabalhe-conosco', label: t.home.nav.careers },
   ];
+
+  // Serviços do dropdown
+  const services = t.servicesPages.services;
 
   return (
     <header
@@ -51,15 +70,92 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+            {/* Home */}
+            <Link
+              href="/"
+              className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+            >
+              {t.home.nav.home}
+            </Link>
+
+            {/* Sobre */}
+            <Link
+              href="/sobre"
+              className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+            >
+              {t.home.nav.about}
+            </Link>
+
+            {/* Serviços Dropdown */}
+            <div
+              ref={servicesRef}
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium py-2"
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
               >
-                {item.label}
-              </Link>
-            ))}
+                {t.home.nav.services}
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              {isServicesOpen && (
+                <>
+                  {/* Ponte invisível entre o botão e o dropdown */}
+                  <div className="absolute top-full left-0 w-full h-2" />
+                  <div className="absolute top-full left-0 pt-2 w-72 z-50">
+                    <div className="bg-[#1a1a2e]/95 backdrop-blur-md rounded-xl border border-white/10 shadow-xl overflow-hidden">
+                      {services.map((service) => (
+                        <Link
+                          key={service.id}
+                          href={`/servicos/${service.slug}`}
+                          className="block px-4 py-3 text-white/80 hover:text-[#C9983A] hover:bg-white/5 transition-colors duration-200 text-sm border-b border-white/5 last:border-b-0"
+                          onClick={() => setIsServicesOpen(false)}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Outros itens */}
+            <Link
+              href="/noticias"
+              className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+            >
+              {t.home.nav.news}
+            </Link>
+            <Link
+              href="/contato"
+              className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+            >
+              {t.home.nav.contact}
+            </Link>
+            <Link
+              href="/blog"
+              className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+            >
+              {t.home.nav.blog}
+            </Link>
+            <Link
+              href="/trabalhe-conosco"
+              className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+            >
+              {t.home.nav.careers}
+            </Link>
 
             {/* Language Selector */}
             <LanguageSelector />
@@ -103,16 +199,90 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-white/10 pt-4">
             <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+              {/* Home */}
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+              >
+                {t.home.nav.home}
+              </Link>
+
+              {/* Sobre */}
+              <Link
+                href="/sobre"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+              >
+                {t.home.nav.about}
+              </Link>
+
+              {/* Serviços Accordion Mobile */}
+              <div>
+                <button
+                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                  className="flex items-center justify-between w-full text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
                 >
-                  {item.label}
-                </Link>
-              ))}
+                  {t.home.nav.services}
+                  <svg
+                    className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {/* Submenu de serviços */}
+                {isMobileServicesOpen && (
+                  <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-white/10 pl-4">
+                    {services.map((service) => (
+                      <Link
+                        key={service.id}
+                        href={`/servicos/${service.slug}`}
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsMobileServicesOpen(false);
+                        }}
+                        className="text-white/70 hover:text-[#C9983A] transition-colors duration-200 text-sm"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Outros itens */}
+              <Link
+                href="/noticias"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+              >
+                {t.home.nav.news}
+              </Link>
+              <Link
+                href="/contato"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+              >
+                {t.home.nav.contact}
+              </Link>
+              <Link
+                href="/blog"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+              >
+                {t.home.nav.blog}
+              </Link>
+              <Link
+                href="/trabalhe-conosco"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/90 hover:text-[#C9983A] transition-colors duration-200 text-sm font-medium"
+              >
+                {t.home.nav.careers}
+              </Link>
             </div>
           </div>
         )}

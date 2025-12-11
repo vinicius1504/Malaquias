@@ -22,7 +22,7 @@ const ReceptionModel = memo(function ReceptionModel() {
   return (
     <group ref={groupRef}>
       <Center>
-        <primitive object={scene} scale={45} position={[0, 2, 0]} />
+        <primitive object={scene} scale={45} position={[0, 3, 0]} />
       </Center>
     </group>
   );
@@ -33,7 +33,7 @@ const ReceptionModel3D = memo(function ReceptionModel3D() {
   return (
     <div className="w-full h-full min-h-[400px]">
       <Canvas
-        camera={{ position: [5, 3, 5], fov: 25 }}
+        camera={{ position: [5, 3, 5], fov: 50 }}
         gl={{
           antialias: true,
           alpha: true,

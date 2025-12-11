@@ -28,7 +28,7 @@ export default function AboutContent() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24">
       <div className="container mx-auto px-6">
         {/* Título da página */}
         <motion.div
@@ -63,20 +63,15 @@ export default function AboutContent() {
         </motion.div>
 
         {/* Layout principal: Modelo 3D + Accordion */}
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
-          {/* Coluna do Modelo 3D da Recepção - flutuando no espaço */}
-          <motion.div
-            className="relative w-full h-full"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
+        <div className="relative min-h-[600px]">
+          {/* Modelo 3D - área expandida, posicionado à esquerda */}
+          <div className="absolute -left-32 -top-20 -bottom-20 w-[60%] z-0">
             <ReceptionModel3D />
-          </motion.div>
+          </div>
 
-          {/* Coluna do Accordion */}
+          {/* Accordion - sobrepõe o modelo 3D à direita */}
           <motion.div
-            className="space-y-3"
+            className="relative z-10 lg:ml-auto lg:w-1/2 space-y-3 pt-8"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -127,7 +122,7 @@ export default function AboutContent() {
 
         {/* Seção Nossos Clientes */}
         <motion.div
-          className="mt-20"
+          className="mt-32"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}

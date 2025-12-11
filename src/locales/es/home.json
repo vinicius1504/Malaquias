@@ -1,4 +1,13 @@
 {
+  "nav": {
+    "home": "Inicio",
+    "about": "Quiénes Somos",
+    "services": "Servicios",
+    "news": "Noticias",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "careers": "Trabaja con Nosotros"
+  },
   "sectionTitles": {
     "areas": "Áreas de actuación",
     "whyPart1": "¿Por qué",

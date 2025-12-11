@@ -1,4 +1,13 @@
 {
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "news": "News",
+    "contact": "Contact",
+    "blog": "Blog",
+    "careers": "Careers"
+  },
   "sectionTitles": {
     "areas": "Areas of Expertise",
     "whyPart1": "Why",
