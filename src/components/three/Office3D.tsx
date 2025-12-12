@@ -7,7 +7,7 @@ import * as THREE from 'three';
 
 function OfficeModel({ isReturning }: { isReturning: boolean }) {
   const meshRef = useRef<THREE.Group>(null);
-  const { scene } = useGLTF('/images/models/excritorio.glb');
+  const { scene } = useGLTF('/images/models/excritorio2.glb');
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -153,4 +153,4 @@ export default function Office3D() {
 }
 
 // Pre-load do modelo
-useGLTF.preload('/images/models/excritorio.glb');
+useGLTF.preload('/images/models/excritorio2.glb');
