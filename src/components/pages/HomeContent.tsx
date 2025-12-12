@@ -34,9 +34,9 @@ export default function HomeContent() {
       />
 
       {/* Áreas de Atuação */}
-      <section id="areas" className="min-h-screen flex flex-col justify-center py-24 bg-[#f5f5f5]">
-        <AnimatedSection className="container mx-auto px-6 mb-12">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
+      <section id="areas" className="min-h-screen flex flex-col justify-center py-24 bg-[#f5f5f5] ">
+        <AnimatedSection className="container mx-auto px-6 mb-12 ">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900 ">
             {sectionTitles.areas}
           </h2>
           <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />

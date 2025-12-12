@@ -1,0 +1,31 @@
+{
+  "pageTitle": "About Us",
+  "history": {
+    "title": "Our History",
+    "content": "Malaquias Accounting was born from the dream of transforming the way companies view accounting. Founded with the purpose of offering much more than numbers and declarations, our mission is to be a strategic partner in the growth of our clients.\n\nWith a specialized team passionate about what they do, we combine technical knowledge with cutting-edge technology to deliver solutions that make a difference. Our Power BI dashboards, personalized tax planning, and 100% digital service reflect our commitment to excellence and innovation.\n\nToday, we serve companies from various segments throughout Brazil, always with the same purpose: to transform accounting into real management, generating savings, clarity, and peace of mind for our clients."
+  },
+  "accordion": {
+    "items": [
+      {
+        "title": "Our Mission",
+        "content": "To offer strategic and personalized accounting solutions, combining technology and expertise to drive the sustainable growth of our clients, with transparency, efficiency, and commitment to results."
+      },
+      {
+        "title": "Our Vision",
+        "content": "To be a national reference in digital and consultative accounting, recognized for excellence in service, technological innovation, and the ability to transform data into intelligent decisions for our clients."
+      },
+      {
+        "title": "Our Values",
+        "content": "Ethics and transparency in all relationships. Commitment to excellence and quality. Constant innovation and adaptation to changes. Focus on the client and their needs. Teamwork and collaboration."
+      },
+      {
+        "title": "Efficiency",
+        "content": "Optimized and automated processes to ensure agility in deliveries. We use the best tools on the market to reduce bureaucracy and maximize results, allowing you to focus on what really matters: growing your business."
+      },
+      {
+        "title": "Continuous Update",
+        "content": "Team in constant training and updating on changes in tax and fiscal legislation. We closely follow all market news to ensure our clients are always in compliance and taking advantage of the best opportunities."
+      }
+    ]
+  }
+}

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
+const DEFAULT_IMAGE = '/images/Sem_foto.png';
+
 interface BlogPost {
   id: number;
   title: string;
@@ -67,7 +69,7 @@ export default function BlogSection({ title, posts, readMore, viewAll }: BlogSec
             >
               {/* Image - Full card */}
               <Image
-                src={post.image}
+                src={post.image || DEFAULT_IMAGE}
                 alt={post.title}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -97,7 +99,7 @@ export default function BlogSection({ title, posts, readMore, viewAll }: BlogSec
 
                 {/* Read More Link */}
                 <Link
-                  href={`/blog/${post.slug}`}
+                  href={`/noticias/${post.slug}`}
                   className="inline-flex items-center gap-1 text-gold-400 font-semibold text-sm hover:text-gold-300 transition-colors"
                 >
                   {readMore}
@@ -128,7 +130,7 @@ export default function BlogSection({ title, posts, readMore, viewAll }: BlogSec
           transition={{ duration: 0.5, delay: 0.5, ease: 'easeOut' }}
         >
           <Link
-            href="/blog"
+            href="/noticias"
             className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gold-500 text-gold-600 font-semibold rounded-lg hover:bg-gold-500 hover:text-white transition-all duration-300"
           >
             {viewAll}

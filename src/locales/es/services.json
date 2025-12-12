@@ -1,42 +1,159 @@
 {
-  "badge": "Serviços",
-  "title": "Soluções completas para sua empresa",
-  "subtitle": "Oferecemos serviços contábeis modernos e estratégicos para impulsionar o crescimento do seu negócio.",
+  "badge": "Servicios",
+  "title": "Servicios especializados en contabilidad y gestión",
+  "subtitle": "Una estructura completa para reducir impuestos, organizar las finanzas y garantizar seguridad fiscal para su empresa.",
   "items": [
     {
-      "icon": "calculator",
-      "title": "Contabilidade Empresarial",
-      "description": "Gestão contábil completa com escrituração, balancetes e demonstrações financeiras."
+      "slug": "abertura-reestruturacao-empresas",
+      "icon": "building",
+      "model3D": "/images/models/Reestruturacao_de_empresa.glb",
+      "title": "Apertura y Reestructuración de Empresas",
+      "shortDescription": "Análisis del modelo de negocio, elección del régimen tributario, elaboración de contrato social y regularización completa de la empresa.",
+      "heroTitle": "Apertura y Reestructuración de Empresas",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "Una de las grandes dificultades para las empresas brasileñas es la burocracia, en lo que respecta a la apertura, legalización, licencias y actualizaciones documentales, que si no se realizan correctamente pueden llevar a multas e incluso interdiciones.",
+        "Nuestro equipo acompañará de forma activa todo el proceso documental de principio a fin, asegurando que su empresa opere de forma legal, completa e íntegra."
+      ],
+      "checklist": [
+        "Apertura, alteración y cierre de empresas",
+        "Regularización de situación fiscal y tributaria de las empresas junto a los órganos de control",
+        "Estudio y elaboración de documentos para escisión, fusión, incorporación y adquisición de empresas",
+        "Constitución de Holding Patrimonial, Control, Familiar, Pura, Mixta y Administrativa",
+        "Obtención de Licencias y Permisos junto al Ayuntamiento, Dispensa de Bomberos y Vigilancia Sanitaria y Dispensa Ambiental",
+        "Obtención de Certificados Negativos junto al ayuntamiento, hacienda estatal y hacienda federal"
+      ]
     },
     {
+      "slug": "consultoria-gestao-financeira",
       "icon": "chart",
-      "title": "Planejamento Tributário",
-      "description": "Análise e estratégias para redução legal da carga tributária da sua empresa."
+      "model3D": "/images/models/model_consultoria.glb",
+      "title": "Consultoría en Gestión Financiera",
+      "shortDescription": "Apoyo estratégico en la organización del flujo de caja, formación de precio, análisis de resultados y construcción de indicadores financieros.",
+      "heroTitle": "Consultoría en Gestión Financiera",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "La gestión financiera eficiente es el cimiento de cualquier empresa de éxito. Muchos empresarios enfrentan dificultades para organizar sus finanzas, entender sus costos reales y tomar decisiones basadas en datos concretos.",
+        "Nuestra consultoría ofrece soporte completo para estructurar su flujo de caja, formar precios de forma estratégica y construir indicadores que realmente importan para el crecimiento de su negocio."
+      ],
+      "checklist": [
+        "Organización y control del flujo de caja",
+        "Formación estratégica de precios de productos y servicios",
+        "Análisis de resultados y margen de contribución",
+        "Construcción de indicadores financieros (KPIs)",
+        "Dashboards gerenciales en Power BI",
+        "Planificación financiera y presupuestaria"
+      ]
     },
     {
+      "slug": "auditoria-revisao-fiscal",
+      "icon": "shieldCheck",
+      "model3D": "/images/models/model_auditoria.glb",
+      "title": "Auditoría, Revisión Fiscal y Recuperación Tributaria",
+      "shortDescription": "Revisión detallada de cálculos y obligaciones para identificar créditos y oportunidades de recuperación de tributos pagados de más.",
+      "heroTitle": "Auditoría, Revisión Fiscal y Recuperación Tributaria",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "Muchas empresas pagan más impuestos de lo que deberían por falta de un acompañamiento especializado. La revisión fiscal permite identificar créditos no aprovechados y tributos pagados indebidamente que pueden ser recuperados.",
+        "Nuestro equipo realiza un análisis minucioso de sus cálculos fiscales, identificando oportunidades de ahorro y recuperación de valores con total seguridad jurídica."
+      ],
+      "checklist": [
+        "Auditoría contable y fiscal completa",
+        "Revisión de cálculos de PIS, COFINS, ICMS e ISS",
+        "Identificación de créditos tributarios no aprovechados",
+        "Recuperación de tributos pagados de más",
+        "Análisis de conformidad con obligaciones accesorias",
+        "Planificación tributaria preventiva"
+      ]
+    },
+    {
+      "slug": "escrita-contabil-fiscal",
       "icon": "document",
-      "title": "Abertura de Empresas",
-      "description": "Assessoria completa para constituição e legalização do seu negócio."
+      "model3D": "/images/models/model_escrita.glb",
+      "title": "Escritura Contable y Fiscal",
+      "shortDescription": "Escrituración contable y fiscal completa, emisión de estados financieros y cumplimiento de obligaciones accesorias.",
+      "heroTitle": "Escritura Contable y Fiscal",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "La escrituración contable y fiscal es obligatoria para todas las empresas y debe ser realizada con precisión para evitar problemas con el Fisco. Errores en esta área pueden resultar en multas pesadas e incluso sanciones.",
+        "Ofrecemos servicio completo de escrituración, garantizando que todas sus obligaciones sean cumplidas dentro de los plazos y con total conformidad legal."
+      ],
+      "checklist": [
+        "Escrituración contable completa (Libro Diario y Mayor)",
+        "Escrituración fiscal de entradas y salidas",
+        "Cálculo de impuestos federales, estatales y municipales",
+        "Emisión de estados financieros (Balance, Estado de Resultados, etc.)",
+        "Entrega de obligaciones accesorias (SPED, ECD, ECF)",
+        "Conciliación bancaria y control patrimonial"
+      ]
     },
     {
-      "icon": "shield",
-      "title": "Consultoria Fiscal",
-      "description": "Orientação especializada em questões fiscais e tributárias."
-    },
-    {
+      "slug": "departamento-pessoal",
       "icon": "users",
-      "title": "Departamento Pessoal",
-      "description": "Gestão de folha de pagamento, admissões, rescisões e obrigações trabalhistas."
+      "model3D": "/images/models/model_dp.glb",
+      "title": "Departamento de Personal",
+      "shortDescription": "Gestión de nómina, contrataciones, despidos, vacaciones, eSocial y demás rutinas laborales.",
+      "heroTitle": "Departamento de Personal",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "La gestión de personas involucra una serie de obligaciones laborales que necesitan ser cumplidas con rigor para evitar pasivos y procesos. El eSocial trajo aún más complejidad a esta área.",
+        "Nuestro equipo cuida de todas las rutinas del departamento de personal de su empresa, desde contrataciones hasta despidos, garantizando conformidad con la legislación y seguridad para su empresa y colaboradores."
+      ],
+      "checklist": [
+        "Procesamiento de nómina",
+        "Contrataciones, despidos y homologaciones",
+        "Cálculo y control de vacaciones y aguinaldo",
+        "Gestión completa del eSocial",
+        "Emisión de guías (FGTS, INSS, IRRF)",
+        "Elaboración de informes laborales"
+      ]
     },
     {
-      "icon": "lightbulb",
-      "title": "Dashboards em Power BI",
-      "description": "Relatórios visuais e inteligentes para acompanhar a saúde financeira da empresa."
+      "slug": "imposto-renda-pessoa-fisica",
+      "icon": "userTax",
+      "model3D": "/images/models/model_irpf.glb",
+      "title": "Impuesto sobre la Renta de Personas Físicas",
+      "shortDescription": "Atención especializada para declaraciones de IRPF, situaciones complejas, ganancias de capital e inversiones.",
+      "heroTitle": "Impuesto sobre la Renta de Personas Físicas",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "La declaración del Impuesto sobre la Renta puede ser simple para algunas personas, pero extremadamente compleja para quien posee inversiones, múltiples fuentes de renta, bienes en el exterior o situaciones especiales.",
+        "Ofrecemos atención especializada para declaraciones de cualquier complejidad, garantizando que usted pague solo lo debido y evite problemas con la Receita Federal."
+      ],
+      "checklist": [
+        "Declaración completa de IRPF",
+        "Cálculo de ganancias de capital",
+        "Declaración de inversiones y criptoactivos",
+        "Carnê-leão para autónomos",
+        "Regularización de pendencias en la Receita Federal",
+        "Planificación tributaria personal"
+      ]
+    },
+    {
+      "slug": "certificacao-digital",
+      "icon": "certificate",
+      "model3D": "/images/models/model_certificado.glb",
+      "title": "Certificación Digital",
+      "shortDescription": "Orientación e intermediación en la emisión de certificados digitales para personas físicas y jurídicas.",
+      "heroTitle": "Certificación Digital",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "El certificado digital es esencial para firmar documentos electrónicos, acceder a sistemas gubernamentales y cumplir obligaciones fiscales. La elección del tipo correcto y la emisión adecuada son fundamentales.",
+        "Ofrecemos todo el soporte necesario para la emisión de su certificado digital, orientando sobre el mejor tipo para su necesidad y agilizando todo el proceso."
+      ],
+      "checklist": [
+        "Orientación sobre tipos de certificado (A1, A3, e-CPF, e-CNPJ)",
+        "Intermediación en la emisión de certificados",
+        "Renovación de certificados vencidos",
+        "Soporte en la instalación y configuración",
+        "Atención presencial o por videoconferencia",
+        "Asociación con certificadoras acreditadas"
+      ]
     }
   ],
   "cta": {
-    "title": "Precisa de ajuda especializada?",
-    "description": "Agende uma conversa gratuita e descubra como podemos ajudar.",
-    "button": "Agendar conversa"
+    "title": "¿Necesita atención personalizada?",
+    "description": "Póngase en contacto y descubra cómo estructurar la contabilidad y la gestión financiera de su empresa con Malaquias.",
+    "button": "Hable con nuestro equipo"
   }
 }

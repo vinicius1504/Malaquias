@@ -120,7 +120,7 @@ export default function Footer() {
           <div className="container mx-auto px-6 md:px-12 py-10 md:py-14">
             <h3 className="text-white font-semibold mb-8">{footer.locations.title}</h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {/* Matriz */}
               <div className="text-white/70 text-sm space-y-3">
                 <h4 className="text-white font-medium mb-4">{footer.locations.matriz.title}</h4>
@@ -129,12 +129,20 @@ export default function Footer() {
                 {renderContactItem(footer.locations.matriz.address, true)}
               </div>
 
-              {/* Filial */}
+              {/* Filial SP */}
               <div className="text-white/70 text-sm space-y-3">
                 <h4 className="text-white font-medium mb-4">{footer.locations.filial.title}</h4>
                 {renderContactItem(footer.locations.filial.phone)}
                 {renderContactItem(footer.locations.filial.email)}
                 {renderContactItem(footer.locations.filial.address, true)}
+              </div>
+
+              {/* Filial RJ */}
+              <div className="text-white/70 text-sm space-y-3">
+                <h4 className="text-white font-medium mb-4">{footer.locations.filialRJ.title}</h4>
+                {renderContactItem(footer.locations.filialRJ.phone)}
+                {renderContactItem(footer.locations.filialRJ.email)}
+                {renderContactItem(footer.locations.filialRJ.address, true)}
               </div>
             </div>
           </div>

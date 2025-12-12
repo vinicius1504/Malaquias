@@ -1,42 +1,159 @@
 {
-  "badge": "Servicios",
-  "title": "Soluciones completas para su empresa",
-  "subtitle": "Ofrecemos servicios contables modernos y estratégicos para impulsar el crecimiento de su negocio.",
+  "badge": "Services",
+  "title": "Specialized accounting and management services",
+  "subtitle": "A complete structure to reduce taxes, organize finances, and ensure fiscal security for your company.",
   "items": [
     {
-      "icon": "calculator",
-      "title": "Contabilidad Empresarial",
-      "description": "Gestión contable completa con escrituración, balances y demostraciones financieras."
+      "slug": "abertura-reestruturacao-empresas",
+      "icon": "building",
+      "model3D": "/images/models/Reestruturacao_de_empresa.glb",
+      "title": "Company Formation and Restructuring",
+      "shortDescription": "Business model analysis, tax regime selection, articles of incorporation drafting, and complete company regularization.",
+      "heroTitle": "Company Formation and Restructuring",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "One of the biggest challenges for Brazilian companies is bureaucracy, particularly regarding formation, legalization, permits, and document updates, which if not done correctly can lead to fines and even shutdowns.",
+        "Our team will actively monitor the entire documentation process from start to finish, ensuring that your company operates legally, completely, and with integrity."
+      ],
+      "checklist": [
+        "Company formation, amendment, and dissolution",
+        "Regularization of fiscal and tax status with control agencies",
+        "Study and preparation of documents for spin-offs, mergers, incorporations, and acquisitions",
+        "Formation of Asset Holding Companies, Control, Family, Pure, Mixed, and Administrative structures",
+        "Obtaining Permits and Licenses from City Hall, Fire Department Clearance, Health Surveillance, and Environmental Clearance",
+        "Obtaining Negative Certificates from municipal, state, and federal tax authorities"
+      ]
     },
     {
+      "slug": "consultoria-gestao-financeira",
       "icon": "chart",
-      "title": "Planificación Tributaria",
-      "description": "Análisis y estrategias para la reducción legal de la carga tributaria de su empresa."
+      "model3D": "/images/models/model_consultoria.glb",
+      "title": "Financial Management Consulting",
+      "shortDescription": "Strategic support in cash flow organization, pricing, results analysis, and building financial indicators.",
+      "heroTitle": "Financial Management Consulting",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "Efficient financial management is the foundation of any successful company. Many entrepreneurs struggle to organize their finances, understand their real costs, and make decisions based on concrete data.",
+        "Our consulting offers complete support to structure your cash flow, set prices strategically, and build indicators that truly matter for your business growth."
+      ],
+      "checklist": [
+        "Cash flow organization and control",
+        "Strategic pricing of products and services",
+        "Results analysis and contribution margin",
+        "Building financial indicators (KPIs)",
+        "Management dashboards in Power BI",
+        "Financial and budget planning"
+      ]
     },
     {
+      "slug": "auditoria-revisao-fiscal",
+      "icon": "shieldCheck",
+      "model3D": "/images/models/model_auditoria.glb",
+      "title": "Audit, Tax Review, and Tax Recovery",
+      "shortDescription": "Detailed review of calculations and obligations to identify credits and opportunities for recovering overpaid taxes.",
+      "heroTitle": "Audit, Tax Review, and Tax Recovery",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "Many companies pay more taxes than they should due to lack of specialized monitoring. Tax review allows identifying unused credits and improperly paid taxes that can be recovered.",
+        "Our team conducts a thorough analysis of your tax calculations, identifying savings and recovery opportunities with complete legal security."
+      ],
+      "checklist": [
+        "Complete accounting and tax audit",
+        "Review of PIS, COFINS, ICMS, and ISS calculations",
+        "Identification of unused tax credits",
+        "Recovery of overpaid taxes",
+        "Compliance analysis with ancillary obligations",
+        "Preventive tax planning"
+      ]
+    },
+    {
+      "slug": "escrita-contabil-fiscal",
       "icon": "document",
-      "title": "Apertura de Empresas",
-      "description": "Asesoría completa para la constitución y legalización de su negocio."
+      "model3D": "/images/models/model_escrita.glb",
+      "title": "Accounting and Tax Bookkeeping",
+      "shortDescription": "Complete accounting and tax bookkeeping, financial statement issuance, and compliance with ancillary obligations.",
+      "heroTitle": "Accounting and Tax Bookkeeping",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "Accounting and tax bookkeeping is mandatory for all companies and must be done accurately to avoid problems with tax authorities. Errors in this area can result in heavy fines and even penalties.",
+        "We offer complete bookkeeping service, ensuring that all your obligations are met within deadlines and in full legal compliance."
+      ],
+      "checklist": [
+        "Complete accounting bookkeeping (Journal and Ledger)",
+        "Tax bookkeeping for inputs and outputs",
+        "Calculation of federal, state, and municipal taxes",
+        "Issuance of financial statements (Balance Sheet, Income Statement, etc.)",
+        "Delivery of ancillary obligations (SPED, ECD, ECF)",
+        "Bank reconciliation and asset control"
+      ]
     },
     {
-      "icon": "shield",
-      "title": "Consultoría Fiscal",
-      "description": "Orientación especializada en cuestiones fiscales y tributarias."
-    },
-    {
+      "slug": "departamento-pessoal",
       "icon": "users",
-      "title": "Departamento de Personal",
-      "description": "Gestión de nómina, admisiones, despidos y obligaciones laborales."
+      "model3D": "/images/models/model_dp.glb",
+      "title": "Personnel Department",
+      "shortDescription": "Payroll management, hiring, terminations, vacations, eSocial, and other labor routines.",
+      "heroTitle": "Personnel Department",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "People management involves a series of labor obligations that need to be strictly met to avoid liabilities and lawsuits. eSocial has brought even more complexity to this area.",
+        "Our team handles all personnel department routines for your company, from hiring to terminations, ensuring compliance with legislation and security for your company and employees."
+      ],
+      "checklist": [
+        "Payroll processing",
+        "Hiring, terminations, and homologations",
+        "Vacation and 13th salary calculation and control",
+        "Complete eSocial management",
+        "Issuance of payment slips (FGTS, INSS, IRRF)",
+        "Preparation of labor reports"
+      ]
     },
     {
-      "icon": "lightbulb",
-      "title": "Dashboards en Power BI",
-      "description": "Informes visuales e inteligentes para acompañar la salud financiera de la empresa."
+      "slug": "imposto-renda-pessoa-fisica",
+      "icon": "userTax",
+      "model3D": "/images/models/model_irpf.glb",
+      "title": "Personal Income Tax",
+      "shortDescription": "Specialized service for personal income tax returns, complex situations, capital gains, and investments.",
+      "heroTitle": "Personal Income Tax",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "Filing income tax can be simple for some people, but extremely complex for those with investments, multiple income sources, foreign assets, or special situations.",
+        "We offer specialized service for returns of any complexity, ensuring you pay only what is due and avoid problems with the Federal Revenue Service."
+      ],
+      "checklist": [
+        "Complete personal income tax return",
+        "Capital gains calculation",
+        "Investment and crypto asset declaration",
+        "Monthly tax payment for self-employed",
+        "Regularization of pending issues with Federal Revenue",
+        "Personal tax planning"
+      ]
+    },
+    {
+      "slug": "certificacao-digital",
+      "icon": "certificate",
+      "model3D": "/images/models/model_certificado.glb",
+      "title": "Digital Certification",
+      "shortDescription": "Guidance and intermediation in issuing digital certificates for individuals and legal entities.",
+      "heroTitle": "Digital Certification",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "Digital certificates are essential for signing electronic documents, accessing government systems, and fulfilling tax obligations. Choosing the correct type and proper issuance are fundamental.",
+        "We offer all the necessary support for issuing your digital certificate, guiding you on the best type for your needs and expediting the entire process."
+      ],
+      "checklist": [
+        "Guidance on certificate types (A1, A3, e-CPF, e-CNPJ)",
+        "Certificate issuance intermediation",
+        "Renewal of expired certificates",
+        "Installation and configuration support",
+        "In-person or video conference service",
+        "Partnership with accredited certifiers"
+      ]
     }
   ],
   "cta": {
-    "title": "¿Necesita ayuda especializada?",
-    "description": "Agende una conversación gratuita y descubra cómo podemos ayudar.",
-    "button": "Agendar conversación"
+    "title": "Need customized service?",
+    "description": "Get in touch and discover how to structure the accounting and financial management of your company with Malaquias.",
+    "button": "Talk to our team"
   }
 }

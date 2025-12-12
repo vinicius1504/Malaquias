@@ -1,0 +1,114 @@
+{
+  "pageTitle": "Notícias",
+  "pageSubtitle": "Acompanhe as últimas novidades, artigos e atualizações sobre contabilidade, legislação tributária e gestão empresarial.",
+  "readMore": "Ler mais",
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Próximo"
+  },
+  "categories": {
+    "all": "Todas",
+    "saude": "Saúde",
+    "varejo": "Varejo e E-commerce",
+    "legislacao": "Legislação",
+    "gestao": "Gestão Financeira",
+    "tributos": "Tributos"
+  },
+  "items": [
+    {
+      "id": 1,
+      "title": "Planejamento Tributário para Clínicas Médicas: o poder da equiparação hospitalar",
+      "excerpt": "Veja como clínicas e serviços de saúde podem reduzir a carga tributária de forma significativa por meio da equiparação hospitalar, com segurança e planejamento.",
+      "image": "/images/noticia-clinicas-medicas.png",
+      "date": "2025-09-28",
+      "category": "Saúde",
+      "slug": "planejamento-tributario-clinicas-medicas-equiparacao-hospitalar",
+      "content": [
+        "A equiparação hospitalar é uma estratégia tributária que permite que clínicas médicas e serviços de saúde sejam tributados de forma mais vantajosa, equiparando-se às regras aplicáveis aos hospitais.",
+        "Esta possibilidade está prevista na legislação brasileira e pode representar uma economia significativa no pagamento de tributos federais, especialmente IRPJ e CSLL.",
+        "Para se beneficiar dessa equiparação, a clínica precisa atender a requisitos específicos relacionados à estrutura física, aos serviços prestados e à forma de constituição jurídica.",
+        "Nossa equipe de especialistas analisa cada caso individualmente para verificar a elegibilidade e implementar as mudanças necessárias com total segurança jurídica."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Planejamento Tributário para Varejo e E-commerce: como pagar menos impostos",
+      "excerpt": "Entenda os principais pontos de atenção para lojas físicas e e-commerces que desejam estruturar o planejamento tributário e reduzir custos com impostos.",
+      "image": "/images/noticia-varejo-ecommerce.png",
+      "date": "2025-09-28",
+      "category": "Varejo e E-commerce",
+      "slug": "planejamento-tributario-varejo-e-ecommerce",
+      "content": [
+        "O setor de varejo, tanto físico quanto digital, enfrenta uma complexa carga tributária que inclui PIS, COFINS, ICMS e ICMS-ST. Uma estrutura tributária bem planejada pode gerar economia significativa.",
+        "Para e-commerces, é fundamental entender as particularidades do ICMS interestadual e a substituição tributária, que variam conforme o estado de origem e destino das mercadorias.",
+        "A escolha do regime tributário adequado — Simples Nacional, Lucro Presumido ou Lucro Real — deve ser feita com base em análise detalhada do faturamento, margens e operações.",
+        "Nosso time acompanha as constantes mudanças na legislação para garantir que sua empresa esteja sempre em conformidade e aproveitando todas as oportunidades de economia."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Entenda o PL 1.087/2025: nova tributação sobre lucros e altas rendas",
+      "excerpt": "Resumo das principais mudanças propostas pelo PL 1.087/2025 e seus impactos para empresários e pessoas físicas de alta renda.",
+      "image": "/images/noticia-pl-1087-2025.png",
+      "date": "2025-09-28",
+      "category": "Legislação",
+      "slug": "pl-1087-2025-lucros-e-altas-rendas",
+      "content": [
+        "O Projeto de Lei 1.087/2025 propõe mudanças significativas na tributação de lucros e dividendos distribuídos por empresas, além de criar novas alíquotas para pessoas físicas de alta renda.",
+        "Entre as principais alterações, destaca-se a possibilidade de tributação de dividendos que hoje são isentos, o que pode impactar diretamente a estrutura de remuneração de sócios e acionistas.",
+        "O projeto também prevê ajustes nas alíquotas do Imposto de Renda para diferentes faixas de rendimento, buscando maior progressividade no sistema tributário brasileiro.",
+        "É essencial que empresários e gestores acompanhem a tramitação deste projeto e avaliem, com antecedência, possíveis ajustes em suas estruturas societárias e de distribuição de resultados."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "eSocial 2025: principais mudanças e como se preparar",
+      "excerpt": "Conheça as atualizações do eSocial para 2025 e saiba como manter sua empresa em conformidade com as novas exigências trabalhistas.",
+      "image": "/images/blog/esocial-2025.jpg",
+      "date": "2025-08-15",
+      "category": "Legislação",
+      "slug": "esocial-2025-mudancas",
+      "content": [
+        "O eSocial continua evoluindo e trazendo novas exigências para as empresas brasileiras. Em 2025, algumas mudanças importantes entram em vigor.",
+        "As principais alterações incluem novos eventos relacionados à saúde e segurança do trabalho, além de ajustes nos prazos de envio de informações.",
+        "Empresas que não se adequarem às novas regras podem enfrentar multas e penalidades significativas.",
+        "Nossa equipe está preparada para auxiliar sua empresa na adaptação às novas exigências, garantindo conformidade e evitando problemas com a fiscalização."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Reforma Tributária: o que muda para sua empresa",
+      "excerpt": "Um resumo completo das mudanças propostas pela reforma tributária e como elas podem afetar diferentes setores da economia.",
+      "image": "/images/blog/reforma-tributaria.jpg",
+      "date": "2025-07-20",
+      "category": "Tributos",
+      "slug": "reforma-tributaria-mudancas-empresa",
+      "content": [
+        "A reforma tributária brasileira promete simplificar o sistema de impostos, unificando tributos como PIS, COFINS, ICMS e ISS em um único imposto sobre valor agregado.",
+        "A transição será gradual, com período de adaptação previsto para os próximos anos, permitindo que empresas se preparem para as mudanças.",
+        "Setores como serviços, varejo e indústria serão impactados de formas diferentes, exigindo análise específica para cada tipo de negócio.",
+        "Acompanhar de perto essas mudanças e planejar com antecedência é fundamental para minimizar impactos negativos e aproveitar possíveis benefícios."
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Como organizar o fluxo de caixa da sua empresa",
+      "excerpt": "Dicas práticas para implementar um controle eficiente de fluxo de caixa e melhorar a saúde financeira do seu negócio.",
+      "image": "/images/blog/fluxo-caixa.jpg",
+      "date": "2025-06-10",
+      "category": "Gestão Financeira",
+      "slug": "organizar-fluxo-caixa-empresa",
+      "content": [
+        "O fluxo de caixa é uma das ferramentas mais importantes para a gestão financeira de qualquer empresa, independentemente do porte.",
+        "Um controle eficiente permite prever períodos de aperto financeiro, planejar investimentos e tomar decisões mais assertivas.",
+        "A categorização correta de receitas e despesas, aliada a projeções realistas, forma a base de um bom controle de caixa.",
+        "Nossa consultoria em gestão financeira pode ajudar sua empresa a implementar processos e ferramentas para um controle de caixa eficiente."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Precisa de orientação especializada?",
+    "description": "Entre em contato e descubra como podemos ajudar sua empresa a crescer com segurança fiscal.",
+    "button": "Fale com um especialista"
+  }
+}

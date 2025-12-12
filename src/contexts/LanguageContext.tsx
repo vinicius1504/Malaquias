@@ -12,6 +12,12 @@ import esServices from '@/locales/es/services.json';
 import ptFaq from '@/locales/pt/faq.json';
 import enFaq from '@/locales/en/faq.json';
 import esFaq from '@/locales/es/faq.json';
+import ptNews from '@/locales/pt/news.json';
+import enNews from '@/locales/en/news.json';
+import esNews from '@/locales/es/news.json';
+import ptContact from '@/locales/pt/contact.json';
+import enContact from '@/locales/en/contact.json';
+import esContact from '@/locales/es/contact.json';
 
 type Locale = 'pt' | 'en'| 'es';
 
@@ -19,12 +25,14 @@ interface Translations {
   home: typeof ptHome;
   services: typeof ptServices;
   faq: typeof ptFaq;
+  news: typeof ptNews;
+  contact: typeof ptContact;
 }
 
 const translations: Record<Locale, Translations> = {
-  pt: { home: ptHome, services: ptServices, faq: ptFaq },
-  en: { home: enHome, services: enServices, faq: enFaq },
-  es: { home: esHome, services: esServices, faq: esFaq },
+  pt: { home: ptHome, services: ptServices, faq: ptFaq, news: ptNews, contact: ptContact },
+  en: { home: enHome, services: enServices, faq: enFaq, news: enNews, contact: enContact },
+  es: { home: esHome, services: esServices, faq: esFaq, news: esNews, contact: esContact },
 };
 
 interface LanguageContextType {

@@ -1,0 +1,116 @@
+{
+  "services": [
+    {
+      "id": "abertura-empresas",
+      "slug": "abertura-e-reestruturacao-de-empresas",
+      "icon": "building",
+      "model3D": "/models/model_abertura.glb",
+      "title": "Apertura y Reestructuración de Empresas",
+      "subtitle": "Uno de los grandes desafíos para las empresas brasileñas es la burocracia en cuanto a la apertura, legalización, permisos y actualizaciones documentales. Si no se realizan correctamente, pueden generar multas e incluso cierres.\n\nNuestro equipo acompañará activamente todo el proceso documental de principio a fin, asegurando que su empresa opere de forma legal, completa e íntegra.",
+      "checklist": [
+        "Apertura, modificación y cierre de empresas",
+        "Regularización de situación fiscal y tributaria ante los órganos de control",
+        "Estudio y elaboración de documentos para escisión, fusión, incorporación y adquisición de empresas",
+        "Constitución de Holding Patrimonial, Control, Familiar, Pura, Mixta y Administrativa",
+        "Obtención de Permisos y Licencias ante la Municipalidad, Bomberos, Vigilancia Sanitaria y Dispensa Ambiental",
+        "Obtención de Certificados Negativos ante la municipalidad, hacienda estatal y federal"
+      ]
+    },
+    {
+      "id": "consultoria-financeira",
+      "slug": "consultoria-em-gestao-financeira",
+      "icon": "chart",
+      "model3D": "/models/model_consultoria.glb",
+      "title": "Consultoría en Gestión Financiera",
+      "subtitle": "Apoyo estratégico en la organización del flujo de caja, formación de precios, análisis de resultados y construcción de indicadores financieros, siempre con informes gerenciales y dashboards en Power BI.",
+      "checklist": [
+        "Organización y análisis de flujo de caja",
+        "Formación estratégica de precios",
+        "Análisis de resultados e indicadores financieros",
+        "Informes gerenciales personalizados",
+        "Dashboards interactivos en Power BI",
+        "Planificación financiera y presupuestaria"
+      ]
+    },
+    {
+      "id": "auditoria-fiscal",
+      "slug": "auditoria-revisao-fiscal-recuperacao-tributaria",
+      "icon": "shieldCheck",
+      "model3D": "/models/model_auditoria.glb",
+      "title": "Auditoría, Revisión Fiscal y Recuperación Tributaria",
+      "subtitle": "Revisión detallada de liquidaciones y obligaciones para identificar créditos y oportunidades de recuperación de tributos pagados en exceso, con seguridad jurídica y enfoque en reducir costos fiscales.",
+      "checklist": [
+        "Auditoría contable y fiscal completa",
+        "Revisión de liquidaciones tributarias",
+        "Identificación de créditos fiscales",
+        "Recuperación de tributos pagados en exceso",
+        "Análisis de conformidad fiscal",
+        "Planificación tributaria estratégica"
+      ]
+    },
+    {
+      "id": "escrita-contabil",
+      "slug": "escrita-contabil-e-fiscal",
+      "icon": "document",
+      "model3D": "/models/model_escrita.glb",
+      "title": "Escritura Contable y Fiscal",
+      "subtitle": "Escrituración contable y fiscal completa, emisión de estados financieros, liquidaciones de tributos y cumplimiento de todas las obligaciones accesorias exigidas por el Fisco.",
+      "checklist": [
+        "Escrituración contable completa",
+        "Escrituración fiscal y tributaria",
+        "Emisión de estados financieros",
+        "Liquidación de tributos federales, estatales y municipales",
+        "Cumplimiento de obligaciones accesorias",
+        "Balances y reportes contables"
+      ]
+    },
+    {
+      "id": "departamento-pessoal",
+      "slug": "departamento-pessoal",
+      "icon": "users",
+      "model3D": "/models/model_dp.glb",
+      "title": "Departamento de Personal",
+      "subtitle": "Gestión de nómina, admisiones, rescisiones, vacaciones, eSocial y demás rutinas laborales, garantizando conformidad con la legislación y seguridad para empresa y colaboradores.",
+      "checklist": [
+        "Gestión completa de nómina",
+        "Procesos de admisión y rescisión",
+        "Control de vacaciones y beneficios",
+        "Envío y gestión del eSocial",
+        "Cálculo de cargas laborales",
+        "Asesoría en legislación laboral"
+      ]
+    },
+    {
+      "id": "irpf",
+      "slug": "imposto-de-renda-pessoa-fisica",
+      "icon": "userTax",
+      "model3D": "/models/model_irpf.glb",
+      "title": "Impuesto de Renta Persona Física",
+      "subtitle": "Atención especializada para declaraciones de IRPF, situaciones complejas, ganancias de capital, inversiones, carnê-leão y regularización de pendencias ante la Receita Federal.",
+      "checklist": [
+        "Declaración completa de IRPF",
+        "Análisis de situaciones complejas",
+        "Liquidación de ganancias de capital",
+        "Declaración de inversiones",
+        "Carnê-leão para autónomos",
+        "Regularización de pendencias en la Receita Federal"
+      ]
+    },
+    {
+      "id": "certificacao-digital",
+      "slug": "certificacao-digital",
+      "icon": "certificate",
+      "model3D": "/models/model_certificado.glb",
+      "title": "Certificación Digital",
+      "subtitle": "Orientación e intermediación en la emisión de certificados digitales para personas físicas y jurídicas, garantizando agilidad para firmar documentos y cumplir obligaciones electrónicas.",
+      "checklist": [
+        "Emisión de certificado e-CPF",
+        "Emisión de certificado e-CNPJ",
+        "Certificados A1 y A3",
+        "Renovación de certificados",
+        "Soporte técnico especializado",
+        "Atención presencial y remota"
+      ]
+    }
+  ]
+}

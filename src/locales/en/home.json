@@ -1,6 +1,16 @@
 {
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "news": "News",
+    "contact": "Contact",
+    "blog": "Blog",
+    "careers": "Careers"
+  },
   "sectionTitles": {
     "areas": "Areas of Expertise",
+    "about": "About Us",
     "whyPart1": "Why",
     "whyPart2": "Malaquias Accounting?",
     "clients": "Our Clients",
@@ -12,6 +22,45 @@
     "heroHighlight1": "taxes",
     "heroTitle2": "more",
     "heroHighlight2": "profit"
+  },
+  "about": {
+    "hero": {
+      "title1": "The office",
+      "highlight1": "Malaquias Accounting",
+      "description1": "is a firm specialized in serving demanding clients who value",
+      "emphasis1": "excellence, precision, and professionalism",
+      "description2": "in accounting services.",
+      "title2": "Since",
+      "highlight2": "2010",
+      "description3": ", we have built a solid track record in the market, offering",
+      "emphasis2": "complete and customized solutions",
+      "description4": "for companies of all sizes — from",
+      "emphasis3": "small entrepreneurs to large business owners",
+      "description5": "— always focused on",
+      "emphasis4": "sustainable growth, tax savings, and the financial health of your business."
+    },
+    "items": [
+      {
+        "title": "Our Mission",
+        "content": "To offer strategic accounting solutions that generate real tax savings, promoting sustainable growth and security for our clients."
+      },
+      {
+        "title": "Our Vision",
+        "content": "To be a national reference in advisory accounting, combining cutting-edge technology and humanized service to transform business financial management."
+      },
+      {
+        "title": "Our Values",
+        "content": "Ethics, transparency, commitment to results, and close relationships with each client, treating your business as if it were our own."
+      },
+      {
+        "title": "Efficiency",
+        "content": "Optimized processes and integrated technology to deliver accurate information in the shortest time, enabling agile and assertive decisions."
+      },
+      {
+        "title": "Continuous Learning",
+        "content": "A team in constant training, following changes in tax legislation to ensure compliance and take advantage of legal savings opportunities."
+      }
+    ]
   },
   "faq": {
     "items": [
@@ -205,10 +254,16 @@
         "address": { "icon": "mapPin", "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS" }
       },
       "filial": {
-        "title": "Branch - Campo Grande/MS",
-        "phone": { "icon": "phone", "text": "(67) 99661-7549" },
+        "title": "Branch - São Paulo/SP",
+        "phone": { "icon": "phone", "text": "(11) 91939-7549" },
         "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS" }
+        "address": { "icon": "mapPin", "text": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP" }
+      },
+      "filialRJ": {
+        "title": "Branch - Rio de Janeiro/RJ",
+        "phone": { "icon": "phone", "text": "(11) 91947-7549" },
+        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
+        "address": { "icon": "mapPin", "text": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ" }
       }
     },
     "registrations": {

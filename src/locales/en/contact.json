@@ -1,0 +1,43 @@
+{
+  "pageTitle": "Contact",
+  "pageSubtitle": "Get in touch with us. We are ready to help your business grow.",
+  "form": {
+    "typeLabel": "Contact type",
+    "types": {
+      "orcamento": "Quote Request",
+      "trabalheConosco": "Work With Us"
+    },
+    "name": "Full name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+1 (000) 000-0000",
+    "company": "Company",
+    "companyPlaceholder": "Your company name",
+    "subject": "Subject",
+    "subjectPlaceholder": "What would you like to talk about?",
+    "message": "Message",
+    "messagePlaceholder": "Describe your need or question...",
+    "resume": "Resume",
+    "resumePlaceholder": "Attach your resume (PDF, DOC, DOCX)",
+    "resumeHint": "Accepted formats: PDF, DOC, DOCX (max. 5MB)",
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "success": "Message sent successfully! We will contact you soon.",
+    "error": "Error sending message. Please try again."
+  },
+  "info": {
+    "title": "Contact Information",
+    "description": "Prefer to talk directly with us? Contact us through one of the channels below.",
+    "whatsapp": "WhatsApp",
+    "whatsappNumber": "+55 67 99661-7549",
+    "email": "Email",
+    "emailAddress": "contato@malaquiascontabilidade.com.br",
+    "address": "Address",
+    "addressText": "Fernão Dias, nº 208 – Vila Vilas Boas, Campo Grande-MS, Brazil"
+  },
+  "cta": {
+    "whatsapp": "Chat on WhatsApp"
+  }
+}

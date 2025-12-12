@@ -1,0 +1,43 @@
+{
+  "pageTitle": "Contato",
+  "pageSubtitle": "Entre em contato conosco. Estamos prontos para ajudar sua empresa a crescer.",
+  "form": {
+    "typeLabel": "Tipo de contato",
+    "types": {
+      "orcamento": "Orçamento",
+      "trabalheConosco": "Trabalhe Conosco"
+    },
+    "name": "Nome completo",
+    "namePlaceholder": "Seu nome",
+    "email": "E-mail",
+    "emailPlaceholder": "seu@email.com",
+    "phone": "Telefone",
+    "phonePlaceholder": "(00) 00000-0000",
+    "company": "Empresa",
+    "companyPlaceholder": "Nome da sua empresa",
+    "subject": "Assunto",
+    "subjectPlaceholder": "Sobre o que deseja falar?",
+    "message": "Mensagem",
+    "messagePlaceholder": "Descreva sua necessidade ou dúvida...",
+    "resume": "Currículo",
+    "resumePlaceholder": "Anexe seu currículo (PDF, DOC, DOCX)",
+    "resumeHint": "Formatos aceitos: PDF, DOC, DOCX (máx. 5MB)",
+    "submit": "Enviar mensagem",
+    "submitting": "Enviando...",
+    "success": "Mensagem enviada com sucesso! Entraremos em contato em breve.",
+    "error": "Erro ao enviar mensagem. Tente novamente."
+  },
+  "info": {
+    "title": "Informações de Contato",
+    "description": "Prefere falar diretamente conosco? Entre em contato por um dos canais abaixo.",
+    "whatsapp": "WhatsApp",
+    "whatsappNumber": "(67) 99661-7549",
+    "email": "E-mail",
+    "emailAddress": "contato@malaquiascontabilidade.com.br",
+    "address": "Endereço",
+    "addressText": "Fernão Dias, nº 208 – Vila Vilas Boas, Campo Grande-MS"
+  },
+  "cta": {
+    "whatsapp": "Falar pelo WhatsApp"
+  }
+}

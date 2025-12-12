@@ -1,6 +1,16 @@
 {
+  "nav": {
+    "home": "Inicio",
+    "about": "Quiénes Somos",
+    "services": "Servicios",
+    "news": "Noticias",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "careers": "Trabaja con Nosotros"
+  },
   "sectionTitles": {
     "areas": "Áreas de actuación",
+    "about": "Quiénes Somos",
     "whyPart1": "¿Por qué",
     "whyPart2": "Malaquias Contabilidad?",
     "clients": "Nuestros Clientes",
@@ -12,6 +22,45 @@
     "heroHighlight1": "impuesto",
     "heroTitle2": "más",
     "heroHighlight2": "lucro"
+  },
+  "about": {
+    "hero": {
+      "title1": "La oficina",
+      "highlight1": "Malaquias Contabilidad",
+      "description1": "es un despacho especializado en atender clientes exigentes, que valoran",
+      "emphasis1": "excelencia, precisión y profesionalismo",
+      "description2": "en servicios contables.",
+      "title2": "Desde",
+      "highlight2": "2010",
+      "description3": ", hemos construido una sólida trayectoria en el mercado, ofreciendo",
+      "emphasis2": "soluciones completas y personalizadas",
+      "description4": "para empresas de todos los tamaños — desde",
+      "emphasis3": "pequeños emprendedores hasta grandes empresarios",
+      "description5": "— siempre con enfoque en",
+      "emphasis4": "crecimiento sostenible, ahorro tributario y salud financiera del negocio."
+    },
+    "items": [
+      {
+        "title": "Nuestra Misión",
+        "content": "Ofrecer soluciones contables estratégicas que generan ahorro tributario real, promoviendo crecimiento sostenible y seguridad para nuestros clientes."
+      },
+      {
+        "title": "Nuestra Visión",
+        "content": "Ser referencia nacional en contabilidad consultiva, uniendo tecnología de punta y atención humanizada para transformar la gestión financiera de las empresas."
+      },
+      {
+        "title": "Nuestros Valores",
+        "content": "Ética, transparencia, compromiso con resultados y relación cercana con cada cliente, tratando su negocio como si fuera el nuestro."
+      },
+      {
+        "title": "Eficiencia",
+        "content": "Procesos optimizados y tecnología integrada para entregar información precisa en el menor tiempo, permitiendo decisiones ágiles y acertadas."
+      },
+      {
+        "title": "Actualización",
+        "content": "Equipo en constante capacitación, acompañando cambios en la legislación tributaria para garantizar conformidad y aprovechar oportunidades legales de ahorro."
+      }
+    ]
   },
   "faq": {
     "items": [
@@ -205,10 +254,16 @@
         "address": { "icon": "mapPin", "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS" }
       },
       "filial": {
-        "title": "Sucursal - Campo Grande/MS",
-        "phone": { "icon": "phone", "text": "(67) 99661-7549" },
+        "title": "Sucursal - São Paulo/SP",
+        "phone": { "icon": "phone", "text": "(11) 91939-7549" },
         "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS" }
+        "address": { "icon": "mapPin", "text": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP" }
+      },
+      "filialRJ": {
+        "title": "Sucursal - Rio de Janeiro/RJ",
+        "phone": { "icon": "phone", "text": "(11) 91947-7549" },
+        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
+        "address": { "icon": "mapPin", "text": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ" }
       }
     },
     "registrations": {

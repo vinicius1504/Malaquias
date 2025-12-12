@@ -4,44 +4,156 @@
   "subtitle": "Uma estrutura completa para reduzir impostos, organizar as finanças e garantir segurança fiscal para a sua empresa.",
   "items": [
     {
+      "slug": "abertura-reestruturacao-empresas",
       "icon": "building",
-      "title": "Abertura e Reestruturação de Empresa",
-      "description": "Análise do modelo de negócio, escolha do regime tributário, elaboração de contrato social e regularização completa da empresa, além de reestruturações societárias e tributárias quando necessário."
+      "model3D": "/images/models/Reestruturacao_de_empresa.glb",
+      "title": "Abertura e Reestruturação de Empresas",
+      "shortDescription": "Análise do modelo de negócio, escolha do regime tributário, elaboração de contrato social e regularização completa da empresa.",
+      "heroTitle": "Abertura e Reestruturação de Empresas",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "Uma das grandes dificuldades para as empresas brasileiras é a burocracia, no que tange à abertura, legalização, alvarás e atualizações documentais, que se não forem realizadas corretamente podem levar a multas e até interdições.",
+        "Nossa equipe acompanhará de forma ativa todo o processo documental de ponta a ponta, assegurando que sua empresa opere de forma legal, completa e íntegra."
+      ],
+      "checklist": [
+        "Abertura, alteração e encerramento de empresas",
+        "Regularização de situação fiscal e tributária das empresas junto aos órgãos de controle",
+        "Estudo e elaboração de documentos para cisão, fusão, incorporação e aquisição de empresas",
+        "Constituição de Holding Patrimonial, Controle, Familiar, Pura, Mista e Administrativa",
+        "Obtenção de Alvarás e Licenças junto à Prefeitura, Dispensa dos Bombeiros e Vigilância Sanitária e Dispensa Ambiental",
+        "Obtenção de Certidões Negativas junto a prefeitura, receita estadual e receita federal"
+      ]
     },
     {
+      "slug": "consultoria-gestao-financeira",
       "icon": "chart",
+      "model3D": "/images/models/model_consultoria.glb",
       "title": "Consultoria em Gestão Financeira",
-      "description": "Apoio estratégico na organização do fluxo de caixa, formação de preço, análise de resultados e construção de indicadores financeiros, sempre com relatórios gerenciais e dashboards em Power BI."
+      "shortDescription": "Apoio estratégico na organização do fluxo de caixa, formação de preço, análise de resultados e construção de indicadores financeiros.",
+      "heroTitle": "Consultoria em Gestão Financeira",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "A gestão financeira eficiente é o alicerce de qualquer empresa de sucesso. Muitos empresários enfrentam dificuldades para organizar suas finanças, entender seus custos reais e tomar decisões baseadas em dados concretos.",
+        "Nossa consultoria oferece suporte completo para estruturar seu fluxo de caixa, formar preços de forma estratégica e construir indicadores que realmente importam para o crescimento do seu negócio."
+      ],
+      "checklist": [
+        "Organização e controle do fluxo de caixa",
+        "Formação estratégica de preços de produtos e serviços",
+        "Análise de resultados e margem de contribuição",
+        "Construção de indicadores financeiros (KPIs)",
+        "Dashboards gerenciais em Power BI",
+        "Planejamento financeiro e orçamentário"
+      ]
     },
     {
+      "slug": "auditoria-revisao-fiscal",
       "icon": "shieldCheck",
+      "model3D": "/images/models/model_auditoria.glb",
       "title": "Auditoria, Revisão Fiscal e Recuperação Tributária",
-      "description": "Revisão detalhada de apurações e obrigações para identificar créditos e oportunidades de recuperação de tributos pagos a maior, com segurança jurídica e foco em reduzir custos fiscais."
+      "shortDescription": "Revisão detalhada de apurações e obrigações para identificar créditos e oportunidades de recuperação de tributos pagos a maior.",
+      "heroTitle": "Auditoria, Revisão Fiscal e Recuperação Tributária",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "Muitas empresas pagam mais impostos do que deveriam por falta de um acompanhamento especializado. A revisão fiscal permite identificar créditos não aproveitados e tributos pagos indevidamente que podem ser recuperados.",
+        "Nossa equipe realiza uma análise minuciosa das suas apurações fiscais, identificando oportunidades de economia e recuperação de valores com total segurança jurídica."
+      ],
+      "checklist": [
+        "Auditoria contábil e fiscal completa",
+        "Revisão de apurações de PIS, COFINS, ICMS e ISS",
+        "Identificação de créditos tributários não aproveitados",
+        "Recuperação de tributos pagos a maior",
+        "Análise de conformidade com obrigações acessórias",
+        "Planejamento tributário preventivo"
+      ]
     },
     {
+      "slug": "escrita-contabil-fiscal",
       "icon": "document",
+      "model3D": "/images/models/model_escrita.glb",
       "title": "Escrita Contábil e Fiscal",
-      "description": "Escrituração contábil e fiscal completa, emissão de demonstrações financeiras, apurações de tributos e cumprimento de todas as obrigações acessórias exigidas pelo Fisco."
+      "shortDescription": "Escrituração contábil e fiscal completa, emissão de demonstrações financeiras e cumprimento de obrigações acessórias.",
+      "heroTitle": "Escrita Contábil e Fiscal",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "A escrituração contábil e fiscal é obrigatória para todas as empresas e deve ser realizada com precisão para evitar problemas com o Fisco. Erros nessa área podem resultar em multas pesadas e até autuações.",
+        "Oferecemos serviço completo de escrituração, garantindo que todas as suas obrigações sejam cumpridas dentro dos prazos e com total conformidade legal."
+      ],
+      "checklist": [
+        "Escrituração contábil completa (Livro Diário e Razão)",
+        "Escrituração fiscal de entradas e saídas",
+        "Apuração de impostos federais, estaduais e municipais",
+        "Emissão de demonstrações financeiras (Balanço, DRE, etc.)",
+        "Entrega de obrigações acessórias (SPED, ECD, ECF)",
+        "Conciliação bancária e controle patrimonial"
+      ]
     },
     {
+      "slug": "departamento-pessoal",
       "icon": "users",
+      "model3D": "/images/models/model_dp.glb",
       "title": "Departamento Pessoal",
-      "description": "Gestão de folha de pagamento, admissões, rescisões, férias, eSocial e demais rotinas trabalhistas, garantindo conformidade com a legislação e segurança para empresa e colaboradores."
+      "shortDescription": "Gestão de folha de pagamento, admissões, rescisões, férias, eSocial e demais rotinas trabalhistas.",
+      "heroTitle": "Departamento Pessoal",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "A gestão de pessoas envolve uma série de obrigações trabalhistas que precisam ser cumpridas com rigor para evitar passivos e processos. O eSocial trouxe ainda mais complexidade para essa área.",
+        "Nossa equipe cuida de todas as rotinas do departamento pessoal da sua empresa, desde admissões até rescisões, garantindo conformidade com a legislação e segurança para sua empresa e colaboradores."
+      ],
+      "checklist": [
+        "Processamento de folha de pagamento",
+        "Admissões, rescisões e homologações",
+        "Cálculo e controle de férias e 13º salário",
+        "Gestão completa do eSocial",
+        "Emissão de guias (FGTS, INSS, IRRF)",
+        "Elaboração de relatórios trabalhistas"
+      ]
     },
     {
+      "slug": "imposto-renda-pessoa-fisica",
       "icon": "userTax",
+      "model3D": "/images/models/model_irpf.glb",
       "title": "Imposto de Renda Pessoa Física",
-      "description": "Atendimento especializado para declarações de IRPF, situações complexas, ganho de capital, investimentos, carnê-leão e regularização de pendências junto à Receita Federal."
+      "shortDescription": "Atendimento especializado para declarações de IRPF, situações complexas, ganho de capital e investimentos.",
+      "heroTitle": "Imposto de Renda Pessoa Física",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "A declaração do Imposto de Renda pode ser simples para algumas pessoas, mas extremamente complexa para quem possui investimentos, múltiplas fontes de renda, bens no exterior ou situações especiais.",
+        "Oferecemos atendimento especializado para declarações de qualquer complexidade, garantindo que você pague apenas o que é devido e evite problemas com a Receita Federal."
+      ],
+      "checklist": [
+        "Declaração completa de IRPF",
+        "Apuração de ganho de capital",
+        "Declaração de investimentos e criptoativos",
+        "Carnê-leão para autônomos",
+        "Regularização de pendências na Receita Federal",
+        "Planejamento tributário pessoal"
+      ]
     },
     {
+      "slug": "certificacao-digital",
       "icon": "certificate",
+      "model3D": "/images/models/model_certificado.glb",
       "title": "Certificação Digital",
-      "description": "Orientação e intermediação na emissão de certificados digitais para pessoas físicas e jurídicas, garantindo agilidade para assinar documentos e cumprir obrigações eletrônicas."
+      "shortDescription": "Orientação e intermediação na emissão de certificados digitais para pessoas físicas e jurídicas.",
+      "heroTitle": "Certificação Digital",
+      "video": "/images/videos/services_video.mp4",
+      "description": [
+        "O certificado digital é essencial para assinar documentos eletrônicos, acessar sistemas governamentais e cumprir obrigações fiscais. A escolha do tipo correto e a emissão adequada são fundamentais.",
+        "Oferecemos todo o suporte necessário para a emissão do seu certificado digital, orientando sobre o melhor tipo para sua necessidade e agilizando todo o processo."
+      ],
+      "checklist": [
+        "Orientação sobre tipos de certificado (A1, A3, e-CPF, e-CNPJ)",
+        "Intermediação na emissão de certificados",
+        "Renovação de certificados vencidos",
+        "Suporte na instalação e configuração",
+        "Atendimento presencial ou por videoconferência",
+        "Parceria com certificadoras credenciadas"
+      ]
     }
   ],
   "cta": {
     "title": "Precisa de um atendimento sob medida?",
     "description": "Entre em contato e descubra como estruturar a contabilidade e a gestão financeira da sua empresa com a Malaquias.",
-    "button": "Falar com um especialista"
+    "button": "Fale com nossa equipe"
   }
 }

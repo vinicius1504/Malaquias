@@ -1,6 +1,16 @@
 {
+  "nav": {
+    "home": "Home",
+    "about": "Quem Somos",
+    "services": "Serviços",
+    "news": "Notícias",
+    "contact": "Contato",
+    "blog": "Blog",
+    "careers": "Trabalhe Conosco"
+  },
   "sectionTitles": {
     "areas": "Serviços",
+    "about": "Quem Somos",
     "whyPart1": "Por que a",
     "whyPart2": "Malaquias Contabilidade?",
     "clients": "Nossos Clientes",
@@ -12,6 +22,45 @@
     "heroHighlight1": "impostos",
     "heroTitle2": "mais",
     "heroHighlight2": "lucro no seu bolso"
+  },
+  "about": {
+    "hero": {
+      "title1": "O escritório",
+      "highlight1": "Malaquias Contabilidade",
+      "description1": "é um escritório especializado em atender clientes exigentes, que valorizam",
+      "emphasis1": "excelência, precisão e profissionalismo",
+      "description2": "em serviços contábeis.",
+      "title2": "Desde",
+      "highlight2": "2010",
+      "description3": ", construímos uma trajetória sólida no mercado, oferecendo",
+      "emphasis2": "soluções completas e personalizadas",
+      "description4": "para empresas de todos os portes — do",
+      "emphasis3": "pequeno empreendedor ao grande empresário",
+      "description5": "— sempre com foco em",
+      "emphasis4": "crescimento sustentável, economia tributária e saúde financeira do negócio."
+    },
+    "items": [
+      {
+        "title": "Nossa missão",
+        "content": "Oferecer soluções contábeis estratégicas que geram economia tributária real, promovendo crescimento sustentável e segurança para nossos clientes."
+      },
+      {
+        "title": "Nossa visão",
+        "content": "Ser referência nacional em contabilidade consultiva, unindo tecnologia de ponta e atendimento humanizado para transformar a gestão financeira das empresas."
+      },
+      {
+        "title": "Nossos Valores",
+        "content": "Ética, transparência, comprometimento com resultados e relacionamento próximo com cada cliente, tratando seu negócio como se fosse o nosso."
+      },
+      {
+        "title": "Eficiência",
+        "content": "Processos otimizados e tecnologia integrada para entregar informações precisas no menor tempo, permitindo decisões ágeis e assertivas."
+      },
+      {
+        "title": "Atualização",
+        "content": "Equipe em constante capacitação, acompanhando mudanças na legislação tributária para garantir conformidade e aproveitar oportunidades legais de economia."
+      }
+    ]
   },
   "faq": {
     "items": [
@@ -153,19 +202,19 @@
       {
         "name": "Luciana Schneider",
         "role": "Empresária",
-        "company": null,
+        "company": "",
         "content": "Equipe atenciosa, prazos cumpridos e comunicação rápida. A sensação é de ter um time de apoio olhando de perto para a empresa o tempo todo."
       },
       {
         "name": "Dra. Marina Araujo",
         "role": "Médica",
-        "company": null,
+        "company": "",
         "content": "Desde a primeira conversa, o atendimento foi muito esclarecedor. Hoje consigo entender exatamente quanto pago de impostos e por quê."
       },
       {
         "name": "Dr. Flavio Cavalcanti",
         "role": "Empresário",
-        "company": null,
+        "company": "",
         "content": "O suporte é ágil e o sistema utilizado é simples de usar. As informações estão sempre atualizadas, o que traz segurança na tomada de decisão."
       }
     ]
@@ -209,6 +258,12 @@
         "phone": { "icon": "phone", "text": "(11) 91939-7549" },
         "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
         "address": { "icon": "mapPin", "text": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP" }
+      },
+      "filialRJ": {
+        "title": "Filial - Rio de Janeiro/RJ",
+        "phone": { "icon": "phone", "text": "(11) 91947-7549" },
+        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
+        "address": { "icon": "mapPin", "text": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ" }
       }
     },
     "registrations": {

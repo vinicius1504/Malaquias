@@ -150,7 +150,7 @@ export default function AreasCarousel() {
         transition={{ duration: 0.5 }}
       >
         <div className="flex gap-6 pb-4 px-6 w-max">
-          {services.map((service: { icon: string; title: string; description: string }, index: number) => (
+          {services.map((service: { icon: string; title: string; shortDescription: string; slug: string }, index: number) => (
             <motion.div
               key={index}
               className="bg-white rounded-lg p-6 shadow-sm w-[380px] h-[320px] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] flex flex-col"
@@ -165,17 +165,18 @@ export default function AreasCarousel() {
               <div className="w-16 h-16 mb-4">
                 {icons[service.icon] || defaultIcon}
               </div>
-              <h3 className="text-lg font-semibold text-dark-900 mb-3">
+              <h3 className="text-lg font-semibold text-dark-900 mb-3 line-clamp-2">
                 {service.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed flex-1">
-                {service.description.length > 150
-                  ? `${service.description.slice(0, 150)}...`
-                  : service.description}
+              <p className="text-sm text-gray-600 leading-relaxed flex-1 line-clamp-4">
+                {service.shortDescription}
               </p>
-              <button className="px-6 py-2 bg-gradient-to-r from-gold-400 to-gold-500 text-white text-sm font-medium rounded hover:from-gold-500 hover:to-gold-600 transition-all mt-4 self-start">
+              <a
+                href={`/servicos/${service.slug}`}
+                className="px-6 py-2 bg-gradient-to-r from-gold-400 to-gold-500 text-white text-sm font-medium rounded hover:from-gold-500 hover:to-gold-600 transition-all mt-4 self-start inline-block"
+              >
                 Saiba Mais!
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>
