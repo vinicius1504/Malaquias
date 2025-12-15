@@ -49,7 +49,7 @@ export default function Header() {
     { href: '#', label: nav.services, hasDropdown: true },
     { href: '/noticias', label: nav.news },
     { href: '/contato', label: nav.contact },
-    { href: '/trabalhe-conosco', label: nav.careers },
+    { href: 'https://onvio.com.br/login/#/', label: nav.careers },
   ];
 
   return (

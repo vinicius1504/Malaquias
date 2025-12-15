@@ -1,6 +1,11 @@
 {
   "pageTitle": "News",
   "pageSubtitle": "Stay updated with the latest news, articles, and updates on accounting, tax legislation, and business management.",
+  "searchPlaceholder": "Search news...",
+  "searchButton": "Search",
+  "clearFilters": "Clear filters",
+  "searchLabel": "Search",
+  "noResults": "No news found.",
   "readMore": "Read more",
   "pagination": {
     "previous": "Previous",

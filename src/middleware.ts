@@ -1,21 +1,55 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { getToken } from 'next-auth/jwt';
 
 /**
  * Middleware de segurança para o site Malaquias Contabilidade
  * Aplica proteções adicionais em todas as requisições
  */
-export function middleware(request: NextRequest) {
-  const response = NextResponse.next();
+export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
 
-  // Adiciona nonce para scripts inline (CSP)
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
+  // ==========================================
+  // PROTEÇÃO DE ROTAS ADMIN
+  // ==========================================
+  if (pathname.startsWith('/admin')) {
+    const token = await getToken({
+      req: request,
+      secret: process.env.NEXTAUTH_SECRET
+    });
+    const isLoginPage = pathname === '/admin/login';
+
+    // Se não está logado e não é página de login, redireciona
+    if (!token && !isLoginPage) {
+      const loginUrl = new URL('/admin/login', request.url);
+      loginUrl.searchParams.set('callbackUrl', pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    // Se está logado e tentando acessar login, vai pro dashboard
+    if (token && isLoginPage) {
+      return NextResponse.redirect(new URL('/admin', request.url));
+    }
+
+    // Proteção de rotas por role (DEV only)
+    const devOnlyRoutes = ['/admin/usuarios', '/admin/logs', '/admin/config'];
+    if (token && devOnlyRoutes.some(route => pathname.startsWith(route))) {
+      if (token.role !== 'dev') {
+        return NextResponse.redirect(new URL('/admin', request.url));
+      }
+    }
+  }
+
+  // ==========================================
+  // SEGURANÇA GERAL
+  // ==========================================
+  const response = NextResponse.next();
 
   // Headers de segurança adicionais no middleware
   response.headers.set('X-Request-Id', crypto.randomUUID());
 
   // Previne cache de dados sensíveis
-  if (request.nextUrl.pathname.startsWith('/api/')) {
+  if (pathname.startsWith('/api/')) {
     response.headers.set('Cache-Control', 'no-store, max-age=0');
   }
 
@@ -37,7 +71,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Previne path traversal
-  if (request.nextUrl.pathname.includes('..')) {
+  if (pathname.includes('..')) {
     return new NextResponse('Bad Request', { status: 400 });
   }
 

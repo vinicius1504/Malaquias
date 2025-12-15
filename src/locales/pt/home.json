@@ -5,8 +5,7 @@
     "services": "Serviços",
     "news": "Notícias",
     "contact": "Contato",
-    "blog": "Blog",
-    "careers": "Trabalhe Conosco"
+    "careers": "Clientes"
   },
   "sectionTitles": {
     "areas": "Serviços",
@@ -249,21 +248,48 @@
       "title": "Onde estamos",
       "matriz": {
         "title": "Matriz - Campo Grande/MS",
-        "phone": { "icon": "phone", "text": "(67) 99661-7549" },
-        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS" }
+        "phone": {
+          "icon": "phone",
+          "text": "(67) 99661-7549"
+        },
+        "email": {
+          "icon": "mail",
+          "text": "contato@malaquiascontabilidade.com.br"
+        },
+        "address": {
+          "icon": "mapPin",
+          "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS"
+        }
       },
       "filial": {
         "title": "Filial - São Paulo/SP",
-        "phone": { "icon": "phone", "text": "(11) 91939-7549" },
-        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP" }
+        "phone": {
+          "icon": "phone",
+          "text": "(11) 91939-7549"
+        },
+        "email": {
+          "icon": "mail",
+          "text": "contato@malaquiascontabilidade.com.br"
+        },
+        "address": {
+          "icon": "mapPin",
+          "text": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP"
+        }
       },
       "filialRJ": {
         "title": "Filial - Rio de Janeiro/RJ",
-        "phone": { "icon": "phone", "text": "(11) 91947-7549" },
-        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ" }
+        "phone": {
+          "icon": "phone",
+          "text": "(11) 91947-7549"
+        },
+        "email": {
+          "icon": "mail",
+          "text": "contato@malaquiascontabilidade.com.br"
+        },
+        "address": {
+          "icon": "mapPin",
+          "text": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ"
+        }
       }
     },
     "registrations": {

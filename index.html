@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Teste Tela 3D - Three.js</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    #info {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 8px 12px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 12px;
+      border-radius: 4px;
+      z-index: 10;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="info">
+    Cena de teste Three.js<br />
+    Se aparecer um quadro com textura, está OK.<br />
+    Depois trocamos para vídeo.
+  </div>
+
+  <!-- ATENÇÃO: usando r149 (funciona com THREE.OrbitControls global) -->
+  <script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.149.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script>
+    // =======================
+    // CENA BÁSICA
+    // =======================
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x111111);
+
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      100
+    );
+    camera.position.set(0, 1.5, 5);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.target.set(0, 1, 0);
+
+    // =======================
+    // LUZES
+    // =======================
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(5, 10, 7);
+    scene.add(dirLight);
+
+    // =======================
+    // CHÃO
+    // =======================
+    const floorGeometry = new THREE.PlaneGeometry(20, 20);
+    const floorMaterial = new THREE.MeshStandardMaterial({
+      color: 0x222222,
+      roughness: 1,
+      metalness: 0
+    });
+    const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = 0;
+    scene.add(floor);
+
+    // =======================
+    // TELA 3D (PLANE) COM TEXTURA DE TESTE
+    // =======================
+    const screenWidth = 3.2;
+    const screenHeight = screenWidth * 9 / 16;
+
+    const screenGeometry = new THREE.PlaneGeometry(screenWidth, screenHeight);
+
+    const loader = new THREE.TextureLoader();
+    const testTexture = loader.load(
+      'https://threejs.org/examples/textures/uv_grid_opengl.jpg',
+      () => {
+        console.log('Textura carregada, deve aparecer na tela.');
+      },
+      undefined,
+      (err) => {
+        console.error('Erro ao carregar textura de teste', err);
+      }
+    );
+
+    const screenMaterial = new THREE.MeshBasicMaterial({
+      map: testTexture
+    });
+
+    const screenMesh = new THREE.Mesh(screenGeometry, screenMaterial);
+    screenMesh.position.set(0, 1.5, 0);
+    scene.add(screenMesh);
+
+    // Moldura
+    const frameGeometry = new THREE.BoxGeometry(screenWidth + 0.1, screenHeight + 0.1, 0.05);
+    const frameMaterial = new THREE.MeshStandardMaterial({
+      color: 0x111b2c,
+      metalness: 0.6,
+      roughness: 0.3
+    });
+    const frameMesh = new THREE.Mesh(frameGeometry, frameMaterial);
+    frameMesh.position.copy(screenMesh.position);
+    frameMesh.position.z -= 0.03;
+    scene.add(frameMesh);
+
+    // =======================
+    // RESIZE
+    // =======================
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+    window.addEventListener('resize', onWindowResize);
+
+    // =======================
+    // LOOP
+    // =======================
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+</html>

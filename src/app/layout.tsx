@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import '@/styles/globals.css';
-import { MainLayout } from '@/components/layout';
-import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -72,9 +70,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${poppins.variable}`}>
       <body className="font-sans">
-        <LanguageProvider>
-          <MainLayout>{children}</MainLayout>
-        </LanguageProvider>
+        {children}
       </body>
     </html>
   );

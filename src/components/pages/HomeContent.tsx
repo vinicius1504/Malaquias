@@ -159,7 +159,6 @@ export default function HomeContent() {
       <div className="py-24 bg-[#f5f5f5]">
         <BlogSection
           title={sectionTitles.blog}
-          posts={blog.items}
           readMore={blog.readMore}
           viewAll={blog.viewAll}
         />
