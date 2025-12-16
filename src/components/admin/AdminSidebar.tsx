@@ -11,6 +11,8 @@ import {
   Users,
   History,
   Shield,
+  Handshake,
+  MessageSquareQuote,
 } from 'lucide-react'
 import type { UserRole } from '@/types/database'
 
@@ -39,6 +41,18 @@ const menuItems = [
     label: 'Notícias',
     href: '/admin/noticias',
     icon: Newspaper,
+    roles: ['dev', 'admin'],
+  },
+  {
+    label: 'Parceiros',
+    href: '/admin/parceiros',
+    icon: Handshake,
+    roles: ['dev', 'admin'],
+  },
+  {
+    label: 'Depoimentos',
+    href: '/admin/depoimentos',
+    icon: MessageSquareQuote,
     roles: ['dev', 'admin'],
   },
   {

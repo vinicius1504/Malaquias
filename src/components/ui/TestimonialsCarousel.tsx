@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Testimonial {
   name: string;
@@ -12,13 +13,47 @@ interface Testimonial {
 }
 
 interface TestimonialsCarouselProps {
-  testimonials: Testimonial[];
+  testimonials: Testimonial[]; // Fallback do JSON de traduções
 }
 
-export default function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps) {
+export default function TestimonialsCarousel({ testimonials: fallbackTestimonials }: TestimonialsCarouselProps) {
+  const { locale } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(fallbackTestimonials);
+
+  // Buscar depoimentos do banco de dados
+  useEffect(() => {
+    async function fetchTestimonials() {
+      try {
+        const response = await fetch(`/api/testimonials?locale=${locale}`);
+
+        if (!response.ok) {
+          console.log('API não disponível, usando fallback');
+          return;
+        }
+
+        const data = await response.json();
+
+        if (data.testimonials && data.testimonials.length > 0) {
+          const items = data.testimonials.map((t: { name: string; role: string; company: string | null; content: string; avatar_url: string | null }) => ({
+            name: t.name,
+            role: t.role,
+            company: t.company,
+            content: t.content,
+            avatar: t.avatar_url,
+          }));
+
+          setTestimonials(items);
+        }
+      } catch (error) {
+        console.log('Erro ao buscar depoimentos, usando fallback:', error);
+      }
+    }
+
+    fetchTestimonials();
+  }, [locale]);
 
   const nextTestimonial = useCallback(() => {
     setIsVisible(false);
@@ -26,17 +61,26 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
       setIsVisible(true);
     }, 300);
-  }, []);
+  }, [testimonials.length]);
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || testimonials.length === 0) return;
 
     const interval = setInterval(() => {
       nextTestimonial();
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isPaused, nextTestimonial]);
+  }, [isPaused, nextTestimonial, testimonials.length]);
+
+  // Reset index when testimonials change
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [testimonials]);
+
+  if (testimonials.length === 0) {
+    return null;
+  }
 
   const currentTestimonial = testimonials[currentIndex];
 

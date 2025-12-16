@@ -33,9 +33,96 @@ const FILE_NAMES: Record<string, string> = {
   services: 'Serviços',
   servicesPages: 'Páginas de Serviços',
   contact: 'Contato',
-  news: 'Notícias',
   common: 'Textos Comuns',
   faq: 'FAQ'
+}
+
+// Labels amigáveis para campos comuns
+const FIELD_LABELS: Record<string, string> = {
+  pageTitle: 'Título da Página',
+  title: 'Título',
+  subtitle: 'Subtítulo',
+  description: 'Descrição',
+  content: 'Conteúdo',
+  text: 'Texto',
+  button: 'Botão',
+  buttonText: 'Texto do Botão',
+  link: 'Link',
+  linkText: 'Texto do Link',
+  name: 'Nome',
+  email: 'E-mail',
+  phone: 'Telefone',
+  address: 'Endereço',
+  message: 'Mensagem',
+  placeholder: 'Placeholder',
+  label: 'Rótulo',
+  hero: 'Banner Principal',
+  cta: 'Chamada para Ação',
+  features: 'Recursos',
+  items: 'Itens',
+  question: 'Pergunta',
+  answer: 'Resposta',
+  history: 'Nossa História',
+  mission: 'Missão',
+  vision: 'Visão',
+  values: 'Valores',
+  team: 'Equipe',
+  testimonials: 'Depoimentos',
+  partners: 'Parceiros',
+  clients: 'Clientes',
+  services: 'Serviços',
+  contact: 'Contato',
+  about: 'Sobre',
+  footer: 'Rodapé',
+  header: 'Cabeçalho',
+  menu: 'Menu',
+  nav: 'Navegação',
+  form: 'Formulário',
+  success: 'Sucesso',
+  error: 'Erro',
+  loading: 'Carregando',
+  send: 'Enviar',
+  submit: 'Enviar',
+  cancel: 'Cancelar',
+  close: 'Fechar',
+  back: 'Voltar',
+  next: 'Próximo',
+  previous: 'Anterior',
+  readMore: 'Leia Mais',
+  seeMore: 'Ver Mais',
+  learnMore: 'Saiba Mais',
+  accordion: 'Seções Expansíveis',
+  cards: 'Cards',
+  list: 'Lista',
+  grid: 'Grade',
+  section: 'Seção',
+  intro: 'Introdução',
+  outro: 'Conclusão',
+  quote: 'Citação',
+  author: 'Autor',
+  date: 'Data',
+  category: 'Categoria',
+  tags: 'Tags',
+  icon: 'Ícone',
+  image: 'Imagem',
+  imageAlt: 'Texto Alternativo da Imagem',
+  meta: 'Meta Dados',
+  seo: 'SEO',
+  keywords: 'Palavras-chave',
+}
+
+// Função para obter label amigável
+const getFieldLabel = (key: string): string => {
+  // Primeiro verifica se existe um label direto
+  if (FIELD_LABELS[key]) return FIELD_LABELS[key]
+
+  // Transforma camelCase em palavras separadas com primeira letra maiúscula
+  const formatted = key
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/^./, str => str.toUpperCase())
+    .trim()
+
+  return formatted
 }
 
 export default function TextosPage() {
@@ -210,7 +297,7 @@ export default function TextosPage() {
     const key = path.join('.')
 
     if (value === null) {
-      return <span className="text-black italic">null</span>
+      return <span className="text-gray-400 italic text-sm">Vazio</span>
     }
 
     if (typeof value === 'string') {
@@ -247,22 +334,30 @@ export default function TextosPage() {
       )
     }
 
+    // Para arrays - mostrar como lista de cards
     if (Array.isArray(value)) {
       const isExpanded = expandedKeys.has(key)
       return (
         <div className="w-full">
           <button
             onClick={() => toggleExpanded(key)}
-            className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+            className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 mb-2"
           >
             {isExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-            <span className="font-medium">Array [{value.length} itens]</span>
+            <span className="font-medium text-amber-600">{value.length} {value.length === 1 ? 'item' : 'itens'}</span>
           </button>
           {isExpanded && (
-            <div className="ml-4 mt-2 space-y-2 border-l-2 border-gray-100 pl-4">
+            <div className="space-y-3">
               {value.map((item, index) => (
-                <div key={index} className="space-y-1">
-                  <span className="text-xs text-gray-400">[{index}]</span>
+                <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                  <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
+                    <span className="w-6 h-6 flex items-center justify-center bg-amber-100 text-amber-700 rounded-full text-xs font-bold">
+                      {index + 1}
+                    </span>
+                    <span className="text-sm font-medium text-gray-600">
+                      Item {index + 1}
+                    </span>
+                  </div>
                   {renderValue(item, [...path, String(index)], level + 1)}
                 </div>
               ))}
@@ -272,33 +367,36 @@ export default function TextosPage() {
       )
     }
 
+    // Para objetos - mostrar campos de forma mais limpa
     if (typeof value === 'object') {
-      const isExpanded = expandedKeys.has(key)
       const entries = Object.entries(value)
 
+      // Mostrar diretamente os campos sem botão de expansão
       return (
-        <div className="w-full">
-          <button
-            onClick={() => toggleExpanded(key)}
-            className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-          >
-            {isExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-            <span className="font-medium">Objeto {`{${entries.length} campos}`}</span>
-          </button>
-          {isExpanded && (
-            <div className="ml-4 mt-2 space-y-3 border-l-2 border-gray-100 pl-4">
-              {entries.map(([k, v]) => (
-                <div key={k}>
-                  <div className="flex items-start gap-3">
-                    <span className="text-sm font-medium text-gray-700 min-w-[120px] pt-2">
-                      {k}
-                    </span>
+        <div className="w-full space-y-4">
+          {entries.map(([k, v]) => {
+            const isNestedObject = typeof v === 'object' && v !== null && !Array.isArray(v)
+            const isNestedArray = Array.isArray(v)
+
+            return (
+              <div key={k}>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  {getFieldLabel(k)}
+                </label>
+                {isNestedObject ? (
+                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                     {renderValue(v, [...path, k], level + 1)}
                   </div>
-                </div>
-              ))}
-            </div>
-          )}
+                ) : isNestedArray ? (
+                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    {renderValue(v, [...path, k], level + 1)}
+                  </div>
+                ) : (
+                  renderValue(v, [...path, k], level + 1)
+                )}
+              </div>
+            )
+          })}
         </div>
       )
     }
@@ -306,7 +404,9 @@ export default function TextosPage() {
     return null
   }
 
-  const currentFiles = translations.find(t => t.locale === selectedLocale)?.files || []
+  // Filtrar arquivos que não devem aparecer (notícias agora vem do banco de dados)
+  const currentFiles = (translations.find(t => t.locale === selectedLocale)?.files || [])
+    .filter(file => file !== 'news')
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
@@ -445,17 +545,30 @@ export default function TextosPage() {
                   <Loader2 className="w-8 h-8 text-amber-500 animate-spin" />
                 </div>
               ) : content ? (
-                <div className="space-y-4">
-                  {Object.entries(content).map(([key, value]) => (
-                    <div key={key} className="border border-gray-100 rounded-lg p-4">
-                      <div className="flex items-start gap-3">
-                        <span className="text-sm font-semibold text-gray-800 min-w-[120px] pt-2">
-                          {key}
-                        </span>
-                        {renderValue(value, [key], 0)}
+                <div className="space-y-6">
+                  {Object.entries(content).map(([key, value]) => {
+                    const isSimpleValue = typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean'
+
+                    return (
+                      <div key={key} className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                        {/* Section Header */}
+                        <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
+                          <h3 className="font-semibold text-gray-800">
+                            {getFieldLabel(key)}
+                          </h3>
+                        </div>
+
+                        {/* Section Content */}
+                        <div className="p-4">
+                          {isSimpleValue ? (
+                            renderValue(value, [key], 0)
+                          ) : (
+                            renderValue(value, [key], 0)
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               ) : (
                 <div className="text-center py-12 text-gray-500">

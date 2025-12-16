@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { RichTextEditor } from '@/components/admin/Editor'
+import toast from 'react-hot-toast'
 
 type Locale = 'pt' | 'en' | 'es'
 
@@ -164,7 +165,7 @@ export default function EditNewsPage() {
   const handleTranslate = async (targetLocale: Locale) => {
     const sourceContent = translations.pt
     if (!sourceContent.title && !sourceContent.excerpt && !sourceContent.content) {
-      alert('Preencha o conteúdo em Português primeiro')
+      toast.error('Preencha o conteúdo em Português primeiro')
       return
     }
 
@@ -194,12 +195,13 @@ export default function EditNewsPage() {
           }
         }))
         setActiveLocale(targetLocale)
+        toast.success('Tradução concluída!')
       } else {
-        alert(data.error || 'Erro ao traduzir')
+        toast.error(data.error || 'Erro ao traduzir')
       }
     } catch (error) {
       console.error('Erro ao traduzir:', error)
-      alert('Erro ao traduzir. Tente novamente.')
+      toast.error('Erro ao traduzir. Tente novamente.')
     } finally {
       setTranslating(null)
     }
@@ -221,11 +223,11 @@ export default function EditNewsPage() {
       if (response.ok) {
         setImageUrl(data.url)
       } else {
-        alert(data.error || 'Erro no upload')
+        toast.error(data.error || 'Erro no upload')
       }
     } catch (error) {
       console.error('Erro no upload:', error)
-      alert('Erro ao fazer upload da imagem')
+      toast.error('Erro ao fazer upload da imagem')
     } finally {
       setUploadingCard(false)
     }
@@ -247,11 +249,11 @@ export default function EditNewsPage() {
       if (response.ok) {
         setImageBanner(data.url)
       } else {
-        alert(data.error || 'Erro no upload')
+        toast.error(data.error || 'Erro no upload')
       }
     } catch (error) {
       console.error('Erro no upload:', error)
-      alert('Erro ao fazer upload da imagem')
+      toast.error('Erro ao fazer upload da imagem')
     } finally {
       setUploadingBanner(false)
     }
@@ -281,12 +283,12 @@ export default function EditNewsPage() {
 
   const handleSave = async (publishNow = false) => {
     if (!translations.pt.title.trim()) {
-      alert('O título em Português é obrigatório')
+      toast.error('O título em Português é obrigatório')
       return
     }
 
     if (!slug.trim()) {
-      alert('O slug é obrigatório')
+      toast.error('O slug é obrigatório')
       return
     }
 
@@ -309,13 +311,14 @@ export default function EditNewsPage() {
       const data = await response.json()
 
       if (response.ok) {
+        toast.success('Notícia salva com sucesso!')
         router.push('/admin/noticias')
       } else {
-        alert(data.error || 'Erro ao salvar')
+        toast.error(data.error || 'Erro ao salvar')
       }
     } catch (error) {
       console.error('Erro ao salvar:', error)
-      alert('Erro ao salvar notícia')
+      toast.error('Erro ao salvar notícia')
     } finally {
       setSaving(false)
     }
@@ -333,14 +336,15 @@ export default function EditNewsPage() {
       })
 
       if (response.ok) {
+        toast.success('Notícia excluída com sucesso!')
         router.push('/admin/noticias')
       } else {
         const data = await response.json()
-        alert(data.error || 'Erro ao excluir')
+        toast.error(data.error || 'Erro ao excluir')
       }
     } catch (error) {
       console.error('Erro ao excluir:', error)
-      alert('Erro ao excluir notícia')
+      toast.error('Erro ao excluir notícia')
     } finally {
       setDeleting(false)
     }
@@ -428,33 +432,21 @@ export default function EditNewsPage() {
                 <span className="font-medium text-gray-700">Idiomas</span>
               </div>
 
-              {/* Auto-translate buttons */}
-              <div className="flex items-center gap-2">
+              {/* Auto-translate button - only for non-PT tabs */}
+              {activeLocale !== 'pt' && (
                 <button
-                  onClick={() => handleTranslate('en')}
+                  onClick={() => handleTranslate(activeLocale)}
                   disabled={translating !== null}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors disabled:opacity-50"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-lg transition-colors disabled:opacity-50"
                 >
-                  {translating === 'en' ? (
+                  {translating === activeLocale ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
                   ) : (
                     <Sparkles className="w-4 h-4" />
                   )}
-                  🇺🇸 Traduzir EN
+                  Traduzir para {LOCALE_LABELS[activeLocale]}
                 </button>
-                <button
-                  onClick={() => handleTranslate('es')}
-                  disabled={translating !== null}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-orange-50 text-orange-700 rounded-lg hover:bg-orange-100 transition-colors disabled:opacity-50"
-                >
-                  {translating === 'es' ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                  ) : (
-                    <Sparkles className="w-4 h-4" />
-                  )}
-                  🇪🇸 Traduzir ES
-                </button>
-              </div>
+              )}
             </div>
 
             {/* Locale tabs */}

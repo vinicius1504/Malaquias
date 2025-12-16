@@ -159,6 +159,7 @@ export async function PUT(
 
 // DELETE - Excluir notícia
 export async function DELETE(
+  request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {

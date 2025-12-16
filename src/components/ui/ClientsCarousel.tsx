@@ -2,15 +2,15 @@
 
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 interface ClientLogo {
   src: string;
   alt: string;
 }
 
-// Logos dos clientes
-const clientLogos: ClientLogo[] = [
+// Logos fallback (caso não haja dados no banco ou erro)
+const fallbackLogos: ClientLogo[] = [
   { src: '/images/clientes/logo (1).png', alt: 'Cliente 1' },
   { src: '/images/clientes/logo (2).png', alt: 'Cliente 2' },
   { src: '/images/clientes/logo (3).png', alt: 'Cliente 3' },
@@ -37,8 +37,7 @@ const clientLogos: ClientLogo[] = [
   { src: '/images/clientes/logo (1).jpeg', alt: 'Cliente 24' },
   { src: '/images/clientes/logo (2).jpeg', alt: 'Cliente 25' },
   { src: '/images/clientes/logo (3).jpeg', alt: 'Cliente 26' },
-  { src: '/images/clientes/logo (1).jpg', alt: 'Cliente 27' },
-  { src: '/images/clientes/logo (2).jpg', alt: 'Cliente 28' },
+  { src: '/images/clientes/logo (2).jpg', alt: 'Cliente 27' },
 ];
 
 function VerticalColumn({ logos, direction, speed = 20 }: { logos: ClientLogo[]; direction: 'up' | 'down'; speed?: number }) {
@@ -75,16 +74,55 @@ function VerticalColumn({ logos, direction, speed = 20 }: { logos: ClientLogo[];
 export default function ClientsCarousel() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+  const [clientLogos, setClientLogos] = useState<ClientLogo[]>(fallbackLogos);
 
-  // 6 colunas com logos distribuídas
-  const columns = [
-    { logos: clientLogos.slice(0, 5), direction: 'up' as const, speed: 18 },
-    { logos: clientLogos.slice(5, 10), direction: 'down' as const, speed: 22 },
-    { logos: clientLogos.slice(10, 15), direction: 'up' as const, speed: 20 },
-    { logos: clientLogos.slice(15, 20), direction: 'down' as const, speed: 19 },
-    { logos: clientLogos.slice(20, 24), direction: 'up' as const, speed: 21 },
-    { logos: clientLogos.slice(24, 28), direction: 'down' as const, speed: 18 },
-  ];
+  useEffect(() => {
+    async function fetchClients() {
+      try {
+        const response = await fetch('/api/partners?type=client');
+
+        if (!response.ok) {
+          console.log('API não disponível, usando fallback');
+          return;
+        }
+
+        const data = await response.json();
+
+        if (data.partners && data.partners.length > 0) {
+          const logos = data.partners
+            .filter((p: { logo_url: string | null }) => p.logo_url)
+            .map((p: { name: string; logo_url: string }) => ({
+              src: p.logo_url,
+              alt: p.name,
+            }));
+
+          if (logos.length > 0) {
+            setClientLogos(logos);
+          }
+        }
+      } catch (error) {
+        console.log('Erro ao buscar clientes, usando fallback:', error);
+        // Mantém o fallback já setado no useState
+      }
+    }
+
+    fetchClients();
+  }, []);
+
+  // Distribui os logos em 6 colunas
+  const getColumns = () => {
+    const logosPerColumn = Math.ceil(clientLogos.length / 6);
+    return [
+      { logos: clientLogos.slice(0, logosPerColumn), direction: 'up' as const, speed: 18 },
+      { logos: clientLogos.slice(logosPerColumn, logosPerColumn * 2), direction: 'down' as const, speed: 22 },
+      { logos: clientLogos.slice(logosPerColumn * 2, logosPerColumn * 3), direction: 'up' as const, speed: 20 },
+      { logos: clientLogos.slice(logosPerColumn * 3, logosPerColumn * 4), direction: 'down' as const, speed: 19 },
+      { logos: clientLogos.slice(logosPerColumn * 4, logosPerColumn * 5), direction: 'up' as const, speed: 21 },
+      { logos: clientLogos.slice(logosPerColumn * 5), direction: 'down' as const, speed: 18 },
+    ].filter(col => col.logos.length > 0);
+  };
+
+  const columns = getColumns();
 
   return (
     <>

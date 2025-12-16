@@ -2,19 +2,19 @@
 
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 interface PartnerLogo {
   src: string;
   alt: string;
 }
 
-// Logos dos parceiros (usando logos de clientes para teste - substituir depois)
-const partnerLogos: PartnerLogo[] = [
-  { src: '/images/parceiros/ec.png', alt: 'Parceiro 1' },
-  { src: '/images/parceiros/solides.jpg', alt: 'Parceiro 2' },
-  { src: '/images/parceiros/tr.png', alt: 'Parceiro 3' },
-  { src: '/images/parceiros/uc.png', alt: 'Parceiro 4' },
+// Logos fallback (caso não haja dados no banco ou erro)
+const fallbackLogos: PartnerLogo[] = [
+  { src: '/images/parceiros/ec.png', alt: 'EC' },
+  { src: '/images/parceiros/solides.jpg', alt: 'Solides' },
+  { src: '/images/parceiros/tr.png', alt: 'TR' },
+  { src: '/images/parceiros/uc.png', alt: 'UC' },
 ];
 
 function HorizontalRow({ logos, direction, speed = 25 }: { logos: PartnerLogo[]; direction: 'left' | 'right'; speed?: number }) {
@@ -52,10 +52,45 @@ function HorizontalRow({ logos, direction, speed = 25 }: { logos: PartnerLogo[];
 export default function PartnersCarousel() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+  const [partnerLogos, setPartnerLogos] = useState<PartnerLogo[]>(fallbackLogos);
+
+  useEffect(() => {
+    async function fetchPartners() {
+      try {
+        const response = await fetch('/api/partners?type=partner');
+
+        if (!response.ok) {
+          console.log('API não disponível, usando fallback');
+          return;
+        }
+
+        const data = await response.json();
+
+        if (data.partners && data.partners.length > 0) {
+          const logos = data.partners
+            .filter((p: { logo_url: string | null }) => p.logo_url)
+            .map((p: { name: string; logo_url: string }) => ({
+              src: p.logo_url,
+              alt: p.name,
+            }));
+
+          if (logos.length > 0) {
+            setPartnerLogos(logos);
+          }
+        }
+      } catch (error) {
+        console.log('Erro ao buscar parceiros, usando fallback:', error);
+        // Mantém o fallback já setado no useState
+      }
+    }
+
+    fetchPartners();
+  }, []);
 
   // Divide os logos em 2 linhas
-  const row1 = partnerLogos.slice(0, 4);
-  const row2 = partnerLogos.slice(4, 8);
+  const half = Math.ceil(partnerLogos.length / 2);
+  const row1 = partnerLogos.slice(0, half);
+  const row2 = partnerLogos.slice(half);
 
   return (
     <>
@@ -88,13 +123,15 @@ export default function PartnersCarousel() {
           >
             <HorizontalRow logos={row1} direction="left" speed={20} />
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-          >
-            <HorizontalRow logos={row2} direction="right" speed={25} />
-          </motion.div>
+          {row2.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+            >
+              <HorizontalRow logos={row2} direction="right" speed={25} />
+            </motion.div>
+          )}
         </div>
       </div>
     </>

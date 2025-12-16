@@ -5,9 +5,12 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
+// URL do modelo 3D - usa Supabase Storage em produção para reduzir tamanho do deploy
+const MODEL_URL = process.env.NEXT_PUBLIC_3D_MODEL_URL || '/images/models/excritorio2.glb';
+
 function OfficeModel({ isReturning }: { isReturning: boolean }) {
   const meshRef = useRef<THREE.Group>(null);
-  const { scene } = useGLTF('/images/models/excritorio2.glb');
+  const { scene } = useGLTF(MODEL_URL);
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -153,4 +156,4 @@ export default function Office3D() {
 }
 
 // Pre-load do modelo
-useGLTF.preload('/images/models/excritorio2.glb');
+useGLTF.preload(MODEL_URL);

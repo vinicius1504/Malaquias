@@ -40,4 +40,6 @@ next-env.d.ts
 *.swp
 *.swo
 
-public/images/models/excritorio.glb
+# Modelos 3D pesados (hospedar no Supabase Storage)
+public/images/models/excritorio2.glb
+

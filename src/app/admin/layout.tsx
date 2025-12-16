@@ -2,6 +2,7 @@ import { auth } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import { AdminSidebar } from '@/components/admin/AdminSidebar'
 import { AdminHeader } from '@/components/admin/AdminHeader'
+import { ToastProvider } from '@/components/admin/ToastProvider'
 
 export const metadata = {
   title: 'Admin | Malaquias Contabilidade',
@@ -26,6 +27,7 @@ export default async function AdminLayout({
   if (session) {
     return (
       <div className="min-h-screen bg-gray-50">
+        <ToastProvider />
         <AdminSidebar user={session.user} />
         <div className="lg:pl-64">
           <AdminHeader user={session.user} />
@@ -36,5 +38,10 @@ export default async function AdminLayout({
   }
 
   // Página de login (sem sidebar)
-  return <>{children}</>
+  return (
+    <>
+      <ToastProvider />
+      {children}
+    </>
+  )
 }

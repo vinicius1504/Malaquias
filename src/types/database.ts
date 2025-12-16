@@ -56,6 +56,38 @@ export interface AuditLog {
   created_at: string
 }
 
+export type PartnerType = 'partner' | 'client'
+
+export interface Partner {
+  id: string
+  name: string
+  type: PartnerType
+  logo_url: string | null
+  is_active: boolean
+  display_order: number
+  created_at: string
+  updated_at: string
+}
+
+export interface Testimonial {
+  id: string
+  name: string
+  avatar_url: string | null
+  is_active: boolean
+  display_order: number
+  created_at: string
+  updated_at: string
+}
+
+export interface TestimonialTranslation {
+  id: string
+  testimonial_id: string
+  locale: 'pt' | 'en' | 'es'
+  role: string
+  company: string | null
+  content: string
+}
+
 // Database schema para Supabase
 export interface Database {
   public: {
@@ -84,6 +116,21 @@ export interface Database {
         Row: AuditLog
         Insert: Omit<AuditLog, 'id' | 'created_at'>
         Update: never
+      }
+      partners: {
+        Row: Partner
+        Insert: Omit<Partner, 'id' | 'created_at' | 'updated_at'>
+        Update: Partial<Omit<Partner, 'id'>>
+      }
+      testimonials: {
+        Row: Testimonial
+        Insert: Omit<Testimonial, 'id' | 'created_at' | 'updated_at'>
+        Update: Partial<Omit<Testimonial, 'id'>>
+      }
+      testimonial_translations: {
+        Row: TestimonialTranslation
+        Insert: Omit<TestimonialTranslation, 'id'>
+        Update: Partial<Omit<TestimonialTranslation, 'id'>>
       }
     }
   }

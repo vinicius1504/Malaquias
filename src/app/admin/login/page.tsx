@@ -3,20 +3,19 @@
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { Eye, EyeOff, Lock, Mail, AlertCircle, Loader2 } from 'lucide-react'
+import { Eye, EyeOff, Lock, Mail, Loader2 } from 'lucide-react'
 import Image from 'next/image'
+import toast from 'react-hot-toast'
 
 export default function AdminLoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setError('')
     setLoading(true)
 
     try {
@@ -27,13 +26,14 @@ export default function AdminLoginPage() {
       })
 
       if (result?.error) {
-        setError('Email ou senha inválidos')
+        toast.error('Email ou senha inválidos')
       } else {
+        toast.success('Login realizado com sucesso!')
         router.push('/admin')
         router.refresh()
       }
     } catch {
-      setError('Erro ao fazer login. Tente novamente.')
+      toast.error('Erro ao fazer login. Tente novamente.')
     } finally {
       setLoading(false)
     }
@@ -69,14 +69,6 @@ export default function AdminLoginPage() {
               Faça login para acessar o painel
             </p>
           </div>
-
-          {/* Error Message */}
-          {error && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
-              <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
-              <p className="text-red-600 text-sm">{error}</p>
-            </div>
-          )}
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">

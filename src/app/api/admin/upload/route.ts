@@ -66,7 +66,12 @@ export async function POST(request: NextRequest) {
     const timestamp = Date.now()
     const randomId = Math.random().toString(36).substring(2, 8)
     const fileName = `${timestamp}-${randomId}.${fileExt}`
-    const filePath = `news/${fileName}`
+
+    // Verificar pasta de destino (news, partners ou testimonials)
+    const folder = formData.get('folder') as string || 'news'
+    const allowedFolders = ['news', 'partners', 'testimonials']
+    const finalFolder = allowedFolders.includes(folder) ? folder : 'news'
+    const filePath = `${finalFolder}/${fileName}`
 
     // Converter File para ArrayBuffer
     const arrayBuffer = await file.arrayBuffer()

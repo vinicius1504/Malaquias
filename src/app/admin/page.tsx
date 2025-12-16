@@ -4,11 +4,72 @@ import {
   FileText,
   Newspaper,
   Users,
-  TrendingUp,
-  Clock,
   ArrowRight,
+  MessageSquareQuote,
+  Handshake,
 } from 'lucide-react'
 import Link from 'next/link'
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+)
+
+async function getStats() {
+  // Buscar contagem de notícias
+  const { count: totalNews } = await supabase
+    .from('news')
+    .select('*', { count: 'exact', head: true })
+
+  const { count: publishedNews } = await supabase
+    .from('news')
+    .select('*', { count: 'exact', head: true })
+    .eq('is_published', true)
+
+  // Buscar contagem de depoimentos
+  const { count: totalTestimonials } = await supabase
+    .from('testimonials')
+    .select('*', { count: 'exact', head: true })
+
+  const { count: activeTestimonials } = await supabase
+    .from('testimonials')
+    .select('*', { count: 'exact', head: true })
+    .eq('is_active', true)
+
+  // Buscar contagem de parceiros/clientes
+  const { count: totalPartners } = await supabase
+    .from('partners')
+    .select('*', { count: 'exact', head: true })
+
+  const { count: activePartners } = await supabase
+    .from('partners')
+    .select('*', { count: 'exact', head: true })
+    .eq('is_active', true)
+
+  // Buscar últimas notícias
+  const { data: recentNews } = await supabase
+    .from('news')
+    .select('id, slug, is_published, created_at, updated_at, news_translations!inner(title, locale)')
+    .eq('news_translations.locale', 'pt')
+    .order('updated_at', { ascending: false })
+    .limit(5)
+
+  return {
+    news: { total: totalNews || 0, published: publishedNews || 0 },
+    testimonials: { total: totalTestimonials || 0, active: activeTestimonials || 0 },
+    partners: { total: totalPartners || 0, active: activePartners || 0 },
+    recentNews: recentNews?.map(n => ({
+      id: n.id,
+      slug: n.slug,
+      title: Array.isArray(n.news_translations)
+        ? n.news_translations[0]?.title
+        : (n.news_translations as { title: string })?.title || 'Sem título',
+      is_published: n.is_published,
+      updated_at: n.updated_at,
+    })) || [],
+  }
+}
 
 export default async function AdminDashboard() {
   const session = await auth()
@@ -17,40 +78,50 @@ export default async function AdminDashboard() {
     redirect('/admin/login')
   }
 
+  const data = await getStats()
+
   const stats = [
     {
-      label: 'Textos',
-      value: '24',
-      change: '3 idiomas',
-      icon: FileText,
-      href: '/admin/textos',
-      color: 'from-blue-500 to-blue-600',
-    },
-    {
       label: 'Notícias',
-      value: '12',
-      change: '3 publicadas',
+      value: String(data.news.total),
+      change: `${data.news.published} publicadas`,
       icon: Newspaper,
       href: '/admin/noticias',
       color: 'from-green-500 to-green-600',
     },
     {
-      label: 'Acessos Hoje',
-      value: '156',
-      change: '+12%',
-      icon: TrendingUp,
-      href: '#',
+      label: 'Depoimentos',
+      value: String(data.testimonials.total),
+      change: `${data.testimonials.active} ativos`,
+      icon: MessageSquareQuote,
+      href: '/admin/depoimentos',
       color: 'from-purple-500 to-purple-600',
     },
-    ...(session.user.role === 'dev'
+    {
+      label: 'Parceiros/Clientes',
+      value: String(data.partners.total),
+      change: `${data.partners.active} ativos`,
+      icon: Handshake,
+      href: '/admin/parceiros',
+      color: 'from-blue-500 to-blue-600',
+    },
+    {
+      label: 'Textos',
+      value: '7',
+      change: '3 idiomas',
+      icon: FileText,
+      href: '/admin/textos',
+      color: 'from-amber-500 to-amber-600',
+    },
+    ...(['dev', 'admin'].includes(session.user.role)
       ? [
           {
             label: 'Usuários',
-            value: '2',
-            change: 'Ativos',
+            value: '—',
+            change: 'Gerenciar',
             icon: Users,
             href: '/admin/usuarios',
-            color: 'from-amber-500 to-amber-600',
+            color: 'from-gray-500 to-gray-600',
           },
         ]
       : []),
@@ -58,16 +129,16 @@ export default async function AdminDashboard() {
 
   const quickActions = [
     {
-      label: 'Editar Textos',
-      description: 'Alterar textos do site em todos os idiomas',
-      href: '/admin/textos',
-      icon: FileText,
-    },
-    {
       label: 'Nova Notícia',
       description: 'Criar uma nova publicação para o blog',
       href: '/admin/noticias/nova',
       icon: Newspaper,
+    },
+    {
+      label: 'Editar Textos',
+      description: 'Alterar textos do site em todos os idiomas',
+      href: '/admin/textos',
+      icon: FileText,
     },
   ]
 
@@ -140,37 +211,45 @@ export default async function AdminDashboard() {
         </div>
       </div>
 
-      {/* Recent Activity */}
+      {/* Recent News */}
       <div>
         <h3 className="text-lg font-semibold text-gray-800 mb-4">
-          Atividade Recente
+          Últimas Notícias
         </h3>
         <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
-          <div className="divide-y divide-gray-100">
-            {[
-              {
-                action: 'Login realizado',
-                user: session.user.name,
-                time: 'Agora',
-              },
-              {
-                action: 'Sistema iniciado',
-                user: 'Sistema',
-                time: 'Hoje',
-              },
-            ].map((activity, i) => (
-              <div key={i} className="p-4 flex items-center gap-4">
-                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                  <Clock className="w-4 h-4 text-gray-400" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm text-gray-800">{activity.action}</p>
-                  <p className="text-xs text-gray-500">por {activity.user}</p>
-                </div>
-                <span className="text-xs text-gray-400">{activity.time}</span>
-              </div>
-            ))}
-          </div>
+          {data.recentNews.length === 0 ? (
+            <div className="p-8 text-center text-gray-500">
+              <Newspaper className="w-10 h-10 mx-auto mb-2 opacity-50" />
+              <p>Nenhuma notícia cadastrada</p>
+            </div>
+          ) : (
+            <div className="divide-y divide-gray-100">
+              {data.recentNews.map((news) => (
+                <Link
+                  key={news.id}
+                  href={`/admin/noticias/${news.id}`}
+                  className="p-4 flex items-center gap-4 hover:bg-gray-50 transition-colors"
+                >
+                  <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                    <Newspaper className="w-4 h-4 text-gray-400" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm text-gray-800 truncate">{news.title}</p>
+                    <p className="text-xs text-gray-500">
+                      {news.is_published ? (
+                        <span className="text-green-600">Publicada</span>
+                      ) : (
+                        <span className="text-amber-600">Rascunho</span>
+                      )}
+                    </p>
+                  </div>
+                  <span className="text-xs text-gray-400 flex-shrink-0">
+                    {new Date(news.updated_at).toLocaleDateString('pt-BR')}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
