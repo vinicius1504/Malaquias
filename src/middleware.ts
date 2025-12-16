@@ -13,9 +13,11 @@ export async function middleware(request: NextRequest) {
   // PROTEÇÃO DE ROTAS ADMIN
   // ==========================================
   if (pathname.startsWith('/admin')) {
+    // NextAuth v5 usa AUTH_SECRET, mas suporta NEXTAUTH_SECRET para compatibilidade
+    const secret = process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET;
     const token = await getToken({
       req: request,
-      secret: process.env.NEXTAUTH_SECRET
+      secret,
     });
     const isLoginPage = pathname === '/admin/login';
 
