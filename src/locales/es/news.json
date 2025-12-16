@@ -1,6 +1,11 @@
 {
   "pageTitle": "Noticias",
   "pageSubtitle": "Siga las últimas novedades, artículos y actualizaciones sobre contabilidad, legislación tributaria y gestión empresarial.",
+  "searchPlaceholder": "Buscar noticias...",
+  "searchButton": "Buscar",
+  "clearFilters": "Limpiar filtros",
+  "searchLabel": "Búsqueda",
+  "noResults": "No se encontraron noticias.",
   "readMore": "Leer más",
   "pagination": {
     "previous": "Anterior",
