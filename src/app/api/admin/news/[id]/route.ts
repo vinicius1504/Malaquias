@@ -3,6 +3,9 @@ import { auth } from '@/lib/auth'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
+// Força rota dinâmica
+export const dynamic = 'force-dynamic'
+
 async function getSupabase() {
   const cookieStore = await cookies()
   return createServerClient(

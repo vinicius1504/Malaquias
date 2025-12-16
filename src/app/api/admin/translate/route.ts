@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
 import { GoogleGenerativeAI } from '@google/generative-ai'
 
+// Força rota dinâmica
+export const dynamic = 'force-dynamic'
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '')
 
 interface TranslateRequest {

@@ -3,6 +3,9 @@ import { auth } from '@/lib/auth'
 import fs from 'fs/promises'
 import path from 'path'
 
+// Força rota dinâmica
+export const dynamic = 'force-dynamic'
+
 const LOCALES_DIR = path.join(process.cwd(), 'src', 'locales')
 
 // GET - Listar arquivos de tradução ou buscar conteúdo de um arquivo

@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
+// Força rota dinâmica (não pode ser estática por usar request.url)
+export const dynamic = 'force-dynamic'
+
 // Usa service_role para bypass do RLS em API de servidor
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,

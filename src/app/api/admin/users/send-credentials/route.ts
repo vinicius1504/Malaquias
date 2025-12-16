@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
+// Força rota dinâmica
+export const dynamic = 'force-dynamic'
+
 // Criar transporter do Nodemailer
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,

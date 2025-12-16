@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
+// Força rota dinâmica (não pode ser estática por usar request.url)
+export const dynamic = 'force-dynamic'
+
 async function getSupabase() {
   const cookieStore = await cookies()
   return createServerClient(
