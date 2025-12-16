@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import BrazilMap from '@/components/ui/BrazilMap';
+import SegmentsCarousel from '@/components/ui/SegmentsCarousel';
 
 export default function CoverageMapSection() {
   const handleStateClick = (stateId: string, stateName: string) => {
@@ -44,6 +45,21 @@ export default function CoverageMapSection() {
             </div>
           </motion.div>
         </div>
+
+        {/* Segmentos Carousel */}
+        <motion.div
+          className="mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h3 className="text-xl md:text-2xl font-heading font-bold text-dark-900 mb-2 text-center">
+            Segmentos que Atendemos
+          </h3>
+          <div className="w-24 h-[2px] bg-gold-500 mx-auto mb-10" />
+          <SegmentsCarousel />
+        </motion.div>
       </div>
     </section>
   );
