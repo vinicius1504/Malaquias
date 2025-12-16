@@ -11,6 +11,7 @@ import TestimonialsCarousel from '@/components/ui/TestimonialsCarousel';
 import BlogSection from '@/components/ui/BlogSection';
 import FAQSection from '@/components/sections/FAQSection';
 import HeroSection from '@/components/sections/HeroSection';
+import CoverageMapSection from '@/components/sections/CoverageMapSection';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
 export default function HomeContent() {
@@ -105,6 +106,9 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
+
+      {/* Cobertura / Mapa do Brasil */}
+      <CoverageMapSection />
 
       {/* Nossos Clientes */}
       <section id="clientes" className="min-h-screen flex flex-col justify-center py-24 bg-[#f5f5f5]">
