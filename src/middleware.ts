@@ -15,9 +15,19 @@ export async function middleware(request: NextRequest) {
   if (pathname.startsWith('/admin')) {
     // NextAuth v5 usa AUTH_SECRET, mas suporta NEXTAUTH_SECRET para compatibilidade
     const secret = process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET;
+
+    // NextAuth v5 usa cookies com prefixo diferente em produção (HTTPS)
+    // Em produção: __Secure-authjs.session-token
+    // Em dev: authjs.session-token
+    const isSecure = request.url.startsWith('https://');
+    const cookieName = isSecure
+      ? '__Secure-authjs.session-token'
+      : 'authjs.session-token';
+
     const token = await getToken({
       req: request,
       secret,
+      cookieName,
     });
     const isLoginPage = pathname === '/admin/login';
 
