@@ -28,7 +28,6 @@ export async function POST(request: NextRequest) {
     if (!session) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
-
     if (!apiKey) {
       return NextResponse.json(
         { error: 'GEMINI_API_KEY não configurada' },
