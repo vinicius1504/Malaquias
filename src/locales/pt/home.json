@@ -1,123 +1,4 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "Quem Somos",
-    "services": "Serviços",
-    "news": "Notícias",
-    "contact": "Contato",
-    "careers": "Clientes"
-  },
-  "sectionTitles": {
-    "areas": "Serviços",
-    "about": "Quem Somos",
-    "whyPart1": "Por que a",
-    "whyPart2": "Malaquias Contabilidade?",
-    "clients": "Nossos Clientes",
-    "partners": "Nossos Parceiros",
-    "testimonials": "Depoimentos",
-    "blog": "Notícias",
-    "faq": "Perguntas Frequentes",
-    "heroTitle1": "Menos",
-    "heroHighlight1": "impostos",
-    "heroTitle2": "mais",
-    "heroHighlight2": "lucro no seu bolso"
-  },
-  "about": {
-    "hero": {
-      "title1": "O escritório",
-      "highlight1": "Malaquias Contabilidade",
-      "description1": "é um escritório especializado em atender clientes exigentes, que valorizam",
-      "emphasis1": "excelência, precisão e profissionalismo",
-      "description2": "em serviços contábeis.",
-      "title2": "Desde",
-      "highlight2": "2010",
-      "description3": ", construímos uma trajetória sólida no mercado, oferecendo",
-      "emphasis2": "soluções completas e personalizadas",
-      "description4": "para empresas de todos os portes — do",
-      "emphasis3": "pequeno empreendedor ao grande empresário",
-      "description5": "— sempre com foco em",
-      "emphasis4": "crescimento sustentável, economia tributária e saúde financeira do negócio."
-    },
-    "items": [
-      {
-        "title": "Nossa missão",
-        "content": "Oferecer soluções contábeis estratégicas que geram economia tributária real, promovendo crescimento sustentável e segurança para nossos clientes."
-      },
-      {
-        "title": "Nossa visão",
-        "content": "Ser referência nacional em contabilidade consultiva, unindo tecnologia de ponta e atendimento humanizado para transformar a gestão financeira das empresas."
-      },
-      {
-        "title": "Nossos Valores",
-        "content": "Ética, transparência, comprometimento com resultados e relacionamento próximo com cada cliente, tratando seu negócio como se fosse o nosso."
-      },
-      {
-        "title": "Eficiência",
-        "content": "Processos otimizados e tecnologia integrada para entregar informações precisas no menor tempo, permitindo decisões ágeis e assertivas."
-      },
-      {
-        "title": "Atualização",
-        "content": "Equipe em constante capacitação, acompanhando mudanças na legislação tributária para garantir conformidade e aproveitar oportunidades legais de economia."
-      }
-    ]
-  },
-  "faq": {
-    "items": [
-      {
-        "question": "Quanto custa os serviços da Malaquias Contabilidade?",
-        "answer": "Os honorários são definidos de acordo com o porte, o regime tributário e a complexidade da operação da sua empresa. Em geral, os valores são muito inferiores à economia tributária que a estrutura correta pode gerar. O primeiro passo é uma análise gratuita para entender sua realidade e montar uma proposta sob medida."
-      },
-      {
-        "question": "Vocês atendem empresas de todo o Brasil?",
-        "answer": "Sim. O escritório atua de forma 100% digital, atendendo clientes em diversos estados, com foco especial em varejo, e-commerce, indústria e clínicas médicas. Toda a comunicação é feita por canais online, sem perder a proximidade no atendimento."
-      },
-      {
-        "question": "Como funciona o planejamento tributário?",
-        "answer": "Realizamos um estudo do faturamento, margens, despesas e enquadramento atual para identificar oportunidades de economia. Comparamos regimes tributários, analisamos benefícios legais aplicáveis ao seu segmento e sugerimos ajustes estruturais sempre com segurança jurídica."
-      },
-      {
-        "question": "Qual o prazo para abertura de empresa?",
-        "answer": "O prazo varia conforme o tipo de empresa e o município, mas em muitos casos conseguimos concluir o processo em poucos dias úteis, desde que toda a documentação seja enviada corretamente. Você acompanha o andamento com o suporte da nossa equipe."
-      },
-      {
-        "question": "Como acesso relatórios e dashboards?",
-        "answer": "Após a implantação, você passa a contar com relatórios periódicos e dashboards em Power BI, acessíveis pela internet, que mostram os principais indicadores do negócio em tempo quase real. Assim, fica mais fácil acompanhar resultados e tomar decisões."
-      }
-    ]
-  },
-  "blog": {
-    "readMore": "Ler mais",
-    "viewAll": "Ver todas as notícias",
-    "items": [
-      {
-        "id": 1,
-        "title": "Planejamento Tributário para Clínicas Médicas: o poder da equiparação hospitalar",
-        "excerpt": "Veja como clínicas e serviços de saúde podem reduzir a carga tributária de forma significativa por meio da equiparação hospitalar, com segurança e planejamento.",
-        "image": "/images/noticia-clinicas-medicas.png",
-        "date": "2025-09-28",
-        "category": "Saúde",
-        "slug": "planejamento-tributario-clinicas-medicas-equiparacao-hospitalar"
-      },
-      {
-        "id": 2,
-        "title": "Planejamento Tributário para Varejo e E-commerce: como pagar menos impostos",
-        "excerpt": "Entenda os principais pontos de atenção para lojas físicas e e-commerces que desejam estruturar o planejamento tributário e reduzir custos com impostos.",
-        "image": "/images/noticia-varejo-ecommerce.png",
-        "date": "2025-09-28",
-        "category": "Varejo e E-commerce",
-        "slug": "planejamento-tributario-varejo-e-ecommerce"
-      },
-      {
-        "id": 3,
-        "title": "Entenda o PL 1.087/2025: nova tributação sobre lucros e altas rendas",
-        "excerpt": "Resumo das principais mudanças propostas pelo PL 1.087/2025 e seus impactos para empresários e pessoas físicas de alta renda.",
-        "image": "/images/noticia-pl-1087-2025.png",
-        "date": "2025-09-28",
-        "category": "Legislação",
-        "slug": "pl-1087-2025-lucros-e-altas-rendas"
-      }
-    ]
-  },
   "hero": {
     "badge": "Sua referência em contabilidade",
     "title": "Aqui, contabilidade é menos impostos e mais lucro no seu bolso.",
@@ -158,145 +39,33 @@
   },
   "segments": {
     "badge": "Segmentos",
-    "title": "Experiência em diversos segmentos",
+    "title": "Segmentos que Atendemos",
     "subtitle": "Atuação forte em saúde, varejo físico e digital, serviços e indústria.",
-    "items": [
-      {
-        "icon": "medical",
-        "title": "Clínicas e Saúde",
-        "description": "Estruturação tributária para clínicas, consultórios e serviços de saúde, incluindo estratégias como equiparação hospitalar."
-      },
-      {
-        "icon": "store",
-        "title": "Varejo e E-commerce",
-        "description": "Planejamento para lojas físicas e online, com foco em redução de PIS, COFINS, ICMS e ICMS-ST e melhor formação de preços."
-      },
-      {
-        "icon": "services",
-        "title": "Prestadores de Serviço",
-        "description": "Profissionais liberais e empresas de serviços com acompanhamento de fluxo de caixa, faturamento e carga tributária."
-      },
-      {
-        "icon": "industry",
-        "title": "Indústria",
-        "description": "Suporte na apuração de tributos e no controle fiscal para empresas industriais que precisam de organização e previsibilidade."
-      },
-      {
-        "icon": "tech",
-        "title": "Tecnologia e Startups",
-        "description": "Startups e empresas de tecnologia com foco em escalabilidade, compliance e indicadores para investidores."
-      },
-      {
-        "icon": "other",
-        "title": "Outros Setores",
-        "description": "Comércio, serviços e negócios de diferentes portes que buscam contabilidade parceira do crescimento."
-      }
-    ]
+    "prefix": "Contabilidade para"
   },
-  "testimonials": {
-    "badge": "Depoimentos",
-    "title": "O que dizem nossos clientes",
-    "subtitle": "Empresários que transformaram a relação com a contabilidade.",
-    "items": [
-      {
-        "name": "Luciana Schneider",
-        "role": "Empresária",
-        "company": "",
-        "content": "Equipe atenciosa, prazos cumpridos e comunicação rápida. A sensação é de ter um time de apoio olhando de perto para a empresa o tempo todo."
-      },
-      {
-        "name": "Dra. Marina Araujo",
-        "role": "Médica",
-        "company": "",
-        "content": "Desde a primeira conversa, o atendimento foi muito esclarecedor. Hoje consigo entender exatamente quanto pago de impostos e por quê."
-      },
-      {
-        "name": "Dr. Flavio Cavalcanti",
-        "role": "Empresário",
-        "company": "",
-        "content": "O suporte é ágil e o sistema utilizado é simples de usar. As informações estão sempre atualizadas, o que traz segurança na tomada de decisão."
-      }
-    ]
+  "coverage": {
+    "title": "Presença que Gera Confiança",
+    "description1": "Estamos presentes nos principais estados do país, oferecendo soluções contábeis digitais com a mesma eficiência e qualidade em cada região.",
+    "description2": "Atuamos com tecnologia, proximidade e compromisso, conectando empresas a resultados em todo o Brasil."
   },
-  "contact": {
-    "badge": "Contato",
-    "title": "Fale com a Malaquias Contabilidade",
-    "subtitle": "Envie uma mensagem ou fale diretamente pelo WhatsApp com nossa equipe especializada.",
-    "email": "E-mail",
-    "phone": "Telefone",
-    "whatsapp": "WhatsApp",
-    "whatsappCta": "Falar com um especialista no WhatsApp",
-    "infoTitle": "Entre em contato",
-    "infoDescription": "Conte um pouco sobre a sua empresa, o segmento em que atua e quais são as suas principais dores hoje. Vamos analisar seu caso e indicar os próximos passos.",
-    "mapPlaceholder": "Mapa das unidades de Campo Grande/MS e São Paulo/SP",
-    "form": {
-      "name": "Nome completo",
-      "namePlaceholder": "Seu nome",
-      "email": "E-mail",
-      "emailPlaceholder": "seu@email.com",
-      "company": "Empresa (opcional)",
-      "companyPlaceholder": "Nome da sua empresa",
-      "message": "Mensagem",
-      "messagePlaceholder": "Descreva brevemente sua necessidade ou dúvida",
-      "submit": "Enviar mensagem"
-    }
+  "sectionTitles": {
+    "heroTitle1": "Aqui, contabilidade é",
+    "heroHighlight1": "menos impostos",
+    "heroTitle2": "mais lucro",
+    "heroHighlight2": "no seu bolso",
+    "areas": "Serviços",
+    "sections": "Especialistas em Diversos Setores da Economia",
+    "about": "Quem Somos",
+    "whyPart1": "Por que a",
+    "whyPart2": "Malaquias Contabilidade?",
+    "clients": "Nossos Clientes",
+    "partners": "Nossos Parceiros",
+    "testimonials": "Depoimentos",
+    "blog": "Notícias",
+    "faq": "Perguntas Frequentes"
   },
-  "footer": {
-    "cta": "Quer pagar menos impostos com segurança?",
-    "ctaButton": "Fale com um especialista",
-    "locations": {
-      "title": "Onde estamos",
-      "matriz": {
-        "title": "Matriz - Campo Grande/MS",
-        "phone": {
-          "icon": "phone",
-          "text": "(67) 99661-7549"
-        },
-        "email": {
-          "icon": "mail",
-          "text": "contato@malaquiascontabilidade.com.br"
-        },
-        "address": {
-          "icon": "mapPin",
-          "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS"
-        }
-      },
-      "filial": {
-        "title": "Filial - São Paulo/SP",
-        "phone": {
-          "icon": "phone",
-          "text": "(11) 91939-7549"
-        },
-        "email": {
-          "icon": "mail",
-          "text": "contato@malaquiascontabilidade.com.br"
-        },
-        "address": {
-          "icon": "mapPin",
-          "text": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP"
-        }
-      },
-      "filialRJ": {
-        "title": "Filial - Rio de Janeiro/RJ",
-        "phone": {
-          "icon": "phone",
-          "text": "(11) 91947-7549"
-        },
-        "email": {
-          "icon": "mail",
-          "text": "contato@malaquiascontabilidade.com.br"
-        },
-        "address": {
-          "icon": "mapPin",
-          "text": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ"
-        }
-      }
-    },
-    "registrations": {
-      "crc": "CRC Escritório: MS-001614/O",
-      "crcRt": "CRC RT: MS-0011173/O",
-      "cnpj": "CNPJ: 34.858.471/0001-57"
-    },
-    "copyright": "© 2025 Malaquias Contabilidade. Todos os direitos reservados."
+  "blog": {
+    "readMore": "Ler mais",
+    "viewAll": "Ver todas as notícias"
   }
 }

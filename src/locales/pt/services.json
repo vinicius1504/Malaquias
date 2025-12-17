@@ -4,11 +4,11 @@
   "subtitle": "Uma estrutura completa para reduzir impostos, organizar as finanças e garantir segurança fiscal para a sua empresa.",
   "items": [
     {
-      "slug": "abertura-reestruturacao-empresas",
+      "slug": " Abertura e Reestruturação de Empresas",
       "icon": "building",
       "model3D": "/images/models/Reestruturacao_de_empresa.glb",
-      "title": "Abertura e Reestruturação de Empresas",
-      "shortDescription": "Análise do modelo de negócio, escolha do regime tributário, elaboração de contrato social e regularização completa da empresa.",
+      "title": "Start Contábil – Abertura de Empresa 100% Digital",
+      "shortDescription": "Abrimos sua empresa com agilidade, segurança e acompanhamento próximo.\nProcessos digitais, orientação estratégica e suporte presencial quando você precisar.",
       "heroTitle": "Abertura e Reestruturação de Empresas",
       "video": "/images/videos/services_video.mp4",
       "description": [
@@ -28,8 +28,8 @@
       "slug": "consultoria-gestao-financeira",
       "icon": "chart",
       "model3D": "/images/models/model_consultoria.glb",
-      "title": "Consultoria em Gestão Financeira",
-      "shortDescription": "Apoio estratégico na organização do fluxo de caixa, formação de preço, análise de resultados e construção de indicadores financeiros.",
+      "title": "Finance Smart – Gestão e Performance Empresarial",
+      "shortDescription": "Transformamos números em decisões inteligentes.\nGestão financeira com tecnologia, análise estratégica e acompanhamento personalizado.",
       "heroTitle": "Consultoria em Gestão Financeira",
       "video": "/images/videos/services_video.mp4",
       "description": [
@@ -49,8 +49,8 @@
       "slug": "auditoria-revisao-fiscal",
       "icon": "shieldCheck",
       "model3D": "/images/models/model_auditoria.glb",
-      "title": "Auditoria, Revisão Fiscal e Recuperação Tributária",
-      "shortDescription": "Revisão detalhada de apurações e obrigações para identificar créditos e oportunidades de recuperação de tributos pagos a maior.",
+      "title": "Tax Review – Diagnóstico Tributário Inteligente",
+      "shortDescription": "Identificamos oportunidades de economia e corrigimos inconsistências fiscais.\nTecnologia avançada aliada à experiência contábil para reduzir riscos e impostos.",
       "heroTitle": "Auditoria, Revisão Fiscal e Recuperação Tributária",
       "video": "/images/videos/services_video.mp4",
       "description": [
@@ -70,8 +70,8 @@
       "slug": "escrita-contabil-fiscal",
       "icon": "document",
       "model3D": "/images/models/model_escrita.glb",
-      "title": "Escrita Contábil e Fiscal",
-      "shortDescription": "Escrituração contábil e fiscal completa, emissão de demonstrações financeiras e cumprimento de obrigações acessórias.",
+      "title": "Contabilidade em Nuvem – Dados em Tempo Real",
+      "shortDescription": "Sua contabilidade integrada, segura e sempre atualizada.\nSistemas próprios, relatórios claros e acesso rápido às informações do seu negócio.",
       "heroTitle": "Escrita Contábil e Fiscal",
       "video": "/images/videos/services_video.mp4",
       "description": [
@@ -91,8 +91,8 @@
       "slug": "departamento-pessoal",
       "icon": "users",
       "model3D": "/images/models/model_dp.glb",
-      "title": "Departamento Pessoal",
-      "shortDescription": "Gestão de folha de pagamento, admissões, rescisões, férias, eSocial e demais rotinas trabalhistas.",
+      "title": "RH Digital – Gestão de Pessoas Descomplicada",
+      "shortDescription": "Cuidamos da folha, obrigações e rotinas trabalhistas com precisão. Processos digitais, conformidade legal e atendimento humano de perto.",
       "heroTitle": "Departamento Pessoal",
       "video": "/images/videos/services_video.mp4",
       "description": [
@@ -112,8 +112,8 @@
       "slug": "imposto-renda-pessoa-fisica",
       "icon": "userTax",
       "model3D": "/images/models/model_irpf.glb",
-      "title": "Imposto de Renda Pessoa Física",
-      "shortDescription": "Atendimento especializado para declarações de IRPF, situações complexas, ganho de capital e investimentos.",
+      "title": "IR Digital – Simples, Rápido e Seguro",
+      "shortDescription": "Declaração de Imposto de Renda feita com atenção aos detalhes.\nAtendimento personalizado, tecnologia e foco na melhor restituição possível.",
       "heroTitle": "Imposto de Renda Pessoa Física",
       "video": "/images/videos/services_video.mp4",
       "description": [
@@ -133,8 +133,8 @@
       "slug": "certificacao-digital",
       "icon": "certificate",
       "model3D": "/images/models/model_certificado.glb",
-      "title": "Certificação Digital",
-      "shortDescription": "Orientação e intermediação na emissão de certificados digitais para pessoas físicas e jurídicas.",
+      "title": "ID Segura – Sua Assinatura Digital em Minutos",
+      "shortDescription": "Emissão e renovação de certificado digital com total segurança. Atendimento rápido, suporte técnico e comodidade para pessoas físicas e empresas.",
       "heroTitle": "Certificação Digital",
       "video": "/images/videos/services_video.mp4",
       "description": [

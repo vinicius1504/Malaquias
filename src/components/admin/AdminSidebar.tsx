@@ -13,6 +13,7 @@ import {
   Shield,
   Handshake,
   MessageSquareQuote,
+  Layers,
 } from 'lucide-react'
 import type { UserRole } from '@/types/database'
 
@@ -53,6 +54,12 @@ const menuItems = [
     label: 'Depoimentos',
     href: '/admin/depoimentos',
     icon: MessageSquareQuote,
+    roles: ['dev', 'admin'],
+  },
+  {
+    label: 'Segmentos',
+    href: '/admin/segmentos',
+    icon: Layers,
     roles: ['dev', 'admin'],
   },
   {

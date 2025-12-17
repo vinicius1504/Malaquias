@@ -45,19 +45,23 @@ export async function POST(request: NextRequest) {
     }
 
     // Validar tipo de arquivo
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
-    if (!allowedTypes.includes(file.type)) {
+    const allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
+    const allowedVideoTypes = ['video/mp4', 'video/webm']
+    const isImage = allowedImageTypes.includes(file.type)
+    const isVideo = allowedVideoTypes.includes(file.type)
+
+    if (!isImage && !isVideo) {
       return NextResponse.json(
-        { error: 'Tipo de arquivo não permitido. Use: JPG, PNG, WebP ou GIF' },
+        { error: 'Tipo de arquivo não permitido. Use: JPG, PNG, WebP, GIF, MP4 ou WebM' },
         { status: 400 }
       )
     }
 
-    // Validar tamanho (máx 5MB)
-    const maxSize = 5 * 1024 * 1024
+    // Validar tamanho (máx 15MB para imagens, 50MB para vídeos)
+    const maxSize = isVideo ? 50 * 1024 * 1024 : 15 * 1024 * 1024
     if (file.size > maxSize) {
       return NextResponse.json(
-        { error: 'Arquivo muito grande. Máximo: 5MB' },
+        { error: `Arquivo muito grande. Máximo: ${isVideo ? '50MB' : '15MB'}` },
         { status: 400 }
       )
     }
@@ -70,9 +74,9 @@ export async function POST(request: NextRequest) {
     const randomId = Math.random().toString(36).substring(2, 8)
     const fileName = `${timestamp}-${randomId}.${fileExt}`
 
-    // Verificar pasta de destino (news, partners ou testimonials)
+    // Verificar pasta de destino
     const folder = formData.get('folder') as string || 'news'
-    const allowedFolders = ['news', 'partners', 'testimonials']
+    const allowedFolders = ['news', 'partners', 'testimonials', 'segments', 'segments/videos']
     const finalFolder = allowedFolders.includes(folder) ? folder : 'news'
     const filePath = `${finalFolder}/${fileName}`
 

@@ -88,6 +88,17 @@ export interface TestimonialTranslation {
   content: string
 }
 
+export interface Segment {
+  id: string
+  title: string
+  image_url: string | null
+  video_url: string | null
+  is_active: boolean
+  display_order: number
+  created_at: string
+  updated_at: string
+}
+
 // Database schema para Supabase
 export interface Database {
   public: {
@@ -131,6 +142,11 @@ export interface Database {
         Row: TestimonialTranslation
         Insert: Omit<TestimonialTranslation, 'id'>
         Update: Partial<Omit<TestimonialTranslation, 'id'>>
+      }
+      segments: {
+        Row: Segment
+        Insert: Omit<Segment, 'id' | 'created_at' | 'updated_at'>
+        Update: Partial<Omit<Segment, 'id'>>
       }
     }
   }

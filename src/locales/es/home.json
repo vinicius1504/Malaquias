@@ -1,124 +1,4 @@
 {
-  "nav": {
-    "home": "Inicio",
-    "about": "Quiénes Somos",
-    "services": "Servicios",
-    "news": "Noticias",
-    "contact": "Contacto",
-    "blog": "Blog",
-    "careers": "Trabaja con Nosotros"
-  },
-  "sectionTitles": {
-    "areas": "Áreas de actuación",
-    "about": "Quiénes Somos",
-    "whyPart1": "¿Por qué",
-    "whyPart2": "Malaquias Contabilidad?",
-    "clients": "Nuestros Clientes",
-    "partners": "Nuestros Socios",
-    "testimonials": "Testimonios",
-    "blog": "Últimas Noticias",
-    "faq": "Preguntas Frecuentes",
-    "heroTitle1": "Menos",
-    "heroHighlight1": "impuesto",
-    "heroTitle2": "más",
-    "heroHighlight2": "lucro"
-  },
-  "about": {
-    "hero": {
-      "title1": "La oficina",
-      "highlight1": "Malaquias Contabilidad",
-      "description1": "es un despacho especializado en atender clientes exigentes, que valoran",
-      "emphasis1": "excelencia, precisión y profesionalismo",
-      "description2": "en servicios contables.",
-      "title2": "Desde",
-      "highlight2": "2010",
-      "description3": ", hemos construido una sólida trayectoria en el mercado, ofreciendo",
-      "emphasis2": "soluciones completas y personalizadas",
-      "description4": "para empresas de todos los tamaños — desde",
-      "emphasis3": "pequeños emprendedores hasta grandes empresarios",
-      "description5": "— siempre con enfoque en",
-      "emphasis4": "crecimiento sostenible, ahorro tributario y salud financiera del negocio."
-    },
-    "items": [
-      {
-        "title": "Nuestra Misión",
-        "content": "Ofrecer soluciones contables estratégicas que generan ahorro tributario real, promoviendo crecimiento sostenible y seguridad para nuestros clientes."
-      },
-      {
-        "title": "Nuestra Visión",
-        "content": "Ser referencia nacional en contabilidad consultiva, uniendo tecnología de punta y atención humanizada para transformar la gestión financiera de las empresas."
-      },
-      {
-        "title": "Nuestros Valores",
-        "content": "Ética, transparencia, compromiso con resultados y relación cercana con cada cliente, tratando su negocio como si fuera el nuestro."
-      },
-      {
-        "title": "Eficiencia",
-        "content": "Procesos optimizados y tecnología integrada para entregar información precisa en el menor tiempo, permitiendo decisiones ágiles y acertadas."
-      },
-      {
-        "title": "Actualización",
-        "content": "Equipo en constante capacitación, acompañando cambios en la legislación tributaria para garantizar conformidad y aprovechar oportunidades legales de ahorro."
-      }
-    ]
-  },
-  "faq": {
-    "items": [
-      {
-        "question": "¿Cuánto cuestan los servicios de Malaquias Contabilidad?",
-        "answer": "Los valores varían según el tamaño de la empresa y los servicios contratados. Ofrecemos planes desde R$ 299/mes para MEI y valores personalizados para empresas mayores. Contáctenos para un presupuesto personalizado."
-      },
-      {
-        "question": "¿Atienden empresas de todo Brasil?",
-        "answer": "¡Sí! Somos 100% digitales y atendemos empresas de cualquier estado brasileño. Todo el proceso se realiza online, de forma práctica y segura."
-      },
-      {
-        "question": "¿Cómo funciona la planificación tributaria?",
-        "answer": "Analizamos detalladamente su empresa para identificar oportunidades legales de reducción de impuestos. Evaluamos el mejor régimen tributario, beneficios fiscales aplicables y estrategias para optimizar su carga tributaria."
-      },
-      {
-        "question": "¿Cuál es el plazo para abrir una empresa?",
-        "answer": "El plazo promedio es de 7 a 15 días hábiles, dependiendo del tipo de empresa y ubicación. Nos encargamos de toda la burocracia por usted."
-      },
-      {
-        "question": "¿Cómo accedo a los dashboards en Power BI?",
-        "answer": "Tras la contratación, recibirá acceso a una plataforma exclusiva donde podrá visualizar todos los informes e indicadores de su empresa en tiempo real desde cualquier dispositivo."
-      }
-    ]
-  },
-  "blog": {
-    "readMore": "Leer más",
-    "viewAll": "Ver todas las noticias",
-    "items": [
-      {
-        "id": 1,
-        "title": "Reforma Tributaria 2025: Qué cambia para su empresa",
-        "excerpt": "Entienda los principales cambios de la reforma tributaria y cómo prepararse para las nuevas reglas fiscales.",
-        "image": "/images/noticia-exemplo.png",
-        "date": "2024-12-05",
-        "category": "Tributario",
-        "slug": "reforma-tributaria-2025"
-      },
-      {
-        "id": 2,
-        "title": "5 Estrategias para Reducir Impuestos Legalmente",
-        "excerpt": "Descubra cómo la planificación tributaria puede ayudar a su empresa a ahorrar e incrementar la rentabilidad legalmente.",
-        "image": "/images/noticia-exemplo.png",
-        "date": "2024-12-01",
-        "category": "Planificación",
-        "slug": "estrategias-reducir-impuestos"
-      },
-      {
-        "id": 3,
-        "title": "MEI 2025: Nuevo Límite de Facturación",
-        "excerpt": "El gobierno anuncia aumento en el límite de facturación del MEI. Sepa si puede beneficiarse con este cambio.",
-        "image": "/images/noticia-exemplo.png",
-        "date": "2024-11-28",
-        "category": "MEI",
-        "slug": "mei-2025-nuevo-limite"
-      }
-    ]
-  },
   "hero": {
     "badge": "Contabilidad Digital",
     "title": "Menos impuestos. Más lucro y control para su empresa.",
@@ -159,118 +39,33 @@
   },
   "segments": {
     "badge": "Segmentos",
-    "title": "Atendemos diversos segmentos",
+    "title": "Segmentos que Atendemos",
     "subtitle": "Experiencia comprobada en diferentes sectores de la economía.",
-    "items": [
-      {
-        "icon": "store",
-        "title": "Comercio",
-        "description": "Minorista, mayorista y e-commerce con gestión tributaria optimizada."
-      },
-      {
-        "icon": "medical",
-        "title": "Salud",
-        "description": "Clínicas, consultorios y profesionales del área de salud."
-      },
-      {
-        "icon": "tech",
-        "title": "Tecnología",
-        "description": "Startups, SaaS y empresas de desarrollo de software."
-      },
-      {
-        "icon": "industry",
-        "title": "Industria",
-        "description": "Manufactura y producción con control fiscal especializado."
-      },
-      {
-        "icon": "services",
-        "title": "Prestadores de Servicios",
-        "description": "Profesionales independientes y empresas de servicios diversos."
-      },
-      {
-        "icon": "startup",
-        "title": "Startups",
-        "description": "Apoyo contable para empresas en fase de crecimiento acelerado."
-      }
-    ]
+    "prefix": "Contabilidad para"
   },
-  "testimonials": {
-    "badge": "Testimonios",
-    "title": "Lo que dicen nuestros clientes",
-    "subtitle": "Historias reales de empresarios que transformaron su gestión con Malaquias.",
-    "items": [
-      {
-        "name": "Carlos Silva",
-        "role": "CEO",
-        "company": "TechStart",
-        "content": "Malaquias transformó nuestra visión sobre contabilidad. Los dashboards en Power BI nos ofrecen claridad total sobre la salud financiera de la empresa."
-      },
-      {
-        "name": "Ana Santos",
-        "role": "Directora Financiera",
-        "company": "Clínica Vida",
-        "content": "Reducimos nuestra carga tributaria en un 30% con la planificación de Malaquias. El retorno fue inmediato."
-      },
-      {
-        "name": "Roberto Oliveira",
-        "role": "Fundador",
-        "company": "E-commerce Plus",
-        "content": "Atención excepcional y 100% digital. Puedo resolver todo por WhatsApp y seguir mis números en tiempo real."
-      }
-    ]
+  "coverage": {
+    "title": "Presencia que Genera Confianza",
+    "description1": "Estamos presentes en los principales estados del país, ofreciendo soluciones contables digitales con la misma eficiencia y calidad en cada región.",
+    "description2": "Actuamos con tecnología, proximidad y compromiso, conectando empresas a resultados en todo Brasil."
   },
-  "contact": {
-    "badge": "Contacto",
-    "title": "¿Hablamos?",
-    "subtitle": "Póngase en contacto y descubra cómo podemos ayudar a su empresa a crecer.",
-    "email": "Correo electrónico",
-    "phone": "Teléfono",
-    "whatsapp": "WhatsApp",
-    "whatsappCta": "Enviar mensaje por WhatsApp",
-    "infoTitle": "Hable con nosotros",
-    "infoDescription": "Nuestro equipo está listo para atenderlo. Elija el canal que prefiera o complete el formulario.",
-    "mapPlaceholder": "El mapa se cargará aquí",
-    "form": {
-      "name": "Nombre completo",
-      "namePlaceholder": "Su nombre",
-      "email": "Correo electrónico",
-      "emailPlaceholder": "su@email.com",
-      "company": "Empresa (opcional)",
-      "companyPlaceholder": "Nombre de su empresa",
-      "message": "Mensaje",
-      "messagePlaceholder": "¿Cómo podemos ayudar?",
-      "submit": "Enviar mensaje"
-    }
+  "sectionTitles": {
+    "heroTitle1": "Aquí, contabilidad es",
+    "heroHighlight1": "menos impuestos",
+    "heroTitle2": "más lucro",
+    "heroHighlight2": "en su bolsillo",
+    "areas": "Servicios",
+    "sections": "Especialistas en Diversos Sectores de la Economía",
+    "about": "Quiénes Somos",
+    "whyPart1": "¿Por qué",
+    "whyPart2": "Malaquias Contabilidad?",
+    "clients": "Nuestros Clientes",
+    "partners": "Nuestros Socios",
+    "testimonials": "Testimonios",
+    "blog": "Noticias",
+    "faq": "Preguntas Frecuentes"
   },
-  "footer": {
-    "cta": "Póngase en contacto y haga una simulación",
-    "ctaButton": "Contactar",
-    "locations": {
-      "title": "Dónde estamos",
-      "matriz": {
-        "title": "Matriz - Campo Grande/MS",
-        "phone": { "icon": "phone", "text": "(67) 99661-7549" },
-        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS" }
-      },
-      "filial": {
-        "title": "Sucursal - São Paulo/SP",
-        "phone": { "icon": "phone", "text": "(11) 91939-7549" },
-        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP" }
-      },
-      "filialRJ": {
-        "title": "Sucursal - Rio de Janeiro/RJ",
-        "phone": { "icon": "phone", "text": "(11) 91947-7549" },
-        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ" }
-      }
-    },
-    "registrations": {
-      "crc": "CRC Oficina: MS-001614/O",
-      "crcRt": "CRC RT: MS-0011173/O",
-      "cnpj": "CNPJ: 34.858.471/0001-57"
-    },
-    "copyright": "© 2025 Malaquias Contabilidad. Todos los derechos reservados."
+  "blog": {
+    "readMore": "Leer más",
+    "viewAll": "Ver todas las noticias"
   }
 }

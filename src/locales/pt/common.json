@@ -1,16 +1,22 @@
 {
   "nav": {
+    "home": "Home",
+    "about": "Quem Somos",
     "services": "Serviços",
+    "news": "Notícias",
+    "contact": "Contato",
+    "clients": "Clientes",
     "whyUs": "Por que a Malaquias",
-    "segments": "Sementar",
+    "segments": "Segmentos",
     "testimonials": "Depoimentos",
     "faq": "FAQ",
-    "contact": "Contato",
     "cta": "Fale com um especialista",
     "changeLanguage": "Mudar idioma"
   },
   "footer": {
     "description": "A Malaquias Contabilidade transforma obrigações fiscais em estratégia de crescimento. Planejamento tributário, gestão financeira e dashboards inteligentes para você pagar menos impostos, com segurança, e ter mais lucro no seu bolso.",
+    "cta": "Quer pagar menos impostos com segurança?",
+    "ctaButton": "Fale com um especialista",
     "services": "Serviços",
     "company": "Empresa",
     "contact": "Contato",
@@ -24,7 +30,33 @@
       "testimonials": "Depoimentos",
       "faq": "Perguntas Frequentes"
     },
-    "copyright": "© {{year}} {{name}}. Todos os direitos reservados.",
+    "locations": {
+      "title": "Onde estamos",
+      "matriz": {
+        "title": "Matriz - Campo Grande/MS",
+        "phone": "(67) 99661-7549",
+        "email": "contato@malaquiascontabilidade.com.br",
+        "address": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS"
+      },
+      "filial": {
+        "title": "Filial - São Paulo/SP",
+        "phone": "(11) 91939-7549",
+        "email": "contato@malaquiascontabilidade.com.br",
+        "address": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP"
+      },
+      "filialRJ": {
+        "title": "Filial - Rio de Janeiro/RJ",
+        "phone": "(11) 91947-7549",
+        "email": "contato@malaquiascontabilidade.com.br",
+        "address": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ"
+      }
+    },
+    "registrations": {
+      "crc": "CRC Escritório: MS-001614/O",
+      "crcRt": "CRC RT: MS-0011173/O",
+      "cnpj": "CNPJ: 34.858.471/0001-57"
+    },
+    "copyright": "© 2025 Malaquias Contabilidade. Todos os direitos reservados.",
     "privacy": "Política de Privacidade",
     "terms": "Termos de Uso"
   },
@@ -32,12 +64,22 @@
     "learnMore": "Saiba mais",
     "getStarted": "Começar agora",
     "contactUs": "Fale conosco",
-    "scheduleCall": "Agendar análise gratuita"
+    "scheduleCall": "Agendar análise gratuita",
+    "readMore": "Ler mais",
+    "viewAll": "Ver todos",
+    "send": "Enviar",
+    "cancel": "Cancelar",
+    "back": "Voltar"
   },
   "forms": {
     "required": "Campo obrigatório",
     "invalidEmail": "E-mail inválido",
+    "invalidPhone": "Telefone inválido",
     "success": "Enviado com sucesso! Em breve entraremos em contato.",
     "error": "Erro ao enviar. Tente novamente ou fale conosco pelo WhatsApp."
+  },
+  "whatsapp": {
+    "number": "(67) 99661-7549",
+    "cta": "Falar pelo WhatsApp"
   }
 }

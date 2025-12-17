@@ -12,11 +12,12 @@ import BlogSection from '@/components/ui/BlogSection';
 import FAQSection from '@/components/sections/FAQSection';
 import HeroSection from '@/components/sections/HeroSection';
 import CoverageMapSection from '@/components/sections/CoverageMapSection';
+import SegmentsSection from '@/components/sections/SegmentsSection';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
 export default function HomeContent() {
   const { t } = useLanguage();
-  const { hero, whyMalaquias, sectionTitles, testimonials, blog } = t.home;
+  const { hero, whyMalaquias, sectionTitles, blog } = t.home;
   const faq = t.faq; // Usa o faq.json completo com 10 perguntas
 
   // Margens escalonadas para os itens
@@ -110,8 +111,11 @@ export default function HomeContent() {
       {/* Cobertura / Mapa do Brasil */}
       <CoverageMapSection />
 
+      {/* Segmentos */}
+      <SegmentsSection />
+
       {/* Nossos Clientes */}
-      <section id="clientes" className="min-h-screen flex flex-col justify-center py-24 bg-[#f5f5f5]">
+      <section id="clientes" className="min-h-screen flex flex-col justify-center py-20 bg-[#f5f5f5]">
         <AnimatedSection className="container mx-auto px-6 mb-12">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {sectionTitles.clients}
@@ -122,7 +126,7 @@ export default function HomeContent() {
       </section>
 
       {/* Nossos Parceiros */}
-      <section id="parceiros" className="py-24 bg-[#f5f5f5]">
+      <section id="parceiros" className="py-44 bg-[#f5f5f5]">
         <AnimatedSection className="container mx-auto px-6 mb-12">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {sectionTitles.partners}
@@ -155,7 +159,7 @@ export default function HomeContent() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           {/* Testimonials Carousel */}
-          <TestimonialsCarousel testimonials={testimonials.items} />
+          <TestimonialsCarousel testimonials={[]} />
         </motion.div>
       </section>
 

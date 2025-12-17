@@ -1,124 +1,4 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About Us",
-    "services": "Services",
-    "news": "News",
-    "contact": "Contact",
-    "blog": "Blog",
-    "careers": "clientes"
-  },
-  "sectionTitles": {
-    "areas": "Areas of Expertise",
-    "about": "About Us",
-    "whyPart1": "Why",
-    "whyPart2": "Malaquias Accounting?",
-    "clients": "Our Clients",
-    "partners": "Our Partners",
-    "testimonials": "Testimonials",
-    "blog": "Latest News",
-    "faq": "Frequently Asked Questions",
-    "heroTitle1": "Less",
-    "heroHighlight1": "taxes",
-    "heroTitle2": "more",
-    "heroHighlight2": "profit"
-  },
-  "about": {
-    "hero": {
-      "title1": "The office",
-      "highlight1": "Malaquias Accounting",
-      "description1": "is a firm specialized in serving demanding clients who value",
-      "emphasis1": "excellence, precision, and professionalism",
-      "description2": "in accounting services.",
-      "title2": "Since",
-      "highlight2": "2010",
-      "description3": ", we have built a solid track record in the market, offering",
-      "emphasis2": "complete and customized solutions",
-      "description4": "for companies of all sizes — from",
-      "emphasis3": "small entrepreneurs to large business owners",
-      "description5": "— always focused on",
-      "emphasis4": "sustainable growth, tax savings, and the financial health of your business."
-    },
-    "items": [
-      {
-        "title": "Our Mission",
-        "content": "To offer strategic accounting solutions that generate real tax savings, promoting sustainable growth and security for our clients."
-      },
-      {
-        "title": "Our Vision",
-        "content": "To be a national reference in advisory accounting, combining cutting-edge technology and humanized service to transform business financial management."
-      },
-      {
-        "title": "Our Values",
-        "content": "Ethics, transparency, commitment to results, and close relationships with each client, treating your business as if it were our own."
-      },
-      {
-        "title": "Efficiency",
-        "content": "Optimized processes and integrated technology to deliver accurate information in the shortest time, enabling agile and assertive decisions."
-      },
-      {
-        "title": "Continuous Learning",
-        "content": "A team in constant training, following changes in tax legislation to ensure compliance and take advantage of legal savings opportunities."
-      }
-    ]
-  },
-  "faq": {
-    "items": [
-      {
-        "question": "How much do Malaquias Accounting services cost?",
-        "answer": "Prices vary according to company size and contracted services. We offer plans starting at $60/month for small businesses and customized rates for larger companies. Contact us for a personalized quote."
-      },
-      {
-        "question": "Do you serve companies across the entire country?",
-        "answer": "Yes! We are 100% digital and serve companies from any state. The entire process is done online, in a practical and secure way."
-      },
-      {
-        "question": "How does tax planning work?",
-        "answer": "We thoroughly analyze your company to identify legal opportunities for tax reduction. We evaluate the best tax regime, applicable fiscal benefits, and strategies to optimize your tax burden."
-      },
-      {
-        "question": "What is the timeline for company formation?",
-        "answer": "The average timeline is 7 to 15 business days, depending on the type of company and location. We handle all the paperwork for you."
-      },
-      {
-        "question": "How do I access the Power BI dashboards?",
-        "answer": "After hiring, you receive access to an exclusive platform where you can view all reports and indicators of your company in real-time, from any device."
-      }
-    ]
-  },
-  "blog": {
-    "readMore": "Read more",
-    "viewAll": "View all news",
-    "items": [
-      {
-        "id": 1,
-        "title": "Tax Reform 2025: What Changes for Your Business",
-        "excerpt": "Understand the main changes in the tax reform and how to prepare for the new fiscal rules coming into effect.",
-        "image": "/images/blog/noticia-exemplo.jpg",
-        "date": "2024-12-05",
-        "category": "Tax",
-        "slug": "tax-reform-2025"
-      },
-      {
-        "id": 2,
-        "title": "5 Strategies to Legally Reduce Taxes",
-        "excerpt": "Discover how tax planning can help your company save money and increase profitability legally.",
-        "image": "/images/blog/noticia-exemplo.jpg",
-        "date": "2024-12-01",
-        "category": "Planning",
-        "slug": "strategies-reduce-taxes"
-      },
-      {
-        "id": 3,
-        "title": "Small Business 2025: New Revenue Limits",
-        "excerpt": "Government announces increase in small business revenue cap. Find out if you can benefit from this change.",
-        "image": "/images/blog/noticia-exemplo.jpg",
-        "date": "2024-11-28",
-        "category": "Small Business",
-        "slug": "small-business-2025-new-limit"
-      }
-    ]
-  },
   "hero": {
     "badge": "Digital Accounting",
     "title": "Less taxes. More profit and control for your business.",
@@ -159,118 +39,33 @@
   },
   "segments": {
     "badge": "Segments",
-    "title": "We serve various segments",
+    "title": "Segments We Serve",
     "subtitle": "Proven experience across different sectors of the economy.",
-    "items": [
-      {
-        "icon": "store",
-        "title": "Commerce",
-        "description": "Retail, wholesale, and e-commerce with optimized tax management."
-      },
-      {
-        "icon": "medical",
-        "title": "Healthcare",
-        "description": "Clinics, offices, and healthcare professionals."
-      },
-      {
-        "icon": "tech",
-        "title": "Technology",
-        "description": "Startups, SaaS, and software development companies."
-      },
-      {
-        "icon": "industry",
-        "title": "Industry",
-        "description": "Manufacturing and production with specialized fiscal control."
-      },
-      {
-        "icon": "services",
-        "title": "Service Providers",
-        "description": "Freelancers and various service companies."
-      },
-      {
-        "icon": "startup",
-        "title": "Startups",
-        "description": "Accounting support for fast-growing companies."
-      }
-    ]
+    "prefix": "Accounting for"
   },
-  "testimonials": {
-    "badge": "Testimonials",
-    "title": "What our clients say",
-    "subtitle": "Real stories from entrepreneurs who transformed their management with Malaquias.",
-    "items": [
-      {
-        "name": "Carlos Silva",
-        "role": "CEO",
-        "company": "TechStart",
-        "content": "Malaquias transformed our view of accounting. The Power BI dashboards give us total clarity about the company's financial health."
-      },
-      {
-        "name": "Ana Santos",
-        "role": "CFO",
-        "company": "Vida Clinic",
-        "content": "We reduced our tax burden by 30% with Malaquias planning. The return on investment was immediate."
-      },
-      {
-        "name": "Roberto Oliveira",
-        "role": "Founder",
-        "company": "E-commerce Plus",
-        "content": "Exceptional and 100% digital service. I can resolve everything via WhatsApp and track my numbers in real-time."
-      }
-    ]
+  "coverage": {
+    "title": "Presence that Builds Trust",
+    "description1": "We are present in the main states of the country, offering digital accounting solutions with the same efficiency and quality in each region.",
+    "description2": "We operate with technology, proximity and commitment, connecting companies to results throughout Brazil."
   },
-  "contact": {
-    "badge": "Contact",
-    "title": "Let's talk?",
-    "subtitle": "Get in touch and discover how we can help your business grow.",
-    "email": "Email",
-    "phone": "Phone",
-    "whatsapp": "WhatsApp",
-    "whatsappCta": "Chat on WhatsApp",
-    "infoTitle": "Get in touch",
-    "infoDescription": "Our team is ready to help you. Choose your preferred channel or fill out the form.",
-    "mapPlaceholder": "Map will load here",
-    "form": {
-      "name": "Full name",
-      "namePlaceholder": "Your name",
-      "email": "Email",
-      "emailPlaceholder": "your@email.com",
-      "company": "Company (optional)",
-      "companyPlaceholder": "Your company name",
-      "message": "Message",
-      "messagePlaceholder": "How can we help?",
-      "submit": "Send message"
-    }
+  "sectionTitles": {
+    "heroTitle1": "Here, accounting means",
+    "heroHighlight1": "less taxes",
+    "heroTitle2": "more profit",
+    "heroHighlight2": "in your pocket",
+    "areas": "Services",
+    "sections": "Specialists in Various Economic Sectors",
+    "about": "About Us",
+    "whyPart1": "Why",
+    "whyPart2": "Malaquias Accounting?",
+    "clients": "Our Clients",
+    "partners": "Our Partners",
+    "testimonials": "Testimonials",
+    "blog": "News",
+    "faq": "Frequently Asked Questions"
   },
-  "footer": {
-    "cta": "Get in touch and request a simulation",
-    "ctaButton": "Contact Us",
-    "locations": {
-      "title": "Our Locations",
-      "matriz": {
-        "title": "Headquarters - Campo Grande/MS",
-        "phone": { "icon": "phone", "text": "(67) 99661-7549" },
-        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS" }
-      },
-      "filial": {
-        "title": "Branch - São Paulo/SP",
-        "phone": { "icon": "phone", "text": "(11) 91939-7549" },
-        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP" }
-      },
-      "filialRJ": {
-        "title": "Branch - Rio de Janeiro/RJ",
-        "phone": { "icon": "phone", "text": "(11) 91947-7549" },
-        "email": { "icon": "mail", "text": "contato@malaquiascontabilidade.com.br" },
-        "address": { "icon": "mapPin", "text": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ" }
-      }
-    },
-    "registrations": {
-      "crc": "CRC Office: MS-001614/O",
-      "crcRt": "CRC RT: MS-0011173/O",
-      "cnpj": "CNPJ: 34.858.471/0001-57"
-    },
-    "copyright": "© 2025 Malaquias Contabilidade. All rights reserved."
+  "blog": {
+    "readMore": "Read more",
+    "viewAll": "View all news"
   }
 }

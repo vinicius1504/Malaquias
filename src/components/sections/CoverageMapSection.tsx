@@ -10,7 +10,7 @@ export default function CoverageMapSection() {
   };
 
   return (
-    <section id="cobertura" className="py-24 bg-[#f5f5f5]">
+    <section id="cobertura" className="py-44 bg-[#f5f5f5]">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Esquerda - Texto */}
@@ -45,21 +45,6 @@ export default function CoverageMapSection() {
             </div>
           </motion.div>
         </div>
-
-        {/* Segmentos Carousel */}
-        <motion.div
-          className="mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <h3 className="text-xl md:text-2xl font-heading font-bold text-dark-900 mb-2 text-center">
-            Segmentos que Atendemos
-          </h3>
-          <div className="w-24 h-[2px] bg-gold-500 mx-auto mb-10" />
-          <SegmentsCarousel />
-        </motion.div>
       </div>
     </section>
   );

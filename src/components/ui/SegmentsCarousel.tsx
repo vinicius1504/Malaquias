@@ -1,112 +1,188 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-interface Segment {
-  id: number;
-  title: string;
-  image: string;
-}
-
-const segments: Segment[] = [
-  { id: 1, title: 'Comércio', image: '/images/segmentos/comercio.jpg' },
-  { id: 2, title: 'Serviços', image: '/images/segmentos/servicos.jpg' },
-  { id: 3, title: 'Indústria', image: '/images/segmentos/industria.jpg' },
-  { id: 4, title: 'Tecnologia', image: '/images/segmentos/tecnologia.jpg' },
-  { id: 5, title: 'Saúde', image: '/images/segmentos/saude.jpg' },
-  { id: 6, title: 'Educação', image: '/images/segmentos/educacao.jpg' },
-  { id: 7, title: 'Construção', image: '/images/segmentos/construcao.jpg' },
-  { id: 8, title: 'Alimentação', image: '/images/segmentos/alimentacao.jpg' },
-];
+import { useState, useEffect, useRef } from 'react';
+import type { Segment } from '@/types/database';
 
 export default function SegmentsCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [segments, setSegments] = useState<Partial<Segment>[]>([]);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({});
 
-  const visibleCount = 3;
-
-  const getVisibleSegments = useCallback(() => {
-    const result: Segment[] = [];
-    for (let i = 0; i < visibleCount; i++) {
-      const index = (currentIndex + i) % segments.length;
-      result.push(segments[index]);
+  // Buscar segmentos do banco
+  useEffect(() => {
+    async function fetchSegments() {
+      try {
+        const response = await fetch('/api/segments');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.segments && data.segments.length > 0) {
+            setSegments(data.segments);
+          }
+        }
+      } catch (error) {
+        console.log('Usando fallback para segmentos:', error);
+      }
     }
-    return result;
-  }, [currentIndex]);
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % segments.length);
+    fetchSegments();
   }, []);
 
-  useEffect(() => {
-    if (isPaused) return;
+  if (segments.length === 0) return null;
 
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [isPaused, nextSlide]);
-
-  const visibleSegments = getVisibleSegments();
+  // Duplica os segmentos para criar efeito infinito
+  const duplicatedSegments = [...segments, ...segments, ...segments];
 
   return (
-    <div
-      className="relative w-full"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      {/* Carousel Container */}
-      <div className="flex gap-6 justify-center">
-        <AnimatePresence mode="popLayout">
-          {visibleSegments.map((segment, idx) => {
-            const globalIndex = (currentIndex + idx) % segments.length;
-            const isHovered = hoveredIndex === idx;
+    <>
+      {/* CSS Keyframes para animação contínua */}
+      <style jsx global>{`
+        @keyframes scrollSegments {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.33%);
+          }
+        }
+      `}</style>
+
+      <div
+        className="relative w-full overflow-hidden flex justify-center"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Container que limita a 3 itens visíveis */}
+        <div className="w-full max-w-[1300px] overflow-hidden">
+          {/* Carousel Container - Animação Contínua */}
+          <div
+            className="flex gap-6"
+            style={{
+              animation: 'scrollSegments 60s linear infinite',
+              animationPlayState: isPaused ? 'paused' : 'running',
+              width: 'fit-content',
+            }}
+          >
+            {duplicatedSegments.map((segment, idx) => {
+              const segmentNumber = (segment.display_order !== undefined ? segment.display_order : idx % segments.length) + 1;
+              const isHovered = hoveredId === `${segment.id}-${idx}`;
+              const uniqueKey = `${segment.id}-${idx}`;
 
             return (
-              <motion.div
-                key={`${segment.id}-${currentIndex}-${idx}`}
+              <div
+                key={uniqueKey}
                 className="relative w-[350px] h-[280px] md:w-[400px] md:h-[300px] rounded-xl overflow-hidden cursor-pointer flex-shrink-0"
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.4, ease: 'easeInOut' }}
-                onMouseEnter={() => setHoveredIndex(idx)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                onMouseEnter={() => {
+                  setHoveredId(uniqueKey);
+                  if (segment.video_url && segment.id) {
+                    const video = videoRefs.current[uniqueKey];
+                    if (video) {
+                      video.play().catch(() => {});
+                    }
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (segment.video_url && segment.id) {
+                    const video = videoRefs.current[uniqueKey];
+                    if (video) {
+                      video.pause();
+                      video.currentTime = 0;
+                    }
+                  }
+                  setHoveredId(null);
+                }}
               >
-                {/* Image */}
-                <Image
-                  src={segment.image}
-                  alt={segment.title}
-                  fill
-                  className="object-cover transition-transform duration-500"
-                  style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
+                {/* Video ou Image */}
+                {segment.video_url ? (
+                  <video
+                    ref={(el) => {
+                      videoRefs.current[uniqueKey] = el;
+                    }}
+                    src={segment.video_url}
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 pointer-events-none"
+                    style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
+                    poster={segment.image_url || undefined}
+                  />
+                ) : (
+                  <Image
+                    src={segment.image_url || '/images/placeholder.jpg'}
+                    alt={segment.title || ''}
+                    fill
+                    className="object-cover transition-transform duration-500 pointer-events-none"
+                    style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
+                    draggable={false}
+                  />
+                )}
+
+                {/* Overlay no hover */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none transition-opacity duration-300 ${
+                    isHovered ? 'opacity-100' : 'opacity-0'
+                  }`}
                 />
 
-                {/* Overlay - aparece no hover */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: isHovered ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
+                {/* Conteúdo - aparece no hover */}
+                <div
+                  className={`absolute inset-0 flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 ${
+                    isHovered ? 'opacity-100' : 'opacity-0'
+                  }`}
                 >
-                  {/* Numeração */}
-                  <span className="text-gold-500 font-bold text-5xl mb-2">
-                    {String(globalIndex + 1).padStart(2, '0')}
-                  </span>
+                  {/* Número na lateral esquerda */}
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center">
+                    <span
+                      className="font-light text-7xl md:text-8xl"
+                      style={{
+                        fontFamily: 'var(--font-heading)',
+                        WebkitTextStroke: '1px #BD9657',
+                        WebkitTextFillColor: 'transparent',
+                        color: 'transparent'
+                      }}
+                    >
+                      {segmentNumber}
+                    </span>
+                  </div>
+
                   {/* Título */}
-                  <h3 className="text-white font-heading font-semibold text-2xl">
-                    {segment.title}
-                  </h3>
-                </motion.div>
-              </motion.div>
+                  <div className="ml-20">
+                    <h3 className="text-white font-heading font-semibold text-xl md:text-2xl">
+                      Contabilidade
+                    </h3>
+                    <h3 className="text-white font-heading font-semibold text-xl md:text-2xl">
+                      para {segment.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Botão no hover */}
+                <div
+                  className={`absolute right-6 bottom-6 pointer-events-none transition-opacity duration-300 ${
+                    isHovered ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <div className="flex items-center gap-2 text-white text-sm font-medium">
+                    <div className="w-8 h-8 border border-gold-500 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Frame decorativo no hover */}
+                <div
+                  className={`absolute top-4 right-4 bottom-4 w-1/2 border border-gold-500/50 rounded pointer-events-none transition-opacity duration-300 ${
+                    isHovered ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              </div>
             );
-          })}
-        </AnimatePresence>
+            })}
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,43 +1,85 @@
 {
   "nav": {
-    "services": "Servicios",
-    "whyUs": "¿Por qué Malaquias?",
-    "segments": "Segmentos",
-    "testimonials": "Testimonios",
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "news": "News",
+    "contact": "Contact",
+    "clients": "Clients",
+    "whyUs": "Why Malaquias",
+    "segments": "Segments",
+    "testimonials": "Testimonials",
     "faq": "FAQ",
-    "contact": "Contacto",
-    "cta": "Hablar con nosotros",
-    "changeLanguage": "Cambiar idioma"
+    "cta": "Talk to a specialist",
+    "changeLanguage": "Change language"
   },
   "footer": {
-    "description": "Transformamos la contabilidad en estrategia para el crecimiento de su negocio. Planificación tributaria, gestión empresarial y dashboards inteligentes.",
-    "services": "Servicios",
-    "company": "Empresa",
-    "contact": "Contacto",
+    "description": "Malaquias Accounting transforms tax obligations into growth strategy. Tax planning, financial management, and smart dashboards to help you pay less taxes, safely, and have more profit.",
+    "cta": "Want to pay less taxes safely?",
+    "ctaButton": "Talk to a specialist",
+    "services": "Services",
+    "company": "Company",
+    "contact": "Contact",
     "links": {
-      "accounting": "Contabilidad",
-      "taxPlanning": "Planificación Tributaria",
-      "consulting": "Consultoría",
-      "powerbi": "Dashboards Power BI",
-      "about": "Sobre nosotros",
-      "segments": "Segmentos",
-      "testimonials": "Testimonios",
-      "faq": "Preguntas Frecuentes"
+      "accounting": "Accounting",
+      "taxPlanning": "Tax Planning",
+      "consulting": "Consulting",
+      "powerbi": "Power BI Dashboards",
+      "about": "About Us",
+      "segments": "Segments",
+      "testimonials": "Testimonials",
+      "faq": "FAQ"
     },
-    "copyright": "© {{year}} {{name}}. Todos los derechos reservados.",
-    "privacy": "Política de Privacidad",
-    "terms": "Términos de Uso"
+    "locations": {
+      "title": "Our Locations",
+      "matriz": {
+        "title": "Headquarters - Campo Grande/MS",
+        "phone": "(67) 99661-7549",
+        "email": "contato@malaquiascontabilidade.com.br",
+        "address": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS"
+      },
+      "filial": {
+        "title": "Branch - São Paulo/SP",
+        "phone": "(11) 91939-7549",
+        "email": "contato@malaquiascontabilidade.com.br",
+        "address": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP"
+      },
+      "filialRJ": {
+        "title": "Branch - Rio de Janeiro/RJ",
+        "phone": "(11) 91947-7549",
+        "email": "contato@malaquiascontabilidade.com.br",
+        "address": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ"
+      }
+    },
+    "registrations": {
+      "crc": "CRC Office: MS-001614/O",
+      "crcRt": "CRC RT: MS-0011173/O",
+      "cnpj": "CNPJ: 34.858.471/0001-57"
+    },
+    "copyright": "© 2025 Malaquias Contabilidade. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
   },
   "buttons": {
-    "learnMore": "Saber más",
-    "getStarted": "Comenzar",
-    "contactUs": "Contactar",
-    "scheduleCall": "Agendar llamada"
+    "learnMore": "Learn more",
+    "getStarted": "Get started",
+    "contactUs": "Contact us",
+    "scheduleCall": "Schedule free analysis",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "send": "Send",
+    "cancel": "Cancel",
+    "back": "Back"
   },
   "forms": {
-    "required": "Campo obligatorio",
-    "invalidEmail": "Correo electrónico inválido",
-    "success": "¡Enviado con éxito!",
-    "error": "Error al enviar. Intente nuevamente."
+    "required": "Required field",
+    "invalidEmail": "Invalid email",
+    "invalidPhone": "Invalid phone",
+    "success": "Sent successfully! We'll be in touch soon.",
+    "error": "Error sending. Try again or contact us via WhatsApp."
+  },
+  "whatsapp": {
+    "number": "(67) 99661-7549",
+    "cta": "Chat on WhatsApp"
   }
 }

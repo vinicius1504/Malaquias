@@ -1,5 +1,6 @@
 import { MainLayout } from '@/components/layout';
 import { LanguageProvider } from '@/contexts/LanguageContext';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 export default function SiteLayout({
   children,
@@ -9,6 +10,7 @@ export default function SiteLayout({
   return (
     <LanguageProvider>
       <MainLayout>{children}</MainLayout>
+      <WhatsAppButton />
     </LanguageProvider>
   );
 }

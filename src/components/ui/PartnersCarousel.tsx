@@ -87,10 +87,11 @@ export default function PartnersCarousel() {
     fetchPartners();
   }, []);
 
-  // Divide os logos em 2 linhas
+  // Se tiver mais de 10, divide em 2 linhas. Senão, usa 1 linha só
+  const useTwoRows = partnerLogos.length > 10;
   const half = Math.ceil(partnerLogos.length / 2);
-  const row1 = partnerLogos.slice(0, half);
-  const row2 = partnerLogos.slice(half);
+  const row1 = useTwoRows ? partnerLogos.slice(0, half) : partnerLogos;
+  const row2 = useTwoRows ? partnerLogos.slice(half) : [];
 
   return (
     <>

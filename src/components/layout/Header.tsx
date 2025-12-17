@@ -19,7 +19,7 @@ export default function Header() {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
-  const { nav } = t.home;
+  const { nav } = t.common;
   const services = t.services;
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export default function Header() {
     { href: '#', label: nav.services, hasDropdown: true },
     { href: '/noticias', label: nav.news },
     { href: '/contato', label: nav.contact },
-    { href: 'https://onvio.com.br/login/#/', label: nav.careers },
+    { href: 'https://onvio.com.br/login/#/', label: nav.clients },
   ];
 
   return (

@@ -2,32 +2,11 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Phone, Mail, MapPin, LucideIcon } from 'lucide-react';
-
-const iconMap: Record<string, LucideIcon> = {
-  phone: Phone,
-  mail: Mail,
-  mapPin: MapPin,
-};
-
-interface ContactInfo {
-  icon: string;
-  text: string;
-}
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const { t } = useLanguage();
-  const { footer } = t.home;
-
-  const renderContactItem = (info: ContactInfo, isAddress = false) => {
-    const Icon = iconMap[info.icon];
-    return (
-      <p className={`flex ${isAddress ? 'items-start' : 'items-center'} gap-3`}>
-        {Icon && <Icon className={`w-4 h-4 text-gold-500 flex-shrink-0 ${isAddress ? 'mt-0.5' : ''}`} />}
-        {info.text}
-      </p>
-    );
-  };
+  const { footer } = t.common;
 
   return (
     <footer className="relative pt-44 z-10">
@@ -124,25 +103,52 @@ export default function Footer() {
               {/* Matriz */}
               <div className="text-white/70 text-sm space-y-3">
                 <h4 className="text-white font-medium mb-4">{footer.locations.matriz.title}</h4>
-                {renderContactItem(footer.locations.matriz.phone)}
-                {renderContactItem(footer.locations.matriz.email)}
-                {renderContactItem(footer.locations.matriz.address, true)}
+                <p className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-gold-500 flex-shrink-0" />
+                  {footer.locations.matriz.phone}
+                </p>
+                <p className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-gold-500 flex-shrink-0" />
+                  {footer.locations.matriz.email}
+                </p>
+                <p className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" />
+                  {footer.locations.matriz.address}
+                </p>
               </div>
 
               {/* Filial SP */}
               <div className="text-white/70 text-sm space-y-3">
                 <h4 className="text-white font-medium mb-4">{footer.locations.filial.title}</h4>
-                {renderContactItem(footer.locations.filial.phone)}
-                {renderContactItem(footer.locations.filial.email)}
-                {renderContactItem(footer.locations.filial.address, true)}
+                <p className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-gold-500 flex-shrink-0" />
+                  {footer.locations.filial.phone}
+                </p>
+                <p className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-gold-500 flex-shrink-0" />
+                  {footer.locations.filial.email}
+                </p>
+                <p className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" />
+                  {footer.locations.filial.address}
+                </p>
               </div>
 
               {/* Filial RJ */}
               <div className="text-white/70 text-sm space-y-3">
                 <h4 className="text-white font-medium mb-4">{footer.locations.filialRJ.title}</h4>
-                {renderContactItem(footer.locations.filialRJ.phone)}
-                {renderContactItem(footer.locations.filialRJ.email)}
-                {renderContactItem(footer.locations.filialRJ.address, true)}
+                <p className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-gold-500 flex-shrink-0" />
+                  {footer.locations.filialRJ.phone}
+                </p>
+                <p className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-gold-500 flex-shrink-0" />
+                  {footer.locations.filialRJ.email}
+                </p>
+                <p className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" />
+                  {footer.locations.filialRJ.address}
+                </p>
               </div>
             </div>
           </div>

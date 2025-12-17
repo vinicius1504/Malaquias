@@ -3,6 +3,9 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 // Importa os arquivos de tradução
+import ptCommon from '@/locales/pt/common.json';
+import enCommon from '@/locales/en/common.json';
+import esCommon from '@/locales/es/common.json';
 import ptHome from '@/locales/pt/home.json';
 import enHome from '@/locales/en/home.json';
 import esHome from '@/locales/es/home.json';
@@ -12,27 +15,28 @@ import esServices from '@/locales/es/services.json';
 import ptFaq from '@/locales/pt/faq.json';
 import enFaq from '@/locales/en/faq.json';
 import esFaq from '@/locales/es/faq.json';
-import ptNews from '@/locales/pt/news.json';
-import enNews from '@/locales/en/news.json';
-import esNews from '@/locales/es/news.json';
 import ptContact from '@/locales/pt/contact.json';
 import enContact from '@/locales/en/contact.json';
 import esContact from '@/locales/es/contact.json';
+import ptAbout from '@/locales/pt/about.json';
+import enAbout from '@/locales/en/about.json';
+import esAbout from '@/locales/es/about.json';
 
 type Locale = 'pt' | 'en'| 'es';
 
 interface Translations {
+  common: typeof ptCommon;
   home: typeof ptHome;
   services: typeof ptServices;
   faq: typeof ptFaq;
-  news: typeof ptNews;
   contact: typeof ptContact;
+  about: typeof ptAbout;
 }
 
 const translations: Record<Locale, Translations> = {
-  pt: { home: ptHome, services: ptServices, faq: ptFaq, news: ptNews, contact: ptContact },
-  en: { home: enHome, services: enServices, faq: enFaq, news: enNews, contact: enContact },
-  es: { home: esHome, services: esServices, faq: esFaq, news: esNews, contact: esContact },
+  pt: { common: ptCommon, home: ptHome, services: ptServices, faq: ptFaq, contact: ptContact, about: ptAbout },
+  en: { common: enCommon, home: enHome, services: enServices, faq: enFaq, contact: enContact, about: enAbout },
+  es: { common: esCommon, home: esHome, services: esServices, faq: esFaq, contact: esContact, about: esAbout },
 };
 
 interface LanguageContextType {
@@ -49,7 +53,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Recupera o idioma salvo no localStorage
     const savedLocale = localStorage.getItem('locale') as Locale;
-    if (savedLocale && (savedLocale === 'pt' || savedLocale === 'en')) {
+    if (savedLocale && (savedLocale === 'pt' || savedLocale === 'en' || savedLocale === 'es')) {
       setLocaleState(savedLocale);
     }
   }, []);

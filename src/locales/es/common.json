@@ -1,43 +1,85 @@
 {
   "nav": {
-    "services": "Serviços",
-    "whyUs": "Por que a Malaquias",
+    "home": "Inicio",
+    "about": "Quiénes Somos",
+    "services": "Servicios",
+    "news": "Noticias",
+    "contact": "Contacto",
+    "clients": "Clientes",
+    "whyUs": "¿Por qué Malaquias?",
     "segments": "Segmentos",
-    "testimonials": "Depoimentos",
+    "testimonials": "Testimonios",
     "faq": "FAQ",
-    "contact": "Contato",
-    "cta": "Fale Conosco",
-    "changeLanguage": "Mudar idioma"
+    "cta": "Hablar con un especialista",
+    "changeLanguage": "Cambiar idioma"
   },
   "footer": {
-    "description": "Transformamos contabilidade em estratégia para o crescimento do seu negócio. Planejamento tributário, gestão empresarial e dashboards inteligentes.",
-    "services": "Serviços",
+    "description": "Malaquias Contabilidad transforma obligaciones fiscales en estrategia de crecimiento. Planificación tributaria, gestión financiera y dashboards inteligentes para pagar menos impuestos, con seguridad, y tener más lucro.",
+    "cta": "¿Quiere pagar menos impuestos con seguridad?",
+    "ctaButton": "Hablar con un especialista",
+    "services": "Servicios",
     "company": "Empresa",
-    "contact": "Contato",
+    "contact": "Contacto",
     "links": {
-      "accounting": "Contabilidade",
-      "taxPlanning": "Planejamento Tributário",
-      "consulting": "Consultoria",
+      "accounting": "Contabilidad",
+      "taxPlanning": "Planificación Tributaria",
+      "consulting": "Consultoría",
       "powerbi": "Dashboards Power BI",
-      "about": "Sobre nós",
+      "about": "Quiénes somos",
       "segments": "Segmentos",
-      "testimonials": "Depoimentos",
-      "faq": "Perguntas Frequentes"
+      "testimonials": "Testimonios",
+      "faq": "Preguntas Frecuentes"
     },
-    "copyright": "© {{year}} {{name}}. Todos os direitos reservados.",
-    "privacy": "Política de Privacidade",
-    "terms": "Termos de Uso"
+    "locations": {
+      "title": "Dónde estamos",
+      "matriz": {
+        "title": "Matriz - Campo Grande/MS",
+        "phone": "(67) 99661-7549",
+        "email": "contato@malaquiascontabilidade.com.br",
+        "address": "Fernão Dias, nº 208 – Vila Vilas Boas, 79051-160, Campo Grande-MS"
+      },
+      "filial": {
+        "title": "Sucursal - São Paulo/SP",
+        "phone": "(11) 91939-7549",
+        "email": "contato@malaquiascontabilidade.com.br",
+        "address": "Rua Voluntários da Pátria, nº 2468 – Sala 32 – Santana, 02402-000, São Paulo-SP"
+      },
+      "filialRJ": {
+        "title": "Sucursal - Rio de Janeiro/RJ",
+        "phone": "(11) 91947-7549",
+        "email": "contato@malaquiascontabilidade.com.br",
+        "address": "Av. Maracanã, nº 987 – Bloco 3, Sala 1107 – Tijuca, 20511-000, Rio de Janeiro-RJ"
+      }
+    },
+    "registrations": {
+      "crc": "CRC Oficina: MS-001614/O",
+      "crcRt": "CRC RT: MS-0011173/O",
+      "cnpj": "CNPJ: 34.858.471/0001-57"
+    },
+    "copyright": "© 2025 Malaquias Contabilidad. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Uso"
   },
   "buttons": {
-    "learnMore": "Saiba mais",
-    "getStarted": "Começar",
-    "contactUs": "Fale conosco",
-    "scheduleCall": "Agendar ligação"
+    "learnMore": "Saber más",
+    "getStarted": "Comenzar",
+    "contactUs": "Contactar",
+    "scheduleCall": "Agendar análisis gratuito",
+    "readMore": "Leer más",
+    "viewAll": "Ver todos",
+    "send": "Enviar",
+    "cancel": "Cancelar",
+    "back": "Volver"
   },
   "forms": {
-    "required": "Campo obrigatório",
-    "invalidEmail": "E-mail inválido",
-    "success": "Enviado com sucesso!",
-    "error": "Erro ao enviar. Tente novamente."
+    "required": "Campo obligatorio",
+    "invalidEmail": "Correo electrónico inválido",
+    "invalidPhone": "Teléfono inválido",
+    "success": "¡Enviado con éxito! Entraremos en contacto pronto.",
+    "error": "Error al enviar. Intente nuevamente o contáctenos por WhatsApp."
+  },
+  "whatsapp": {
+    "number": "(67) 99661-7549",
+    "cta": "Hablar por WhatsApp"
   }
 }

@@ -31,7 +31,6 @@ const FILE_NAMES: Record<string, string> = {
   home: 'Página Inicial',
   about: 'Sobre Nós',
   services: 'Serviços',
-  servicesPages: 'Páginas de Serviços',
   contact: 'Contato',
   common: 'Textos Comuns',
   faq: 'FAQ'
@@ -404,9 +403,9 @@ export default function TextosPage() {
     return null
   }
 
-  // Filtrar arquivos que não devem aparecer (notícias agora vem do banco de dados)
+  // Filtrar arquivos que não devem aparecer (news vem do banco, servicesPages é duplicado)
   const currentFiles = (translations.find(t => t.locale === selectedLocale)?.files || [])
-    .filter(file => file !== 'news')
+    .filter(file => !['news', 'servicesPages'].includes(file))
 
   return (
     <div className="p-6 max-w-7xl mx-auto">

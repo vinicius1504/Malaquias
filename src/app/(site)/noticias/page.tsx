@@ -22,9 +22,71 @@ interface NewsItem {
   category: string;
 }
 
+interface Category {
+  id: string;
+  slug: string;
+  name: string;
+  color: string;
+}
+
+// Textos fixos por idioma
+const texts = {
+  pt: {
+    pageTitle: 'Notícias',
+    pageSubtitle: 'Fique por dentro das novidades do mundo contábil e tributário',
+    searchPlaceholder: 'Buscar notícias...',
+    searchButton: 'Buscar',
+    searchLabel: 'Busca',
+    clearFilters: 'Limpar filtros',
+    noResults: 'Nenhuma notícia encontrada.',
+    readMore: 'Ler mais',
+    allCategories: 'Todas',
+    pagination: { previous: 'Anterior', next: 'Próxima' },
+    cta: {
+      title: 'Quer saber mais sobre como economizar impostos?',
+      description: 'Entre em contato com nossa equipe e descubra como podemos ajudar sua empresa.',
+      button: 'Fale com um especialista'
+    }
+  },
+  en: {
+    pageTitle: 'News',
+    pageSubtitle: 'Stay updated with the latest in accounting and tax news',
+    searchPlaceholder: 'Search news...',
+    searchButton: 'Search',
+    searchLabel: 'Search',
+    clearFilters: 'Clear filters',
+    noResults: 'No news found.',
+    readMore: 'Read more',
+    allCategories: 'All',
+    pagination: { previous: 'Previous', next: 'Next' },
+    cta: {
+      title: 'Want to learn more about saving on taxes?',
+      description: 'Contact our team and discover how we can help your business.',
+      button: 'Talk to an expert'
+    }
+  },
+  es: {
+    pageTitle: 'Noticias',
+    pageSubtitle: 'Mantente al día con las últimas novedades en contabilidad e impuestos',
+    searchPlaceholder: 'Buscar noticias...',
+    searchButton: 'Buscar',
+    searchLabel: 'Búsqueda',
+    clearFilters: 'Limpiar filtros',
+    noResults: 'No se encontraron noticias.',
+    readMore: 'Leer más',
+    allCategories: 'Todas',
+    pagination: { previous: 'Anterior', next: 'Siguiente' },
+    cta: {
+      title: '¿Quieres saber más sobre cómo ahorrar impuestos?',
+      description: 'Contacta a nuestro equipo y descubre cómo podemos ayudar a tu empresa.',
+      button: 'Habla con un especialista'
+    }
+  }
+};
+
 export default function NoticiasPage() {
-  const { t, locale } = useLanguage();
-  const news = t.news;
+  const { locale } = useLanguage();
+  const t = texts[locale as keyof typeof texts] || texts.pt;
   const [items, setItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,6 +94,23 @@ export default function NoticiasPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [searchInput, setSearchInput] = useState('');
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  // Buscar categorias do banco
+  useEffect(() => {
+    async function fetchCategories() {
+      try {
+        const response = await fetch(`/api/categories?locale=${locale}`);
+        if (response.ok) {
+          const data = await response.json();
+          setCategories(data.categories || []);
+        }
+      } catch (error) {
+        console.error('Erro ao buscar categorias:', error);
+      }
+    }
+    fetchCategories();
+  }, [locale]);
 
   useEffect(() => {
     fetchNews();
@@ -77,24 +156,15 @@ export default function NoticiasPage() {
     });
   };
 
-  const getCategoryLabel = (category: string) => {
-    const categories: Record<string, string> = {
-      saude: news.categories?.saude || 'Saúde',
-      varejo: news.categories?.varejo || 'Varejo e E-commerce',
-      legislacao: news.categories?.legislacao || 'Legislação',
-      gestao: news.categories?.gestao || 'Gestão Financeira',
-      tributos: news.categories?.tributos || 'Tributos',
-    };
-    return categories[category] || category;
+  const getCategoryLabel = (categorySlug: string) => {
+    const found = categories.find(cat => cat.slug === categorySlug);
+    return found?.name || categorySlug;
   };
 
-  const categories = [
-    { value: 'all', label: news.categories?.all || 'Todas' },
-    { value: 'saude', label: news.categories?.saude || 'Saúde' },
-    { value: 'varejo', label: news.categories?.varejo || 'Varejo e E-commerce' },
-    { value: 'legislacao', label: news.categories?.legislacao || 'Legislação' },
-    { value: 'gestao', label: news.categories?.gestao || 'Gestão Financeira' },
-    { value: 'tributos', label: news.categories?.tributos || 'Tributos' },
+  // Opções do dropdown com "Todas" no início
+  const categoryOptions = [
+    { value: 'all', label: t.allCategories },
+    ...categories.map(cat => ({ value: cat.slug, label: cat.name }))
   ];
 
   return (
@@ -123,7 +193,7 @@ export default function NoticiasPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {news.pageTitle}
+            {t.pageTitle}
           </motion.h1>
           <motion.p
             className="text-white/80 text-lg mt-4 max-w-2xl mx-auto"
@@ -131,7 +201,7 @@ export default function NoticiasPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {news.pageSubtitle}
+            {t.pageSubtitle}
           </motion.p>
         </div>
 
@@ -148,7 +218,7 @@ export default function NoticiasPage() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
-                placeholder={news.searchPlaceholder || "Buscar notícias..."}
+                placeholder={t.searchPlaceholder}
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 onKeyDown={(e) => {
@@ -183,7 +253,7 @@ export default function NoticiasPage() {
                 }}
                 className="w-full appearance-none px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-gold-500/50 focus:border-gold-500 transition-all cursor-pointer pr-10"
               >
-                {categories.map((cat) => (
+                {categoryOptions.map((cat) => (
                   <option key={cat.value} value={cat.value}>
                     {cat.label}
                   </option>
@@ -200,7 +270,7 @@ export default function NoticiasPage() {
               }}
               className="w-full sm:w-auto px-6 py-3 bg-gold-500 hover:bg-gold-600 text-white font-semibold rounded-xl transition-all shadow-md hover:shadow-lg"
             >
-              {news.searchButton || "Buscar"}
+              {t.searchButton}
             </button>
           </div>
 
@@ -209,7 +279,7 @@ export default function NoticiasPage() {
             <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
               {searchQuery && (
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-gold-100 text-gold-700 rounded-full text-sm">
-                  {news.searchLabel || "Busca"}: "{searchQuery}"
+                  {t.searchLabel}: "{searchQuery}"
                   <button
                     onClick={() => {
                       setSearchInput('');
@@ -245,7 +315,7 @@ export default function NoticiasPage() {
                 }}
                 className="text-sm text-gray-500 hover:text-gray-700 underline"
               >
-                {news.clearFilters || "Limpar filtros"}
+                {t.clearFilters}
               </button>
             </div>
           )}
@@ -261,7 +331,7 @@ export default function NoticiasPage() {
             </div>
           ) : items.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">{news.noResults || "Nenhuma notícia encontrada."}</p>
+              <p className="text-gray-500 text-lg">{t.noResults}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -312,7 +382,7 @@ export default function NoticiasPage() {
                       href={`/noticias/${item.slug}`}
                       className="inline-flex items-center gap-1 text-gold-400 font-semibold text-sm hover:text-gold-300 transition-colors"
                     >
-                      {news.readMore}
+                      {t.readMore}
                       <svg
                         className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                         fill="none"
@@ -346,7 +416,7 @@ export default function NoticiasPage() {
                 disabled={currentPage === 1}
                 className="px-4 py-2 text-sm font-medium text-dark-700 hover:text-gold-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {news.pagination.previous}
+                {t.pagination.previous}
               </button>
 
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
@@ -368,7 +438,7 @@ export default function NoticiasPage() {
                 disabled={currentPage === totalPages}
                 className="px-4 py-2 text-sm font-medium text-dark-700 hover:text-gold-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {news.pagination.next}
+                {t.pagination.next}
               </button>
             </motion.div>
           )}
@@ -387,10 +457,10 @@ export default function NoticiasPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
-              {news.cta.title}
+              {t.cta.title}
             </h2>
             <p className="text-white/70 mb-8 max-w-xl mx-auto">
-              {news.cta.description}
+              {t.cta.description}
             </p>
             <Link
               href="https://wa.me/5567996617549"
@@ -398,7 +468,7 @@ export default function NoticiasPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-white font-semibold text-lg rounded-full transition-all duration-300 shadow-lg shadow-gold-500/30 hover:shadow-xl hover:shadow-gold-500/40 hover:scale-105"
             >
-              {news.cta.button}
+              {t.cta.button}
             </Link>
           </motion.div>
         </div>

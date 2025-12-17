@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight,MessageCircle, ArrowRight } from 'lucide-react';
+import { ChevronRight, MessageCircle, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Office3D from '@/components/three/Office3D';
 import ClientsCarousel from '@/components/ui/ClientsCarousel';
@@ -13,7 +13,8 @@ import Link from 'next/link';
 
 export default function SobrePage() {
   const { t } = useLanguage();
-  const { sectionTitles, about } = t.home;
+  const { sectionTitles } = t.home;
+  const about = t.about;
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const services = t.services;
 
@@ -43,25 +44,14 @@ export default function SobrePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Primeiro parágrafo */}
-            <p className="text-lg md:text-xl text-white leading-relaxed mb-6">
-              <span className="text-gold-500 font-semibold">{about.hero.title1} </span>
-              <span className="text-gold-500 font-bold">{about.hero.highlight1} </span>
-              <span>{about.hero.description1} </span>
-              <span className="font-semibold">{about.hero.emphasis1} </span>
-              <span>{about.hero.description2}</span>
-            </p>
+            {/* Título */}
+            <h1 className="text-3xl md:text-4xl font-heading font-bold text-gold-500 mb-6">
+              {about.history.title}
+            </h1>
 
-            {/* Segundo parágrafo */}
+            {/* Conteúdo da história */}
             <p className="text-lg md:text-xl text-white leading-relaxed">
-              <span>{about.hero.title2} </span>
-              <span className="text-gold-500 font-bold">{about.hero.highlight2}</span>
-              <span>{about.hero.description3} </span>
-              <span className="font-semibold">{about.hero.emphasis2} </span>
-              <span>{about.hero.description4} </span>
-              <span className="font-semibold">{about.hero.emphasis3} </span>
-              <span>{about.hero.description5} </span>
-              <span className="font-semibold">{about.hero.emphasis4}</span>
+              {about.history.content}
             </p>
           </motion.div>
         </div>
@@ -91,7 +81,7 @@ export default function SobrePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              {about.items.map((item, index) => (
+              {about.accordion.items.map((item, index) => (
                 <div
                   key={index}
                   className="border-b border-gold-500/30"
