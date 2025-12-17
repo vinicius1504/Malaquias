@@ -40,6 +40,6 @@ next-env.d.ts
 *.swp
 *.swo
 
-images/videos/
+/images/videos/
 
 
