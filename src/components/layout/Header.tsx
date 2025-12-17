@@ -158,7 +158,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-white/10 pt-4">
+          <div className="lg:hidden mt-4 pb-4 pt-4 px-4 rounded-lg bg-[rgba(0,61,125,0.19)] backdrop-blur-[7.1px] shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/10">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 item.hasDropdown ? (
@@ -175,7 +175,7 @@ export default function Header() {
                     </button>
 
                     {isMobileServicesOpen && (
-                      <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gold-500/30 pl-4">
+                      <div className="mt-2 ml-4 flex flex-col gap-2 pl-4 py-3 pr-3 rounded-lg bg-[rgba(0,61,125,0.19)] backdrop-blur-[7.1px] shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/10">
                         {services.items.map((service: ServiceItem) => (
                           <Link
                             key={service.slug}
