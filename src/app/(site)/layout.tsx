@@ -1,6 +1,7 @@
 import { MainLayout } from '@/components/layout';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import { ToastProvider } from '@/components/admin/ToastProvider';
 
 export default function SiteLayout({
   children,
@@ -9,6 +10,7 @@ export default function SiteLayout({
 }) {
   return (
     <LanguageProvider>
+      <ToastProvider />
       <MainLayout>{children}</MainLayout>
       <WhatsAppButton />
     </LanguageProvider>

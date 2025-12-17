@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { X, Loader2 } from 'lucide-react'
+import toast from 'react-hot-toast'
 
 interface CategoryModalProps {
   isOpen: boolean
@@ -37,7 +38,7 @@ export function CategoryModal({ isOpen, onClose, onSuccess }: CategoryModalProps
     e.preventDefault()
 
     if (!name_pt.trim() || !slug.trim()) {
-      alert('Nome e slug são obrigatórios')
+      toast.error('Nome e slug são obrigatórios')
       return
     }
 
@@ -58,14 +59,15 @@ export function CategoryModal({ isOpen, onClose, onSuccess }: CategoryModalProps
       const data = await response.json()
 
       if (response.ok) {
+        toast.success('Categoria criada com sucesso!')
         onSuccess()
         handleClose()
       } else {
-        alert(data.error || 'Erro ao criar categoria')
+        toast.error(data.error || 'Erro ao criar categoria')
       }
     } catch (error) {
       console.error('Erro ao criar categoria:', error)
-      alert('Erro ao criar categoria')
+      toast.error('Erro ao criar categoria')
     } finally {
       setSaving(false)
     }

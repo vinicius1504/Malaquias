@@ -1,6 +1,8 @@
 {
   "pageTitle": "Contact",
   "pageSubtitle": "Get in touch with us. We are ready to help your business grow.",
+  "heroMedia": "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/contato.mp4",
+  "heroMediaType": "video",
   "form": {
     "typeLabel": "Contact type",
     "types": {

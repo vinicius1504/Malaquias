@@ -1,6 +1,8 @@
 {
   "pageTitle": "Contato",
   "pageSubtitle": "Entre em contato conosco. Estamos prontos para ajudar sua empresa a crescer.",
+  "heroMedia": "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/contac.mp4",
+  "heroMediaType": "video",
   "form": {
     "typeLabel": "Tipo de contato",
     "types": {

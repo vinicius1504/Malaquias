@@ -18,6 +18,7 @@ import {
 import Link from 'next/link'
 import { RichTextEditor } from '@/components/admin/Editor'
 import { CategoryModal } from '@/components/admin/CategoryModal'
+import toast from 'react-hot-toast'
 
 type Locale = 'pt' | 'en' | 'es'
 
@@ -134,7 +135,7 @@ export default function NewNewsPage() {
   const handleTranslate = async (targetLocale: Locale) => {
     const sourceContent = translations.pt
     if (!sourceContent.title && !sourceContent.excerpt && !sourceContent.content) {
-      alert('Preencha o conteúdo em Português primeiro')
+      toast.error('Preencha o conteúdo em Português primeiro')
       return
     }
 
@@ -164,12 +165,13 @@ export default function NewNewsPage() {
           }
         }))
         setActiveLocale(targetLocale)
+        toast.success('Tradução concluída!')
       } else {
-        alert(data.error || 'Erro ao traduzir')
+        toast.error(data.error || 'Erro ao traduzir')
       }
     } catch (error) {
       console.error('Erro ao traduzir:', error)
-      alert('Erro ao traduzir. Tente novamente.')
+      toast.error('Erro ao traduzir. Tente novamente.')
     } finally {
       setTranslating(null)
     }
@@ -191,11 +193,11 @@ export default function NewNewsPage() {
       if (response.ok) {
         setImageUrl(data.url)
       } else {
-        alert(data.error || 'Erro no upload')
+        toast.error(data.error || 'Erro no upload')
       }
     } catch (error) {
       console.error('Erro no upload:', error)
-      alert('Erro ao fazer upload da imagem')
+      toast.error('Erro ao fazer upload da imagem')
     } finally {
       setUploading(false)
     }
@@ -214,17 +216,17 @@ export default function NewNewsPage() {
 
   const handleSave = async (publishNow = false) => {
     if (!translations.pt.title.trim()) {
-      alert('O título em Português é obrigatório')
+      toast.error('O título em Português é obrigatório')
       return
     }
 
     if (!slug.trim()) {
-      alert('O slug é obrigatório')
+      toast.error('O slug é obrigatório')
       return
     }
 
     if (!categoryId) {
-      alert('Selecione uma categoria')
+      toast.error('Selecione uma categoria')
       return
     }
 
@@ -246,13 +248,14 @@ export default function NewNewsPage() {
       const data = await response.json()
 
       if (response.ok) {
+        toast.success(publishNow ? 'Notícia publicada!' : 'Rascunho salvo!')
         router.push('/admin/noticias')
       } else {
-        alert(data.error || 'Erro ao salvar')
+        toast.error(data.error || 'Erro ao salvar')
       }
     } catch (error) {
       console.error('Erro ao salvar:', error)
-      alert('Erro ao salvar notícia')
+      toast.error('Erro ao salvar notícia')
     } finally {
       setSaving(false)
     }

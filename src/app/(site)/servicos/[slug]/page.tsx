@@ -54,6 +54,7 @@ export default function ServicePage() {
             muted
             loop
             playsInline
+            crossOrigin="anonymous"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src={service.video} type="video/mp4" />

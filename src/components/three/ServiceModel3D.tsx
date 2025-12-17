@@ -28,7 +28,7 @@ const ServiceModel = memo(function ServiceModel({ modelPath }: ServiceModelProps
         {/* Rotação de -90 graus no eixo X para deixar o modelo de pé */}
         <primitive
           object={scene}
-          scale={90}
+          scale={120}
           position={[0, 1, 0]}
           rotation={[Math.PI / 2, 0, 0]}
         />

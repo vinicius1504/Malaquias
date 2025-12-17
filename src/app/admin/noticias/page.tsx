@@ -14,6 +14,8 @@ import {
   Database,
 } from 'lucide-react'
 import { CategoryModal } from '@/components/admin/CategoryModal'
+import { useConfirm } from '@/components/admin/ConfirmDialog'
+import toast from 'react-hot-toast'
 
 interface NewsTranslation {
   id: string
@@ -65,6 +67,7 @@ export default function NewsListPage() {
     errors: string[]
     skipped: string[]
   } | null>(null)
+  const confirm = useConfirm()
 
   useEffect(() => {
     fetchCategories()
@@ -111,7 +114,15 @@ export default function NewsListPage() {
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Tem certeza que deseja excluir esta notícia?')) return
+    const confirmed = await confirm({
+      title: 'Excluir notícia',
+      message: 'Tem certeza que deseja excluir esta notícia? Esta ação não pode ser desfeita.',
+      confirmText: 'Excluir',
+      cancelText: 'Cancelar',
+      type: 'danger',
+    })
+
+    if (!confirmed) return
 
     try {
       setDeleting(id)
@@ -121,16 +132,26 @@ export default function NewsListPage() {
 
       if (response.ok) {
         setNews(news.filter((n) => n.id !== id))
+        toast.success('Notícia excluída com sucesso!')
       }
     } catch (error) {
       console.error('Erro ao excluir:', error)
+      toast.error('Erro ao excluir notícia')
     } finally {
       setDeleting(null)
     }
   }
 
   const handleMigrate = async () => {
-    if (!confirm('Isso irá migrar as notícias do arquivo JSON para o banco de dados. Continuar?')) return
+    const confirmed = await confirm({
+      title: 'Migrar notícias',
+      message: 'Isso irá migrar as notícias do arquivo JSON para o banco de dados. Deseja continuar?',
+      confirmText: 'Migrar',
+      cancelText: 'Cancelar',
+      type: 'warning',
+    })
+
+    if (!confirmed) return
 
     try {
       setMigrating(true)
@@ -144,12 +165,13 @@ export default function NewsListPage() {
       if (response.ok) {
         setMigrationResult(data.results)
         fetchNews()
+        toast.success('Migração concluída!')
       } else {
-        alert(data.error || 'Erro na migração')
+        toast.error(data.error || 'Erro na migração')
       }
     } catch (error) {
       console.error('Erro na migração:', error)
-      alert('Erro ao executar migração')
+      toast.error('Erro ao executar migração')
     } finally {
       setMigrating(false)
     }

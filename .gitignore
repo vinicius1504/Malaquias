@@ -40,6 +40,5 @@ next-env.d.ts
 *.swp
 *.swo
 
-# Modelos 3D pesados (hospedado no GitHub Releases)
-public/images/models/excritorio2.glb
+
 

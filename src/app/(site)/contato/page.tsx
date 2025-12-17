@@ -8,11 +8,11 @@ import { Phone, Mail, MapPin, MessageCircle, Upload, X, ChevronDown } from 'luci
 import { useLanguage } from '@/contexts/LanguageContext';
 import Footer from '@/components/sections/Footer';
 import StarfieldCanvas from '@/components/ui/StarfieldCanvas';
+import toast from 'react-hot-toast';
 
 type ContactType = 'orcamento' | 'trabalheConosco';
 
 const DEFAULT_IMAGE = '/images/Sem_foto.png';
-const HERO_IMAGE = '/images/contact-hero.jpg';
 
 export default function ContatoPage() {
   const { t } = useLanguage();
@@ -44,12 +44,12 @@ export default function ContatoPage() {
       // Validar tipo de arquivo
       const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
       if (!allowedTypes.includes(file.type)) {
-        alert('Formato não permitido. Use PDF, DOC ou DOCX.');
+        toast.error('Formato não permitido. Use PDF, DOC ou DOCX.');
         return;
       }
       // Validar tamanho (5MB)
       if (file.size > 5 * 1024 * 1024) {
-        alert('Arquivo muito grande. Máximo 5MB.');
+        toast.error('Arquivo muito grande. Máximo 5MB.');
         return;
       }
       setResumeFile(file);
@@ -83,21 +83,34 @@ export default function ContatoPage() {
 
   return (
     <main className="min-h-screen bg-[#f5f5f5]">
-      {/* Hero Section com Imagem */}
+      {/* Hero Section com Vídeo ou Imagem */}
       <section className="relative min-h-[40vh] flex items-center justify-center">
-        {/* Background Image */}
+        {/* Background Media */}
         <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src={HERO_IMAGE}
-            alt="Contato"
-            fill
-            className="object-cover"
-            priority
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = DEFAULT_IMAGE;
-            }}
-          />
+          {contact.heroMediaType === 'video' ? (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              crossOrigin="anonymous"
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src={contact.heroMedia} type="video/mp4" />
+            </video>
+          ) : (
+            <Image
+              src={contact.heroMedia || DEFAULT_IMAGE}
+              alt="Contato"
+              fill
+              className="object-cover"
+              priority
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = DEFAULT_IMAGE;
+              }}
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e]/70 via-[#1a1a2e]/50 to-[#1a1a2e]/70" />
         </div>
 

@@ -17,6 +17,7 @@ import {
   Send,
   AlertCircle,
 } from 'lucide-react'
+import { useConfirm } from '@/components/admin/ConfirmDialog'
 
 interface User {
   id: string
@@ -42,6 +43,7 @@ export default function UsuariosPage() {
   const [deleting, setDeleting] = useState<string | null>(null)
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
   const [showPassword, setShowPassword] = useState(false)
+  const confirm = useConfirm()
 
   // Form state
   const [formData, setFormData] = useState({
@@ -154,7 +156,15 @@ export default function UsuariosPage() {
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Tem certeza que deseja excluir este usuário?')) return
+    const confirmed = await confirm({
+      title: 'Excluir usuário',
+      message: 'Tem certeza que deseja excluir este usuário? Esta ação não pode ser desfeita.',
+      confirmText: 'Excluir',
+      cancelText: 'Cancelar',
+      type: 'danger',
+    })
+
+    if (!confirmed) return
 
     setDeleting(id)
     try {

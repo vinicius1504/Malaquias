@@ -18,6 +18,7 @@ import {
 import Link from 'next/link'
 import { RichTextEditor } from '@/components/admin/Editor'
 import toast from 'react-hot-toast'
+import { useConfirm } from '@/components/admin/ConfirmDialog'
 
 type Locale = 'pt' | 'en' | 'es'
 
@@ -60,6 +61,7 @@ export default function EditNewsPage() {
   const [categories, setCategories] = useState<Category[]>([])
   const [loadingCategories, setLoadingCategories] = useState(true)
   const [translating, setTranslating] = useState<Locale | null>(null)
+  const confirm = useConfirm()
 
   // Active locale for editing
   const [activeLocale, setActiveLocale] = useState<Locale>('pt')
@@ -325,9 +327,15 @@ export default function EditNewsPage() {
   }
 
   const handleDelete = async () => {
-    if (!confirm('Tem certeza que deseja excluir esta notícia? Esta ação não pode ser desfeita.')) {
-      return
-    }
+    const confirmed = await confirm({
+      title: 'Excluir notícia',
+      message: 'Tem certeza que deseja excluir esta notícia? Esta ação não pode ser desfeita.',
+      confirmText: 'Excluir',
+      cancelText: 'Cancelar',
+      type: 'danger',
+    })
+
+    if (!confirmed) return
 
     try {
       setDeleting(true)

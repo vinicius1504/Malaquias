@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import type { Segment } from '@/types/database'
 import toast from 'react-hot-toast'
+import { useConfirm } from '@/components/admin/ConfirmDialog'
 
 export default function SegmentosPage() {
   const [segments, setSegments] = useState<Segment[]>([])
@@ -28,6 +29,7 @@ export default function SegmentosPage() {
   const [uploadingVideo, setUploadingVideo] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const videoInputRef = useRef<HTMLInputElement>(null)
+  const confirm = useConfirm()
 
   const [formData, setFormData] = useState({
     title: '',
@@ -179,7 +181,15 @@ export default function SegmentosPage() {
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Tem certeza que deseja excluir este segmento?')) return
+    const confirmed = await confirm({
+      title: 'Excluir segmento',
+      message: 'Tem certeza que deseja excluir este segmento? Esta ação não pode ser desfeita.',
+      confirmText: 'Excluir',
+      cancelText: 'Cancelar',
+      type: 'danger',
+    })
+
+    if (!confirmed) return
 
     setDeleting(id)
     try {

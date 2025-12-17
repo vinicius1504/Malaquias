@@ -1,0 +1,21 @@
+{
+  "pageTitle": "Noticias",
+  "pageSubtitle": "Mantente al dia con las ultimas novedades en contabilidad e impuestos",
+  "video": "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/news.mp4",
+  "searchPlaceholder": "Buscar noticias...",
+  "searchButton": "Buscar",
+  "searchLabel": "Busqueda",
+  "clearFilters": "Limpiar filtros",
+  "noResults": "No se encontraron noticias.",
+  "readMore": "Leer mas",
+  "allCategories": "Todas",
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
+  "cta": {
+    "title": "Quieres saber mas sobre como ahorrar impuestos?",
+    "description": "Contacta a nuestro equipo y descubre como podemos ayudar a tu empresa.",
+    "button": "Habla con un especialista"
+  }
+}

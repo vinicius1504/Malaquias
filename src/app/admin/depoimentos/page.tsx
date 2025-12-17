@@ -17,6 +17,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 import toast from 'react-hot-toast'
+import { useConfirm } from '@/components/admin/ConfirmDialog'
 
 type Locale = 'pt' | 'en' | 'es'
 
@@ -68,6 +69,7 @@ export default function DepoimentosPage() {
   const [uploading, setUploading] = useState(false)
   const [translating, setTranslating] = useState<Locale | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const confirm = useConfirm()
 
   // Active locale for editing
   const [activeLocale, setActiveLocale] = useState<Locale>('pt')
@@ -280,7 +282,15 @@ export default function DepoimentosPage() {
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Tem certeza que deseja excluir este depoimento?')) return
+    const confirmed = await confirm({
+      title: 'Excluir depoimento',
+      message: 'Tem certeza que deseja excluir este depoimento? Esta ação não pode ser desfeita.',
+      confirmText: 'Excluir',
+      cancelText: 'Cancelar',
+      type: 'danger',
+    })
+
+    if (!confirmed) return
 
     setDeleting(id)
     try {

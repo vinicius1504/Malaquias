@@ -1,6 +1,8 @@
 {
   "pageTitle": "Contacto",
   "pageSubtitle": "Póngase en contacto con nosotros. Estamos listos para ayudar a su empresa a crecer.",
+  "heroMedia": "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/contato.mp4",
+  "heroMediaType": "video",
   "form": {
     "typeLabel": "Tipo de contacto",
     "types": {

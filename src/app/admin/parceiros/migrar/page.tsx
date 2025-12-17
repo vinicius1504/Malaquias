@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { Loader2, Check, AlertCircle, Upload, ArrowLeft } from 'lucide-react'
+import { Loader2, Check, AlertCircle, Upload, ArrowLeft, Cloud, HardDrive } from 'lucide-react'
 import Link from 'next/link'
+import { toast } from 'react-hot-toast'
+import { useConfirm } from '@/components/admin/ConfirmDialog'
 
 // Logos de clientes existentes
 const clientLogos = [
@@ -43,15 +45,20 @@ const partnerLogos = [
   { src: '/images/parceiros/uc.png', name: 'UC' },
 ]
 
+type UploadMode = 'cloud' | 'local'
+
 interface MigrationItem {
   src: string
   name: string
   type: 'client' | 'partner'
-  status: 'pending' | 'migrating' | 'success' | 'error'
+  status: 'pending' | 'migrating' | 'uploading' | 'success' | 'error'
   error?: string
+  cloudUrl?: string
 }
 
 export default function MigrarPage() {
+  const confirm = useConfirm()
+  const [uploadMode, setUploadMode] = useState<UploadMode>('cloud')
   const [items, setItems] = useState<MigrationItem[]>([
     ...clientLogos.map(l => ({ ...l, type: 'client' as const, status: 'pending' as const })),
     ...partnerLogos.map(l => ({ ...l, type: 'partner' as const, status: 'pending' as const })),
@@ -65,21 +72,66 @@ export default function MigrarPage() {
     ))
   }
 
+  const uploadToCloud = async (localPath: string, folder: string): Promise<string | null> => {
+    try {
+      const response = await fetch('/api/admin/migrate-image', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ localPath, folder }),
+      })
+
+      if (!response.ok) {
+        const data = await response.json()
+        throw new Error(data.error || 'Erro no upload')
+      }
+
+      const data = await response.json()
+      return data.url
+    } catch (error) {
+      console.error('Erro no upload para cloud:', error)
+      return null
+    }
+  }
+
   const migrateItem = async (item: MigrationItem, index: number) => {
+    let logoUrl = item.src
+
+    // Se modo cloud, primeiro faz upload para Supabase Storage
+    if (uploadMode === 'cloud') {
+      setItems(prev => prev.map((it, i) =>
+        i === index ? { ...it, status: 'uploading' } : it
+      ))
+
+      const folder = item.type === 'client' ? 'clients' : 'partners'
+      const cloudUrl = await uploadToCloud(item.src, folder)
+
+      if (!cloudUrl) {
+        setItems(prev => prev.map((it, i) =>
+          i === index ? { ...it, status: 'error', error: 'Falha no upload para cloud' } : it
+        ))
+        return
+      }
+
+      logoUrl = cloudUrl
+      setItems(prev => prev.map((it, i) =>
+        i === index ? { ...it, cloudUrl } : it
+      ))
+    }
+
     // Atualiza status para migrando
     setItems(prev => prev.map((it, i) =>
       i === index ? { ...it, status: 'migrating' } : it
     ))
 
     try {
-      // Cria o registro no banco usando a URL local da imagem
+      // Cria o registro no banco
       const response = await fetch('/api/admin/partners', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: item.name,
           type: item.type,
-          logo_url: item.src, // Usa a URL local
+          logo_url: logoUrl,
           is_active: true,
           display_order: index,
         }),
@@ -104,6 +156,15 @@ export default function MigrarPage() {
   }
 
   const startMigration = async () => {
+    const confirmed = await confirm({
+      title: 'Confirmar Migração',
+      message: `Deseja iniciar a migração de ${pendingCount} itens ${uploadMode === 'cloud' ? 'para o Supabase Storage' : 'com URLs locais'}?`,
+      confirmText: 'Iniciar',
+      type: 'info',
+    })
+
+    if (!confirmed) return
+
     setMigrating(true)
     setCompleted(0)
 
@@ -112,16 +173,35 @@ export default function MigrarPage() {
       if (items[i].status === 'pending') {
         await migrateItem(items[i], i)
         // Pequeno delay entre cada requisição
-        await new Promise(resolve => setTimeout(resolve, 200))
+        await new Promise(resolve => setTimeout(resolve, 300))
       }
     }
 
     setMigrating(false)
+
+    const successItems = items.filter(i => i.status === 'success').length
+    const errorItems = items.filter(i => i.status === 'error').length
+
+    if (errorItems === 0) {
+      toast.success(`Migração concluída! ${successItems} itens migrados.`)
+    } else {
+      toast.error(`Migração finalizada com ${errorItems} erros.`)
+    }
   }
 
   const pendingCount = items.filter(i => i.status === 'pending').length
   const successCount = items.filter(i => i.status === 'success').length
   const errorCount = items.filter(i => i.status === 'error').length
+
+  const getStatusText = (status: MigrationItem['status']) => {
+    switch (status) {
+      case 'pending': return 'Pendente'
+      case 'uploading': return 'Enviando...'
+      case 'migrating': return 'Salvando...'
+      case 'success': return 'Concluído'
+      case 'error': return 'Erro'
+    }
+  }
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -138,6 +218,43 @@ export default function MigrarPage() {
         <p className="text-gray-500 mt-1">
           Migre os logos locais para o banco de dados. Você pode editar os nomes antes de migrar.
         </p>
+      </div>
+
+      {/* Modo de Upload */}
+      <div className="mb-6 bg-white border border-gray-200 rounded-xl p-4">
+        <h3 className="text-sm font-medium text-gray-700 mb-3">Modo de Upload</h3>
+        <div className="flex gap-4">
+          <button
+            onClick={() => setUploadMode('cloud')}
+            disabled={migrating}
+            className={`flex-1 flex items-center justify-center gap-3 p-4 rounded-lg border-2 transition-all ${
+              uploadMode === 'cloud'
+                ? 'border-amber-500 bg-amber-50 text-amber-700'
+                : 'border-gray-200 hover:border-gray-300 text-gray-600'
+            } ${migrating ? 'opacity-50 cursor-not-allowed' : ''}`}
+          >
+            <Cloud className="w-5 h-5" />
+            <div className="text-left">
+              <p className="font-medium">Supabase Storage</p>
+              <p className="text-xs opacity-75">Upload para a nuvem (recomendado)</p>
+            </div>
+          </button>
+          <button
+            onClick={() => setUploadMode('local')}
+            disabled={migrating}
+            className={`flex-1 flex items-center justify-center gap-3 p-4 rounded-lg border-2 transition-all ${
+              uploadMode === 'local'
+                ? 'border-amber-500 bg-amber-50 text-amber-700'
+                : 'border-gray-200 hover:border-gray-300 text-gray-600'
+            } ${migrating ? 'opacity-50 cursor-not-allowed' : ''}`}
+          >
+            <HardDrive className="w-5 h-5" />
+            <div className="text-left">
+              <p className="font-medium">URL Local</p>
+              <p className="text-xs opacity-75">Mantém referência local</p>
+            </div>
+          </button>
+        </div>
       </div>
 
       {/* Stats */}
@@ -159,6 +276,22 @@ export default function MigrarPage() {
           <p className="text-sm text-gray-500">Erros</p>
         </div>
       </div>
+
+      {/* Progress Bar */}
+      {migrating && (
+        <div className="mb-6">
+          <div className="flex justify-between text-sm text-gray-600 mb-2">
+            <span>Progresso</span>
+            <span>{completed} de {items.length}</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <div
+              className="bg-amber-500 h-2 rounded-full transition-all duration-300"
+              style={{ width: `${(completed / items.length) * 100}%` }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Botão de migração */}
       <div className="mb-6">
@@ -212,15 +345,27 @@ export default function MigrarPage() {
                   />
 
                   {/* Status */}
-                  <div className="w-24 flex justify-center">
+                  <div className="w-28 flex justify-center">
                     {item.status === 'pending' && (
-                      <span className="text-sm text-gray-400">Pendente</span>
+                      <span className="text-sm text-gray-400">{getStatusText(item.status)}</span>
+                    )}
+                    {item.status === 'uploading' && (
+                      <div className="flex items-center gap-2 text-blue-500">
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span className="text-xs">{getStatusText(item.status)}</span>
+                      </div>
                     )}
                     {item.status === 'migrating' && (
-                      <Loader2 className="w-5 h-5 text-amber-500 animate-spin" />
+                      <div className="flex items-center gap-2 text-amber-500">
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span className="text-xs">{getStatusText(item.status)}</span>
+                      </div>
                     )}
                     {item.status === 'success' && (
-                      <Check className="w-5 h-5 text-green-500" />
+                      <div className="flex items-center gap-1 text-green-500">
+                        <Check className="w-5 h-5" />
+                        {item.cloudUrl && <Cloud className="w-4 h-4" />}
+                      </div>
                     )}
                     {item.status === 'error' && (
                       <div className="flex items-center gap-1 text-red-500" title={item.error}>
@@ -266,15 +411,27 @@ export default function MigrarPage() {
                   />
 
                   {/* Status */}
-                  <div className="w-24 flex justify-center">
+                  <div className="w-28 flex justify-center">
                     {item.status === 'pending' && (
-                      <span className="text-sm text-gray-400">Pendente</span>
+                      <span className="text-sm text-gray-400">{getStatusText(item.status)}</span>
+                    )}
+                    {item.status === 'uploading' && (
+                      <div className="flex items-center gap-2 text-blue-500">
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span className="text-xs">{getStatusText(item.status)}</span>
+                      </div>
                     )}
                     {item.status === 'migrating' && (
-                      <Loader2 className="w-5 h-5 text-amber-500 animate-spin" />
+                      <div className="flex items-center gap-2 text-amber-500">
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span className="text-xs">{getStatusText(item.status)}</span>
+                      </div>
                     )}
                     {item.status === 'success' && (
-                      <Check className="w-5 h-5 text-green-500" />
+                      <div className="flex items-center gap-1 text-green-500">
+                        <Check className="w-5 h-5" />
+                        {item.cloudUrl && <Cloud className="w-4 h-4" />}
+                      </div>
                     )}
                     {item.status === 'error' && (
                       <div className="flex items-center gap-1 text-red-500" title={item.error}>
@@ -292,9 +449,18 @@ export default function MigrarPage() {
       {/* Aviso */}
       <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
         <p className="text-sm text-blue-700">
-          <strong>Nota:</strong> Esta migração usa as URLs locais das imagens (/images/...).
-          As imagens continuarão sendo servidas da pasta public. Se preferir fazer upload
-          para o Supabase Storage, você pode editar cada item depois na página de parceiros.
+          <strong>Modo selecionado:</strong>{' '}
+          {uploadMode === 'cloud' ? (
+            <>
+              As imagens serão enviadas para o Supabase Storage e as URLs públicas
+              serão salvas no banco de dados. Isso é recomendado para produção.
+            </>
+          ) : (
+            <>
+              As imagens continuarão sendo servidas da pasta public usando URLs locais (/images/...).
+              Isso funciona apenas em desenvolvimento ou se a pasta public for servida estaticamente.
+            </>
+          )}
         </p>
       </div>
     </div>

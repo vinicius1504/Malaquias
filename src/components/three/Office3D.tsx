@@ -27,7 +27,7 @@ function OfficeModel({ isReturning }: { isReturning: boolean }) {
     <group ref={meshRef}>
       <primitive
         object={scene}
-        scale={0.3}
+        scale={0.7}
         position={[0, -2, 0]}
       />
     </group>

@@ -1,0 +1,21 @@
+{
+  "pageTitle": "Noticias",
+  "pageSubtitle": "Fique por dentro das novidades do mundo contabil e tributario",
+  "video": "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/news.mp4",
+  "searchPlaceholder": "Buscar noticias...",
+  "searchButton": "Buscar",
+  "searchLabel": "Busca",
+  "clearFilters": "Limpar filtros",
+  "noResults": "Nenhuma noticia encontrada.",
+  "readMore": "Ler mais",
+  "allCategories": "Todas",
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Proxima"
+  },
+  "cta": {
+    "title": "Quer saber mais sobre como economizar impostos?",
+    "description": "Entre em contato com nossa equipe e descubra como podemos ajudar sua empresa.",
+    "button": "Fale com um especialista"
+  }
+}

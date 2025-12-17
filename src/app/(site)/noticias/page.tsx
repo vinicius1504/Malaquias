@@ -29,64 +29,9 @@ interface Category {
   color: string;
 }
 
-// Textos fixos por idioma
-const texts = {
-  pt: {
-    pageTitle: 'Notícias',
-    pageSubtitle: 'Fique por dentro das novidades do mundo contábil e tributário',
-    searchPlaceholder: 'Buscar notícias...',
-    searchButton: 'Buscar',
-    searchLabel: 'Busca',
-    clearFilters: 'Limpar filtros',
-    noResults: 'Nenhuma notícia encontrada.',
-    readMore: 'Ler mais',
-    allCategories: 'Todas',
-    pagination: { previous: 'Anterior', next: 'Próxima' },
-    cta: {
-      title: 'Quer saber mais sobre como economizar impostos?',
-      description: 'Entre em contato com nossa equipe e descubra como podemos ajudar sua empresa.',
-      button: 'Fale com um especialista'
-    }
-  },
-  en: {
-    pageTitle: 'News',
-    pageSubtitle: 'Stay updated with the latest in accounting and tax news',
-    searchPlaceholder: 'Search news...',
-    searchButton: 'Search',
-    searchLabel: 'Search',
-    clearFilters: 'Clear filters',
-    noResults: 'No news found.',
-    readMore: 'Read more',
-    allCategories: 'All',
-    pagination: { previous: 'Previous', next: 'Next' },
-    cta: {
-      title: 'Want to learn more about saving on taxes?',
-      description: 'Contact our team and discover how we can help your business.',
-      button: 'Talk to an expert'
-    }
-  },
-  es: {
-    pageTitle: 'Noticias',
-    pageSubtitle: 'Mantente al día con las últimas novedades en contabilidad e impuestos',
-    searchPlaceholder: 'Buscar noticias...',
-    searchButton: 'Buscar',
-    searchLabel: 'Búsqueda',
-    clearFilters: 'Limpiar filtros',
-    noResults: 'No se encontraron noticias.',
-    readMore: 'Leer más',
-    allCategories: 'Todas',
-    pagination: { previous: 'Anterior', next: 'Siguiente' },
-    cta: {
-      title: '¿Quieres saber más sobre cómo ahorrar impuestos?',
-      description: 'Contacta a nuestro equipo y descubre cómo podemos ayudar a tu empresa.',
-      button: 'Habla con un especialista'
-    }
-  }
-};
-
 export default function NoticiasPage() {
-  const { locale } = useLanguage();
-  const t = texts[locale as keyof typeof texts] || texts.pt;
+  const { locale, t } = useLanguage();
+  const newsT = t.news;
   const [items, setItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -163,7 +108,7 @@ export default function NoticiasPage() {
 
   // Opções do dropdown com "Todas" no início
   const categoryOptions = [
-    { value: 'all', label: t.allCategories },
+    { value: 'all', label: newsT.allCategories },
     ...categories.map(cat => ({ value: cat.slug, label: cat.name }))
   ];
 
@@ -178,9 +123,10 @@ export default function NoticiasPage() {
             muted
             loop
             playsInline
+            crossOrigin="anonymous"
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src="/images/videos/services_video.mp4" type="video/mp4" />
+            <source src={newsT.video} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e]/70 via-[#1a1a2e]/50 to-[#1a1a2e]/70" />
         </div>
@@ -193,7 +139,7 @@ export default function NoticiasPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {t.pageTitle}
+            {newsT.pageTitle}
           </motion.h1>
           <motion.p
             className="text-white/80 text-lg mt-4 max-w-2xl mx-auto"
@@ -201,7 +147,7 @@ export default function NoticiasPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {t.pageSubtitle}
+            {newsT.pageSubtitle}
           </motion.p>
         </div>
 
@@ -218,7 +164,7 @@ export default function NoticiasPage() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
-                placeholder={t.searchPlaceholder}
+                placeholder={newsT.searchPlaceholder}
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 onKeyDown={(e) => {
@@ -270,7 +216,7 @@ export default function NoticiasPage() {
               }}
               className="w-full sm:w-auto px-6 py-3 bg-gold-500 hover:bg-gold-600 text-white font-semibold rounded-xl transition-all shadow-md hover:shadow-lg"
             >
-              {t.searchButton}
+              {newsT.searchButton}
             </button>
           </div>
 
@@ -279,7 +225,7 @@ export default function NoticiasPage() {
             <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
               {searchQuery && (
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-gold-100 text-gold-700 rounded-full text-sm">
-                  {t.searchLabel}: "{searchQuery}"
+                  {newsT.searchLabel}: "{searchQuery}"
                   <button
                     onClick={() => {
                       setSearchInput('');
@@ -315,7 +261,7 @@ export default function NoticiasPage() {
                 }}
                 className="text-sm text-gray-500 hover:text-gray-700 underline"
               >
-                {t.clearFilters}
+                {newsT.clearFilters}
               </button>
             </div>
           )}
@@ -331,7 +277,7 @@ export default function NoticiasPage() {
             </div>
           ) : items.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">{t.noResults}</p>
+              <p className="text-gray-500 text-lg">{newsT.noResults}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -382,7 +328,7 @@ export default function NoticiasPage() {
                       href={`/noticias/${item.slug}`}
                       className="inline-flex items-center gap-1 text-gold-400 font-semibold text-sm hover:text-gold-300 transition-colors"
                     >
-                      {t.readMore}
+                      {newsT.readMore}
                       <svg
                         className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                         fill="none"
@@ -416,7 +362,7 @@ export default function NoticiasPage() {
                 disabled={currentPage === 1}
                 className="px-4 py-2 text-sm font-medium text-dark-700 hover:text-gold-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {t.pagination.previous}
+                {newsT.pagination.previous}
               </button>
 
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
@@ -438,7 +384,7 @@ export default function NoticiasPage() {
                 disabled={currentPage === totalPages}
                 className="px-4 py-2 text-sm font-medium text-dark-700 hover:text-gold-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {t.pagination.next}
+                {newsT.pagination.next}
               </button>
             </motion.div>
           )}
@@ -457,10 +403,10 @@ export default function NoticiasPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
-              {t.cta.title}
+              {newsT.cta.title}
             </h2>
             <p className="text-white/70 mb-8 max-w-xl mx-auto">
-              {t.cta.description}
+              {newsT.cta.description}
             </p>
             <Link
               href="https://wa.me/5567996617549"
@@ -468,7 +414,7 @@ export default function NoticiasPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-white font-semibold text-lg rounded-full transition-all duration-300 shadow-lg shadow-gold-500/30 hover:shadow-xl hover:shadow-gold-500/40 hover:scale-105"
             >
-              {t.cta.button}
+              {newsT.cta.button}
             </Link>
           </motion.div>
         </div>

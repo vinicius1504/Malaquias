@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import { AdminSidebar } from '@/components/admin/AdminSidebar'
 import { AdminHeader } from '@/components/admin/AdminHeader'
 import { ToastProvider } from '@/components/admin/ToastProvider'
+import { ConfirmProvider } from '@/components/admin/ConfirmDialog'
 
 export const metadata = {
   title: 'Admin | Malaquias Contabilidade',
@@ -26,22 +27,24 @@ export default async function AdminLayout({
   // Se estiver na página de login e já estiver logado, vai pro dashboard
   if (session) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <ToastProvider />
-        <AdminSidebar user={session.user} />
-        <div className="lg:pl-64">
-          <AdminHeader user={session.user} />
-          <main className="p-6">{children}</main>
+      <ConfirmProvider>
+        <div className="min-h-screen bg-gray-50">
+          <ToastProvider />
+          <AdminSidebar user={session.user} />
+          <div className="lg:pl-64">
+            <AdminHeader user={session.user} />
+            <main className="p-6">{children}</main>
+          </div>
         </div>
-      </div>
+      </ConfirmProvider>
     )
   }
 
   // Página de login (sem sidebar)
   return (
-    <>
+    <ConfirmProvider>
       <ToastProvider />
       {children}
-    </>
+    </ConfirmProvider>
   )
 }

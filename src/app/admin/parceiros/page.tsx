@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import type { Partner, PartnerType } from '@/types/database'
 import toast from 'react-hot-toast'
+import { useConfirm } from '@/components/admin/ConfirmDialog'
 
 const TYPE_LABELS: Record<PartnerType, string> = {
   partner: 'Parceiro',
@@ -40,6 +41,7 @@ export default function ParceirosPage() {
   const [filterType, setFilterType] = useState<PartnerType | 'all'>('all')
   const [uploading, setUploading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const confirm = useConfirm()
 
   // Form state - apenas nome e logo
   const [formData, setFormData] = useState({
@@ -159,7 +161,15 @@ export default function ParceirosPage() {
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Tem certeza que deseja excluir?')) return
+    const confirmed = await confirm({
+      title: 'Excluir registro',
+      message: 'Tem certeza que deseja excluir este registro? Esta ação não pode ser desfeita.',
+      confirmText: 'Excluir',
+      cancelText: 'Cancelar',
+      type: 'danger',
+    })
+
+    if (!confirmed) return
 
     setDeleting(id)
     try {

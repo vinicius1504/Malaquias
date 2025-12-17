@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
-// Força rota dinâmica (não pode ser estática por usar request.url)
+// Força rota dinâmica e desabilita cache
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
+export const fetchCache = 'force-no-store'
 
 // Usa service_role para bypass do RLS em API de servidor
 const supabase = createClient(
@@ -54,7 +56,14 @@ export async function GET(request: NextRequest) {
       }
     }) || []
 
-    return NextResponse.json({ testimonials })
+    const response = NextResponse.json({ testimonials })
+
+    // Headers para prevenir cache
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+    response.headers.set('Pragma', 'no-cache')
+    response.headers.set('Expires', '0')
+
+    return response
   } catch (error) {
     console.error('Erro no GET /api/testimonials:', error)
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 })
