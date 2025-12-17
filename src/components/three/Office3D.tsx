@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
 // URL do modelo 3D - usa Supabase Storage em produção para reduzir tamanho do deploy
-const MODEL_URL = process.env.NEXT_PUBLIC_3D_MODEL_URL || '/images/models/excritorio2.glb';
+const MODEL_URL = '/images/models/excritorio2.glb';
 
 function OfficeModel({ isReturning }: { isReturning: boolean }) {
   const meshRef = useRef<THREE.Group>(null);
