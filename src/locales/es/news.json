@@ -9,6 +9,13 @@
   "noResults": "No se encontraron noticias.",
   "readMore": "Leer mas",
   "allCategories": "Todas",
+  "categories": {
+    "saude": "Salud",
+    "varejo": "Retail y E-commerce",
+    "legislacao": "Legislación",
+    "gestao": "Gestión Financiera",
+    "tributos": "Impuestos"
+  },
   "pagination": {
     "previous": "Anterior",
     "next": "Siguiente"

@@ -9,6 +9,13 @@
   "noResults": "Nenhuma noticia encontrada.",
   "readMore": "Ler mais",
   "allCategories": "Todas",
+  "categories": {
+    "saude": "Saúde",
+    "varejo": "Varejo e E-commerce",
+    "legislacao": "Legislação",
+    "gestao": "Gestão Financeira",
+    "tributos": "Tributos"
+  },
   "pagination": {
     "previous": "Anterior",
     "next": "Proxima"

@@ -9,6 +9,13 @@
   "noResults": "No news found.",
   "readMore": "Read more",
   "allCategories": "All",
+  "categories": {
+    "saude": "Health",
+    "varejo": "Retail and E-commerce",
+    "legislacao": "Legislation",
+    "gestao": "Financial Management",
+    "tributos": "Taxes"
+  },
   "pagination": {
     "previous": "Previous",
     "next": "Next"
