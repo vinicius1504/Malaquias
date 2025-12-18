@@ -1,0 +1,795 @@
+{
+  "slug": "varejo",
+  "theme": {
+    "mode": "dark",
+    "accentColor": "#BD9657"
+  },
+  "content": {
+    "pt": {
+      "seo": {
+        "title": "Contabilidade para Lojas Físicas e E-commerce | Malaquias Contabilidade",
+        "description": "Contabilidade especializada para varejo e e-commerce. Gestão fiscal, tributária e financeira para lojas físicas, marketplaces e operações omnichannel.",
+        "keywords": ["contabilidade para e-commerce", "contabilidade para varejo", "gestão fiscal", "tributação no e-commerce"]
+      },
+      "hero": {
+        "title": "Contabilidade para Lojas Físicas e E-commerce",
+        "description": "Varejo e e-commerce crescem rápido — e a contabilidade precisa acompanhar no mesmo ritmo. Para reduzir custos tributários, manter conformidade fiscal e transformar dados em decisões que aumentam a margem, conte com a Malaquias: contabilidade estratégica para operações físicas, digitais e omnichannel.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contato?segmento=varejo-ecommerce",
+        "ctaSecondaryText": "Conhecer nossos serviços",
+        "ctaSecondaryLink": "#servicos",
+        "trustText": "Retorno em até 24h úteis com especialista do varejo",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/4795018/",
+          "https://www.pexels.com/pt-br/download/video/4962796/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Eficiência tributária no varejo",
+            "text": "impacta diretamente o preço, a margem e o caixa."
+          },
+          {
+            "emphasis": "Operação omnichannel,",
+            "text": "marketplaces, meios de pagamento e logística exigem controle e conciliação impecáveis."
+          },
+          {
+            "emphasis": "Crescimento sustentável",
+            "text": "depende de gestão por indicadores, compliance e previsibilidade financeira."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "NO DIA A DIA DO VAREJO",
+          "title": "Contadores e consultores com foco total em varejo, e-commerce e omnichannel",
+          "titleHighlight": "foco total em varejo, e-commerce e omnichannel",
+          "paragraphs": [
+            "No varejo e no e-commerce, detalhes contábeis viram dinheiro: tributação por NCM, regimes especiais, substituição tributária, precificação, comissões de marketplace, taxas de cartão, chargebacks e devoluções. Quando esses pontos não estão bem estruturados, a empresa perde margem sem perceber — e assume riscos fiscais desnecessários.",
+            "A Malaquias atua com uma equipe multidisciplinar para varejo e operações digitais, integrando contabilidade, fiscal, financeiro e gestão. Organizamos processos, conferimos tributos, melhoramos controles e entregamos relatórios gerenciais que ajudam você a vender com segurança, crescer com previsibilidade e tomar decisões baseadas em números confiáveis."
+          ],
+          "ctaText": "Quer identificar vazamentos de margem e oportunidades tributárias na sua operação?",
+          "ctaButtonText": "Agendar conversa com especialista",
+          "ctaButtonLink": "/contato?segmento=varejo-ecommerce&assunto=consultoria",
+          "image": "https://images.pexels.com/photos/17485352/pexels-photo-17485352.jpeg",
+          "imageAlt": "Operação de loja e e-commerce",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "PROTEÇÃO E EXPANSÃO",
+          "title": "Estruture seu crescimento com governança, blindagem e planejamento estratégico",
+          "titleHighlight": "crescimento com governança",
+          "paragraphs": [
+            "Crescer no varejo e no e-commerce sem estrutura é arriscado: novas filiais, centros de distribuição, expansão para marketplace, troca de regime tributário e aumento de volume podem expor a empresa a autuações, inconsistências fiscais e falta de previsibilidade de caixa.",
+            "Apoiamos sua operação com planejamento tributário, organização societária e governança para expansão. Da abertura de unidades e reorganização empresarial à padronização de processos e definição de indicadores, ajudamos você a crescer com segurança, reduzir riscos e proteger o patrimônio construído."
+          ],
+          "ctaText": "Vai expandir loja, abrir filial ou escalar no digital?",
+          "ctaButtonText": "Solicitar avaliação gratuita",
+          "ctaButtonLink": "/contato?segmento=varejo-ecommerce&assunto=expansao",
+          "image": "https://images.pexels.com/photos/1737957/pexels-photo-1737957.jpeg",
+          "imageAlt": "Planejamento para expansão no varejo",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EM TODOS OS CANAIS",
+          "title": "Estamos presentes em toda a cadeia do varejo e do e-commerce",
+          "titleHighlight": "toda a cadeia do varejo e do e-commerce",
+          "description": "Dominamos as particularidades fiscais e contábeis de operações físicas, digitais e híbridas — do PDV ao marketplace.",
+          "ctaText": "Falar com um especialista do seu segmento",
+          "ctaLink": "/contato?segmento=varejo-ecommerce",
+          "cards": [
+            {
+              "image": "https://images.unsplash.com/photo-1562280963-8a5475740a10?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "title": "Lojas Físicas",
+              "subtitle": "Varejo e franquias",
+              "ctaText": "Consultoria para lojas",
+              "ctaLink": "/contato?perfil=loja-fisica"
+            },
+            {
+              "image": "https://images.pexels.com/photos/17485351/pexels-photo-17485351.jpeg",
+              "title": "E-commerce",
+              "subtitle": "D2C e operação própria",
+              "ctaText": "Soluções para e-commerce",
+              "ctaLink": "/contato?perfil=ecommerce"
+            },
+            {
+              "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+              "title": "Marketplaces",
+              "subtitle": "Vendas em plataformas",
+              "ctaText": "Gestão para marketplaces",
+              "ctaLink": "/contato?perfil=marketplace"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4481260/pexels-photo-4481260.jpeg",
+              "title": "Distribuição e Logística",
+              "subtitle": "CDs e operações",
+              "ctaText": "Estrutura fiscal e contábil",
+              "ctaLink": "/contato?perfil=logistica"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERIÊNCIA QUE ENTREGA",
+          "title": "Mais de três décadas ajudando empresas a crescer com números confiáveis",
+          "titleHighlight": "três décadas",
+          "description": "Experiência prática para transformar contabilidade em gestão, controle e resultado — com foco em margem e compliance.",
+          "ctaText": "Conhecer nossos cases de sucesso",
+          "ctaLink": "/cases?segmento=varejo-ecommerce",
+          "cards": [
+            {
+              "image": "https://images.unsplash.com/photo-1562280963-8a5475740a10?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "title": "Varejo",
+              "subtitle": "Lojas e redes",
+              "ctaText": "Ver cases de varejo",
+              "ctaLink": "/cases?perfil=varejo"
+            },
+            {
+              "image": "https://images.pexels.com/photos/17485351/pexels-photo-17485351.jpeg",
+              "title": "E-commerce",
+              "subtitle": "D2C e operação própria",
+              "ctaText": "Ver cases de e-commerce",
+              "ctaLink": "/cases?perfil=ecommerce"
+            },
+            {
+              "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+              "title": "Marketplaces",
+              "subtitle": "Escala e conciliações",
+              "ctaText": "Ver cases em marketplaces",
+              "ctaLink": "/cases?perfil=marketplace"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4481260/pexels-photo-4481260.jpeg",
+              "title": "Operações Omnichannel",
+              "subtitle": "Físico + digital",
+              "ctaText": "Ver cases omnichannel",
+              "ctaLink": "/cases?perfil=omnichannel"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NOSSOS SERVIÇOS",
+          "title": "Soluções completas para Lojas Físicas e E-commerce",
+          "titleHighlight": "Lojas Físicas e E-commerce",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Não sabe por onde começar para organizar fiscal, contábil e financeiro?",
+          "ctaButtonText": "Receber orientação personalizada",
+          "ctaButtonLink": "/contato?segmento=varejo-ecommerce&assunto=orientacao",
+          "tabs": [
+            {
+              "label": "Assessoria Contábil",
+              "title": "Assessoria Contábil",
+              "items": [
+                "Escrituração contábil e relatórios gerenciais por canal (loja, site, marketplace);",
+                "Fechamento mensal com indicadores de margem e performance;",
+                "Apoio na precificação com base em custos, impostos e taxas;",
+                "Folha de pagamento e rotinas trabalhistas;",
+                "Organização documental e compliance contábil;",
+                "Acompanhamento de resultados e recomendações práticas;",
+                "Suporte para expansão, filiais e reorganização interna."
+              ]
+            },
+            {
+              "label": "Assessoria Societária",
+              "title": "Assessoria Societária",
+              "items": [
+                "Abertura, alteração e regularização de empresas e filiais;",
+                "Estruturação societária para expansão e proteção patrimonial;",
+                "Acordos societários e governança;",
+                "Reorganização empresarial (cisão, incorporação, etc.);",
+                "Adequação para operação multicanal/omnichannel;",
+                "Apoio em negociações e estruturação para investidores."
+              ]
+            },
+            {
+              "label": "Consultoria Tributária",
+              "title": "Consultoria Tributária",
+              "items": [
+                "Planejamento tributário para varejo e e-commerce (regime e operação);",
+                "Análise de NCM, regras fiscais e impactos na precificação;",
+                "Revisão de apurações e redução de riscos fiscais;",
+                "Recuperação de créditos tributários quando aplicável;",
+                "Orientação para operações interestaduais e marketplace;",
+                "Compliance tributário e suporte em fiscalizações."
+              ]
+            },
+            {
+              "label": "Auditoria Independente",
+              "title": "Auditoria Independente",
+              "items": [
+                "Auditoria das demonstrações contábeis;",
+                "Revisão de processos e controles internos;",
+                "Auditoria de estoques, compras e movimentações;",
+                "Validação de conciliações (cartões, gateways, marketplaces);",
+                "Due diligence em operações societárias e M&A;",
+                "Relatórios e recomendações para mitigação de riscos."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "DÚVIDAS FREQUENTES",
+          "title": "Perguntas frequentes sobre contabilidade para varejo e e-commerce",
+          "titleHighlight": "varejo e e-commerce",
+          "description": "Respostas diretas para as dúvidas mais comuns de quem vende no físico, no digital ou nos dois.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/35253196/",
+          "ctaText": "Quer um diagnóstico do seu cenário atual?",
+          "ctaButtonText": "Conversar com especialista",
+          "ctaButtonLink": "/contato?segmento=varejo-ecommerce&assunto=duvida",
+          "questions": [
+            {
+              "question": "Qual a principal diferença entre contabilidade para varejo/e-commerce e contabilidade tradicional?",
+              "answer": "No varejo e no e-commerce existem particularidades como tributação por produto (NCM), substituição tributária, devoluções, chargebacks, conciliações de cartão e marketplace, além de rotinas fiscais mais sensíveis. Uma contabilidade especializada evita perdas de margem e reduz riscos."
+            },
+            {
+              "question": "Vocês fazem conciliação de marketplace e meios de pagamento?",
+              "answer": "Sim. Apoiamos a organização e validação de conciliações (vendas, taxas, repasses, estornos e devoluções) para que o financeiro e a contabilidade reflitam a realidade — com números confiáveis para decisão."
+            },
+            {
+              "question": "Como reduzir a carga tributária sem aumentar o risco fiscal?",
+              "answer": "A redução segura vem de planejamento: enquadramento correto, revisão de apuração, análise de produtos e operação, e compliance. O objetivo é pagar o que é devido — e não pagar o que não é."
+            },
+            {
+              "question": "O que mais impacta a margem no e-commerce?",
+              "answer": "Geralmente: impostos, frete, comissões de marketplace, taxas de cartão/gateway, custo de aquisição (marketing) e devoluções. Uma estrutura contábil gerencial ajuda a enxergar isso por canal e por produto."
+            },
+            {
+              "question": "A Malaquias atende empresas de qualquer região do Brasil?",
+              "answer": "Sim. Atendemos em todo o Brasil com processos digitais, reuniões remotas e troca segura de documentos — com a mesma qualidade do atendimento presencial."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SUA OPERAÇÃO",
+          "title": "Organize sua contabilidade, ganhe previsibilidade e aumente sua margem",
+          "titleHighlight": "aumente sua margem",
+          "description": "Solicite um diagnóstico gratuito e descubra como estruturar fiscal, contábil e financeiro para crescer no físico e no digital com segurança.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Retorno garantido em até 24h úteis",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "en": {
+      "seo": {
+        "title": "Accounting for Retail Stores & E-commerce | Malaquias Accounting",
+        "description": "Specialized accounting for retail and e-commerce. Tax planning, fiscal and financial management for stores, marketplaces and omnichannel operations.",
+        "keywords": ["e-commerce accounting", "retail accounting", "fiscal management", "e-commerce taxation"]
+      },
+      "hero": {
+        "title": "Accounting for Retail Stores & E-commerce",
+        "description": "Retail and e-commerce move fast — your accounting must keep up. To reduce tax costs, stay compliant and turn numbers into decisions that improve margins, count on Malaquias: strategic accounting for physical, digital and omnichannel operations.",
+        "ctaText": "Request free assessment",
+        "ctaLink": "/contact?segment=retail-ecommerce",
+        "ctaSecondaryText": "Explore our services",
+        "ctaSecondaryLink": "#services",
+        "trustText": "Specialized support with response within 24 business hours",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/4795018/",
+          "https://www.pexels.com/pt-br/download/video/4962796/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Tax efficiency in retail",
+            "text": "directly impacts pricing, margins and cash flow."
+          },
+          {
+            "emphasis": "Omnichannel operations,",
+            "text": "marketplaces, payments and logistics require accurate controls and reconciliations."
+          },
+          {
+            "emphasis": "Sustainable growth",
+            "text": "depends on KPIs, compliance and financial predictability."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "IN YOUR DAY-TO-DAY",
+          "title": "Accountants and consultants fully focused on retail, e-commerce and omnichannel",
+          "titleHighlight": "fully focused on retail, e-commerce and omnichannel",
+          "paragraphs": [
+            "In retail and e-commerce, accounting details become real money: product taxation, special regimes, returns, chargebacks, marketplace commissions, payment fees and shipping costs. When these aren’t well structured, businesses lose margin quietly — and take unnecessary compliance risks.",
+            "Malaquias brings a multidisciplinary team dedicated to retail and digital operations. We connect accounting, tax, finance and management to organize processes, validate taxes and deliver KPI-driven reports so you can grow safely, price confidently and make decisions based on reliable numbers."
+          ],
+          "ctaText": "Want to uncover margin leaks and tax opportunities in your operation?",
+          "ctaButtonText": "Schedule a consultation",
+          "ctaButtonLink": "/contact?segment=retail-ecommerce&subject=consulting",
+          "image": "https://images.pexels.com/photos/1737957/pexels-photo-1737957.jpeg",
+          "imageAlt": "Retail and e-commerce operation",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "PROTECTION & SCALE",
+          "title": "Scale with governance, protection and strategic planning",
+          "titleHighlight": "scale with governance",
+          "paragraphs": [
+            "Scaling without structure is risky: new stores, warehouses, marketplace expansion, tax regime changes and higher volume can expose your business to audits, inconsistencies and cash-flow surprises.",
+            "We support your growth with tax planning, corporate structuring and governance for expansion. From opening new units to standardizing processes and defining KPIs, we help you grow with compliance, reduce risks and protect what you’ve built."
+          ],
+          "ctaText": "Planning to open a store, add a warehouse or scale online?",
+          "ctaButtonText": "Request free evaluation",
+          "ctaButtonLink": "/contact?segment=retail-ecommerce&subject=expansion",
+          "image": "https://images.pexels.com/photos/1737957/pexels-photo-1737957.jpeg",
+          "imageAlt": "Planning for retail expansion",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "ACROSS ALL CHANNELS",
+          "title": "We cover the entire retail and e-commerce value chain",
+          "titleHighlight": "entire retail and e-commerce value chain",
+          "description": "We master the accounting and tax specifics of physical, digital and hybrid operations — from POS to marketplaces.",
+          "ctaText": "Talk to a specialist in your segment",
+          "ctaLink": "/contact?segment=retail-ecommerce",
+          "cards": [
+            {
+              "image": "https://images.unsplash.com/photo-1562280963-8a5475740a10?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "title": "Physical Stores",
+              "subtitle": "Retail & franchises",
+              "ctaText": "Consulting for stores",
+              "ctaLink": "/contact?profile=physical-store"
+            },
+            {
+              "image": "https://images.pexels.com/photos/17485351/pexels-photo-17485351.jpeg",
+              "title": "E-commerce",
+              "subtitle": "D2C & owned ops",
+              "ctaText": "Solutions for e-commerce",
+              "ctaLink": "/contact?profile=ecommerce"
+            },
+            {
+              "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+              "title": "Marketplaces",
+              "subtitle": "Platform sales",
+              "ctaText": "Marketplace support",
+              "ctaLink": "/contact?profile=marketplace"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4481260/pexels-photo-4481260.jpeg",
+              "title": "Distribution & Logistics",
+              "subtitle": "Warehouses & ops",
+              "ctaText": "Tax & accounting structure",
+              "ctaLink": "/contact?profile=logistics"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "PROVEN TRACK RECORD",
+          "title": "Over three decades helping businesses grow with reliable numbers",
+          "titleHighlight": "three decades",
+          "description": "Hands-on experience turning accounting into management, control and results — with a focus on margins and compliance.",
+          "ctaText": "Explore our success stories",
+          "ctaLink": "/cases?segment=retail-ecommerce",
+          "cards": [
+            {
+              "image": "https://images.unsplash.com/photo-1562280963-8a5475740a10?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "title": "Retail",
+              "subtitle": "Stores & chains",
+              "ctaText": "Retail cases",
+              "ctaLink": "/cases?profile=retail"
+            },
+            {
+              "image": "https://images.pexels.com/photos/17485351/pexels-photo-17485351.jpeg",
+              "title": "E-commerce",
+              "subtitle": "D2C & owned ops",
+              "ctaText": "E-commerce cases",
+              "ctaLink": "/cases?profile=ecommerce"
+            },
+            {
+              "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+              "title": "Marketplaces",
+              "subtitle": "Scale & reconciliations",
+              "ctaText": "Marketplace cases",
+              "ctaLink": "/cases?profile=marketplace"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4481260/pexels-photo-4481260.jpeg",
+              "title": "Omnichannel Operations",
+              "subtitle": "Physical + digital",
+              "ctaText": "Omnichannel cases",
+              "ctaLink": "/cases?profile=omnichannel"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "OUR SERVICES",
+          "title": "Complete solutions for Retail Stores & E-commerce",
+          "titleHighlight": "Retail Stores & E-commerce",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Not sure where to start to organize tax, accounting and finance?",
+          "ctaButtonText": "Get personalized guidance",
+          "ctaButtonLink": "/contact?segment=retail-ecommerce&subject=guidance",
+          "tabs": [
+            {
+              "label": "Accounting Advisory",
+              "title": "Accounting Advisory",
+              "items": [
+                "Bookkeeping and management reports by channel (store, website, marketplace);",
+                "Monthly closing with margin and performance KPIs;",
+                "Pricing support based on costs, taxes and fees;",
+                "Payroll and labor routines support;",
+                "Document organization and accounting compliance;",
+                "Results tracking with practical recommendations;",
+                "Support for expansion, branches and internal structuring."
+              ]
+            },
+            {
+              "label": "Corporate Advisory",
+              "title": "Corporate Advisory",
+              "items": [
+                "Company formation, amendments and branch regularization;",
+                "Corporate structuring for expansion and asset protection;",
+                "Governance and shareholder agreements;",
+                "Business reorganizations (mergers, spin-offs, etc.);",
+                "Structuring for omnichannel operations;",
+                "Support for investor-ready organization and negotiations."
+              ]
+            },
+            {
+              "label": "Tax Consulting",
+              "title": "Tax Consulting",
+              "items": [
+                "Tax planning for retail and e-commerce (regime and operations);",
+                "Product tax analysis and pricing impacts;",
+                "Review of tax calculations and risk reduction;",
+                "Tax credit recovery when applicable;",
+                "Guidance for interstate sales and marketplace operations;",
+                "Compliance support and audit readiness."
+              ]
+            },
+            {
+              "label": "Independent Audit",
+              "title": "Independent Audit",
+              "items": [
+                "Financial statements audit;",
+                "Internal processes and controls review;",
+                "Inventory, purchasing and movements audit;",
+                "Reconciliation validation (cards, gateways, marketplaces);",
+                "Due diligence for corporate transactions and M&A;",
+                "Risk mitigation reports and recommendations."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "FREQUENTLY ASKED QUESTIONS",
+          "title": "Frequently asked questions about retail and e-commerce accounting",
+          "titleHighlight": "retail and e-commerce",
+          "description": "Clear answers to the most common questions from businesses selling in-store, online or both.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/35253196/",
+          "ctaText": "Want a diagnosis of your current setup?",
+          "ctaButtonText": "Talk to a specialist",
+          "ctaButtonLink": "/contact?segment=retail-ecommerce&subject=question",
+          "questions": [
+            {
+              "question": "What’s the difference between retail/e-commerce accounting and traditional accounting?",
+              "answer": "Retail and e-commerce include specifics like product taxation, returns, chargebacks, marketplace commissions and payment reconciliations. A specialized approach helps protect margins and reduce compliance risks."
+            },
+            {
+              "question": "Do you support marketplace and payment reconciliation?",
+              "answer": "Yes. We help organize and validate reconciliations (sales, fees, payouts, refunds and returns) so your finance and accounting match reality — with reliable numbers for decision-making."
+            },
+            {
+              "question": "How can we reduce taxes without increasing compliance risks?",
+              "answer": "Safe reduction comes from planning: correct tax regime, review of calculations, product and operation analysis, and compliance. The goal is to pay what’s due — and avoid paying what isn’t."
+            },
+            {
+              "question": "What typically impacts e-commerce margins the most?",
+              "answer": "Usually: taxes, shipping, marketplace commissions, payment/gateway fees, customer acquisition costs and returns. Management accounting helps you track this by channel and product."
+            },
+            {
+              "question": "Do you serve companies across Brazil?",
+              "answer": "Yes. We serve clients nationwide through secure digital processes, remote meetings and streamlined document exchange."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORM YOUR OPERATION",
+          "title": "Organize your accounting, gain predictability and improve your margins",
+          "titleHighlight": "improve your margins",
+          "description": "Request a free assessment and discover how to structure tax, accounting and finance to scale safely across physical and digital channels.",
+          "submitText": "Request free assessment",
+          "submitMicrocopy": "Guaranteed response within 24 business hours",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "es": {
+      "seo": {
+        "title": "Contabilidad para Tiendas Físicas y E-commerce | Malaquias Contabilidad",
+        "description": "Contabilidad especializada para retail y e-commerce. Planificación tributaria, gestión fiscal y financiera para tiendas, marketplaces y operaciones omnicanal.",
+        "keywords": ["contabilidad para e-commerce", "contabilidad para retail", "gestión fiscal", "tributación en e-commerce"]
+      },
+      "hero": {
+        "title": "Contabilidad para Tiendas Físicas y E-commerce",
+        "description": "El retail y el e-commerce avanzan rápido — y la contabilidad debe acompañar ese ritmo. Para reducir costos tributarios, cumplir con la normativa y convertir números en decisiones que aumenten el margen, cuente con Malaquias: contabilidad estratégica para operaciones físicas, digitales y omnicanal.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contacto?segmento=varejo-ecommerce",
+        "ctaSecondaryText": "Conocer nuestros servicios",
+        "ctaSecondaryLink": "#servicios",
+        "trustText": "Respuesta en hasta 24h hábiles con especialista en retail",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/4795018/",
+          "https://www.pexels.com/pt-br/download/video/4962796/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Eficiencia tributaria en retail",
+            "text": "impacta directamente el precio, el margen y el flujo de caja."
+          },
+          {
+            "emphasis": "Operación omnicanal,",
+            "text": "marketplaces, pagos y logística exigen control y conciliación impecables."
+          },
+          {
+            "emphasis": "Crecimiento sostenible",
+            "text": "depende de indicadores, compliance y previsibilidad financiera."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "EN EL DÍA A DÍA",
+          "title": "Contadores y consultores con foco total en retail, e-commerce y omnicanal",
+          "titleHighlight": "foco total en retail, e-commerce y omnicanal",
+          "paragraphs": [
+            "En retail y e-commerce, los detalles contables se convierten en dinero real: tributación por producto, regímenes especiales, devoluciones, chargebacks, comisiones de marketplace, tasas de pago y costos de envío. Cuando esto no está bien estructurado, el negocio pierde margen sin darse cuenta — y asume riesgos fiscales innecesarios.",
+            "Malaquias reúne un equipo multidisciplinario dedicado a operaciones físicas y digitales. Conectamos contabilidad, fiscal, finanzas y gestión para organizar procesos, validar impuestos y entregar reportes con indicadores, ayudándole a crecer con seguridad, precificar con confianza y decidir con números confiables."
+          ],
+          "ctaText": "¿Quiere identificar fugas de margen y oportunidades tributarias en su operación?",
+          "ctaButtonText": "Agendar conversación con especialista",
+          "ctaButtonLink": "/contacto?segmento=varejo-ecommerce&asunto=consultoria",
+          "image": "https://images.pexels.com/photos/1737957/pexels-photo-1737957.jpeg",
+          "imageAlt": "Operación retail y e-commerce",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "PROTECCIÓN Y ESCALA",
+          "title": "Escale con gobernanza, protección y planificación estratégica",
+          "titleHighlight": "escale con gobernanza",
+          "paragraphs": [
+            "Escalar sin estructura es arriesgado: nuevas tiendas, depósitos, expansión a marketplace, cambio de régimen tributario y mayor volumen pueden exponer al negocio a auditorías, inconsistencias y sorpresas de caja.",
+            "Apoyamos su crecimiento con planificación tributaria, estructura societaria y gobernanza para expansión. Desde la apertura de unidades hasta la estandarización de procesos y definición de indicadores, le ayudamos a crecer con compliance, reducir riesgos y proteger lo que construyó."
+          ],
+          "ctaText": "¿Va a abrir tienda, sumar depósito o escalar en digital?",
+          "ctaButtonText": "Solicitar evaluación gratuita",
+          "ctaButtonLink": "/contacto?segmento=varejo-ecommerce&asunto=expansion",
+          "image": "https://images.pexels.com/photos/1737957/pexels-photo-1737957.jpeg",
+          "imageAlt": "Planificación de expansión en retail",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EN TODOS LOS CANALES",
+          "title": "Estamos presentes en toda la cadena del retail y del e-commerce",
+          "titleHighlight": "toda la cadena del retail y del e-commerce",
+          "description": "Dominamos las particularidades contables y fiscales de operaciones físicas, digitales e híbridas — del punto de venta al marketplace.",
+          "ctaText": "Hablar con un especialista de su segmento",
+          "ctaLink": "/contacto?segmento=varejo-ecommerce",
+          "cards": [
+            {
+              "image": "https://images.unsplash.com/photo-1562280963-8a5475740a10?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "title": "Tiendas Físicas",
+              "subtitle": "Retail y franquicias",
+              "ctaText": "Consultoría para tiendas",
+              "ctaLink": "/contacto?perfil=loja-fisica"
+            },
+            {
+              "image": "https://images.pexels.com/photos/17485351/pexels-photo-17485351.jpeg",
+              "title": "E-commerce",
+              "subtitle": "D2C y operación propia",
+              "ctaText": "Soluciones para e-commerce",
+              "ctaLink": "/contacto?perfil=ecommerce"
+            },
+            {
+              "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+              "title": "Marketplaces",
+              "subtitle": "Ventas en plataformas",
+              "ctaText": "Gestión para marketplaces",
+              "ctaLink": "/contacto?perfil=marketplace"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4481260/pexels-photo-4481260.jpeg",
+              "title": "Distribución y Logística",
+              "subtitle": "Depósitos y operación",
+              "ctaText": "Estructura fiscal y contable",
+              "ctaLink": "/contacto?perfil=logistica"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERIENCIA QUE ENTREGA",
+          "title": "Más de tres décadas ayudando a empresas a crecer con números confiables",
+          "titleHighlight": "tres décadas",
+          "description": "Experiencia práctica para transformar contabilidad en gestión, control y resultados — con foco en margen y compliance.",
+          "ctaText": "Conocer nuestros casos de éxito",
+          "ctaLink": "/cases?segmento=varejo-ecommerce",
+          "cards": [
+            {
+              "image": "https://images.unsplash.com/photo-1562280963-8a5475740a10?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "title": "Retail",
+              "subtitle": "Tiendas y redes",
+              "ctaText": "Ver casos de retail",
+              "ctaLink": "/cases?perfil=varejo"
+            },
+            {
+              "image": "https://images.pexels.com/photos/17485351/pexels-photo-17485351.jpeg",
+              "title": "E-commerce",
+              "subtitle": "D2C y operación propia",
+              "ctaText": "Ver casos de e-commerce",
+              "ctaLink": "/cases?perfil=ecommerce"
+            },
+            {
+              "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+              "title": "Marketplaces",
+              "subtitle": "Escala y conciliaciones",
+              "ctaText": "Ver casos en marketplaces",
+              "ctaLink": "/cases?perfil=marketplace"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4481260/pexels-photo-4481260.jpeg",
+              "title": "Operaciones Omnicanal",
+              "subtitle": "Físico + digital",
+              "ctaText": "Ver casos omnicanal",
+              "ctaLink": "/cases?perfil=omnichannel"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NUESTROS SERVICIOS",
+          "title": "Soluciones completas para Tiendas Físicas y E-commerce",
+          "titleHighlight": "Tiendas Físicas y E-commerce",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "¿No sabe por dónde empezar para organizar fiscal, contable y finanzas?",
+          "ctaButtonText": "Recibir orientación personalizada",
+          "ctaButtonLink": "/contacto?segmento=varejo-ecommerce&asunto=orientacion",
+          "tabs": [
+            {
+              "label": "Asesoría Contable",
+              "title": "Asesoría Contable",
+              "items": [
+                "Contabilidad e informes gerenciales por canal (tienda, sitio, marketplace);",
+                "Cierre mensual con indicadores de margen y desempeño;",
+                "Apoyo en precios basado en costos, impuestos y tasas;",
+                "Nómina y rutinas laborales;",
+                "Organización documental y compliance contable;",
+                "Seguimiento de resultados con recomendaciones prácticas;",
+                "Soporte para expansión, sucursales y estructura interna."
+              ]
+            },
+            {
+              "label": "Asesoría Societaria",
+              "title": "Asesoría Societaria",
+              "items": [
+                "Apertura, cambios y regularización de empresas y sucursales;",
+                "Estructura societaria para expansión y protección patrimonial;",
+                "Gobernanza y acuerdos societarios;",
+                "Reorganización empresarial (fusiones, escisiones, etc.);",
+                "Adecuación para operación omnicanal;",
+                "Apoyo para preparación y negociación con inversionistas."
+              ]
+            },
+            {
+              "label": "Consultoría Tributaria",
+              "title": "Consultoría Tributaria",
+              "items": [
+                "Planificación tributaria para retail y e-commerce (régimen y operación);",
+                "Análisis fiscal de productos e impacto en precios;",
+                "Revisión de cálculos y reducción de riesgos fiscales;",
+                "Recuperación de créditos tributarios cuando aplique;",
+                "Orientación para ventas interestatales y marketplace;",
+                "Compliance tributario y soporte ante fiscalizaciones."
+              ]
+            },
+            {
+              "label": "Auditoría Independiente",
+              "title": "Auditoría Independiente",
+              "items": [
+                "Auditoría de estados financieros;",
+                "Revisión de procesos y controles internos;",
+                "Auditoría de inventarios, compras y movimientos;",
+                "Validación de conciliaciones (tarjetas, gateways, marketplaces);",
+                "Due diligence en operaciones societarias y M&A;",
+                "Informes y recomendaciones para mitigación de riesgos."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "PREGUNTAS FRECUENTES",
+          "title": "Preguntas frecuentes sobre contabilidad para retail y e-commerce",
+          "titleHighlight": "retail y e-commerce",
+          "description": "Respuestas claras a las dudas más comunes de quienes venden en tienda, online o en ambos canales.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/35253196/",
+          "ctaText": "¿Quiere un diagnóstico de su escenario actual?",
+          "ctaButtonText": "Conversar con especialista",
+          "ctaButtonLink": "/contacto?segmento=varejo-ecommerce&asunto=duda",
+          "questions": [
+            {
+              "question": "¿Cuál es la diferencia entre contabilidad para retail/e-commerce y la contabilidad tradicional?",
+              "answer": "Retail y e-commerce incluyen particularidades como tributación por producto, devoluciones, chargebacks, comisiones de marketplace y conciliaciones de pagos. Un enfoque especializado protege el margen y reduce riesgos."
+            },
+            {
+              "question": "¿Ustedes apoyan conciliación de marketplace y medios de pago?",
+              "answer": "Sí. Ayudamos a organizar y validar conciliaciones (ventas, tasas, repases, reembolsos y devoluciones) para que finanzas y contabilidad reflejen la realidad, con números confiables."
+            },
+            {
+              "question": "¿Cómo reducir impuestos sin aumentar el riesgo fiscal?",
+              "answer": "La reducción segura viene de planificación: régimen correcto, revisión de cálculos, análisis de productos y operación, y compliance. El objetivo es pagar lo debido — y evitar pagar lo que no corresponde."
+            },
+            {
+              "question": "¿Qué impacta más el margen en e-commerce?",
+              "answer": "Normalmente: impuestos, envío, comisiones de marketplace, tasas de pago/gateway, costo de adquisición (marketing) y devoluciones. La contabilidad gerencial ayuda a medir por canal y por producto."
+            },
+            {
+              "question": "¿Malaquias atiende empresas en todo Brasil?",
+              "answer": "Sí. Atendemos en todo el país con procesos digitales seguros, reuniones remotas y intercambio ágil de documentos."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SU OPERACIÓN",
+          "title": "Organice su contabilidad, gane previsibilidad y mejore su margen",
+          "titleHighlight": "mejore su margen",
+          "description": "Solicite un diagnóstico gratuito y descubra cómo estructurar fiscal, contable y finanzas para escalar con seguridad en canales físicos y digitales.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Respuesta garantizada en hasta 24h hábiles",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    }
+  }
+}

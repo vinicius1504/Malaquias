@@ -1,0 +1,795 @@
+{
+  "slug": "automoveis",
+  "theme": {
+    "mode": "dark",
+    "accentColor": "#BD9657"
+  },
+  "content": {
+    "pt": {
+      "seo": {
+        "title": "Contabilidade para Concessionárias e Mecânicas | Malaquias Contabilidade",
+        "description": "Contabilidade especializada para concessionárias, oficinas e centros automotivos. Gestão fiscal, tributária e financeira para controlar margem, estoque e crescer com segurança.",
+        "keywords": ["contabilidade para concessionárias", "contabilidade para oficinas", "gestão fiscal", "planejamento tributário automotivo"]
+      },
+      "hero": {
+        "title": "Contabilidade para Concessionárias e Mecânicas",
+        "description": "No setor automotivo, margem, estoque e fluxo de caixa precisam estar sob controle todos os dias. Para organizar tributos, reduzir riscos, melhorar resultados e dar previsibilidade para crescer, conte com a Malaquias: contabilidade estratégica para concessionárias, oficinas mecânicas e centros automotivos.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contato?segmento=automoveis",
+        "ctaSecondaryText": "Conhecer nossos serviços",
+        "ctaSecondaryLink": "#servicos",
+        "trustText": "Retorno em até 24h úteis com especialista do setor",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/5992516/",
+          "https://www.pexels.com/pt-br/download/video/4488706/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Controle de margem e precificação",
+            "text": "evita perda de lucro em peças, serviços e vendas."
+          },
+          {
+            "emphasis": "Estoque e giro bem geridos,",
+            "text": "reduzem capital parado e melhoram o caixa."
+          },
+          {
+            "emphasis": "Conformidade fiscal e tributária",
+            "text": "protege a operação e reduz riscos de autuações."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "NO DIA A DIA DO AUTOMOTIVO",
+          "title": "Contabilidade consultiva para concessionárias, oficinas e centros automotivos",
+          "titleHighlight": "concessionárias, oficinas e centros automotivos",
+          "paragraphs": [
+            "Concessionárias e oficinas lidam com rotinas complexas: vendas e pós-venda, peças e serviços, ordens de serviço, garantias, comissões, controle de estoque e diferentes tributações por operação. Sem um financeiro e uma contabilidade alinhados, a margem se perde em detalhes e o caixa vira surpresa.",
+            "A Malaquias estrutura sua contabilidade com foco em gestão e resultado. Integramos fiscal, contábil e financeiro para organizar processos, melhorar controles, reduzir riscos e entregar relatórios práticos que ajudam na precificação, no giro de estoque e na análise de rentabilidade por área."
+          ],
+          "ctaText": "Quer identificar onde sua margem está sendo consumida e corrigir rápido?",
+          "ctaButtonText": "Agendar conversa com especialista",
+          "ctaButtonLink": "/contato?segmento=concessionarias-mecanicas&assunto=consultoria",
+          "image": "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg",
+          "imageAlt": "Gestão de oficina e concessionária",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "EXPANSÃO E CONTROLE",
+          "title": "Cresça com previsibilidade: filiais, novas unidades e padronização de rotinas",
+          "titleHighlight": "padronização de rotinas",
+          "paragraphs": [
+            "Abrir uma nova unidade, ampliar a operação ou organizar o pós-venda exige padronização e governança. Sem rotinas claras, a empresa perde controle sobre estoque, custos, comissões e impostos — e o crescimento vira risco.",
+            "Apoiamos sua empresa com planejamento tributário, organização societária e implantação de rotinas gerenciais para escalar com segurança. O objetivo é crescer mantendo controle, conformidade e visão clara de desempenho por unidade e por centro de resultado."
+          ],
+          "ctaText": "Vai expandir a operação ou organizar processos internos?",
+          "ctaButtonText": "Solicitar avaliação gratuita",
+          "ctaButtonLink": "/contato?segmento=concessionarias-mecanicas&assunto=expansao",
+          "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+          "imageAlt": "Planejamento e crescimento no setor automotivo",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "ATENDIMENTO POR PERFIL",
+          "title": "Soluções para diferentes operações do setor automotivo",
+          "titleHighlight": "setor automotivo",
+          "description": "Atendemos operações com perfis diferentes, sempre ajustando contabilidade, fiscal e gestão à realidade do seu negócio.",
+          "ctaText": "Falar com um especialista do seu perfil",
+          "ctaLink": "/contato?segmento=concessionarias-mecanicas",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
+              "title": "Concessionárias",
+              "subtitle": "Vendas e pós-venda",
+              "ctaText": "Soluções para concessionárias",
+              "ctaLink": "/contato?perfil=concessionarias"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
+              "title": "Oficinas Mecânicas",
+              "subtitle": "Serviços e manutenção",
+              "ctaText": "Assessoria para oficinas",
+              "ctaLink": "/contato?perfil=oficinas"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+              "title": "Centros Automotivos",
+              "subtitle": "Serviços rápidos",
+              "ctaText": "Gestão para centros",
+              "ctaLink": "/contato?perfil=centros-automotivos"
+            },
+            {
+              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
+              "title": "Autopeças e Distribuição",
+              "subtitle": "Estoque e giro",
+              "ctaText": "Atendimento especializado",
+              "ctaLink": "/contato?perfil=autopecas"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERTISE COMPROVADA",
+          "title": "Contabilidade que vira gestão: foco em margem, estoque e caixa",
+          "titleHighlight": "margem, estoque e caixa",
+          "description": "Transformamos números em ações: controles melhores, tributos organizados e decisões práticas para aumentar rentabilidade.",
+          "ctaText": "Conhecer nossos cases de sucesso",
+          "ctaLink": "/cases?segmento=concessionarias-mecanicas",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
+              "title": "Concessionárias",
+              "subtitle": "",
+              "ctaText": "Ver cases de concessionárias",
+              "ctaLink": "/cases?perfil=concessionarias"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
+              "title": "Oficinas",
+              "subtitle": "",
+              "ctaText": "Ver cases de oficinas",
+              "ctaLink": "/cases?perfil=oficinas"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+              "title": "Centros Automotivos",
+              "subtitle": "",
+              "ctaText": "Ver cases de centros",
+              "ctaLink": "/cases?perfil=centros"
+            },
+            {
+              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
+              "title": "Autopeças",
+              "subtitle": "",
+              "ctaText": "Ver cases de autopeças",
+              "ctaLink": "/cases?perfil=autopecas"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NOSSOS SERVIÇOS",
+          "title": "Soluções completas em contabilidade e consultoria para o setor automotivo",
+          "titleHighlight": "setor automotivo",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Não tem certeza sobre qual serviço é ideal para sua operação?",
+          "ctaButtonText": "Receber orientação personalizada",
+          "ctaButtonLink": "/contato?segmento=concessionarias-mecanicas&assunto=orientacao",
+          "tabs": [
+            {
+              "label": "Assessoria Contábil",
+              "title": "Assessoria Contábil",
+              "items": [
+                "Escrituração contábil e fechamento mensal com relatórios gerenciais;",
+                "Organização de rotinas financeiras e conciliações;",
+                "Estruturação de centros de resultado (vendas, peças, serviços, pós-venda);",
+                "Acompanhamento de indicadores (margem, ticket, produtividade, giro);",
+                "Folha de pagamento, comissões e rotinas trabalhistas;",
+                "Organização documental e conformidade contábil;",
+                "Atendimento consultivo contínuo."
+              ]
+            },
+            {
+              "label": "Assessoria Societária",
+              "title": "Assessoria Societária",
+              "items": [
+                "Abertura, alteração e regularização de empresas e filiais;",
+                "Estruturação societária para expansão e proteção patrimonial;",
+                "Acordos societários e governança;",
+                "Reorganização empresarial;",
+                "Suporte para entrada de sócios e investidores;",
+                "Padronização documental para escala."
+              ]
+            },
+            {
+              "label": "Consultoria Tributária",
+              "title": "Consultoria Tributária",
+              "items": [
+                "Planejamento tributário para operações de comércio e serviços automotivos;",
+                "Revisão de apurações e redução de riscos fiscais;",
+                "Análise de oportunidades de economia tributária com segurança;",
+                "Compliance fiscal e suporte em fiscalizações;",
+                "Orientação para expansão e mudanças de regime;",
+                "Recuperação de créditos quando aplicável."
+              ]
+            },
+            {
+              "label": "Auditoria Independente",
+              "title": "Auditoria Independente",
+              "items": [
+                "Auditoria das demonstrações contábeis;",
+                "Revisão de controles internos e processos;",
+                "Auditoria de estoque e movimentações (peças e insumos);",
+                "Validação de conciliações e controles de recebíveis;",
+                "Due diligence para aquisições e reorganizações;",
+                "Relatórios e recomendações para mitigação de riscos."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "DÚVIDAS FREQUENTES",
+          "title": "Perguntas frequentes sobre contabilidade no setor automotivo",
+          "titleHighlight": "setor automotivo",
+          "description": "Respostas diretas para as dúvidas mais comuns de concessionárias, oficinas e centros automotivos.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/5450263/",
+          "ctaText": "Quer um diagnóstico do seu cenário atual?",
+          "ctaButtonText": "Conversar com especialista",
+          "ctaButtonLink": "/contato?segmento=concessionarias-mecanicas&assunto=duvida",
+          "questions": [
+            {
+              "question": "Por que concessionárias e oficinas precisam de contabilidade especializada?",
+              "answer": "Porque há particularidades como divisão por centros de resultado (vendas/peças/serviços), comissões, controle de estoque, garantias e rotinas fiscais específicas. Uma contabilidade alinhada à operação protege margem e reduz riscos."
+            },
+            {
+              "question": "Vocês ajudam a separar resultados por área (peças, serviços, vendas)?",
+              "answer": "Sim. Estruturamos centros de resultado e relatórios para acompanhar rentabilidade por área, por unidade e por canal."
+            },
+            {
+              "question": "Como melhorar o controle de estoque e giro de peças?",
+              "answer": "Apoiamos na organização de processos, conciliações e relatórios gerenciais para reduzir capital parado, perdas e divergências."
+            },
+            {
+              "question": "Dá para reduzir tributos sem aumentar risco fiscal?",
+              "answer": "Sim. Com planejamento tributário, enquadramento correto, revisão de apurações e compliance, é possível pagar o que é devido e evitar pagamentos indevidos."
+            },
+            {
+              "question": "A Malaquias atende operações com várias unidades?",
+              "answer": "Sim. Apoiamos redes e grupos com padronização de rotinas, relatórios por unidade e estrutura societária para expansão."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SUA OPERAÇÃO",
+          "title": "Ganhe controle, reduza riscos e aumente a rentabilidade do seu negócio automotivo",
+          "titleHighlight": "aumente a rentabilidade",
+          "description": "Solicite um diagnóstico gratuito e descubra como estruturar contabilidade, fiscal e gestão para crescer com previsibilidade no setor automotivo.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Resposta garantida em até 24h úteis",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "en": {
+      "seo": {
+        "title": "Accounting for Dealerships & Auto Repair Shops | Malaquias Accounting",
+        "description": "Specialized accounting for car dealerships, repair shops and automotive service centers. Tax and financial management to control margin, inventory and scale safely.",
+        "keywords": ["dealership accounting", "auto repair accounting", "fiscal management", "automotive tax planning"]
+      },
+      "hero": {
+        "title": "Accounting for Dealerships & Auto Repair Shops",
+        "description": "In the automotive sector, margin, inventory and cash flow must be controlled every day. To organize taxes, reduce risk, improve results and create predictability to scale, count on Malaquias: strategic accounting for dealerships, auto repair shops and service centers.",
+        "ctaText": "Request a free assessment",
+        "ctaLink": "/contact?segment=dealerships-auto-repair",
+        "ctaSecondaryText": "Explore our services",
+        "ctaSecondaryLink": "#services",
+        "trustText": "Response within 24 business hours with a sector specialist",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/5992516/",
+          "https://www.pexels.com/pt-br/download/video/4488706/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Margin control and pricing",
+            "text": "prevent profit loss in parts, services and sales."
+          },
+          {
+            "emphasis": "Inventory and turnover,",
+            "text": "reduce tied-up capital and improve cash flow."
+          },
+          {
+            "emphasis": "Tax and fiscal compliance",
+            "text": "protects operations and reduces audit risk."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "IN AUTOMOTIVE DAILY OPERATIONS",
+          "title": "Consultative accounting for dealerships, repair shops and service centers",
+          "titleHighlight": "dealerships, repair shops and service centers",
+          "paragraphs": [
+            "Dealerships and repair shops handle complex routines: sales and after-sales, parts and labor, work orders, warranties, commissions, inventory control and different tax rules per operation. Without aligned finance and accounting, margins are lost in small details and cash flow becomes unpredictable.",
+            "Malaquias structures your accounting with a focus on management and results. We integrate tax, accounting and finance to organize processes, improve controls, reduce risks and deliver practical reports that support pricing, inventory turnover and profitability by department."
+          ],
+          "ctaText": "Want to find what’s consuming your margin — and fix it fast?",
+          "ctaButtonText": "Schedule a consultation",
+          "ctaButtonLink": "/contact?segment=dealerships-auto-repair&subject=consulting",
+          "image": "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg",
+          "imageAlt": "Auto shop and dealership management",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "SCALE WITH CONTROL",
+          "title": "Scale predictably: new locations and standardized routines",
+          "titleHighlight": "standardized routines",
+          "paragraphs": [
+            "Opening a new location, expanding operations or organizing after-sales requires standardization and governance. Without clear routines, you lose control of inventory, costs, commissions and taxes — and growth increases risk.",
+            "We support your business with tax planning, corporate structuring and management routines to scale safely. The goal is to grow with control, compliance and clear performance by unit and profit center."
+          ],
+          "ctaText": "Planning to expand or reorganize internal processes?",
+          "ctaButtonText": "Request a free evaluation",
+          "ctaButtonLink": "/contact?segment=dealerships-auto-repair&subject=expansion",
+          "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+          "imageAlt": "Automotive business growth planning",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "BY OPERATION TYPE",
+          "title": "Solutions for different automotive operations",
+          "titleHighlight": "automotive operations",
+          "description": "We support different operation profiles, aligning accounting, tax and management to your business reality.",
+          "ctaText": "Talk to a specialist for your profile",
+          "ctaLink": "/contact?segment=dealerships-auto-repair",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
+              "title": "Dealerships",
+              "subtitle": "Sales and after-sales",
+              "ctaText": "Dealership solutions",
+              "ctaLink": "/contact?profile=dealerships"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
+              "title": "Auto Repair Shops",
+              "subtitle": "Service and maintenance",
+              "ctaText": "Repair shop support",
+              "ctaLink": "/contact?profile=repair-shops"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+              "title": "Service Centers",
+              "subtitle": "Quick service",
+              "ctaText": "Service center management",
+              "ctaLink": "/contact?profile=service-centers"
+            },
+            {
+              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
+              "title": "Auto Parts & Distribution",
+              "subtitle": "Inventory and turnover",
+              "ctaText": "Specialized support",
+              "ctaLink": "/contact?profile=auto-parts"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "PROVEN EXPERTISE",
+          "title": "Accounting that becomes management: focus on margin, inventory and cash",
+          "titleHighlight": "margin, inventory and cash",
+          "description": "We turn numbers into action: better controls, organized taxes and practical decisions to improve profitability.",
+          "ctaText": "Explore our success stories",
+          "ctaLink": "/cases?segment=dealerships-auto-repair",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
+              "title": "Dealerships",
+              "subtitle": "",
+              "ctaText": "Dealership cases",
+              "ctaLink": "/cases?profile=dealerships"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
+              "title": "Repair Shops",
+              "subtitle": "",
+              "ctaText": "Repair shop cases",
+              "ctaLink": "/cases?profile=repair-shops"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+              "title": "Service Centers",
+              "subtitle": "",
+              "ctaText": "Service center cases",
+              "ctaLink": "/cases?profile=service-centers"
+            },
+            {
+              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
+              "title": "Auto Parts",
+              "subtitle": "",
+              "ctaText": "Auto parts cases",
+              "ctaLink": "/cases?profile=auto-parts"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "OUR SERVICES",
+          "title": "Complete accounting and consulting solutions for the automotive sector",
+          "titleHighlight": "automotive sector",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Not sure which service fits your operation best?",
+          "ctaButtonText": "Get personalized guidance",
+          "ctaButtonLink": "/contact?segment=dealerships-auto-repair&subject=guidance",
+          "tabs": [
+            {
+              "label": "Accounting Advisory",
+              "title": "Accounting Advisory",
+              "items": [
+                "Bookkeeping and monthly close with management reports;",
+                "Finance routines and reconciliations organization;",
+                "Profit centers (sales, parts, labor, after-sales) structuring;",
+                "KPI tracking (margin, ticket, productivity, turnover);",
+                "Payroll, commissions and labor routines support;",
+                "Document organization and accounting compliance;",
+                "Ongoing consultative support."
+              ]
+            },
+            {
+              "label": "Corporate Advisory",
+              "title": "Corporate Advisory",
+              "items": [
+                "Company formation, amendments and branch regularization;",
+                "Corporate structuring for expansion and asset protection;",
+                "Governance and shareholder agreements;",
+                "Business reorganizations;",
+                "Support for partners and investors;",
+                "Documentation standardization for scale."
+              ]
+            },
+            {
+              "label": "Tax Consulting",
+              "title": "Tax Consulting",
+              "items": [
+                "Tax planning for automotive commerce and service operations;",
+                "Review of calculations and fiscal risk reduction;",
+                "Safe tax-saving opportunities analysis;",
+                "Fiscal compliance and audit support;",
+                "Guidance for expansion and regime changes;",
+                "Tax credit recovery when applicable."
+              ]
+            },
+            {
+              "label": "Independent Audit",
+              "title": "Independent Audit",
+              "items": [
+                "Financial statements audit;",
+                "Internal controls and process review;",
+                "Inventory audit and movement validation (parts and supplies);",
+                "Receivables and reconciliations validation;",
+                "Due diligence for acquisitions and reorganizations;",
+                "Risk mitigation reports and recommendations."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "FREQUENTLY ASKED QUESTIONS",
+          "title": "Frequently asked questions about automotive accounting",
+          "titleHighlight": "automotive accounting",
+          "description": "Direct answers to the most common questions from dealerships, repair shops and service centers.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/5450263/",
+          "ctaText": "Want a diagnosis of your current setup?",
+          "ctaButtonText": "Talk to a specialist",
+          "ctaButtonLink": "/contact?segment=dealerships-auto-repair&subject=question",
+          "questions": [
+            {
+              "question": "Why do dealerships and repair shops need specialized accounting?",
+              "answer": "Because there are specifics like profit centers (sales/parts/labor), commissions, inventory, warranties and different tax rules. Accounting aligned to operations protects margin and reduces risk."
+            },
+            {
+              "question": "Can you separate results by department (parts, service, sales)?",
+              "answer": "Yes. We structure profit centers and reports to track profitability by department, unit and channel."
+            },
+            {
+              "question": "How can we improve parts inventory control and turnover?",
+              "answer": "We support process organization, reconciliations and management reports to reduce tied-up capital, losses and mismatches."
+            },
+            {
+              "question": "Can we reduce taxes without increasing compliance risk?",
+              "answer": "Yes. With tax planning, correct regime, review of calculations and compliance, you can pay what’s due and avoid overpayment."
+            },
+            {
+              "question": "Do you support multi-unit operations?",
+              "answer": "Yes. We support groups with standardized routines, unit-level reports and corporate structuring for expansion."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORM YOUR OPERATION",
+          "title": "Gain control, reduce risk and increase profitability in your automotive business",
+          "titleHighlight": "increase profitability",
+          "description": "Request a free assessment and discover how to structure accounting, tax and management to scale predictably in the automotive sector.",
+          "submitText": "Request a free assessment",
+          "submitMicrocopy": "Guaranteed response within 24 business hours",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "es": {
+      "seo": {
+        "title": "Contabilidad para Concesionarias y Talleres | Malaquias Contabilidad",
+        "description": "Contabilidad especializada para concesionarias, talleres y centros automotrices. Gestión fiscal, tributaria y financiera para controlar margen, inventario y crecer con seguridad.",
+        "keywords": ["contabilidad para concesionarias", "contabilidad para talleres", "gestión fiscal", "planificación tributaria automotriz"]
+      },
+      "hero": {
+        "title": "Contabilidad para Concesionarias y Talleres",
+        "description": "En el sector automotriz, margen, inventario y flujo de caja deben estar bajo control todos los días. Para organizar impuestos, reducir riesgos, mejorar resultados y ganar previsibilidad para crecer, cuente con Malaquias: contabilidad estratégica para concesionarias, talleres mecánicos y centros automotrices.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contacto?segmento=concesionarias-talleres",
+        "ctaSecondaryText": "Conocer nuestros servicios",
+        "ctaSecondaryLink": "#servicios",
+        "trustText": "Respuesta en hasta 24h hábiles con especialista del sector",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/5992516/",
+          "https://www.pexels.com/pt-br/download/video/4488706/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Control de margen y precios",
+            "text": "evita pérdida de ganancias en repuestos, servicios y ventas."
+          },
+          {
+            "emphasis": "Inventario y rotación bien gestionados,",
+            "text": "reducen capital inmovilizado y mejoran el flujo de caja."
+          },
+          {
+            "emphasis": "Cumplimiento fiscal y tributario",
+            "text": "protege la operación y reduce riesgos de sanciones."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "EN EL DÍA A DÍA AUTOMOTRIZ",
+          "title": "Contabilidad consultiva para concesionarias, talleres y centros automotrices",
+          "titleHighlight": "concesionarias, talleres y centros automotrices",
+          "paragraphs": [
+            "Concesionarias y talleres manejan rutinas complejas: ventas y posventa, repuestos y servicios, órdenes de trabajo, garantías, comisiones, control de inventario y diferentes reglas tributarias por operación. Sin finanzas y contabilidad alineadas, el margen se pierde en detalles y el flujo de caja se vuelve impredecible.",
+            "Malaquias estructura su contabilidad con foco en gestión y resultados. Integramos fiscal, contable y finanzas para organizar procesos, mejorar controles, reducir riesgos y entregar informes prácticos que ayudan en precios, rotación de inventario y rentabilidad por área."
+          ],
+          "ctaText": "¿Quiere identificar qué está consumiendo su margen y corregirlo rápido?",
+          "ctaButtonText": "Agendar conversación con especialista",
+          "ctaButtonLink": "/contacto?segmento=concesionarias-talleres&asunto=consultoria",
+          "image": "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg",
+          "imageAlt": "Gestión de taller y concesionaria",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "EXPANSIÓN Y CONTROL",
+          "title": "Crezca con previsibilidad: nuevas unidades y estandarización de rutinas",
+          "titleHighlight": "estandarización de rutinas",
+          "paragraphs": [
+            "Abrir una nueva unidad, ampliar la operación u organizar la posventa exige estandarización y gobernanza. Sin rutinas claras, se pierde control de inventario, costos, comisiones e impuestos — y el crecimiento aumenta el riesgo.",
+            "Apoyamos su empresa con planificación tributaria, estructura societaria e implementación de rutinas gerenciales para escalar con seguridad. El objetivo es crecer manteniendo control, cumplimiento y visión clara del desempeño por unidad y por centro de resultados."
+          ],
+          "ctaText": "¿Va a expandir la operación u organizar procesos internos?",
+          "ctaButtonText": "Solicitar evaluación gratuita",
+          "ctaButtonLink": "/contacto?segmento=concesionarias-talleres&asunto=expansion",
+          "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+          "imageAlt": "Planificación y crecimiento automotriz",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "ATENCIÓN POR PERFIL",
+          "title": "Soluciones para diferentes operaciones del sector automotriz",
+          "titleHighlight": "sector automotriz",
+          "description": "Atendemos distintos perfiles de operación, ajustando contabilidad, fiscalidad y gestión a la realidad de su negocio.",
+          "ctaText": "Hablar con un especialista para su perfil",
+          "ctaLink": "/contacto?segmento=concesionarias-talleres",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
+              "title": "Concesionarias",
+              "subtitle": "Ventas y posventa",
+              "ctaText": "Soluciones para concesionarias",
+              "ctaLink": "/contacto?perfil=concesionarias"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
+              "title": "Talleres Mecánicos",
+              "subtitle": "Servicio y mantenimiento",
+              "ctaText": "Asesoría para talleres",
+              "ctaLink": "/contacto?perfil=talleres"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+              "title": "Centros Automotrices",
+              "subtitle": "Servicio rápido",
+              "ctaText": "Gestión para centros",
+              "ctaLink": "/contacto?perfil=centros-automotrices"
+            },
+            {
+              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
+              "title": "Repuestos y Distribución",
+              "subtitle": "Inventario y rotación",
+              "ctaText": "Atención especializada",
+              "ctaLink": "/contacto?perfil=autopartes"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERTISE COMPROBADA",
+          "title": "Contabilidad que se vuelve gestión: foco en margen, inventario y caja",
+          "titleHighlight": "margen, inventario y caja",
+          "description": "Convertimos números en acción: mejores controles, impuestos organizados y decisiones prácticas para aumentar la rentabilidad.",
+          "ctaText": "Conocer nuestros casos de éxito",
+          "ctaLink": "/cases?segmento=concesionarias-talleres",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
+              "title": "Concesionarias",
+              "subtitle": "",
+              "ctaText": "Ver casos de concesionarias",
+              "ctaLink": "/cases?perfil=concesionarias"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
+              "title": "Talleres",
+              "subtitle": "",
+              "ctaText": "Ver casos de talleres",
+              "ctaLink": "/cases?perfil=talleres"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+              "title": "Centros Automotrices",
+              "subtitle": "",
+              "ctaText": "Ver casos de centros",
+              "ctaLink": "/cases?perfil=centros"
+            },
+            {
+              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
+              "title": "Repuestos",
+              "subtitle": "",
+              "ctaText": "Ver casos de repuestos",
+              "ctaLink": "/cases?perfil=autopartes"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NUESTROS SERVICIOS",
+          "title": "Soluciones completas en contabilidad y consultoría para el sector automotriz",
+          "titleHighlight": "sector automotriz",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "¿No está seguro de qué servicio es ideal para su operación?",
+          "ctaButtonText": "Recibir orientación personalizada",
+          "ctaButtonLink": "/contacto?segmento=concesionarias-talleres&asunto=orientacion",
+          "tabs": [
+            {
+              "label": "Asesoría Contable",
+              "title": "Asesoría Contable",
+              "items": [
+                "Contabilidad y cierre mensual con informes gerenciales;",
+                "Organización de rutinas financieras y conciliaciones;",
+                "Estructuración de centros de resultados (ventas, repuestos, servicios, posventa);",
+                "Seguimiento de indicadores (margen, ticket, productividad, rotación);",
+                "Nómina, comisiones y rutinas laborales;",
+                "Organización documental y cumplimiento contable;",
+                "Soporte consultivo continuo."
+              ]
+            },
+            {
+              "label": "Asesoría Societaria",
+              "title": "Asesoría Societaria",
+              "items": [
+                "Apertura, cambios y regularización de empresas y sucursales;",
+                "Estructura societaria para expansión y protección patrimonial;",
+                "Gobernanza y acuerdos societarios;",
+                "Reorganización empresarial;",
+                "Soporte para socios e inversionistas;",
+                "Estandarización documental para escalar."
+              ]
+            },
+            {
+              "label": "Consultoría Tributaria",
+              "title": "Consultoría Tributaria",
+              "items": [
+                "Planificación tributaria para comercio y servicios automotrices;",
+                "Revisión de cálculos y reducción de riesgos fiscales;",
+                "Análisis de oportunidades de ahorro con seguridad;",
+                "Compliance fiscal y soporte ante fiscalizaciones;",
+                "Orientación para expansión y cambios de régimen;",
+                "Recuperación de créditos cuando aplique."
+              ]
+            },
+            {
+              "label": "Auditoría Independiente",
+              "title": "Auditoría Independiente",
+              "items": [
+                "Auditoría de estados financieros;",
+                "Revisión de controles internos y procesos;",
+                "Auditoría de inventario y movimientos (repuestos e insumos);",
+                "Validación de conciliaciones y control de cuentas por cobrar;",
+                "Due diligence para adquisiciones y reorganizaciones;",
+                "Informes y recomendaciones para mitigar riesgos."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "PREGUNTAS FRECUENTES",
+          "title": "Preguntas frecuentes sobre contabilidad en el sector automotriz",
+          "titleHighlight": "sector automotriz",
+          "description": "Respuestas directas a las dudas más comunes de concesionarias, talleres y centros automotrices.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/5450263/",
+          "ctaText": "¿Quiere un diagnóstico de su situación actual?",
+          "ctaButtonText": "Conversar con especialista",
+          "ctaButtonLink": "/contacto?segmento=concesionarias-talleres&asunto=duda",
+          "questions": [
+            {
+              "question": "¿Por qué concesionarias y talleres necesitan contabilidad especializada?",
+              "answer": "Porque existen particularidades como centros de resultados (ventas/repuestos/servicios), comisiones, inventario, garantías y reglas tributarias diferentes. Una contabilidad alineada a la operación protege el margen y reduce riesgos."
+            },
+            {
+              "question": "¿Ayudan a separar resultados por área (repuestos, servicios, ventas)?",
+              "answer": "Sí. Estructuramos centros de resultados e informes para seguir la rentabilidad por área, por unidad y por canal."
+            },
+            {
+              "question": "¿Cómo mejorar el control de inventario y la rotación de repuestos?",
+              "answer": "Apoyamos la organización de procesos, conciliaciones e informes gerenciales para reducir capital inmovilizado, pérdidas y diferencias."
+            },
+            {
+              "question": "¿Se pueden reducir impuestos sin aumentar el riesgo fiscal?",
+              "answer": "Sí. Con planificación tributaria, régimen correcto, revisión de cálculos y compliance, se puede pagar lo debido y evitar pagos indebidos."
+            },
+            {
+              "question": "¿Atienden operaciones con varias unidades?",
+              "answer": "Sí. Apoyamos grupos con rutinas estandarizadas, informes por unidad y estructura societaria para expansión."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SU OPERACIÓN",
+          "title": "Gane control, reduzca riesgos y aumente la rentabilidad de su negocio automotriz",
+          "titleHighlight": "aumente la rentabilidad",
+          "description": "Solicite un diagnóstico gratuito y descubra cómo estructurar contabilidad, fiscalidad y gestión para crecer con previsibilidad en el sector automotriz.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Respuesta garantizada en hasta 24h hábiles",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    }
+  }
+}

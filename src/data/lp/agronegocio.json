@@ -1,0 +1,795 @@
+{
+  "slug": "agronegocio",
+  "theme": {
+    "mode": "dark",
+    "accentColor": "#BD9657"
+  },
+  "content": {
+    "pt": {
+      "seo": {
+        "title": "Contabilidade para o Agronegócio | Malaquias Contabilidade",
+        "description": "Contabilidade especializada para o agronegócio brasileiro. Planejamento tributário, gestão fiscal e financeira para produtores rurais e empresas do agro.",
+        "keywords": ["contabilidade rural", "agronegócio", "gestão fiscal", "tributação rural"]
+      },
+      "hero": {
+        "title": "Contabilidade para o Agronegócio",
+        "description": "O agronegócio é um dos pilares da economia brasileira e exige decisões estratégicas baseadas em informações contábeis precisas. Para alcançar eficiência tributária, segurança patrimonial e crescimento sustentável, conte com a Malaquias, referência em contabilidade rural e consultoria para o agro.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contato?segmento=agronegocio",
+        "ctaSecondaryText": "Conhecer nossos serviços",
+        "ctaSecondaryLink": "#servicos",
+        "trustText": "Atendimento especializado com retorno em até 24h úteis",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/agro.mp4",
+          "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/agro2.mp4"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Eficiência tributária no agro",
+            "text": "é decisiva para aumentar a rentabilidade e a competitividade."
+          },
+          {
+            "emphasis": "Questões societárias e patrimoniais,",
+            "text": "como sucessão familiar, reorganização empresarial e regularização de imóveis, exigem planejamento especializado."
+          },
+          {
+            "emphasis": "Produtividade e crescimento sustentável",
+            "text": "dependem de uma estrutura contábil e fiscal bem definida."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "NO DIA A DIA DO AGRO",
+          "title": "Contadores e consultores com atuação exclusiva no mercado rural",
+          "titleHighlight": "atuação exclusiva no mercado rural",
+          "paragraphs": [
+            "A contabilidade para o agronegócio apresenta desafios únicos, como regimes tributários específicos, sazonalidade da produção e tratamento diferenciado dos ativos biológicos. Quando bem conduzidas, essas particularidades se transformam em oportunidades reais de economia tributária e ganho de eficiência.",
+            "Pensando nisso, a Malaquias reúne uma equipe multidisciplinar de contadores e consultores especializados no setor rural, preparada para desenvolver soluções sob medida. Nosso trabalho integra gestão, estratégia e legislação para garantir segurança, conformidade fiscal e melhores resultados para o produtor e para as empresas do agro."
+          ],
+          "ctaText": "Quer saber como reduzir riscos e otimizar a tributação do seu negócio rural?",
+          "ctaButtonText": "Agendar conversa com especialista",
+          "ctaButtonLink": "/contato?segmento=agronegocio&assunto=consultoria",
+          "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
+          "imageAlt": "Trator no campo - Agronegócio",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "PLANEJAMENTO SUCESSÓRIO",
+          "title": "Segurança patrimonial e continuidade para o seu negócio rural",
+          "titleHighlight": "continuidade para o seu negócio rural",
+          "paragraphs": [
+            "O planejamento sucessório no agronegócio é essencial para preservar o patrimônio e evitar conflitos familiares. A ausência de uma estrutura adequada pode resultar em perdas financeiras, disputas jurídicas e descontinuidade das atividades rurais.",
+            "Atuamos na criação de holdings rurais e familiares, acordos societários e estratégias patrimoniais que garantem organização, proteção dos bens e tranquilidade para as próximas gerações, sempre alinhadas à legislação e aos objetivos da família."
+          ],
+          "ctaText": "Quer proteger seu patrimônio rural e planejar o futuro da sua família?",
+          "ctaButtonText": "Solicitar avaliação gratuita",
+          "ctaButtonLink": "/contato?segmento=agronegocio&assunto=sucessao",
+          "image": "https://images.pexels.com/photos/8064065/pexels-photo-8064065.jpeg",
+          "imageAlt": "Planejamento rural",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "PRESENÇA EM CADA SOLO",
+          "title": "Especialistas em todos os elos da cadeia do agronegócio",
+          "titleHighlight": "todos os elos da cadeia do agronegócio",
+          "description": "Atendemos desde o produtor rural até empresas e cooperativas, dominando as particularidades contábeis, fiscais e tributárias de cada segmento do agro.",
+          "ctaText": "Falar com um especialista do seu segmento",
+          "ctaLink": "/contato?segmento=agronegocio",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6399526/pexels-photo-6399526.jpeg",
+              "title": "Produtor Rural",
+              "subtitle": "Pessoa Física e Jurídica",
+              "ctaText": "Soluções para produtores rurais",
+              "ctaLink": "/contato?perfil=produtor-rural"
+            },
+            {
+              "image": "https://images.pexels.com/photos/14968005/pexels-photo-14968005.jpeg",
+              "title": "Revenda de Insumos",
+              "subtitle": "Agrícolas",
+              "ctaText": "Consultoria para revendas",
+              "ctaLink": "/contato?perfil=revenda-insumos"
+            },
+            {
+              "image": "https://images.pexels.com/photos/8209041/pexels-photo-8209041.jpeg",
+              "title": "Concessionárias",
+              "subtitle": "Tratores e Implementos",
+              "ctaText": "Assessoria especializada",
+              "ctaLink": "/contato?perfil=concessionaria"
+            },
+            {
+              "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
+              "title": "Cooperativas",
+              "subtitle": "Agrícolas",
+              "ctaText": "Atendimento para cooperativas",
+              "ctaLink": "/contato?perfil=cooperativa"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERTISE COMPROVADA",
+          "title": "Mais de três décadas de experiência no agronegócio",
+          "titleHighlight": "três décadas de experiência",
+          "description": "Nossa trajetória no agro nos permite oferecer soluções estratégicas, seguras e alinhadas à realidade de cada negócio rural.",
+          "ctaText": "Conhecer nossos cases de sucesso",
+          "ctaLink": "/cases?segmento=agronegocio",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6399526/pexels-photo-6399526.jpeg",
+              "title": "Produtor Rural",
+              "subtitle": "",
+              "ctaText": "Cases de produtores",
+              "ctaLink": "/cases?perfil=produtor"
+            },
+            {
+              "image": "https://images.pexels.com/photos/14968005/pexels-photo-14968005.jpeg",
+              "title": "Revenda de Insumos",
+              "subtitle": "Agrícolas",
+              "ctaText": "Cases de revendas",
+              "ctaLink": "/cases?perfil=revenda"
+            },
+            {
+              "image": "https://images.pexels.com/photos/8209041/pexels-photo-8209041.jpeg",
+              "title": "Concessionárias",
+              "subtitle": "Tratores e Implementos",
+              "ctaText": "Cases de concessionárias",
+              "ctaLink": "/cases?perfil=concessionaria"
+            },
+            {
+              "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
+              "title": "Agroindústrias",
+              "subtitle": "",
+              "ctaText": "Cases de agroindústrias",
+              "ctaLink": "/cases?perfil=agroindustria"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NOSSOS SERVIÇOS",
+          "title": "Soluções completas em contabilidade e consultoria para o Agronegócio",
+          "titleHighlight": "contabilidade e consultoria para o Agronegócio",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Não tem certeza sobre qual solução é ideal para o seu negócio?",
+          "ctaButtonText": "Receber orientação personalizada",
+          "ctaButtonLink": "/contato?segmento=agronegocio&assunto=orientacao",
+          "tabs": [
+            {
+              "label": "Assessoria Contábil",
+              "title": "Assessoria Contábil",
+              "items": [
+                "Escrituração do Livro Caixa do Produtor Rural;",
+                "Elaboração da Declaração de Imposto de Renda (DIRPF);",
+                "Elaboração da Declaração do Imposto Territorial Rural (DITR);",
+                "Relatórios financeiros, orçamentários e gerenciais do ano agrícola;",
+                "Planejamento tributário em aquisições e vendas de imóveis rurais;",
+                "Gestão e elaboração da folha de pagamento;",
+                "Auditoria e revisão de recolhimentos do Funrural."
+              ]
+            },
+            {
+              "label": "Assessoria Societária",
+              "title": "Assessoria Societária",
+              "items": [
+                "Constituição de holdings rurais e familiares;",
+                "Planejamento sucessório e patrimonial;",
+                "Reestruturação societária de empresas rurais;",
+                "Elaboração de acordos de quotistas;",
+                "Regularização de imóveis rurais;",
+                "Assessoria em fusões e aquisições (M&A)."
+              ]
+            },
+            {
+              "label": "Consultoria Tributária",
+              "title": "Consultoria Tributária",
+              "items": [
+                "Planejamento tributário para produtores rurais;",
+                "Recuperação de créditos tributários;",
+                "Análise de incentivos fiscais do agronegócio;",
+                "Compliance tributário e fiscal;",
+                "Defesa em processos administrativos;",
+                "Consultoria em operações de exportação."
+              ]
+            },
+            {
+              "label": "Auditoria Independente",
+              "title": "Auditoria Independente",
+              "items": [
+                "Auditoria das demonstrações contábeis;",
+                "Revisão de processos e controles internos;",
+                "Due diligence em operações societárias;",
+                "Auditoria de estoques e ativos biológicos;",
+                "Avaliação de riscos e controles;",
+                "Emissão de relatórios e pareceres técnicos."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "DÚVIDAS FREQUENTES",
+          "title": "Principais dúvidas sobre contabilidade para o agronegócio",
+          "titleHighlight": "contabilidade para o agronegócio",
+          "description": "Confira as respostas para as dúvidas mais comuns sobre nossos serviços especializados.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/4921863/",
+          "ctaText": "Precisa de mais esclarecimentos?",
+          "ctaButtonText": "Conversar com especialista",
+          "ctaButtonLink": "/contato?segmento=agronegocio&assunto=duvida",
+          "questions": [
+            {
+              "question": "Qual a diferença entre contabilidade rural e contabilidade tradicional?",
+              "answer": "A contabilidade rural considera particularidades como ativos biológicos, sazonalidade, regimes tributários específicos, Funrural e ITR, exigindo conhecimento técnico especializado no setor agro."
+            },
+            {
+              "question": "O que é o Livro Caixa do Produtor Rural?",
+              "answer": "É o instrumento obrigatório para o produtor rural pessoa física, onde são registradas receitas e despesas da atividade rural, permitindo correta apuração do resultado e do imposto de renda."
+            },
+            {
+              "question": "Quais os benefícios de uma holding rural?",
+              "answer": "A holding rural facilita o planejamento sucessório, protege o patrimônio, reduz conflitos familiares e pode gerar economia tributária em operações imobiliárias."
+            },
+            {
+              "question": "Como funciona o Funrural?",
+              "answer": "O Funrural é a contribuição previdenciária incidente sobre a receita bruta da produção rural. A forma de recolhimento varia conforme o perfil do produtor e o tipo de comercialização."
+            },
+            {
+              "question": "A Malaquias atende produtores de todo o Brasil?",
+              "answer": "Sim. Atendemos clientes em todas as regiões do país, com atendimento remoto estruturado, seguro e eficiente."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SEU AGRONEGÓCIO",
+          "title": "Eleve a gestão, reduza riscos e aumente a rentabilidade do seu negócio rural",
+          "titleHighlight": "aumente a rentabilidade",
+          "description": "Solicite um diagnóstico gratuito e descubra como uma contabilidade estratégica pode transformar o seu agronegócio.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Retorno garantido em até 24h úteis",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "en": {
+      "seo": {
+        "title": "Accounting for Agribusiness | Malaquias Accounting",
+        "description": "Specialized accounting for Brazilian agribusiness. Tax planning, fiscal and financial management for rural producers and agro companies.",
+        "keywords": ["rural accounting", "agribusiness", "fiscal management", "rural taxation"]
+      },
+      "hero": {
+        "title": "Accounting for Agribusiness",
+        "description": "Agribusiness is one of the pillars of the Brazilian economy and requires strategic decisions based on accurate accounting information. To achieve tax efficiency, asset security and sustainable growth, count on Malaquias, a reference in rural accounting and agro consulting.",
+        "ctaText": "Request free assessment",
+        "ctaLink": "/contact?segment=agribusiness",
+        "ctaSecondaryText": "Explore our services",
+        "ctaSecondaryLink": "#services",
+        "trustText": "Specialized service with response within 24 business hours",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/agro.mp4",
+          "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/agro2.mp4"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Tax efficiency in agribusiness",
+            "text": "is crucial for increasing profitability and competitiveness."
+          },
+          {
+            "emphasis": "Corporate and asset matters,",
+            "text": "such as family succession, corporate reorganization and property regularization, require specialized planning."
+          },
+          {
+            "emphasis": "Productivity and sustainable growth",
+            "text": "depend on a well-defined accounting and tax structure."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "IN THE DAILY AGRO",
+          "title": "Accountants and consultants with exclusive focus on the rural market",
+          "titleHighlight": "exclusive focus on the rural market",
+          "paragraphs": [
+            "Accounting for agribusiness presents unique challenges, such as specific tax regimes, production seasonality and differentiated treatment of biological assets. When well managed, these particularities become real opportunities for tax savings and efficiency gains.",
+            "With this in mind, Malaquias brings together a multidisciplinary team of accountants and consultants specialized in the rural sector, prepared to develop tailored solutions. Our work integrates management, strategy and legislation to ensure security, fiscal compliance and better results for producers and agro companies."
+          ],
+          "ctaText": "Want to know how to reduce risks and optimize taxation for your rural business?",
+          "ctaButtonText": "Schedule a consultation",
+          "ctaButtonLink": "/contact?segment=agribusiness&subject=consulting",
+          "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
+          "imageAlt": "Tractor in the field - Agribusiness",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "SUCCESSION PLANNING",
+          "title": "Asset security and continuity for your rural business",
+          "titleHighlight": "continuity for your rural business",
+          "paragraphs": [
+            "Succession planning in agribusiness is essential to preserve assets and avoid family conflicts. The absence of an adequate structure can result in financial losses, legal disputes and discontinuity of rural activities.",
+            "We work on creating rural and family holdings, corporate agreements and asset strategies that ensure organization, asset protection and peace of mind for future generations, always aligned with legislation and family objectives."
+          ],
+          "ctaText": "Want to protect your rural assets and plan your family's future?",
+          "ctaButtonText": "Request free evaluation",
+          "ctaButtonLink": "/contact?segment=agribusiness&subject=succession",
+          "image": "https://images.pexels.com/photos/8064065/pexels-photo-8064065.jpeg",
+          "imageAlt": "Rural planning",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "PRESENCE IN EVERY FIELD",
+          "title": "Specialists in all links of the agribusiness chain",
+          "titleHighlight": "all links of the agribusiness chain",
+          "description": "We serve from rural producers to companies and cooperatives, mastering the accounting, fiscal and tax particularities of each agro segment.",
+          "ctaText": "Talk to a specialist in your segment",
+          "ctaLink": "/contact?segment=agribusiness",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6399526/pexels-photo-6399526.jpeg",
+              "title": "Rural Producer",
+              "subtitle": "Individual and Legal Entity",
+              "ctaText": "Solutions for rural producers",
+              "ctaLink": "/contact?profile=rural-producer"
+            },
+            {
+              "image": "https://images.pexels.com/photos/14968005/pexels-photo-14968005.jpeg",
+              "title": "Input Reseller",
+              "subtitle": "Agricultural",
+              "ctaText": "Consulting for resellers",
+              "ctaLink": "/contact?profile=input-reseller"
+            },
+            {
+              "image": "https://images.pexels.com/photos/8209041/pexels-photo-8209041.jpeg",
+              "title": "Dealerships",
+              "subtitle": "Tractors and Implements",
+              "ctaText": "Specialized advisory",
+              "ctaLink": "/contact?profile=dealership"
+            },
+            {
+              "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
+              "title": "Cooperatives",
+              "subtitle": "Agricultural",
+              "ctaText": "Service for cooperatives",
+              "ctaLink": "/contact?profile=cooperative"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "PROVEN EXPERTISE",
+          "title": "Over three decades of experience in agribusiness",
+          "titleHighlight": "three decades of experience",
+          "description": "Our track record in agro allows us to offer strategic, secure solutions aligned with the reality of each rural business.",
+          "ctaText": "Learn about our success stories",
+          "ctaLink": "/cases?segment=agribusiness",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6399526/pexels-photo-6399526.jpeg",
+              "title": "Rural Producer",
+              "subtitle": "",
+              "ctaText": "Producer cases",
+              "ctaLink": "/cases?profile=producer"
+            },
+            {
+              "image": "https://images.pexels.com/photos/14968005/pexels-photo-14968005.jpeg",
+              "title": "Input Reseller",
+              "subtitle": "Agricultural",
+              "ctaText": "Reseller cases",
+              "ctaLink": "/cases?profile=reseller"
+            },
+            {
+              "image": "https://images.pexels.com/photos/8209041/pexels-photo-8209041.jpeg",
+              "title": "Dealerships",
+              "subtitle": "Tractors and Implements",
+              "ctaText": "Dealership cases",
+              "ctaLink": "/cases?profile=dealership"
+            },
+            {
+              "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
+              "title": "Agroindustries",
+              "subtitle": "",
+              "ctaText": "Agroindustry cases",
+              "ctaLink": "/cases?profile=agroindustry"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "OUR SERVICES",
+          "title": "Complete accounting and consulting solutions for Agribusiness",
+          "titleHighlight": "accounting and consulting for Agribusiness",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Not sure which solution is ideal for your business?",
+          "ctaButtonText": "Get personalized guidance",
+          "ctaButtonLink": "/contact?segment=agribusiness&subject=guidance",
+          "tabs": [
+            {
+              "label": "Accounting Advisory",
+              "title": "Accounting Advisory",
+              "items": [
+                "Rural Producer Cash Book entries;",
+                "Income Tax Return (DIRPF) preparation;",
+                "Rural Territorial Tax Return (DITR) preparation;",
+                "Financial, budgetary and management reports for the agricultural year;",
+                "Tax planning for rural property acquisitions and sales;",
+                "Payroll management and preparation;",
+                "Funrural collection audit and review."
+              ]
+            },
+            {
+              "label": "Corporate Advisory",
+              "title": "Corporate Advisory",
+              "items": [
+                "Formation of rural and family holdings;",
+                "Succession and estate planning;",
+                "Corporate restructuring of rural companies;",
+                "Shareholder agreement preparation;",
+                "Rural property regularization;",
+                "M&A advisory services."
+              ]
+            },
+            {
+              "label": "Tax Consulting",
+              "title": "Tax Consulting",
+              "items": [
+                "Tax planning for rural producers;",
+                "Tax credit recovery;",
+                "Analysis of agribusiness tax incentives;",
+                "Tax and fiscal compliance;",
+                "Defense in administrative proceedings;",
+                "Export operations consulting."
+              ]
+            },
+            {
+              "label": "Independent Audit",
+              "title": "Independent Audit",
+              "items": [
+                "Financial statements audit;",
+                "Internal processes and controls review;",
+                "Due diligence in corporate transactions;",
+                "Inventory and biological assets audit;",
+                "Risk and control assessment;",
+                "Technical reports and opinions issuance."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "FREQUENTLY ASKED QUESTIONS",
+          "title": "Main questions about agribusiness accounting",
+          "titleHighlight": "agribusiness accounting",
+          "description": "Check out answers to the most common questions about our specialized services.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/4921863/",
+          "ctaText": "Need more clarification?",
+          "ctaButtonText": "Talk to a specialist",
+          "ctaButtonLink": "/contact?segment=agribusiness&subject=question",
+          "questions": [
+            {
+              "question": "What is the difference between rural and traditional accounting?",
+              "answer": "Rural accounting considers particularities such as biological assets, seasonality, specific tax regimes, Funrural and ITR, requiring specialized technical knowledge in the agro sector."
+            },
+            {
+              "question": "What is the Rural Producer Cash Book?",
+              "answer": "It is the mandatory instrument for individual rural producers, where revenues and expenses from rural activity are recorded, allowing correct calculation of results and income tax."
+            },
+            {
+              "question": "What are the benefits of a rural holding?",
+              "answer": "A rural holding facilitates succession planning, protects assets, reduces family conflicts and can generate tax savings in real estate operations."
+            },
+            {
+              "question": "How does Funrural work?",
+              "answer": "Funrural is the social security contribution levied on gross revenue from rural production. The collection method varies according to the producer's profile and type of commercialization."
+            },
+            {
+              "question": "Does Malaquias serve producers from all over Brazil?",
+              "answer": "Yes. We serve clients in all regions of the country, with structured, secure and efficient remote service."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORM YOUR AGRIBUSINESS",
+          "title": "Elevate management, reduce risks and increase your rural business profitability",
+          "titleHighlight": "increase profitability",
+          "description": "Request a free assessment and discover how strategic accounting can transform your agribusiness.",
+          "submitText": "Request free assessment",
+          "submitMicrocopy": "Guaranteed response within 24 business hours",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "es": {
+      "seo": {
+        "title": "Contabilidad para el Agronegocio | Malaquias Contabilidad",
+        "description": "Contabilidad especializada para el agronegocio brasileño. Planificación tributaria, gestión fiscal y financiera para productores rurales y empresas del agro.",
+        "keywords": ["contabilidad rural", "agronegocio", "gestión fiscal", "tributación rural"]
+      },
+      "hero": {
+        "title": "Contabilidad para el Agronegocio",
+        "description": "El agronegocio es uno de los pilares de la economía brasileña y exige decisiones estratégicas basadas en información contable precisa. Para alcanzar eficiencia tributaria, seguridad patrimonial y crecimiento sostenible, cuente con Malaquias, referencia en contabilidad rural y consultoría para el agro.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contacto?segmento=agronegocio",
+        "ctaSecondaryText": "Conocer nuestros servicios",
+        "ctaSecondaryLink": "#servicios",
+        "trustText": "Atención especializada con respuesta en hasta 24h hábiles",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/agro.mp4",
+          "https://vfujqqdxgcuubiaqcvtm.supabase.co/storage/v1/object/public/News-image-malaquias/Videos/agro2.mp4"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Eficiencia tributaria en el agro",
+            "text": "es decisiva para aumentar la rentabilidad y la competitividad."
+          },
+          {
+            "emphasis": "Cuestiones societarias y patrimoniales,",
+            "text": "como sucesión familiar, reorganización empresarial y regularización de inmuebles, exigen planificación especializada."
+          },
+          {
+            "emphasis": "Productividad y crecimiento sostenible",
+            "text": "dependen de una estructura contable y fiscal bien definida."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "EN EL DÍA A DÍA DEL AGRO",
+          "title": "Contadores y consultores con actuación exclusiva en el mercado rural",
+          "titleHighlight": "actuación exclusiva en el mercado rural",
+          "paragraphs": [
+            "La contabilidad para el agronegocio presenta desafíos únicos, como regímenes tributarios específicos, estacionalidad de la producción y tratamiento diferenciado de los activos biológicos. Cuando están bien gestionadas, estas particularidades se convierten en oportunidades reales de ahorro fiscal y ganancia de eficiencia.",
+            "Pensando en esto, Malaquias reúne un equipo multidisciplinario de contadores y consultores especializados en el sector rural, preparado para desarrollar soluciones a medida. Nuestro trabajo integra gestión, estrategia y legislación para garantizar seguridad, cumplimiento fiscal y mejores resultados para el productor y las empresas del agro."
+          ],
+          "ctaText": "¿Quiere saber cómo reducir riesgos y optimizar la tributación de su negocio rural?",
+          "ctaButtonText": "Agendar conversación con especialista",
+          "ctaButtonLink": "/contacto?segmento=agronegocio&asunto=consultoria",
+          "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
+          "imageAlt": "Tractor en el campo - Agronegocio",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "PLANIFICACIÓN SUCESORIA",
+          "title": "Seguridad patrimonial y continuidad para su negocio rural",
+          "titleHighlight": "continuidad para su negocio rural",
+          "paragraphs": [
+            "La planificación sucesoria en el agronegocio es esencial para preservar el patrimonio y evitar conflictos familiares. La ausencia de una estructura adecuada puede resultar en pérdidas financieras, disputas legales y discontinuidad de las actividades rurales.",
+            "Actuamos en la creación de holdings rurales y familiares, acuerdos societarios y estrategias patrimoniales que garantizan organización, protección de bienes y tranquilidad para las próximas generaciones, siempre alineadas con la legislación y los objetivos de la familia."
+          ],
+          "ctaText": "¿Quiere proteger su patrimonio rural y planificar el futuro de su familia?",
+          "ctaButtonText": "Solicitar evaluación gratuita",
+          "ctaButtonLink": "/contacto?segmento=agronegocio&asunto=sucesion",
+          "image": "https://images.pexels.com/photos/8064065/pexels-photo-8064065.jpeg",
+          "imageAlt": "Planificación rural",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "PRESENCIA EN CADA SUELO",
+          "title": "Especialistas en todos los eslabones de la cadena del agronegocio",
+          "titleHighlight": "todos los eslabones de la cadena del agronegocio",
+          "description": "Atendemos desde el productor rural hasta empresas y cooperativas, dominando las particularidades contables, fiscales y tributarias de cada segmento del agro.",
+          "ctaText": "Hablar con un especialista de su segmento",
+          "ctaLink": "/contacto?segmento=agronegocio",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6399526/pexels-photo-6399526.jpeg",
+              "title": "Productor Rural",
+              "subtitle": "Persona Física y Jurídica",
+              "ctaText": "Soluciones para productores rurales",
+              "ctaLink": "/contacto?perfil=productor-rural"
+            },
+            {
+              "image": "https://images.pexels.com/photos/14968005/pexels-photo-14968005.jpeg",
+              "title": "Reventa de Insumos",
+              "subtitle": "Agrícolas",
+              "ctaText": "Consultoría para reventas",
+              "ctaLink": "/contacto?perfil=reventa-insumos"
+            },
+            {
+              "image": "https://images.pexels.com/photos/8209041/pexels-photo-8209041.jpeg",
+              "title": "Concesionarias",
+              "subtitle": "Tractores e Implementos",
+              "ctaText": "Asesoría especializada",
+              "ctaLink": "/contacto?perfil=concesionaria"
+            },
+            {
+              "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
+              "title": "Cooperativas",
+              "subtitle": "Agrícolas",
+              "ctaText": "Atención para cooperativas",
+              "ctaLink": "/contacto?perfil=cooperativa"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERTISE COMPROBADA",
+          "title": "Más de tres décadas de experiencia en el agronegocio",
+          "titleHighlight": "tres décadas de experiencia",
+          "description": "Nuestra trayectoria en el agro nos permite ofrecer soluciones estratégicas, seguras y alineadas con la realidad de cada negocio rural.",
+          "ctaText": "Conocer nuestros casos de éxito",
+          "ctaLink": "/casos?segmento=agronegocio",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6399526/pexels-photo-6399526.jpeg",
+              "title": "Productor Rural",
+              "subtitle": "",
+              "ctaText": "Casos de productores",
+              "ctaLink": "/casos?perfil=productor"
+            },
+            {
+              "image": "https://images.pexels.com/photos/14968005/pexels-photo-14968005.jpeg",
+              "title": "Reventa de Insumos",
+              "subtitle": "Agrícolas",
+              "ctaText": "Casos de reventas",
+              "ctaLink": "/casos?perfil=reventa"
+            },
+            {
+              "image": "https://images.pexels.com/photos/8209041/pexels-photo-8209041.jpeg",
+              "title": "Concesionarias",
+              "subtitle": "Tractores e Implementos",
+              "ctaText": "Casos de concesionarias",
+              "ctaLink": "/casos?perfil=concesionaria"
+            },
+            {
+              "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
+              "title": "Agroindustrias",
+              "subtitle": "",
+              "ctaText": "Casos de agroindustrias",
+              "ctaLink": "/casos?perfil=agroindustria"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NUESTROS SERVICIOS",
+          "title": "Soluciones completas en contabilidad y consultoría para el Agronegocio",
+          "titleHighlight": "contabilidad y consultoría para el Agronegocio",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "¿No está seguro de qué solución es ideal para su negocio?",
+          "ctaButtonText": "Recibir orientación personalizada",
+          "ctaButtonLink": "/contacto?segmento=agronegocio&asunto=orientacion",
+          "tabs": [
+            {
+              "label": "Asesoría Contable",
+              "title": "Asesoría Contable",
+              "items": [
+                "Escrituración del Libro Caja del Productor Rural;",
+                "Elaboración de la Declaración de Impuesto de Renta (DIRPF);",
+                "Elaboración de la Declaración del Impuesto Territorial Rural (DITR);",
+                "Informes financieros, presupuestarios y gerenciales del año agrícola;",
+                "Planificación tributaria en adquisiciones y ventas de inmuebles rurales;",
+                "Gestión y elaboración de la nómina de pagos;",
+                "Auditoría y revisión de recaudaciones del Funrural."
+              ]
+            },
+            {
+              "label": "Asesoría Societaria",
+              "title": "Asesoría Societaria",
+              "items": [
+                "Constitución de holdings rurales y familiares;",
+                "Planificación sucesoria y patrimonial;",
+                "Reestructuración societaria de empresas rurales;",
+                "Elaboración de acuerdos de socios;",
+                "Regularización de inmuebles rurales;",
+                "Asesoría en fusiones y adquisiciones (M&A)."
+              ]
+            },
+            {
+              "label": "Consultoría Tributaria",
+              "title": "Consultoría Tributaria",
+              "items": [
+                "Planificación tributaria para productores rurales;",
+                "Recuperación de créditos tributarios;",
+                "Análisis de incentivos fiscales del agronegocio;",
+                "Compliance tributario y fiscal;",
+                "Defensa en procesos administrativos;",
+                "Consultoría en operaciones de exportación."
+              ]
+            },
+            {
+              "label": "Auditoría Independiente",
+              "title": "Auditoría Independiente",
+              "items": [
+                "Auditoría de los estados financieros;",
+                "Revisión de procesos y controles internos;",
+                "Due diligence en operaciones societarias;",
+                "Auditoría de inventarios y activos biológicos;",
+                "Evaluación de riesgos y controles;",
+                "Emisión de informes y dictámenes técnicos."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "PREGUNTAS FRECUENTES",
+          "title": "Principales dudas sobre contabilidad para el agronegocio",
+          "titleHighlight": "contabilidad para el agronegocio",
+          "description": "Consulte las respuestas a las dudas más comunes sobre nuestros servicios especializados.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/4921863/",
+          "ctaText": "¿Necesita más aclaraciones?",
+          "ctaButtonText": "Conversar con especialista",
+          "ctaButtonLink": "/contacto?segmento=agronegocio&asunto=duda",
+          "questions": [
+            {
+              "question": "¿Cuál es la diferencia entre contabilidad rural y contabilidad tradicional?",
+              "answer": "La contabilidad rural considera particularidades como activos biológicos, estacionalidad, regímenes tributarios específicos, Funrural e ITR, exigiendo conocimiento técnico especializado en el sector agro."
+            },
+            {
+              "question": "¿Qué es el Libro Caja del Productor Rural?",
+              "answer": "Es el instrumento obligatorio para el productor rural persona física, donde se registran ingresos y gastos de la actividad rural, permitiendo el cálculo correcto del resultado y del impuesto de renta."
+            },
+            {
+              "question": "¿Cuáles son los beneficios de una holding rural?",
+              "answer": "La holding rural facilita la planificación sucesoria, protege el patrimonio, reduce conflictos familiares y puede generar ahorro tributario en operaciones inmobiliarias."
+            },
+            {
+              "question": "¿Cómo funciona el Funrural?",
+              "answer": "El Funrural es la contribución previsional incidente sobre los ingresos brutos de la producción rural. La forma de recaudación varía según el perfil del productor y el tipo de comercialización."
+            },
+            {
+              "question": "¿Malaquias atiende productores de todo Brasil?",
+              "answer": "Sí. Atendemos clientes en todas las regiones del país, con atención remota estructurada, segura y eficiente."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SU AGRONEGOCIO",
+          "title": "Eleve la gestión, reduzca riesgos y aumente la rentabilidad de su negocio rural",
+          "titleHighlight": "aumente la rentabilidad",
+          "description": "Solicite un diagnóstico gratuito y descubra cómo una contabilidad estratégica puede transformar su agronegocio.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Respuesta garantizada en hasta 24h hábiles",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    }
+  }
+}

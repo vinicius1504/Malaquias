@@ -1,0 +1,36 @@
+{
+  "title": "Segmentos",
+  "subtitle": "Soluciones especializadas para cada sector",
+  "items": [
+    {
+      "slug": "agronegocio",
+      "title": "Agronegocios",
+      "shortDescription": "Contabilidad rural especializada"
+    },
+    {
+      "slug": "industria",
+      "title": "Industria",
+      "shortDescription": "Gestión fiscal para el sector industrial"
+    },
+    {
+      "slug": "varejo",
+      "title": "Comercio",
+      "shortDescription": "Soluciones para comercio y e-commerce"
+    },
+    {
+      "slug": "saude",
+      "title": "Salud",
+      "shortDescription": "Contabilidad para clínicas y hospitales"
+    },
+    {
+      "slug": "tecnologia",
+      "title": "Tecnología",
+      "shortDescription": "Startups y empresas de TI"
+    },
+    {
+      "slug": "servicos",
+      "title": "Servicios",
+      "shortDescription": "Proveedores de servicios en general"
+    }
+  ]
+}

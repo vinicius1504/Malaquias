@@ -1,0 +1,795 @@
+{
+  "slug": "setores-diversos",
+  "theme": {
+    "mode": "dark",
+    "accentColor": "#BD9657"
+  },
+  "content": {
+    "pt": {
+      "seo": {
+        "title": "Contabilidade para Setores Diversos | Malaquias Contabilidade",
+        "description": "Contabilidade estratégica para empresas de diversos setores. Gestão fiscal, tributária, financeira e societária adaptada à realidade do seu negócio.",
+        "keywords": ["contabilidade empresarial", "gestão fiscal", "planejamento tributário", "contabilidade para empresas"]
+      },
+      "hero": {
+        "title": "Contabilidade para Setores Diversos",
+        "description": "Cada empresa tem desafios próprios — e a contabilidade precisa refletir essa realidade. A Malaquias oferece soluções contábeis, fiscais e estratégicas para diferentes segmentos, apoiando decisões seguras, crescimento sustentável e total conformidade com a legislação.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contato?segmento=setores-diversos",
+        "ctaSecondaryText": "Conhecer nossos serviços",
+        "ctaSecondaryLink": "#servicos",
+        "trustText": "Atendimento consultivo com retorno em até 24h úteis",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/3192305/",
+          "https://www.pexels.com/pt-br/download/video/32243767/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Cada setor tem sua lógica,",
+            "text": "e a contabilidade precisa acompanhar essa dinâmica."
+          },
+          {
+            "emphasis": "Gestão, fiscal e estratégia",
+            "text": "devem caminhar juntas para reduzir riscos e aumentar resultados."
+          },
+          {
+            "emphasis": "Decisões melhores",
+            "text": "nascem de informações confiáveis e bem estruturadas."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "NO DIA A DIA DAS EMPRESAS",
+          "title": "Contabilidade consultiva adaptada à realidade do seu segmento",
+          "titleHighlight": "adaptada à realidade do seu segmento",
+          "paragraphs": [
+            "Empresas de diferentes setores enfrentam desafios distintos: regras fiscais específicas, modelos de faturamento variados, estruturas operacionais complexas e necessidades gerenciais próprias. Tratar todos os negócios da mesma forma gera ineficiência, riscos fiscais e decisões equivocadas.",
+            "Na Malaquias, atuamos de forma consultiva, entendendo profundamente a operação, o setor e os objetivos da empresa. A partir disso, estruturamos uma contabilidade personalizada, integrada ao financeiro e à estratégia, garantindo conformidade legal e apoio real à tomada de decisão."
+          ],
+          "ctaText": "Quer uma contabilidade que realmente entenda o seu negócio?",
+          "ctaButtonText": "Agendar conversa com especialista",
+          "ctaButtonLink": "/contato?segmento=setores-diversos&assunto=consultoria",
+          "image": "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg",
+          "imageAlt": "Gestão empresarial",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "ESTRUTURA E CRESCIMENTO",
+          "title": "Organização, governança e planejamento para crescer com segurança",
+          "titleHighlight": "crescer com segurança",
+          "paragraphs": [
+            "Crescer sem estrutura contábil e fiscal adequada pode gerar passivos, autuações e perda de controle financeiro. Mudanças de porte, abertura de filiais, novos contratos ou investidores exigem organização e previsibilidade.",
+            "Apoiamos empresas na organização societária, no planejamento tributário e na implantação de boas práticas de governança. Nosso objetivo é garantir que o crescimento venha acompanhado de controle, segurança jurídica e sustentabilidade financeira."
+          ],
+          "ctaText": "Sua empresa está preparada para crescer?",
+          "ctaButtonText": "Solicitar avaliação gratuita",
+          "ctaButtonLink": "/contato?segmento=setores-diversos&assunto=planejamento",
+          "image": "https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg",
+          "imageAlt": "Planejamento estratégico empresarial",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "ATUAÇÃO MULTISSETORIAL",
+          "title": "Experiência em diferentes segmentos da economia",
+          "titleHighlight": "diferentes segmentos da economia",
+          "description": "Atuamos com empresas de diversos portes e áreas, entregando soluções contábeis e fiscais ajustadas à realidade de cada operação.",
+          "ctaText": "Falar com um especialista",
+          "ctaLink": "/contato?segmento=setores-diversos",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/64609/pexels-photo-64609.jpeg",
+              "title": "Prestação de Serviços",
+              "subtitle": "B2B e B2C",
+              "ctaText": "Soluções para serviços",
+              "ctaLink": "/contato?perfil=servicos"
+            },
+            {
+              "image": "https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg",
+              "title": "Indústria",
+              "subtitle": "Pequena e média",
+              "ctaText": "Consultoria para indústrias",
+              "ctaLink": "/contato?perfil=industria"
+            },
+            {
+              "image": "https://images.pexels.com/photos/64613/pexels-photo-64613.jpeg",
+              "title": "Comércio",
+              "subtitle": "Atacado e varejo",
+              "ctaText": "Assessoria para comércio",
+              "ctaLink": "/contato?perfil=comercio"
+            },
+            {
+              "image": "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg",
+              "title": "Empresas em Crescimento",
+              "subtitle": "Estruturação e escala",
+              "ctaText": "Apoio à expansão",
+              "ctaLink": "/contato?perfil=expansao"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERIÊNCIA COMPROVADA",
+          "title": "Mais de três décadas apoiando empresas na tomada de decisão",
+          "titleHighlight": "três décadas",
+          "description": "Experiência prática para transformar contabilidade em gestão, controle e crescimento sustentável.",
+          "ctaText": "Conhecer nossos cases",
+          "ctaLink": "/cases?segmento=setores-diversos",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/64609/pexels-photo-64609.jpeg",
+              "title": "Serviços",
+              "subtitle": "",
+              "ctaText": "Ver cases de serviços",
+              "ctaLink": "/cases?perfil=servicos"
+            },
+            {
+              "image": "https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg",
+              "title": "Indústria",
+              "subtitle": "",
+              "ctaText": "Ver cases industriais",
+              "ctaLink": "/cases?perfil=industria"
+            },
+            {
+              "image": "https://images.pexels.com/photos/64613/pexels-photo-64613.jpeg",
+              "title": "Comércio",
+              "subtitle": "",
+              "ctaText": "Ver cases de comércio",
+              "ctaLink": "/cases?perfil=comercio"
+            },
+            {
+              "image": "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg",
+              "title": "Empresas Estruturadas",
+              "subtitle": "",
+              "ctaText": "Ver cases empresariais",
+              "ctaLink": "/cases?perfil=empresarial"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NOSSOS SERVIÇOS",
+          "title": "Soluções contábeis completas para empresas de diferentes setores",
+          "titleHighlight": "empresas de diferentes setores",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Não sabe qual solução faz mais sentido para sua empresa?",
+          "ctaButtonText": "Receber orientação personalizada",
+          "ctaButtonLink": "/contato?segmento=setores-diversos&assunto=orientacao",
+          "tabs": [
+            {
+              "label": "Assessoria Contábil",
+              "title": "Assessoria Contábil",
+              "items": [
+                "Escrituração contábil completa;",
+                "Fechamento mensal e relatórios gerenciais;",
+                "Análise de resultados e indicadores;",
+                "Folha de pagamento e rotinas trabalhistas;",
+                "Conformidade com normas contábeis;",
+                "Apoio à gestão e tomada de decisão;",
+                "Atendimento consultivo contínuo."
+              ]
+            },
+            {
+              "label": "Assessoria Societária",
+              "title": "Assessoria Societária",
+              "items": [
+                "Abertura, alteração e regularização de empresas;",
+                "Estruturação societária e governança;",
+                "Planejamento patrimonial;",
+                "Reorganização empresarial;",
+                "Acordos societários;",
+                "Suporte em negociações e expansão."
+              ]
+            },
+            {
+              "label": "Consultoria Tributária",
+              "title": "Consultoria Tributária",
+              "items": [
+                "Planejamento tributário conforme o setor;",
+                "Revisão de apurações e enquadramentos;",
+                "Redução de riscos fiscais;",
+                "Recuperação de créditos tributários;",
+                "Compliance fiscal;",
+                "Suporte em fiscalizações."
+              ]
+            },
+            {
+              "label": "Auditoria Independente",
+              "title": "Auditoria Independente",
+              "items": [
+                "Auditoria das demonstrações contábeis;",
+                "Revisão de processos e controles internos;",
+                "Avaliação de riscos;",
+                "Due diligence;",
+                "Relatórios técnicos e recomendações;",
+                "Suporte à governança corporativa."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "DÚVIDAS FREQUENTES",
+          "title": "Perguntas frequentes sobre contabilidade empresarial",
+          "titleHighlight": "contabilidade empresarial",
+          "description": "Esclareça as principais dúvidas sobre nossos serviços para empresas de diferentes setores.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/3251737/",
+          "ctaText": "Quer entender melhor o seu cenário?",
+          "ctaButtonText": "Conversar com especialista",
+          "ctaButtonLink": "/contato?segmento=setores-diversos&assunto=duvida",
+          "questions": [
+            {
+              "question": "Minha empresa não se encaixa em um setor específico. Vocês atendem?",
+              "answer": "Sim. Atuamos com empresas de diferentes segmentos, adaptando a contabilidade à realidade operacional e tributária de cada negócio."
+            },
+            {
+              "question": "Vocês atuam apenas como contabilidade operacional?",
+              "answer": "Não. Nosso foco é consultivo, unindo contabilidade, fiscal e gestão para apoiar decisões estratégicas."
+            },
+            {
+              "question": "É possível reduzir riscos fiscais sem comprometer a operação?",
+              "answer": "Sim. Com planejamento tributário, organização de processos e compliance, é possível reduzir riscos e manter segurança jurídica."
+            },
+            {
+              "question": "Vocês atendem empresas em crescimento?",
+              "answer": "Sim. Apoiamos empresas em fase de expansão, reorganização e profissionalização da gestão."
+            },
+            {
+              "question": "A Malaquias atende empresas em todo o Brasil?",
+              "answer": "Sim. Atendemos clientes em todo o país com estrutura digital, reuniões remotas e atendimento próximo."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SUA GESTÃO",
+          "title": "Tenha uma contabilidade que apoia decisões e impulsiona resultados",
+          "titleHighlight": "impulsiona resultados",
+          "description": "Solicite um diagnóstico gratuito e descubra como estruturar sua contabilidade para crescer com segurança e eficiência.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Resposta garantida em até 24h úteis",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "en": {
+      "seo": {
+        "title": "Accounting for Multiple Industries | Malaquias Accounting",
+        "description": "Strategic accounting for companies across multiple industries. Tax, fiscal, financial and corporate support tailored to your business reality.",
+        "keywords": ["business accounting", "fiscal management", "tax planning", "accounting for companies"]
+      },
+      "hero": {
+        "title": "Accounting for Multiple Industries",
+        "description": "Every business has its own challenges — and accounting should reflect that reality. Malaquias delivers accounting, tax and strategic solutions for different industries, supporting safe decisions, sustainable growth and full compliance.",
+        "ctaText": "Request a free assessment",
+        "ctaLink": "/contact?segment=multiple-industries",
+        "ctaSecondaryText": "Explore our services",
+        "ctaSecondaryLink": "#services",
+        "trustText": "Consultative support with a response within 24 business hours",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/3192305/",
+          "https://www.pexels.com/pt-br/download/video/32243767/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Each industry has its own rules,",
+            "text": "and accounting must keep up with that pace."
+          },
+          {
+            "emphasis": "Management, tax and strategy",
+            "text": "must work together to reduce risk and improve results."
+          },
+          {
+            "emphasis": "Better decisions",
+            "text": "come from reliable, well-structured information."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "IN THE DAY-TO-DAY",
+          "title": "Consultative accounting tailored to your industry and operation",
+          "titleHighlight": "tailored to your industry and operation",
+          "paragraphs": [
+            "Companies in different industries face different challenges: specific tax rules, varied revenue models, complex operations and unique management needs. Treating every business the same leads to inefficiency, compliance risks and poor decisions.",
+            "At Malaquias, we work consultatively by deeply understanding your operation, industry and goals. From there, we build a personalized accounting structure integrated with finance and strategy — ensuring compliance and real support for decision-making."
+          ],
+          "ctaText": "Want accounting that truly understands your business?",
+          "ctaButtonText": "Schedule a consultation",
+          "ctaButtonLink": "/contact?segment=multiple-industries&subject=consulting",
+          "image": "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg",
+          "imageAlt": "Business management",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "STRUCTURE & GROWTH",
+          "title": "Organization, governance and planning to scale safely",
+          "titleHighlight": "scale safely",
+          "paragraphs": [
+            "Growing without the right accounting and tax structure can create liabilities, audits and financial blind spots. Changes in size, new branches, new contracts or investors require organization and predictability.",
+            "We support companies with corporate structuring, tax planning and governance best practices. Our goal is to ensure your growth comes with control, legal security and financial sustainability."
+          ],
+          "ctaText": "Is your business ready to scale?",
+          "ctaButtonText": "Request a free evaluation",
+          "ctaButtonLink": "/contact?segment=multiple-industries&subject=planning",
+          "image": "https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg",
+          "imageAlt": "Business strategic planning",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "MULTI-INDUSTRY COVERAGE",
+          "title": "Experience across different areas of the economy",
+          "titleHighlight": "different areas of the economy",
+          "description": "We serve companies of multiple sizes and industries, delivering accounting and tax solutions tailored to each operation.",
+          "ctaText": "Talk to a specialist",
+          "ctaLink": "/contact?segment=multiple-industries",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/64609/pexels-photo-64609.jpeg",
+              "title": "Services",
+              "subtitle": "B2B and B2C",
+              "ctaText": "Solutions for services",
+              "ctaLink": "/contact?profile=services"
+            },
+            {
+              "image": "https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg",
+              "title": "Industry",
+              "subtitle": "Small and mid-sized",
+              "ctaText": "Consulting for industry",
+              "ctaLink": "/contact?profile=industry"
+            },
+            {
+              "image": "https://images.pexels.com/photos/64613/pexels-photo-64613.jpeg",
+              "title": "Commerce",
+              "subtitle": "Wholesale and retail",
+              "ctaText": "Support for commerce",
+              "ctaLink": "/contact?profile=commerce"
+            },
+            {
+              "image": "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg",
+              "title": "Growing Businesses",
+              "subtitle": "Structure and scale",
+              "ctaText": "Expansion support",
+              "ctaLink": "/contact?profile=expansion"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "PROVEN EXPERIENCE",
+          "title": "Over three decades supporting decision-making in businesses",
+          "titleHighlight": "three decades",
+          "description": "Hands-on experience turning accounting into management, control and sustainable growth.",
+          "ctaText": "Explore our cases",
+          "ctaLink": "/cases?segment=multiple-industries",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/64609/pexels-photo-64609.jpeg",
+              "title": "Services",
+              "subtitle": "",
+              "ctaText": "View service cases",
+              "ctaLink": "/cases?profile=services"
+            },
+            {
+              "image": "https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg",
+              "title": "Industry",
+              "subtitle": "",
+              "ctaText": "View industry cases",
+              "ctaLink": "/cases?profile=industry"
+            },
+            {
+              "image": "https://images.pexels.com/photos/64613/pexels-photo-64613.jpeg",
+              "title": "Commerce",
+              "subtitle": "",
+              "ctaText": "View commerce cases",
+              "ctaLink": "/cases?profile=commerce"
+            },
+            {
+              "image": "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg",
+              "title": "Structured Companies",
+              "subtitle": "",
+              "ctaText": "View business cases",
+              "ctaLink": "/cases?profile=business"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "OUR SERVICES",
+          "title": "Complete accounting solutions for companies across industries",
+          "titleHighlight": "companies across industries",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Not sure which solution fits your company best?",
+          "ctaButtonText": "Get personalized guidance",
+          "ctaButtonLink": "/contact?segment=multiple-industries&subject=guidance",
+          "tabs": [
+            {
+              "label": "Accounting Advisory",
+              "title": "Accounting Advisory",
+              "items": [
+                "Full bookkeeping and accounting routines;",
+                "Monthly close and management reporting;",
+                "Performance analysis and KPIs;",
+                "Payroll and labor routines support;",
+                "Compliance with accounting standards;",
+                "Management support and decision-making;",
+                "Ongoing consultative service."
+              ]
+            },
+            {
+              "label": "Corporate Advisory",
+              "title": "Corporate Advisory",
+              "items": [
+                "Company formation, amendments and regularization;",
+                "Corporate structuring and governance;",
+                "Asset planning support;",
+                "Business reorganizations;",
+                "Shareholder agreements;",
+                "Support for negotiations and expansion."
+              ]
+            },
+            {
+              "label": "Tax Consulting",
+              "title": "Tax Consulting",
+              "items": [
+                "Industry-based tax planning;",
+                "Review of tax calculations and classification;",
+                "Fiscal risk reduction;",
+                "Tax credit recovery when applicable;",
+                "Fiscal compliance;",
+                "Support during audits and inspections."
+              ]
+            },
+            {
+              "label": "Independent Audit",
+              "title": "Independent Audit",
+              "items": [
+                "Financial statements audit;",
+                "Internal controls and process review;",
+                "Risk assessment;",
+                "Due diligence;",
+                "Technical reports and recommendations;",
+                "Support for corporate governance."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "FREQUENTLY ASKED QUESTIONS",
+          "title": "Frequently asked questions about business accounting",
+          "titleHighlight": "business accounting",
+          "description": "Clear answers to the most common questions about our services for companies in different industries.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/3251737/",
+          "ctaText": "Want to better understand your current situation?",
+          "ctaButtonText": "Talk to a specialist",
+          "ctaButtonLink": "/contact?segment=multiple-industries&subject=question",
+          "questions": [
+            {
+              "question": "My company doesn’t fit a single industry category. Can you help?",
+              "answer": "Yes. We serve companies across different segments, tailoring accounting to your operational and tax reality."
+            },
+            {
+              "question": "Do you work only as operational accounting?",
+              "answer": "No. Our approach is consultative, connecting accounting, tax and management to support strategic decisions."
+            },
+            {
+              "question": "Can we reduce fiscal risks without hurting operations?",
+              "answer": "Yes. With tax planning, organized processes and compliance, you can reduce risks while maintaining legal certainty."
+            },
+            {
+              "question": "Do you support growing companies?",
+              "answer": "Yes. We support businesses in expansion, restructuring and management professionalization stages."
+            },
+            {
+              "question": "Do you serve companies across Brazil?",
+              "answer": "Yes. We serve clients nationwide with a digital structure, remote meetings and close support."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORM YOUR MANAGEMENT",
+          "title": "Get accounting that supports decisions and drives results",
+          "titleHighlight": "drives results",
+          "description": "Request a free assessment and discover how to structure your accounting to grow with safety and efficiency.",
+          "submitText": "Request a free assessment",
+          "submitMicrocopy": "Guaranteed response within 24 business hours",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "es": {
+      "seo": {
+        "title": "Contabilidad para Sectores Diversos | Malaquias Contabilidad",
+        "description": "Contabilidad estratégica para empresas de sectores diversos. Gestión fiscal, tributaria, financiera y societaria adaptada a la realidad de su negocio.",
+        "keywords": ["contabilidad empresarial", "gestión fiscal", "planificación tributaria", "contabilidad para empresas"]
+      },
+      "hero": {
+        "title": "Contabilidad para Sectores Diversos",
+        "description": "Cada empresa tiene desafíos propios — y la contabilidad debe reflejar esa realidad. Malaquias ofrece soluciones contables, fiscales y estratégicas para diferentes sectores, apoyando decisiones seguras, crecimiento sostenible y cumplimiento total con la legislación.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contacto?segmento=sectores-diversos",
+        "ctaSecondaryText": "Conocer nuestros servicios",
+        "ctaSecondaryLink": "#servicios",
+        "trustText": "Atención consultiva con respuesta en hasta 24h hábiles",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/3192305/",
+          "https://www.pexels.com/pt-br/download/video/32243767/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Cada sector tiene su lógica,",
+            "text": "y la contabilidad debe acompañar esa dinámica."
+          },
+          {
+            "emphasis": "Gestión, fiscalidad y estrategia",
+            "text": "deben ir juntas para reducir riesgos y mejorar resultados."
+          },
+          {
+            "emphasis": "Mejores decisiones",
+            "text": "nacen de información confiable y bien estructurada."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "EN EL DÍA A DÍA DE LAS EMPRESAS",
+          "title": "Contabilidad consultiva adaptada a la realidad de su sector",
+          "titleHighlight": "adaptada a la realidad de su sector",
+          "paragraphs": [
+            "Empresas de diferentes sectores enfrentan desafíos distintos: reglas fiscales específicas, modelos de facturación variados, estructuras operativas complejas y necesidades gerenciales propias. Tratar todos los negocios de la misma forma genera ineficiencia, riesgos fiscales y decisiones equivocadas.",
+            "En Malaquias trabajamos de manera consultiva, entendiendo a fondo la operación, el sector y los objetivos de la empresa. A partir de eso, estructuramos una contabilidad personalizada, integrada con finanzas y estrategia, garantizando cumplimiento legal y apoyo real para la toma de decisiones."
+          ],
+          "ctaText": "¿Quiere una contabilidad que realmente entienda su negocio?",
+          "ctaButtonText": "Agendar conversación con especialista",
+          "ctaButtonLink": "/contacto?segmento=sectores-diversos&asunto=consultoria",
+          "image": "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg",
+          "imageAlt": "Gestión empresarial",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "ESTRUCTURA Y CRECIMIENTO",
+          "title": "Organización, gobernanza y planificación para crecer con seguridad",
+          "titleHighlight": "crecer con seguridad",
+          "paragraphs": [
+            "Crecer sin una estructura contable y fiscal adecuada puede generar pasivos, auditorías y pérdida de control financiero. Cambios de tamaño, apertura de sucursales, nuevos contratos o inversionistas requieren organización y previsibilidad.",
+            "Apoyamos a empresas en la organización societaria, en la planificación tributaria y en la implementación de buenas prácticas de gobernanza. Nuestro objetivo es que el crecimiento venga acompañado de control, seguridad jurídica y sostenibilidad financiera."
+          ],
+          "ctaText": "¿Su empresa está preparada para crecer?",
+          "ctaButtonText": "Solicitar evaluación gratuita",
+          "ctaButtonLink": "/contacto?segmento=sectores-diversos&asunto=planificacion",
+          "image": "https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg",
+          "imageAlt": "Planificación estratégica empresarial",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "ACTUACIÓN MULTISECTORIAL",
+          "title": "Experiencia en diferentes segmentos de la economía",
+          "titleHighlight": "diferentes segmentos de la economía",
+          "description": "Atendemos empresas de distintos tamaños y sectores, entregando soluciones contables y fiscales ajustadas a la realidad de cada operación.",
+          "ctaText": "Hablar con un especialista",
+          "ctaLink": "/contacto?segmento=sectores-diversos",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/64609/pexels-photo-64609.jpeg",
+              "title": "Servicios",
+              "subtitle": "B2B y B2C",
+              "ctaText": "Soluciones para servicios",
+              "ctaLink": "/contacto?perfil=servicios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg",
+              "title": "Industria",
+              "subtitle": "Pequeña y mediana",
+              "ctaText": "Consultoría para industria",
+              "ctaLink": "/contacto?perfil=industria"
+            },
+            {
+              "image": "https://images.pexels.com/photos/64613/pexels-photo-64613.jpeg",
+              "title": "Comercio",
+              "subtitle": "Mayorista y minorista",
+              "ctaText": "Asesoría para comercio",
+              "ctaLink": "/contacto?perfil=comercio"
+            },
+            {
+              "image": "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg",
+              "title": "Empresas en Crecimiento",
+              "subtitle": "Estructura y escala",
+              "ctaText": "Apoyo a la expansión",
+              "ctaLink": "/contacto?perfil=expansion"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERIENCIA COMPROBADA",
+          "title": "Más de tres décadas apoyando a empresas en la toma de decisiones",
+          "titleHighlight": "tres décadas",
+          "description": "Experiencia práctica para convertir la contabilidad en gestión, control y crecimiento sostenible.",
+          "ctaText": "Conocer nuestros casos",
+          "ctaLink": "/cases?segmento=sectores-diversos",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/64609/pexels-photo-64609.jpeg",
+              "title": "Servicios",
+              "subtitle": "",
+              "ctaText": "Ver casos de servicios",
+              "ctaLink": "/cases?perfil=servicios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg",
+              "title": "Industria",
+              "subtitle": "",
+              "ctaText": "Ver casos industriales",
+              "ctaLink": "/cases?perfil=industria"
+            },
+            {
+              "image": "https://images.pexels.com/photos/64613/pexels-photo-64613.jpeg",
+              "title": "Comercio",
+              "subtitle": "",
+              "ctaText": "Ver casos de comercio",
+              "ctaLink": "/cases?perfil=comercio"
+            },
+            {
+              "image": "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg",
+              "title": "Empresas Estructuradas",
+              "subtitle": "",
+              "ctaText": "Ver casos empresariales",
+              "ctaLink": "/cases?perfil=empresarial"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NUESTROS SERVICIOS",
+          "title": "Soluciones contables completas para empresas de diferentes sectores",
+          "titleHighlight": "empresas de diferentes sectores",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "¿No sabe qué solución tiene más sentido para su empresa?",
+          "ctaButtonText": "Recibir orientación personalizada",
+          "ctaButtonLink": "/contacto?segmento=sectores-diversos&assunto=orientacion",
+          "tabs": [
+            {
+              "label": "Asesoría Contable",
+              "title": "Asesoría Contable",
+              "items": [
+                "Contabilidad completa;",
+                "Cierre mensual e informes gerenciales;",
+                "Análisis de resultados e indicadores;",
+                "Nómina y rutinas laborales;",
+                "Cumplimiento de normas contables;",
+                "Apoyo a la gestión y toma de decisiones;",
+                "Atención consultiva continua."
+              ]
+            },
+            {
+              "label": "Asesoría Societaria",
+              "title": "Asesoría Societaria",
+              "items": [
+                "Apertura, cambios y regularización de empresas;",
+                "Estructura societaria y gobernanza;",
+                "Planificación patrimonial;",
+                "Reorganización empresarial;",
+                "Acuerdos societarios;",
+                "Soporte en negociaciones y expansión."
+              ]
+            },
+            {
+              "label": "Consultoría Tributaria",
+              "title": "Consultoría Tributaria",
+              "items": [
+                "Planificación tributaria según el sector;",
+                "Revisión de cálculos y encuadres;",
+                "Reducción de riesgos fiscales;",
+                "Recuperación de créditos tributarios;",
+                "Compliance fiscal;",
+                "Soporte en fiscalizaciones."
+              ]
+            },
+            {
+              "label": "Auditoría Independiente",
+              "title": "Auditoría Independiente",
+              "items": [
+                "Auditoría de estados financieros;",
+                "Revisión de procesos y controles internos;",
+                "Evaluación de riesgos;",
+                "Due diligence;",
+                "Informes técnicos y recomendaciones;",
+                "Soporte a la gobernanza corporativa."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "PREGUNTAS FRECUENTES",
+          "title": "Preguntas frecuentes sobre contabilidad empresarial",
+          "titleHighlight": "contabilidad empresarial",
+          "description": "Aclare las principales dudas sobre nuestros servicios para empresas de diferentes sectores.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/3251737/",
+          "ctaText": "¿Quiere entender mejor su situación?",
+          "ctaButtonText": "Conversar con especialista",
+          "ctaButtonLink": "/contacto?segmento=sectores-diversos&asunto=duda",
+          "questions": [
+            {
+              "question": "Mi empresa no encaja en un sector específico. ¿Ustedes atienden?",
+              "answer": "Sí. Atendemos empresas de diferentes segmentos, adaptando la contabilidad a la realidad operativa y tributaria de cada negocio."
+            },
+            {
+              "question": "¿Ustedes actúan solo como contabilidad operativa?",
+              "answer": "No. Nuestro enfoque es consultivo, uniendo contabilidad, fiscalidad y gestión para apoyar decisiones estratégicas."
+            },
+            {
+              "question": "¿Es posible reducir riesgos fiscales sin afectar la operación?",
+              "answer": "Sí. Con planificación tributaria, procesos organizados y compliance, se pueden reducir riesgos manteniendo seguridad jurídica."
+            },
+            {
+              "question": "¿Atienden empresas en crecimiento?",
+              "answer": "Sí. Apoyamos empresas en expansión, reorganización y profesionalización de la gestión."
+            },
+            {
+              "question": "¿Malaquias atiende empresas en todo Brasil?",
+              "answer": "Sí. Atendemos clientes en todo el país con estructura digital, reuniones remotas y acompañamiento cercano."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SU GESTIÓN",
+          "title": "Tenga una contabilidad que apoye decisiones e impulse resultados",
+          "titleHighlight": "impulse resultados",
+          "description": "Solicite un diagnóstico gratuito y descubra cómo estructurar su contabilidad para crecer con seguridad y eficiencia.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Respuesta garantizada en hasta 24h hábiles",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,795 @@
+{
+  "slug": "saude",
+  "theme": {
+    "mode": "dark",
+    "accentColor": "#BD9657"
+  },
+  "content": {
+    "pt": {
+      "seo": {
+        "title": "Contabilidade para a Área da Saúde | Malaquias Contabilidade",
+        "description": "Contabilidade especializada para a área da saúde. Gestão fiscal, tributária e financeira para clínicas, consultórios, laboratórios e serviços médicos.",
+        "keywords": ["contabilidade para clínicas", "contabilidade médica", "área da saúde", "gestão tributária"]
+      },
+      "hero": {
+        "title": "Contabilidade para a Área da Saúde",
+        "description": "Na saúde, decisões precisam ser rápidas, seguras e bem documentadas. Para reduzir riscos, otimizar tributos e manter a gestão financeira sob controle, conte com a Malaquias: contabilidade estratégica para clínicas, consultórios, laboratórios e empresas do setor.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contato?segmento=saude",
+        "ctaSecondaryText": "Conhecer nossos serviços",
+        "ctaSecondaryLink": "#servicos",
+        "trustText": "Atendimento especializado com retorno em até 24h úteis",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/6997945/",
+          "https://www.pexels.com/pt-br/download/video/7579334/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Eficiência tributária na saúde",
+            "text": "protege a margem e sustenta o crescimento com segurança."
+          },
+          {
+            "emphasis": "Conformidade e organização,",
+            "text": "com rotinas bem definidas, evitam riscos e retrabalho."
+          },
+          {
+            "emphasis": "Gestão por indicadores",
+            "text": "ajuda a enxergar a operação e tomar decisões melhores."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "NO DIA A DIA DA SAÚDE",
+          "title": "Contabilidade consultiva para clínicas, consultórios e laboratórios",
+          "titleHighlight": "clínicas, consultórios e laboratórios",
+          "paragraphs": [
+            "O setor de saúde tem particularidades que exigem atenção: diferentes fontes de receita, convênios, repasses, glosas, alto controle de despesas e rotinas trabalhistas sensíveis. Quando a contabilidade não acompanha essa complexidade, a gestão perde previsibilidade — e o risco cresce.",
+            "A Malaquias atua com uma equipe preparada para estruturar a contabilidade da saúde com foco em conformidade, controle e resultado. Integramos fiscal, contábil e financeiro para entregar relatórios claros, organização de processos e suporte consultivo para decisões mais seguras."
+          ],
+          "ctaText": "Quer organizar a contabilidade e ganhar controle sobre o caixa da sua operação?",
+          "ctaButtonText": "Agendar conversa com especialista",
+          "ctaButtonLink": "/contato?segmento=saude&assunto=consultoria",
+          "image": "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg",
+          "imageAlt": "Gestão em clínica e saúde",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "EXPANSÃO E SEGURANÇA",
+          "title": "Estruture crescimento, filiais e novas unidades com segurança jurídica",
+          "titleHighlight": "segurança jurídica",
+          "paragraphs": [
+            "Abrir novas unidades, ampliar equipe, contratar especialistas ou investir em equipamentos exige planejamento e governança. Sem estrutura contábil e tributária adequada, a expansão pode gerar passivos, inconsistências e surpresas no fluxo de caixa.",
+            "Apoiamos sua clínica ou empresa de saúde na organização societária, planejamento tributário e padronização de rotinas para crescer com previsibilidade. Nosso foco é reduzir riscos, proteger o patrimônio e fortalecer a gestão para uma operação sustentável."
+          ],
+          "ctaText": "Vai expandir, abrir unidade ou reorganizar a empresa?",
+          "ctaButtonText": "Solicitar avaliação gratuita",
+          "ctaButtonLink": "/contato?segmento=saude&assunto=expansao",
+          "image": "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg",
+          "imageAlt": "Planejamento para expansão na saúde",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "ATENDIMENTO POR PERFIL",
+          "title": "Soluções para diferentes operações na área da saúde",
+          "titleHighlight": "área da saúde",
+          "description": "Atendemos negócios de saúde com necessidades distintas, com estrutura contábil e fiscal alinhada ao seu modelo de atendimento.",
+          "ctaText": "Falar com um especialista do seu segmento",
+          "ctaLink": "/contato?segmento=saude",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
+              "title": "Clínicas",
+              "subtitle": "Multiespecialidades",
+              "ctaText": "Soluções para clínicas",
+              "ctaLink": "/contato?perfil=clinicas"
+            },
+            {
+              "image": "https://images.pexels.com/photos/532786/pexels-photo-532786.jpeg",
+              "title": "Consultórios",
+              "subtitle": "Médicos e profissionais",
+              "ctaText": "Assessoria para consultórios",
+              "ctaLink": "/contato?perfil=consultorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/3735769/pexels-photo-3735769.jpeg",
+              "title": "Laboratórios",
+              "subtitle": "Exames e diagnósticos",
+              "ctaText": "Gestão para laboratórios",
+              "ctaLink": "/contato?perfil=laboratorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/7195310/pexels-photo-7195310.jpeg",
+              "title": "Serviços de Saúde",
+              "subtitle": "Empresas e operações",
+              "ctaText": "Atendimento especializado",
+              "ctaLink": "/contato?perfil=servicos-saude"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERTISE COMPROVADA",
+          "title": "Experiência para transformar contabilidade em gestão na saúde",
+          "titleHighlight": "transformar contabilidade em gestão",
+          "description": "Trabalhamos para que sua contabilidade gere controle, previsibilidade e decisões melhores — com foco em compliance e rentabilidade.",
+          "ctaText": "Conhecer nossos cases de sucesso",
+          "ctaLink": "/cases?segmento=saude",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
+              "title": "Clínicas",
+              "subtitle": "",
+              "ctaText": "Ver cases de clínicas",
+              "ctaLink": "/cases?perfil=clinicas"
+            },
+            {
+              "image": "https://images.pexels.com/photos/532786/pexels-photo-532786.jpeg",
+              "title": "Consultórios",
+              "subtitle": "",
+              "ctaText": "Ver cases de consultórios",
+              "ctaLink": "/cases?perfil=consultorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/3735769/pexels-photo-3735769.jpeg",
+              "title": "Laboratórios",
+              "subtitle": "",
+              "ctaText": "Ver cases de laboratórios",
+              "ctaLink": "/cases?perfil=laboratorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/7195310/pexels-photo-7195310.jpeg",
+              "title": "Empresas de Saúde",
+              "subtitle": "",
+              "ctaText": "Ver cases empresariais",
+              "ctaLink": "/cases?perfil=empresas-saude"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NOSSOS SERVIÇOS",
+          "title": "Soluções completas em contabilidade e consultoria para a Saúde",
+          "titleHighlight": "para a Saúde",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Não tem certeza sobre qual serviço faz mais sentido para sua operação?",
+          "ctaButtonText": "Receber orientação personalizada",
+          "ctaButtonLink": "/contato?segmento=saude&assunto=orientacao",
+          "tabs": [
+            {
+              "label": "Assessoria Contábil",
+              "title": "Assessoria Contábil",
+              "items": [
+                "Escrituração contábil e fechamento mensal com relatórios gerenciais;",
+                "Organização do fluxo financeiro e rotinas de conciliação;",
+                "Acompanhamento de resultados e indicadores (margem, custos, produtividade);",
+                "Folha de pagamento e rotinas trabalhistas;",
+                "Organização documental e conformidade contábil;",
+                "Apoio na estruturação de centros de custo e unidades;",
+                "Atendimento consultivo contínuo."
+              ]
+            },
+            {
+              "label": "Assessoria Societária",
+              "title": "Assessoria Societária",
+              "items": [
+                "Abertura, alteração e regularização de empresas e unidades;",
+                "Estruturação societária para expansão e proteção patrimonial;",
+                "Acordos societários e governança;",
+                "Reorganização empresarial (clínica, grupo, rede);",
+                "Suporte para entrada de sócios e investidores;",
+                "Adequação documental para crescimento com segurança."
+              ]
+            },
+            {
+              "label": "Consultoria Tributária",
+              "title": "Consultoria Tributária",
+              "items": [
+                "Planejamento tributário para atividades de saúde;",
+                "Revisão de apuração e redução de riscos fiscais;",
+                "Análise de oportunidades de economia tributária com segurança;",
+                "Compliance fiscal e suporte em fiscalizações;",
+                "Recuperação de créditos quando aplicável;",
+                "Orientação para expansão e mudanças de regime."
+              ]
+            },
+            {
+              "label": "Auditoria Independente",
+              "title": "Auditoria Independente",
+              "items": [
+                "Auditoria das demonstrações contábeis;",
+                "Revisão de controles internos e processos;",
+                "Auditoria de custos e despesas operacionais;",
+                "Due diligence para aquisições e reorganizações;",
+                "Relatórios técnicos e recomendações;",
+                "Suporte à governança e mitigação de riscos."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "DÚVIDAS FREQUENTES",
+          "title": "Perguntas frequentes sobre contabilidade na área da saúde",
+          "titleHighlight": "área da saúde",
+          "description": "Respostas diretas para as dúvidas mais comuns de clínicas, consultórios e empresas de saúde.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/6129941/",
+          "ctaText": "Quer avaliar seu cenário com um especialista?",
+          "ctaButtonText": "Conversar com especialista",
+          "ctaButtonLink": "/contato?segmento=saude&assunto=duvida",
+          "questions": [
+            {
+              "question": "A contabilidade para clínicas e consultórios é diferente da contabilidade tradicional?",
+              "answer": "Sim. A saúde possui particularidades como receitas por convênios, repasses, glosas, rotinas trabalhistas sensíveis e controle rígido de custos. Uma contabilidade especializada melhora o controle e reduz riscos."
+            },
+            {
+              "question": "Vocês ajudam a organizar centro de custos por unidade e especialidade?",
+              "answer": "Sim. Estruturamos centros de custo e relatórios gerenciais para enxergar margens, despesas e produtividade por unidade, especialidade ou serviço."
+            },
+            {
+              "question": "Como reduzir tributos sem aumentar o risco fiscal?",
+              "answer": "Com planejamento: enquadramento correto, revisão de apurações, organização documental e compliance. O objetivo é pagar o que é devido e evitar pagamentos indevidos."
+            },
+            {
+              "question": "Vocês atendem clínicas com várias unidades?",
+              "answer": "Sim. Apoiamos a estrutura contábil e societária para redes e grupos, com padronização de rotinas e indicadores por unidade."
+            },
+            {
+              "question": "A Malaquias atende empresas de saúde em todo o Brasil?",
+              "answer": "Sim. Atendemos nacionalmente com processos digitais, reuniões remotas e troca segura de documentos."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SUA GESTÃO",
+          "title": "Ganhe controle, reduza riscos e aumente a previsibilidade da sua operação de saúde",
+          "titleHighlight": "aumente a previsibilidade",
+          "description": "Solicite um diagnóstico gratuito e descubra como estruturar contabilidade, fiscal e gestão para crescer com segurança na área da saúde.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Resposta garantida em até 24h úteis",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "en": {
+      "seo": {
+        "title": "Accounting for Healthcare | Malaquias Accounting",
+        "description": "Specialized accounting for healthcare. Tax, fiscal and financial management for clinics, practices, labs and healthcare service companies.",
+        "keywords": ["accounting for clinics", "medical accounting", "healthcare", "tax management"]
+      },
+      "hero": {
+        "title": "Accounting for Healthcare",
+        "description": "In healthcare, decisions must be fast, safe and well documented. To reduce risks, optimize taxes and keep financial management under control, count on Malaquias: strategic accounting for clinics, medical practices, laboratories and healthcare companies.",
+        "ctaText": "Request a free assessment",
+        "ctaLink": "/contact?segment=healthcare",
+        "ctaSecondaryText": "Explore our services",
+        "ctaSecondaryLink": "#services",
+        "trustText": "Specialized support with a response within 24 business hours",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/6997945/",
+          "https://www.pexels.com/pt-br/download/video/7579334/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Tax efficiency in healthcare",
+            "text": "protects margins and supports safe growth."
+          },
+          {
+            "emphasis": "Compliance and organization,",
+            "text": "with clear routines, reduce risk and rework."
+          },
+          {
+            "emphasis": "KPI-driven management",
+            "text": "helps you see the operation and decide better."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "IN HEALTHCARE DAY-TO-DAY",
+          "title": "Consultative accounting for clinics, practices and laboratories",
+          "titleHighlight": "clinics, practices and laboratories",
+          "paragraphs": [
+            "Healthcare has specific complexities that require attention: multiple revenue sources, insurance contracts, reimbursements, denials, strict expense control and sensitive payroll routines. When accounting doesn’t keep up, management loses predictability — and risk increases.",
+            "Malaquias provides a team ready to structure healthcare accounting focused on compliance, control and results. We integrate tax, accounting and finance to deliver clear reports, organized processes and consultative support for safer decisions."
+          ],
+          "ctaText": "Want to organize accounting and gain control over your cash flow?",
+          "ctaButtonText": "Schedule a consultation",
+          "ctaButtonLink": "/contact?segment=healthcare&subject=consulting",
+          "image": "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg",
+          "imageAlt": "Healthcare clinic management",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "SCALE WITH SECURITY",
+          "title": "Structure growth, new branches and units with legal certainty",
+          "titleHighlight": "legal certainty",
+          "paragraphs": [
+            "Opening new units, expanding staff, hiring specialists or investing in equipment requires planning and governance. Without the right accounting and tax structure, expansion can create liabilities, inconsistencies and cash-flow surprises.",
+            "We support your clinic or healthcare company with corporate structuring, tax planning and standardized routines to scale with predictability. Our focus is to reduce risks, protect assets and strengthen management for a sustainable operation."
+          ],
+          "ctaText": "Planning to expand, open a new unit or restructure your business?",
+          "ctaButtonText": "Request a free evaluation",
+          "ctaButtonLink": "/contact?segment=healthcare&subject=expansion",
+          "image": "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg",
+          "imageAlt": "Planning healthcare expansion",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "BY OPERATION TYPE",
+          "title": "Solutions for different healthcare operations",
+          "titleHighlight": "healthcare operations",
+          "description": "We support healthcare businesses with different needs, aligning accounting and tax structure to your care model.",
+          "ctaText": "Talk to a specialist in your segment",
+          "ctaLink": "/contact?segment=healthcare",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
+              "title": "Clinics",
+              "subtitle": "Multi-specialty",
+              "ctaText": "Solutions for clinics",
+              "ctaLink": "/contact?profile=clinics"
+            },
+            {
+              "image": "https://images.pexels.com/photos/532786/pexels-photo-532786.jpeg",
+              "title": "Medical Practices",
+              "subtitle": "Doctors and professionals",
+              "ctaText": "Support for practices",
+              "ctaLink": "/contact?profile=practices"
+            },
+            {
+              "image": "https://images.pexels.com/photos/3735769/pexels-photo-3735769.jpeg",
+              "title": "Laboratories",
+              "subtitle": "Testing and diagnostics",
+              "ctaText": "Management for labs",
+              "ctaLink": "/contact?profile=laboratories"
+            },
+            {
+              "image": "https://images.pexels.com/photos/7195310/pexels-photo-7195310.jpeg",
+              "title": "Healthcare Services",
+              "subtitle": "Companies and operations",
+              "ctaText": "Specialized support",
+              "ctaLink": "/contact?profile=health-services"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "PROVEN EXPERTISE",
+          "title": "Experience to turn healthcare accounting into management",
+          "titleHighlight": "turn healthcare accounting into management",
+          "description": "We help your accounting deliver control, predictability and better decisions — with a focus on compliance and profitability.",
+          "ctaText": "Explore our success stories",
+          "ctaLink": "/cases?segment=healthcare",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
+              "title": "Clinics",
+              "subtitle": "",
+              "ctaText": "Clinic cases",
+              "ctaLink": "/cases?profile=clinics"
+            },
+            {
+              "image": "https://images.pexels.com/photos/532786/pexels-photo-532786.jpeg",
+              "title": "Practices",
+              "subtitle": "",
+              "ctaText": "Practice cases",
+              "ctaLink": "/cases?profile=practices"
+            },
+            {
+              "image": "https://images.pexels.com/photos/3735769/pexels-photo-3735769.jpeg",
+              "title": "Laboratories",
+              "subtitle": "",
+              "ctaText": "Laboratory cases",
+              "ctaLink": "/cases?profile=laboratories"
+            },
+            {
+              "image": "https://images.pexels.com/photos/7195310/pexels-photo-7195310.jpeg",
+              "title": "Healthcare Companies",
+              "subtitle": "",
+              "ctaText": "Business cases",
+              "ctaLink": "/cases?profile=healthcare-companies"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "OUR SERVICES",
+          "title": "Complete accounting and consulting solutions for Healthcare",
+          "titleHighlight": "for Healthcare",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "Not sure which service fits your operation best?",
+          "ctaButtonText": "Get personalized guidance",
+          "ctaButtonLink": "/contact?segment=healthcare&subject=guidance",
+          "tabs": [
+            {
+              "label": "Accounting Advisory",
+              "title": "Accounting Advisory",
+              "items": [
+                "Bookkeeping and monthly close with management reporting;",
+                "Cash-flow routines and reconciliation organization;",
+                "Results tracking and KPIs (margin, costs, productivity);",
+                "Payroll and labor routines support;",
+                "Document organization and accounting compliance;",
+                "Cost centers by unit and service structuring;",
+                "Ongoing consultative support."
+              ]
+            },
+            {
+              "label": "Corporate Advisory",
+              "title": "Corporate Advisory",
+              "items": [
+                "Company and unit formation, amendments and regularization;",
+                "Corporate structuring for expansion and asset protection;",
+                "Governance and shareholder agreements;",
+                "Business reorganization (clinic, group, network);",
+                "Support for partners and investors;",
+                "Documentation readiness for safe growth."
+              ]
+            },
+            {
+              "label": "Tax Consulting",
+              "title": "Tax Consulting",
+              "items": [
+                "Tax planning for healthcare activities;",
+                "Review of tax calculations and fiscal risk reduction;",
+                "Safe tax-saving opportunities analysis;",
+                "Fiscal compliance and audit support;",
+                "Tax credit recovery when applicable;",
+                "Guidance for expansion and regime changes."
+              ]
+            },
+            {
+              "label": "Independent Audit",
+              "title": "Independent Audit",
+              "items": [
+                "Financial statements audit;",
+                "Internal controls and process review;",
+                "Operating costs and expenses audit;",
+                "Due diligence for acquisitions and reorganizations;",
+                "Technical reports and recommendations;",
+                "Governance and risk mitigation support."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "FREQUENTLY ASKED QUESTIONS",
+          "title": "Frequently asked questions about healthcare accounting",
+          "titleHighlight": "healthcare accounting",
+          "description": "Clear answers to the most common questions from clinics, practices and healthcare businesses.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/6129941/",
+          "ctaText": "Want to review your current setup with a specialist?",
+          "ctaButtonText": "Talk to a specialist",
+          "ctaButtonLink": "/contact?segment=healthcare&subject=question",
+          "questions": [
+            {
+              "question": "Is accounting for clinics and practices different from traditional accounting?",
+              "answer": "Yes. Healthcare has specifics such as insurance revenue, reimbursements, denials, sensitive payroll routines and strict cost control. Specialized accounting improves control and reduces risks."
+            },
+            {
+              "question": "Can you structure cost centers by unit and specialty?",
+              "answer": "Yes. We set up cost centers and management reports to track margins, expenses and productivity by unit, specialty or service."
+            },
+            {
+              "question": "How can we reduce taxes without increasing compliance risk?",
+              "answer": "With planning: correct classification, review of calculations, organized documentation and compliance. The goal is to pay what’s due and avoid overpayment."
+            },
+            {
+              "question": "Do you support multi-unit clinics?",
+              "answer": "Yes. We support accounting and corporate structuring for groups and networks, with standardized routines and unit-level KPIs."
+            },
+            {
+              "question": "Do you serve healthcare businesses across Brazil?",
+              "answer": "Yes. We serve nationwide with digital processes, remote meetings and secure document exchange."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORM YOUR MANAGEMENT",
+          "title": "Gain control, reduce risk and increase predictability in your healthcare operation",
+          "titleHighlight": "increase predictability",
+          "description": "Request a free assessment and discover how to structure accounting, tax and management to grow safely in healthcare.",
+          "submitText": "Request a free assessment",
+          "submitMicrocopy": "Guaranteed response within 24 business hours",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    },
+    "es": {
+      "seo": {
+        "title": "Contabilidad para el Área de la Salud | Malaquias Contabilidad",
+        "description": "Contabilidad especializada para el área de la salud. Gestión fiscal, tributaria y financiera para clínicas, consultorios, laboratorios y servicios médicos.",
+        "keywords": ["contabilidad para clínicas", "contabilidad médica", "salud", "gestión tributaria"]
+      },
+      "hero": {
+        "title": "Contabilidad para el Área de la Salud",
+        "description": "En salud, las decisiones deben ser rápidas, seguras y bien documentadas. Para reducir riesgos, optimizar tributos y mantener la gestión financiera bajo control, cuente con Malaquias: contabilidad estratégica para clínicas, consultorios, laboratorios y empresas del sector.",
+        "ctaText": "Solicitar diagnóstico gratuito",
+        "ctaLink": "/contacto?segmento=salud",
+        "ctaSecondaryText": "Conocer nuestros servicios",
+        "ctaSecondaryLink": "#servicios",
+        "trustText": "Atención especializada con respuesta en hasta 24h hábiles",
+        "backgroundType": "video",
+        "backgroundVideos": [
+          "https://www.pexels.com/pt-br/download/video/6997945/",
+          "https://www.pexels.com/pt-br/download/video/7579334/"
+        ],
+        "backgroundImage": "",
+        "videoDuration": 5,
+        "highlights": [
+          {
+            "emphasis": "Eficiencia tributaria en salud",
+            "text": "protege el margen y sostiene el crecimiento con seguridad."
+          },
+          {
+            "emphasis": "Cumplimiento y organización,",
+            "text": "con rutinas claras, evitan riesgos y retrabajo."
+          },
+          {
+            "emphasis": "Gestión por indicadores",
+            "text": "ayuda a ver la operación y tomar mejores decisiones."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "textImage",
+          "tag": "EN EL DÍA A DÍA DE LA SALUD",
+          "title": "Contabilidad consultiva para clínicas, consultorios y laboratorios",
+          "titleHighlight": "clínicas, consultorios y laboratorios",
+          "paragraphs": [
+            "El sector salud tiene particularidades que exigen atención: diferentes fuentes de ingresos, convenios, pagos, rechazos (glosas), alto control de gastos y rutinas laborales sensibles. Cuando la contabilidad no acompaña esta complejidad, la gestión pierde previsibilidad — y el riesgo aumenta.",
+            "Malaquias actúa con un equipo preparado para estructurar la contabilidad en salud con foco en cumplimiento, control y resultados. Integramos fiscal, contable y finanzas para entregar informes claros, procesos organizados y soporte consultivo para decisiones más seguras."
+          ],
+          "ctaText": "¿Quiere organizar la contabilidad y ganar control del flujo de caja?",
+          "ctaButtonText": "Agendar conversación con especialista",
+          "ctaButtonLink": "/contacto?segmento=salud&asunto=consultoria",
+          "image": "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg",
+          "imageAlt": "Gestión en clínica y salud",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "textImage",
+          "tag": "EXPANSIÓN Y SEGURIDAD",
+          "title": "Estructure el crecimiento, sucursales y nuevas unidades con seguridad jurídica",
+          "titleHighlight": "seguridad jurídica",
+          "paragraphs": [
+            "Abrir nuevas unidades, ampliar el equipo, contratar especialistas o invertir en equipos exige planificación y gobernanza. Sin una estructura contable y tributaria adecuada, la expansión puede generar pasivos, inconsistencias y sorpresas en el flujo de caja.",
+            "Apoyamos su clínica o empresa de salud con estructura societaria, planificación tributaria y estandarización de rutinas para crecer con previsibilidad. Nuestro foco es reducir riesgos, proteger el patrimonio y fortalecer la gestión para una operación sostenible."
+          ],
+          "ctaText": "¿Va a expandir, abrir una unidad o reorganizar la empresa?",
+          "ctaButtonText": "Solicitar evaluación gratuita",
+          "ctaButtonLink": "/contacto?segmento=salud&asunto=expansion",
+          "image": "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg",
+          "imageAlt": "Planificación para expansión en salud",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "ATENCIÓN POR PERFIL",
+          "title": "Soluciones para diferentes operaciones en el área de la salud",
+          "titleHighlight": "área de la salud",
+          "description": "Atendemos negocios de salud con necesidades distintas, con estructura contable y fiscal alineada a su modelo de atención.",
+          "ctaText": "Hablar con un especialista de su segmento",
+          "ctaLink": "/contacto?segmento=salud",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
+              "title": "Clínicas",
+              "subtitle": "Multiespecialidades",
+              "ctaText": "Soluciones para clínicas",
+              "ctaLink": "/contacto?perfil=clinicas"
+            },
+            {
+              "image": "https://images.pexels.com/photos/532786/pexels-photo-532786.jpeg",
+              "title": "Consultorios",
+              "subtitle": "Médicos y profesionales",
+              "ctaText": "Asesoría para consultorios",
+              "ctaLink": "/contacto?perfil=consultorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/3735769/pexels-photo-3735769.jpeg",
+              "title": "Laboratorios",
+              "subtitle": "Exámenes y diagnósticos",
+              "ctaText": "Gestión para laboratorios",
+              "ctaLink": "/contacto?perfil=laboratorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/7195310/pexels-photo-7195310.jpeg",
+              "title": "Servicios de Salud",
+              "subtitle": "Empresas y operaciones",
+              "ctaText": "Atención especializada",
+              "ctaLink": "/contacto?perfil=servicios-salud"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERTISE COMPROBADA",
+          "title": "Experiencia para convertir la contabilidad en gestión en salud",
+          "titleHighlight": "convertir la contabilidad en gestión",
+          "description": "Trabajamos para que su contabilidad entregue control, previsibilidad y mejores decisiones — con foco en cumplimiento y rentabilidad.",
+          "ctaText": "Conocer nuestros casos de éxito",
+          "ctaLink": "/cases?segmento=salud",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
+              "title": "Clínicas",
+              "subtitle": "",
+              "ctaText": "Ver casos de clínicas",
+              "ctaLink": "/cases?perfil=clinicas"
+            },
+            {
+              "image": "https://images.pexels.com/photos/532786/pexels-photo-532786.jpeg",
+              "title": "Consultorios",
+              "subtitle": "",
+              "ctaText": "Ver casos de consultorios",
+              "ctaLink": "/cases?perfil=consultorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/3735769/pexels-photo-3735769.jpeg",
+              "title": "Laboratorios",
+              "subtitle": "",
+              "ctaText": "Ver casos de laboratorios",
+              "ctaLink": "/cases?perfil=laboratorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/7195310/pexels-photo-7195310.jpeg",
+              "title": "Empresas de Salud",
+              "subtitle": "",
+              "ctaText": "Ver casos empresariales",
+              "ctaLink": "/cases?perfil=empresas-salud"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "servicesTabs",
+          "tag": "NUESTROS SERVICIOS",
+          "title": "Soluciones completas en contabilidad y consultoría para la Salud",
+          "titleHighlight": "para la Salud",
+          "logoPosition": "left",
+          "backgroundColor": "#ffffff",
+          "ctaText": "¿No está seguro de qué servicio es ideal para su operación?",
+          "ctaButtonText": "Recibir orientación personalizada",
+          "ctaButtonLink": "/contacto?segmento=salud&asunto=orientacion",
+          "tabs": [
+            {
+              "label": "Asesoría Contable",
+              "title": "Asesoría Contable",
+              "items": [
+                "Contabilidad y cierre mensual con informes gerenciales;",
+                "Organización de flujo de caja y rutinas de conciliación;",
+                "Seguimiento de resultados e indicadores (margen, costos, productividad);",
+                "Nómina y rutinas laborales;",
+                "Organización documental y cumplimiento contable;",
+                "Estructuración de centros de costo por unidad y servicio;",
+                "Soporte consultivo continuo."
+              ]
+            },
+            {
+              "label": "Asesoría Societaria",
+              "title": "Asesoría Societaria",
+              "items": [
+                "Apertura, cambios y regularización de empresas y unidades;",
+                "Estructura societaria para expansión y protección patrimonial;",
+                "Gobernanza y acuerdos societarios;",
+                "Reorganización empresarial (clínica, grupo, red);",
+                "Soporte para socios e inversionistas;",
+                "Preparación documental para crecer con seguridad."
+              ]
+            },
+            {
+              "label": "Consultoría Tributaria",
+              "title": "Consultoría Tributaria",
+              "items": [
+                "Planificación tributaria para actividades de salud;",
+                "Revisión de cálculos y reducción de riesgos fiscales;",
+                "Análisis de oportunidades de ahorro con seguridad;",
+                "Compliance fiscal y soporte ante fiscalizaciones;",
+                "Recuperación de créditos cuando aplique;",
+                "Orientación para expansión y cambios de régimen."
+              ]
+            },
+            {
+              "label": "Auditoría Independiente",
+              "title": "Auditoría Independiente",
+              "items": [
+                "Auditoría de estados financieros;",
+                "Revisión de controles internos y procesos;",
+                "Auditoría de costos y gastos operativos;",
+                "Due diligence para adquisiciones y reorganizaciones;",
+                "Informes técnicos y recomendaciones;",
+                "Soporte para gobernanza y mitigación de riesgos."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "tag": "PREGUNTAS FRECUENTES",
+          "title": "Preguntas frecuentes sobre contabilidad en el área de la salud",
+          "titleHighlight": "área de la salud",
+          "description": "Respuestas directas a las dudas más comunes de clínicas, consultorios y empresas de salud.",
+          "backgroundVideo": "https://www.pexels.com/pt-br/download/video/6129941/",
+          "ctaText": "¿Quiere evaluar su escenario con un especialista?",
+          "ctaButtonText": "Conversar con especialista",
+          "ctaButtonLink": "/contacto?segmento=salud&assunto=duda",
+          "questions": [
+            {
+              "question": "¿La contabilidad para clínicas y consultorios es diferente de la contabilidad tradicional?",
+              "answer": "Sí. La salud tiene particularidades como ingresos por convenios, pagos, rechazos (glosas), rutinas laborales sensibles y control estricto de costos. Una contabilidad especializada mejora el control y reduce riesgos."
+            },
+            {
+              "question": "¿Ustedes ayudan a organizar centros de costo por unidad y especialidad?",
+              "answer": "Sí. Estructuramos centros de costo e informes gerenciales para ver márgenes, gastos y productividad por unidad, especialidad o servicio."
+            },
+            {
+              "question": "¿Cómo reducir tributos sin aumentar el riesgo fiscal?",
+              "answer": "Con planificación: encuadre correcto, revisión de cálculos, organización documental y compliance. El objetivo es pagar lo debido y evitar pagos indebidos."
+            },
+            {
+              "question": "¿Atienden clínicas con varias unidades?",
+              "answer": "Sí. Apoyamos la estructura contable y societaria para grupos y redes, con estandarización de rutinas e indicadores por unidad."
+            },
+            {
+              "question": "¿Malaquias atiende empresas de salud en todo Brasil?",
+              "answer": "Sí. Atendemos a nivel nacional con procesos digitales, reuniones remotas e intercambio seguro de documentos."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "tag": "TRANSFORME SU GESTIÓN",
+          "title": "Gane control, reduzca riesgos y aumente la previsibilidad de su operación de salud",
+          "titleHighlight": "aumente la previsibilidad",
+          "description": "Solicite un diagnóstico gratuito y descubra cómo estructurar contabilidad, fiscal y gestión para crecer con seguridad en el área de la salud.",
+          "submitText": "Solicitar diagnóstico gratuito",
+          "submitMicrocopy": "Respuesta garantizada en hasta 24h hábiles",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    }
+  }
+}

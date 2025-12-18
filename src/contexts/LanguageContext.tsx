@@ -24,6 +24,9 @@ import esAbout from '@/locales/es/about.json';
 import ptNews from '@/locales/pt/news.json';
 import enNews from '@/locales/en/news.json';
 import esNews from '@/locales/es/news.json';
+import ptSegments from '@/locales/pt/segments.json';
+import enSegments from '@/locales/en/segments.json';
+import esSegments from '@/locales/es/segments.json';
 
 type Locale = 'pt' | 'en'| 'es';
 
@@ -35,12 +38,13 @@ interface Translations {
   contact: typeof ptContact;
   about: typeof ptAbout;
   news: typeof ptNews;
+  segments: typeof ptSegments;
 }
 
 const translations: Record<Locale, Translations> = {
-  pt: { common: ptCommon, home: ptHome, services: ptServices, faq: ptFaq, contact: ptContact, about: ptAbout, news: ptNews },
-  en: { common: enCommon, home: enHome, services: enServices, faq: enFaq, contact: enContact, about: enAbout, news: enNews },
-  es: { common: esCommon, home: esHome, services: esServices, faq: esFaq, contact: esContact, about: esAbout, news: esNews },
+  pt: { common: ptCommon, home: ptHome, services: ptServices, faq: ptFaq, contact: ptContact, about: ptAbout, news: ptNews, segments: ptSegments },
+  en: { common: enCommon, home: enHome, services: enServices, faq: enFaq, contact: enContact, about: enAbout, news: enNews, segments: enSegments },
+  es: { common: esCommon, home: esHome, services: esServices, faq: esFaq, contact: esContact, about: esAbout, news: esNews, segments: esSegments },
 };
 
 interface LanguageContextType {

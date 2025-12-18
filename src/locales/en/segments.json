@@ -1,0 +1,36 @@
+{
+  "title": "Segments",
+  "subtitle": "Specialized solutions for each sector",
+  "items": [
+    {
+      "slug": "agronegocio",
+      "title": "Agribusiness",
+      "shortDescription": "Specialized rural accounting"
+    },
+    {
+      "slug": "industria",
+      "title": "Industry",
+      "shortDescription": "Tax management for the industrial sector"
+    },
+    {
+      "slug": "varejo",
+      "title": "Retail",
+      "shortDescription": "Solutions for commerce and e-commerce"
+    },
+    {
+      "slug": "saude",
+      "title": "Healthcare",
+      "shortDescription": "Accounting for clinics and hospitals"
+    },
+    {
+      "slug": "tecnologia",
+      "title": "Technology",
+      "shortDescription": "Startups and IT companies"
+    },
+    {
+      "slug": "servicos",
+      "title": "Services",
+      "shortDescription": "General service providers"
+    }
+  ]
+}
