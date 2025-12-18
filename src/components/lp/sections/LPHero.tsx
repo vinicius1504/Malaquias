@@ -105,7 +105,7 @@ export default function LPHero({
   }, [currentVideoIndex, backgroundType, videos.length]);
 
   return (
-    <section className="relative min-h-screen py-48 flex">
+    <section className="relative min-h-screen py-32 flex justify-between">
       {/* Background Video ou Image */}
       <div className="absolute inset-0 overflow-hidden">
         {backgroundType === 'video' && videos.length > 0 ? (
