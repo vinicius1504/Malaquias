@@ -1,8 +1,23 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import type { Segment } from '@/types/database';
+
+// Mapeamento fixo: título do banco -> slug da LP
+const SEGMENT_SLUG_MAP: Record<string, string> = {
+  'Agronegócio': 'agronegocio',
+  'Varejo': 'varejo',
+  'Saúde': 'saude',
+  'Restaurantes': 'restaurantes',
+  'Automóveis': 'automoveis',
+  'Setores': 'setores',
+};
+
+function getSegmentSlug(title: string): string | null {
+  return SEGMENT_SLUG_MAP[title] || null;
+}
 
 export default function SegmentsCarousel() {
   const [segments, setSegments] = useState<Partial<Segment>[]>([]);
@@ -67,118 +82,140 @@ export default function SegmentsCarousel() {
               const segmentNumber = (segment.display_order !== undefined ? segment.display_order : idx % segments.length) + 1;
               const isHovered = hoveredId === `${segment.id}-${idx}`;
               const uniqueKey = `${segment.id}-${idx}`;
+              const segmentSlug = segment.title ? getSegmentSlug(segment.title) : null;
 
-            return (
-              <div
-                key={uniqueKey}
-                className="relative w-[350px] h-[280px] md:w-[400px] md:h-[300px] rounded-xl overflow-hidden cursor-pointer flex-shrink-0"
-                onMouseEnter={() => {
-                  setHoveredId(uniqueKey);
-                  if (segment.video_url && segment.id) {
-                    const video = videoRefs.current[uniqueKey];
-                    if (video) {
-                      video.play().catch(() => {});
-                    }
+              const handleMouseEnter = () => {
+                setHoveredId(uniqueKey);
+                if (segment.video_url && segment.id) {
+                  const video = videoRefs.current[uniqueKey];
+                  if (video) {
+                    video.play().catch(() => {});
                   }
-                }}
-                onMouseLeave={() => {
-                  if (segment.video_url && segment.id) {
-                    const video = videoRefs.current[uniqueKey];
-                    if (video) {
-                      video.pause();
-                      video.currentTime = 0;
-                    }
+                }
+              };
+
+              const handleMouseLeave = () => {
+                if (segment.video_url && segment.id) {
+                  const video = videoRefs.current[uniqueKey];
+                  if (video) {
+                    video.pause();
+                    video.currentTime = 0;
                   }
-                  setHoveredId(null);
-                }}
-              >
-                {/* Video ou Image */}
-                {segment.video_url ? (
-                  <video
-                    ref={(el) => {
-                      videoRefs.current[uniqueKey] = el;
-                    }}
-                    src={segment.video_url}
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 pointer-events-none"
-                    style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
-                    poster={segment.image_url || undefined}
-                  />
-                ) : (
-                  <Image
-                    src={segment.image_url || '/images/placeholder.jpg'}
-                    alt={segment.title || ''}
-                    fill
-                    className="object-cover transition-transform duration-500 pointer-events-none"
-                    style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
-                    draggable={false}
-                  />
-                )}
+                }
+                setHoveredId(null);
+              };
 
-                {/* Overlay no hover */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none transition-opacity duration-300 ${
-                    isHovered ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-
-                {/* Conteúdo - aparece no hover */}
-                <div
-                  className={`absolute inset-0 flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 ${
-                    isHovered ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
-                  {/* Número na lateral esquerda */}
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center">
-                    <span
-                      className="font-light text-7xl md:text-8xl"
-                      style={{
-                        fontFamily: 'var(--font-heading)',
-                        WebkitTextStroke: '1px #BD9657',
-                        WebkitTextFillColor: 'transparent',
-                        color: 'transparent'
+              const cardContent = (
+                <div className="relative w-[350px] h-[280px] md:w-[400px] md:h-[300px] rounded-xl overflow-hidden cursor-pointer">
+                  {/* Video ou Image */}
+                  {segment.video_url ? (
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[uniqueKey] = el;
                       }}
-                    >
-                      {segmentNumber}
-                    </span>
-                  </div>
+                      src={segment.video_url}
+                      muted
+                      loop
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 pointer-events-none"
+                      style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
+                      poster={segment.image_url || undefined}
+                    />
+                  ) : (
+                    <Image
+                      src={segment.image_url || '/images/placeholder.jpg'}
+                      alt={segment.title || ''}
+                      fill
+                      className="object-cover transition-transform duration-500 pointer-events-none"
+                      style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
+                      draggable={false}
+                    />
+                  )}
 
-                  {/* Título */}
-                  <div className="ml-20">
-                    <h3 className="text-white font-heading font-semibold text-xl md:text-2xl">
-                      Contabilidade
-                    </h3>
-                    <h3 className="text-white font-heading font-semibold text-xl md:text-2xl">
-                      para {segment.title}
-                    </h3>
-                  </div>
-                </div>
+                  {/* Overlay no hover */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none transition-opacity duration-300 ${
+                      isHovered ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
 
-                {/* Botão no hover */}
-                <div
-                  className={`absolute right-6 bottom-6 pointer-events-none transition-opacity duration-300 ${
-                    isHovered ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
-                  <div className="flex items-center gap-2 text-white text-sm font-medium">
-                    <div className="w-8 h-8 border border-gold-500 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                      </svg>
+                  {/* Conteúdo - aparece no hover */}
+                  <div
+                    className={`absolute inset-0 flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 ${
+                      isHovered ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    {/* Número na lateral esquerda */}
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center">
+                      <span
+                        className="font-light text-7xl md:text-8xl"
+                        style={{
+                          fontFamily: 'var(--font-heading)',
+                          WebkitTextStroke: '1px #BD9657',
+                          WebkitTextFillColor: 'transparent',
+                          color: 'transparent'
+                        }}
+                      >
+                        {segmentNumber}
+                      </span>
+                    </div>
+
+                    {/* Título */}
+                    <div className="ml-20">
+                      <h3 className="text-white font-heading font-semibold text-xl md:text-2xl">
+                        Contabilidade
+                      </h3>
+                      <h3 className="text-white font-heading font-semibold text-xl md:text-2xl">
+                        para {segment.title}
+                      </h3>
                     </div>
                   </div>
-                </div>
 
-                {/* Frame decorativo no hover */}
+                  {/* Botão no hover */}
+                  <div
+                    className={`absolute right-6 bottom-6 pointer-events-none transition-opacity duration-300 ${
+                      isHovered ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 text-white text-sm font-medium">
+                      <div className="w-8 h-8 border border-gold-500 flex items-center justify-center">
+                        <svg className="w-4 h-4 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Frame decorativo no hover */}
+                  <div
+                    className={`absolute top-4 right-4 bottom-4 w-1/2 border border-gold-500/50 rounded pointer-events-none transition-opacity duration-300 ${
+                      isHovered ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                </div>
+              );
+
+              // Se tem slug, envolve com Link para a LP
+              return segmentSlug ? (
+                <Link
+                  key={uniqueKey}
+                  href={`/segmentos/${segmentSlug}`}
+                  className="flex-shrink-0 block"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {cardContent}
+                </Link>
+              ) : (
                 <div
-                  className={`absolute top-4 right-4 bottom-4 w-1/2 border border-gold-500/50 rounded pointer-events-none transition-opacity duration-300 ${
-                    isHovered ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              </div>
-            );
+                  key={uniqueKey}
+                  className="flex-shrink-0"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {cardContent}
+                </div>
+              );
             })}
           </div>
         </div>
