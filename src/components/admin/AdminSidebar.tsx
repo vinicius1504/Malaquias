@@ -15,6 +15,7 @@ import {
   MessageSquareQuote,
   Layers,
   PanelTop,
+  HelpCircle,
 } from 'lucide-react'
 import type { UserRole } from '@/types/database'
 
@@ -160,7 +161,16 @@ export function AdminSidebar({ user }: AdminSidebarProps) {
       </nav>
 
       {/* Footer */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
+      <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 space-y-2">
+        <Link
+          href="https://sites.google.com/view/manual-adm"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 px-3 py-2 bg-amber-50 text-amber-700 hover:bg-amber-100 rounded-lg text-sm font-medium transition-colors"
+        >
+          <HelpCircle className="w-4 h-4" />
+          Ajuda / Manual
+        </Link>
         <Link
           href="/"
           target="_blank"
