@@ -3,7 +3,7 @@ import React from 'react';
 const BrazilMap = ({
   onStateClick,
   highlightedStates = ['saopaulo', 'minasgerais', 'riodejaneiro', 'matogrossodosul', 'parana', 'santacatarina', 'riograndedosul', 'ceara'],
-  logoSrc = '/images/logos/vector.svg',
+  logoSrc = '/images/logos/Vector.svg',
   grayLogoSrc = '/images/logos/vector-gray.svg',
   showAllLogos = true
 }) => {
