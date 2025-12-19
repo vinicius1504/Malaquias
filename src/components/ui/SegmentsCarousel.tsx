@@ -57,7 +57,7 @@ export default function SegmentsCarousel() {
         <div className="w-full max-w-[1300px] lg:max-w-[1550px] overflow-hidden">
           {/* Carousel Container - Animação Contínua */}
           <div
-            className="flex gap-10"
+            className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-10"
             style={{
               animation: 'scrollSegments 60s linear infinite',
               animationPlayState: isPaused ? 'paused' : 'running',
@@ -92,7 +92,7 @@ export default function SegmentsCarousel() {
               };
 
               const cardContent = (
-                <div className="relative w-[550px] h-[480px] md:w-[400px] md:h-[300px] lg:w-[720px] lg:h-[590px] rounded-2xl overflow-hidden cursor-pointer">
+                <div className="relative w-[280px] h-[220px] sm:w-[320px] sm:h-[260px] md:w-[400px] md:h-[300px] lg:w-[720px] lg:h-[590px] rounded-2xl overflow-hidden cursor-pointer">
                   {/* Video ou Image */}
                   {segment.video_url ? (
                     <video
@@ -127,14 +127,14 @@ export default function SegmentsCarousel() {
 
                   {/* Conteúdo - aparece no hover */}
                   <div
-                    className={`absolute inset-0 flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 ${
+                    className={`absolute inset-0 flex flex-col justify-end p-3 sm:p-4 md:p-6 pointer-events-none transition-opacity duration-300 ${
                       isHovered ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
                     {/* Número na lateral esquerda */}
-                    <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center">
+                    <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 flex items-center">
                       <span
-                        className="font-light text-7xl md:text-8xl"
+                        className="font-light text-4xl sm:text-5xl md:text-7xl lg:text-8xl"
                         style={{
                           fontFamily: 'var(--font-heading)',
                           WebkitTextStroke: '1px #BD9657',
@@ -147,11 +147,11 @@ export default function SegmentsCarousel() {
                     </div>
 
                     {/* Título */}
-                    <div className="ml-20">
-                      <h3 className="text-white font-heading font-semibold text-xl md:text-2xl">
+                    <div className="ml-12 sm:ml-16 md:ml-20">
+                      <h3 className="text-white font-heading font-semibold text-sm sm:text-base md:text-xl lg:text-2xl">
                         Contabilidade
                       </h3>
-                      <h3 className="text-white font-heading font-semibold text-xl md:text-2xl">
+                      <h3 className="text-white font-heading font-semibold text-sm sm:text-base md:text-xl lg:text-2xl">
                         para {segment.title}
                       </h3>
                     </div>
@@ -159,13 +159,13 @@ export default function SegmentsCarousel() {
 
                   {/* Botão no hover */}
                   <div
-                    className={`absolute right-6 bottom-6 pointer-events-none transition-opacity duration-300 ${
+                    className={`absolute right-3 bottom-3 sm:right-4 sm:bottom-4 md:right-6 md:bottom-6 pointer-events-none transition-opacity duration-300 ${
                       isHovered ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
                     <div className="flex items-center gap-2 text-white text-sm font-medium">
-                      <div className="w-8 h-8 border border-gold-500 flex items-center justify-center">
-                        <svg className="w-4 h-4 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 border border-gold-500 flex items-center justify-center">
+                        <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                         </svg>
                       </div>
@@ -174,7 +174,7 @@ export default function SegmentsCarousel() {
 
                   {/* Frame decorativo no hover */}
                   <div
-                    className={`absolute top-4 right-4 bottom-4 w-1/2 border border-gold-500/50 rounded pointer-events-none transition-opacity duration-300 ${
+                    className={`absolute top-2 right-2 bottom-2 sm:top-3 sm:right-3 sm:bottom-3 md:top-4 md:right-4 md:bottom-4 w-1/2 border border-gold-500/50 rounded pointer-events-none transition-opacity duration-300 ${
                       isHovered ? 'opacity-100' : 'opacity-0'
                     }`}
                   />
