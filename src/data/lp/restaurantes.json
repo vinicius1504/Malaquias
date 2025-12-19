@@ -9,7 +9,12 @@
       "seo": {
         "title": "Contabilidade para Restaurantes e Alimentação | Malaquias Contabilidade",
         "description": "Contabilidade especializada para restaurantes e negócios de alimentação. Gestão fiscal, tributária e financeira para reduzir desperdícios, melhorar margem e crescer com segurança.",
-        "keywords": ["contabilidade para restaurantes", "contabilidade food service", "gestão fiscal", "planejamento tributário"]
+        "keywords": [
+          "contabilidade para restaurantes",
+          "contabilidade food service",
+          "gestão fiscal",
+          "planejamento tributário"
+        ]
       },
       "hero": {
         "title": "Contabilidade para Restaurantes e Alimentação",
@@ -44,23 +49,6 @@
       "sections": [
         {
           "type": "textImage",
-          "tag": "NO DIA A DIA DO FOOD SERVICE",
-          "title": "Contabilidade consultiva para restaurantes, delivery e operações de alimentação",
-          "titleHighlight": "restaurantes, delivery e operações de alimentação",
-          "paragraphs": [
-            "Restaurantes e negócios de alimentação lidam com desafios bem específicos: CMV, desperdício, compras frequentes, variação de preços, controle de estoque, taxas de delivery e meios de pagamento, além de rotinas trabalhistas intensas. Sem números confiáveis, a margem some — e o caixa sente primeiro.",
-            "A Malaquias estrutura a contabilidade do food service com foco em controle e resultado. Integramos fiscal, contábil e financeiro para organizar processos, reduzir riscos e entregar relatórios que ajudam na precificação, no controle de custos e na tomada de decisão para melhorar a rentabilidade."
-          ],
-          "ctaText": "Quer identificar onde a margem está vazando e como corrigir?",
-          "ctaButtonText": "Agendar conversa com especialista",
-          "ctaButtonLink": "/contato?segmento=restaurantes-alimentacao&assunto=consultoria",
-          "image": "https://images.pexels.com/photos/2696064/pexels-photo-2696064.jpeg",
-          "imageAlt": "Gestão de restaurante e operação de alimentação",
-          "imagePosition": "right",
-          "backgroundColor": "#ffffff"
-        },
-        {
-          "type": "textImage",
           "tag": "EXPANSÃO E PADRONIZAÇÃO",
           "title": "Cresça com segurança: filiais, franquias e novas unidades com governança",
           "titleHighlight": "filiais, franquias e novas unidades",
@@ -74,49 +62,8 @@
           "image": "https://images.pexels.com/photos/13111720/pexels-photo-13111720.jpeg",
           "imageAlt": "Planejamento para expansão de restaurante",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
-        },
-        {
-          "type": "carouselCards",
-          "tag": "ATENDIMENTO POR PERFIL",
-          "title": "Soluções para diferentes modelos no setor de alimentação",
-          "titleHighlight": "setor de alimentação",
-          "description": "Atendemos operações com perfis diferentes, sempre ajustando contabilidade, fiscal e gestão ao seu modelo de negócio.",
-          "ctaText": "Falar com um especialista do seu segmento",
-          "ctaLink": "/contato?segmento=restaurantes-alimentacao",
-          "cards": [
-            {
-              "image": "https://images.pexels.com/photos/1581554/pexels-photo-1581554.jpeg",
-              "title": "Restaurantes",
-              "subtitle": "À la carte e self-service",
-              "ctaText": "Soluções para restaurantes",
-              "ctaLink": "/contato?perfil=restaurantes"
-            },
-            {
-              "image": "https://images.pexels.com/photos/941864/pexels-photo-941864.jpeg",
-              "title": "Bares e Lanchonetes",
-              "subtitle": "Operação ágil",
-              "ctaText": "Assessoria para bares",
-              "ctaLink": "/contato?perfil=bares-lanchonetes"
-            },
-            {
-              "image": "https://images.pexels.com/photos/4393668/pexels-photo-4393668.jpeg",
-              "title": "Delivery e Dark Kitchen",
-              "subtitle": "Apps e operação digital",
-              "ctaText": "Gestão para delivery",
-              "ctaLink": "/contato?perfil=delivery"
-            },
-            {
-              "image": "https://images.pexels.com/photos/34357873/pexels-photo-34357873.jpeg",
-              "title": "Indústria de Alimentos",
-              "subtitle": "Produção e distribuição",
-              "ctaText": "Atendimento especializado",
-              "ctaLink": "/contato?perfil=industria-alimentos"
-            }
-          ],
-          "contentPosition": "left",
-          "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-1-1766164703978"
         },
         {
           "type": "carouselCards",
@@ -158,7 +105,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-3-1766164703978"
         },
         {
           "type": "servicesTabs",
@@ -220,7 +168,69 @@
                 "Relatórios e recomendações para mitigação de riscos."
               ]
             }
-          ]
+          ],
+          "id": "section-pt-4-1766164703978"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "ATENDIMENTO POR PERFIL",
+          "title": "Soluções para diferentes modelos no setor de alimentação",
+          "titleHighlight": "setor de alimentação",
+          "description": "Atendemos operações com perfis diferentes, sempre ajustando contabilidade, fiscal e gestão ao seu modelo de negócio.",
+          "ctaText": "Falar com um especialista do seu segmento",
+          "ctaLink": "/contato?segmento=restaurantes-alimentacao",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/1581554/pexels-photo-1581554.jpeg",
+              "title": "Restaurantes",
+              "subtitle": "À la carte e self-service",
+              "ctaText": "Soluções para restaurantes",
+              "ctaLink": "/contato?perfil=restaurantes"
+            },
+            {
+              "image": "https://images.pexels.com/photos/941864/pexels-photo-941864.jpeg",
+              "title": "Bares e Lanchonetes",
+              "subtitle": "Operação ágil",
+              "ctaText": "Assessoria para bares",
+              "ctaLink": "/contato?perfil=bares-lanchonetes"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4393668/pexels-photo-4393668.jpeg",
+              "title": "Delivery e Dark Kitchen",
+              "subtitle": "Apps e operação digital",
+              "ctaText": "Gestão para delivery",
+              "ctaLink": "/contato?perfil=delivery"
+            },
+            {
+              "image": "https://images.pexels.com/photos/34357873/pexels-photo-34357873.jpeg",
+              "title": "Indústria de Alimentos",
+              "subtitle": "Produção e distribuição",
+              "ctaText": "Atendimento especializado",
+              "ctaLink": "/contato?perfil=industria-alimentos"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-2-1766164703978"
+        },
+        {
+          "type": "textImage",
+          "tag": "NO DIA A DIA DO FOOD SERVICE",
+          "title": "Contabilidade consultiva para restaurantes, delivery e operações de alimentação",
+          "titleHighlight": "restaurantes, delivery e operações de alimentação",
+          "paragraphs": [
+            "Restaurantes e negócios de alimentação lidam com desafios bem específicos: CMV, desperdício, compras frequentes, variação de preços, controle de estoque, taxas de delivery e meios de pagamento, além de rotinas trabalhistas intensas. Sem números confiáveis, a margem some — e o caixa sente primeiro.",
+            "A Malaquias estrutura a contabilidade do food service com foco em controle e resultado. Integramos fiscal, contábil e financeiro para organizar processos, reduzir riscos e entregar relatórios que ajudam na precificação, no controle de custos e na tomada de decisão para melhorar a rentabilidade."
+          ],
+          "ctaText": "Quer identificar onde a margem está vazando e como corrigir?",
+          "ctaButtonText": "Agendar conversa com especialista",
+          "ctaButtonLink": "/contato?segmento=restaurantes-alimentacao&assunto=consultoria",
+          "image": "https://images.pexels.com/photos/2696064/pexels-photo-2696064.jpeg",
+          "imageAlt": "Gestão de restaurante e operação de alimentação",
+          "imagePosition": "right",
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-0-1766164703978"
         },
         {
           "type": "faq",
@@ -253,7 +263,8 @@
               "question": "A Malaquias atende operações com várias unidades?",
               "answer": "Sim. Apoiamos redes e grupos com padronização de rotinas, relatórios por unidade e estrutura societária para expansão."
             }
-          ]
+          ],
+          "id": "section-pt-5-1766164703978"
         },
         {
           "type": "cta",
@@ -263,7 +274,8 @@
           "description": "Solicite um diagnóstico gratuito e descubra como estruturar contabilidade, fiscal e gestão para crescer com segurança no setor de alimentação.",
           "submitText": "Solicitar diagnóstico gratuito",
           "submitMicrocopy": "Resposta garantida em até 24h úteis",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-6-1766164703978"
         }
       ]
     },
@@ -271,7 +283,12 @@
       "seo": {
         "title": "Accounting for Restaurants & Food Service | Malaquias Accounting",
         "description": "Specialized accounting for restaurants and food service businesses. Tax, fiscal and financial management to reduce waste, improve margins and scale safely.",
-        "keywords": ["restaurant accounting", "food service accounting", "fiscal management", "tax planning"]
+        "keywords": [
+          "restaurant accounting",
+          "food service accounting",
+          "fiscal management",
+          "tax planning"
+        ]
       },
       "hero": {
         "title": "Accounting for Restaurants & Food Service",
@@ -319,7 +336,8 @@
           "image": "https://images.pexels.com/photos/2696064/pexels-photo-2696064.jpeg",
           "imageAlt": "Restaurant management and food operation",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-0-1766164703978"
         },
         {
           "type": "textImage",
@@ -336,7 +354,8 @@
           "image": "https://images.pexels.com/photos/13111720/pexels-photo-13111720.jpeg",
           "imageAlt": "Restaurant expansion planning",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-1-1766164703978"
         },
         {
           "type": "carouselCards",
@@ -378,7 +397,8 @@
           ],
           "contentPosition": "left",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-2-1766164703978"
         },
         {
           "type": "carouselCards",
@@ -420,7 +440,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-3-1766164703978"
         },
         {
           "type": "servicesTabs",
@@ -482,7 +503,8 @@
                 "Risk mitigation reports and recommendations."
               ]
             }
-          ]
+          ],
+          "id": "section-en-4-1766164703978"
         },
         {
           "type": "faq",
@@ -515,7 +537,8 @@
               "question": "Do you support multi-unit operations?",
               "answer": "Yes. We support groups and networks with standardized routines, unit-level reports and corporate structuring for expansion."
             }
-          ]
+          ],
+          "id": "section-en-5-1766164703978"
         },
         {
           "type": "cta",
@@ -525,7 +548,8 @@
           "description": "Request a free assessment and discover how to structure accounting, tax and management to scale safely in food service.",
           "submitText": "Request a free assessment",
           "submitMicrocopy": "Guaranteed response within 24 business hours",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-6-1766164703978"
         }
       ]
     },
@@ -533,7 +557,12 @@
       "seo": {
         "title": "Contabilidad para Restaurantes y Alimentación | Malaquias Contabilidad",
         "description": "Contabilidad especializada para restaurantes y negocios de alimentación. Gestión fiscal, tributaria y financiera para reducir desperdicios, mejorar el margen y crecer con seguridad.",
-        "keywords": ["contabilidad para restaurantes", "contabilidad food service", "gestión fiscal", "planificación tributaria"]
+        "keywords": [
+          "contabilidad para restaurantes",
+          "contabilidad food service",
+          "gestión fiscal",
+          "planificación tributaria"
+        ]
       },
       "hero": {
         "title": "Contabilidad para Restaurantes y Alimentación",
@@ -581,7 +610,8 @@
           "image": "https://images.pexels.com/photos/2696064/pexels-photo-2696064.jpeg",
           "imageAlt": "Gestión de restaurante y operación de alimentación",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-0-1766164703978"
         },
         {
           "type": "textImage",
@@ -598,7 +628,8 @@
           "image": "https://images.pexels.com/photos/13111720/pexels-photo-13111720.jpeg",
           "imageAlt": "Planificación para expansión de restaurante",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-1-1766164703978"
         },
         {
           "type": "carouselCards",
@@ -640,7 +671,8 @@
           ],
           "contentPosition": "left",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-2-1766164703978"
         },
         {
           "type": "carouselCards",
@@ -682,7 +714,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-3-1766164703978"
         },
         {
           "type": "servicesTabs",
@@ -744,7 +777,8 @@
                 "Informes y recomendaciones para mitigar riesgos."
               ]
             }
-          ]
+          ],
+          "id": "section-es-4-1766164703978"
         },
         {
           "type": "faq",
@@ -777,7 +811,8 @@
               "question": "¿Atienden operaciones con varias unidades?",
               "answer": "Sí. Apoyamos grupos y redes con rutinas estandarizadas, informes por unidad y estructura societaria para expansión."
             }
-          ]
+          ],
+          "id": "section-es-5-1766164703978"
         },
         {
           "type": "cta",
@@ -787,7 +822,8 @@
           "description": "Solicite un diagnóstico gratuito y descubra cómo estructurar contabilidad, fiscalidad y gestión para crecer con seguridad en el sector de alimentación.",
           "submitText": "Solicitar diagnóstico gratuito",
           "submitMicrocopy": "Respuesta garantizada en hasta 24h hábiles",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-6-1766164703978"
         }
       ]
     }

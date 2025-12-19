@@ -67,24 +67,6 @@
           "video": ""
         },
         {
-          "type": "textImage",
-          "tag": "PLANEJAMENTO SUCESSÓRIO",
-          "title": "Segurança patrimonial e continuidade para o seu negócio rural",
-          "titleHighlight": "continuidade para o seu negócio rural",
-          "paragraphs": [
-            "O planejamento sucessório no agronegócio é essencial para preservar o patrimônio e evitar conflitos familiares. A ausência de uma estrutura adequada pode resultar em perdas financeiras, disputas jurídicas e descontinuidade das atividades rurais.",
-            "Atuamos na criação de holdings rurais e familiares, acordos societários e estratégias patrimoniais que garantem organização, proteção dos bens e tranquilidade para as próximas gerações, sempre alinhadas à legislação e aos objetivos da família."
-          ],
-          "ctaText": "Quer proteger seu patrimônio rural e planejar o futuro da sua família?",
-          "ctaButtonText": "Solicitar avaliação gratuita",
-          "ctaButtonLink": "/contato?segmento=agronegocio&assunto=sucessao",
-          "image": "https://images.pexels.com/photos/8064065/pexels-photo-8064065.jpeg",
-          "imageAlt": "Planejamento rural",
-          "imagePosition": "left",
-          "backgroundColor": "#ffffff",
-          "id": "section-pt-1-1766147452553"
-        },
-        {
           "type": "carouselCards",
           "tag": "PRESENÇA EM CADA SOLO",
           "title": "Especialistas em todos os elos da cadeia do agronegócio",
@@ -126,6 +108,24 @@
           "speed": 30,
           "backgroundColor": "#ffffff",
           "id": "section-pt-2-1766147452553"
+        },
+        {
+          "type": "textImage",
+          "tag": "PLANEJAMENTO SUCESSÓRIO",
+          "title": "Segurança patrimonial e continuidade para o seu negócio rural",
+          "titleHighlight": "continuidade para o seu negócio rural",
+          "paragraphs": [
+            "O planejamento sucessório no agronegócio é essencial para preservar o patrimônio e evitar conflitos familiares. A ausência de uma estrutura adequada pode resultar em perdas financeiras, disputas jurídicas e descontinuidade das atividades rurais.",
+            "Atuamos na criação de holdings rurais e familiares, acordos societários e estratégias patrimoniais que garantem organização, proteção dos bens e tranquilidade para as próximas gerações, sempre alinhadas à legislação e aos objetivos da família."
+          ],
+          "ctaText": "Quer proteger seu patrimônio rural e planejar o futuro da sua família?",
+          "ctaButtonText": "Solicitar avaliação gratuita",
+          "ctaButtonLink": "/contato?segmento=agronegocio&assunto=sucessao",
+          "image": "https://images.pexels.com/photos/8064065/pexels-photo-8064065.jpeg",
+          "imageAlt": "Planejamento rural",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-1-1766147452553"
         },
         {
           "type": "carouselCards",

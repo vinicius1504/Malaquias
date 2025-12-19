@@ -9,7 +9,12 @@
       "seo": {
         "title": "Contabilidade para a Área da Saúde | Malaquias Contabilidade",
         "description": "Contabilidade especializada para a área da saúde. Gestão fiscal, tributária e financeira para clínicas, consultórios, laboratórios e serviços médicos.",
-        "keywords": ["contabilidade para clínicas", "contabilidade médica", "área da saúde", "gestão tributária"]
+        "keywords": [
+          "contabilidade para clínicas",
+          "contabilidade médica",
+          "área da saúde",
+          "gestão tributária"
+        ]
       },
       "hero": {
         "title": "Contabilidade para a Área da Saúde",
@@ -43,6 +48,49 @@
       },
       "sections": [
         {
+          "type": "carouselCards",
+          "tag": "EXPERTISE COMPROVADA",
+          "title": "Experiência para transformar contabilidade em gestão na saúde",
+          "titleHighlight": "transformar contabilidade em gestão",
+          "description": "Trabalhamos para que sua contabilidade gere controle, previsibilidade e decisões melhores — com foco em compliance e rentabilidade.",
+          "ctaText": "Conhecer nossos cases de sucesso",
+          "ctaLink": "/cases?segmento=saude",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
+              "title": "Clínicas",
+              "subtitle": "",
+              "ctaText": "Ver cases de clínicas",
+              "ctaLink": "/cases?perfil=clinicas"
+            },
+            {
+              "image": "https://images.pexels.com/photos/532786/pexels-photo-532786.jpeg",
+              "title": "Consultórios",
+              "subtitle": "",
+              "ctaText": "Ver cases de consultórios",
+              "ctaLink": "/cases?perfil=consultorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/3735769/pexels-photo-3735769.jpeg",
+              "title": "Laboratórios",
+              "subtitle": "",
+              "ctaText": "Ver cases de laboratórios",
+              "ctaLink": "/cases?perfil=laboratorios"
+            },
+            {
+              "image": "https://images.pexels.com/photos/7195310/pexels-photo-7195310.jpeg",
+              "title": "Empresas de Saúde",
+              "subtitle": "",
+              "ctaText": "Ver cases empresariais",
+              "ctaLink": "/cases?perfil=empresas-saude"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-3-1766164719719"
+        },
+        {
           "type": "textImage",
           "tag": "NO DIA A DIA DA SAÚDE",
           "title": "Contabilidade consultiva para clínicas, consultórios e laboratórios",
@@ -57,24 +105,8 @@
           "image": "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg",
           "imageAlt": "Gestão em clínica e saúde",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
-        },
-        {
-          "type": "textImage",
-          "tag": "EXPANSÃO E SEGURANÇA",
-          "title": "Estruture crescimento, filiais e novas unidades com segurança jurídica",
-          "titleHighlight": "segurança jurídica",
-          "paragraphs": [
-            "Abrir novas unidades, ampliar equipe, contratar especialistas ou investir em equipamentos exige planejamento e governança. Sem estrutura contábil e tributária adequada, a expansão pode gerar passivos, inconsistências e surpresas no fluxo de caixa.",
-            "Apoiamos sua clínica ou empresa de saúde na organização societária, planejamento tributário e padronização de rotinas para crescer com previsibilidade. Nosso foco é reduzir riscos, proteger o patrimônio e fortalecer a gestão para uma operação sustentável."
-          ],
-          "ctaText": "Vai expandir, abrir unidade ou reorganizar a empresa?",
-          "ctaButtonText": "Solicitar avaliação gratuita",
-          "ctaButtonLink": "/contato?segmento=saude&assunto=expansao",
-          "image": "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg",
-          "imageAlt": "Planejamento para expansão na saúde",
-          "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-0-1766164719719"
         },
         {
           "type": "carouselCards",
@@ -116,49 +148,8 @@
           ],
           "contentPosition": "left",
           "speed": 30,
-          "backgroundColor": "#ffffff"
-        },
-        {
-          "type": "carouselCards",
-          "tag": "EXPERTISE COMPROVADA",
-          "title": "Experiência para transformar contabilidade em gestão na saúde",
-          "titleHighlight": "transformar contabilidade em gestão",
-          "description": "Trabalhamos para que sua contabilidade gere controle, previsibilidade e decisões melhores — com foco em compliance e rentabilidade.",
-          "ctaText": "Conhecer nossos cases de sucesso",
-          "ctaLink": "/cases?segmento=saude",
-          "cards": [
-            {
-              "image": "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
-              "title": "Clínicas",
-              "subtitle": "",
-              "ctaText": "Ver cases de clínicas",
-              "ctaLink": "/cases?perfil=clinicas"
-            },
-            {
-              "image": "https://images.pexels.com/photos/532786/pexels-photo-532786.jpeg",
-              "title": "Consultórios",
-              "subtitle": "",
-              "ctaText": "Ver cases de consultórios",
-              "ctaLink": "/cases?perfil=consultorios"
-            },
-            {
-              "image": "https://images.pexels.com/photos/3735769/pexels-photo-3735769.jpeg",
-              "title": "Laboratórios",
-              "subtitle": "",
-              "ctaText": "Ver cases de laboratórios",
-              "ctaLink": "/cases?perfil=laboratorios"
-            },
-            {
-              "image": "https://images.pexels.com/photos/7195310/pexels-photo-7195310.jpeg",
-              "title": "Empresas de Saúde",
-              "subtitle": "",
-              "ctaText": "Ver cases empresariais",
-              "ctaLink": "/cases?perfil=empresas-saude"
-            }
-          ],
-          "contentPosition": "right",
-          "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-2-1766164719719"
         },
         {
           "type": "servicesTabs",
@@ -220,7 +211,26 @@
                 "Suporte à governança e mitigação de riscos."
               ]
             }
-          ]
+          ],
+          "id": "section-pt-4-1766164719719"
+        },
+        {
+          "type": "textImage",
+          "tag": "EXPANSÃO E SEGURANÇA",
+          "title": "Estruture crescimento, filiais e novas unidades com segurança jurídica",
+          "titleHighlight": "segurança jurídica",
+          "paragraphs": [
+            "Abrir novas unidades, ampliar equipe, contratar especialistas ou investir em equipamentos exige planejamento e governança. Sem estrutura contábil e tributária adequada, a expansão pode gerar passivos, inconsistências e surpresas no fluxo de caixa.",
+            "Apoiamos sua clínica ou empresa de saúde na organização societária, planejamento tributário e padronização de rotinas para crescer com previsibilidade. Nosso foco é reduzir riscos, proteger o patrimônio e fortalecer a gestão para uma operação sustentável."
+          ],
+          "ctaText": "Vai expandir, abrir unidade ou reorganizar a empresa?",
+          "ctaButtonText": "Solicitar avaliação gratuita",
+          "ctaButtonLink": "/contato?segmento=saude&assunto=expansao",
+          "image": "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg",
+          "imageAlt": "Planejamento para expansão na saúde",
+          "imagePosition": "left",
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-1-1766164719719"
         },
         {
           "type": "faq",
@@ -253,7 +263,8 @@
               "question": "A Malaquias atende empresas de saúde em todo o Brasil?",
               "answer": "Sim. Atendemos nacionalmente com processos digitais, reuniões remotas e troca segura de documentos."
             }
-          ]
+          ],
+          "id": "section-pt-5-1766164719719"
         },
         {
           "type": "cta",
@@ -263,7 +274,8 @@
           "description": "Solicite um diagnóstico gratuito e descubra como estruturar contabilidade, fiscal e gestão para crescer com segurança na área da saúde.",
           "submitText": "Solicitar diagnóstico gratuito",
           "submitMicrocopy": "Resposta garantida em até 24h úteis",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-6-1766164719719"
         }
       ]
     },
@@ -271,7 +283,12 @@
       "seo": {
         "title": "Accounting for Healthcare | Malaquias Accounting",
         "description": "Specialized accounting for healthcare. Tax, fiscal and financial management for clinics, practices, labs and healthcare service companies.",
-        "keywords": ["accounting for clinics", "medical accounting", "healthcare", "tax management"]
+        "keywords": [
+          "accounting for clinics",
+          "medical accounting",
+          "healthcare",
+          "tax management"
+        ]
       },
       "hero": {
         "title": "Accounting for Healthcare",
@@ -319,7 +336,8 @@
           "image": "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg",
           "imageAlt": "Healthcare clinic management",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-0-1766164719719"
         },
         {
           "type": "textImage",
@@ -336,7 +354,8 @@
           "image": "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg",
           "imageAlt": "Planning healthcare expansion",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-1-1766164719719"
         },
         {
           "type": "carouselCards",
@@ -378,7 +397,8 @@
           ],
           "contentPosition": "left",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-2-1766164719719"
         },
         {
           "type": "carouselCards",
@@ -420,7 +440,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-3-1766164719719"
         },
         {
           "type": "servicesTabs",
@@ -482,7 +503,8 @@
                 "Governance and risk mitigation support."
               ]
             }
-          ]
+          ],
+          "id": "section-en-4-1766164719719"
         },
         {
           "type": "faq",
@@ -515,7 +537,8 @@
               "question": "Do you serve healthcare businesses across Brazil?",
               "answer": "Yes. We serve nationwide with digital processes, remote meetings and secure document exchange."
             }
-          ]
+          ],
+          "id": "section-en-5-1766164719719"
         },
         {
           "type": "cta",
@@ -525,7 +548,8 @@
           "description": "Request a free assessment and discover how to structure accounting, tax and management to grow safely in healthcare.",
           "submitText": "Request a free assessment",
           "submitMicrocopy": "Guaranteed response within 24 business hours",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-6-1766164719719"
         }
       ]
     },
@@ -533,7 +557,12 @@
       "seo": {
         "title": "Contabilidad para el Área de la Salud | Malaquias Contabilidad",
         "description": "Contabilidad especializada para el área de la salud. Gestión fiscal, tributaria y financiera para clínicas, consultorios, laboratorios y servicios médicos.",
-        "keywords": ["contabilidad para clínicas", "contabilidad médica", "salud", "gestión tributaria"]
+        "keywords": [
+          "contabilidad para clínicas",
+          "contabilidad médica",
+          "salud",
+          "gestión tributaria"
+        ]
       },
       "hero": {
         "title": "Contabilidad para el Área de la Salud",
@@ -581,7 +610,8 @@
           "image": "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg",
           "imageAlt": "Gestión en clínica y salud",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-0-1766164719719"
         },
         {
           "type": "textImage",
@@ -598,7 +628,8 @@
           "image": "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg",
           "imageAlt": "Planificación para expansión en salud",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-1-1766164719719"
         },
         {
           "type": "carouselCards",
@@ -640,7 +671,8 @@
           ],
           "contentPosition": "left",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-2-1766164719719"
         },
         {
           "type": "carouselCards",
@@ -682,7 +714,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-3-1766164719719"
         },
         {
           "type": "servicesTabs",
@@ -744,7 +777,8 @@
                 "Soporte para gobernanza y mitigación de riesgos."
               ]
             }
-          ]
+          ],
+          "id": "section-es-4-1766164719719"
         },
         {
           "type": "faq",
@@ -777,7 +811,8 @@
               "question": "¿Malaquias atiende empresas de salud en todo Brasil?",
               "answer": "Sí. Atendemos a nivel nacional con procesos digitales, reuniones remotas e intercambio seguro de documentos."
             }
-          ]
+          ],
+          "id": "section-es-5-1766164719719"
         },
         {
           "type": "cta",
@@ -787,7 +822,8 @@
           "description": "Solicite un diagnóstico gratuito y descubra cómo estructurar contabilidad, fiscal y gestión para crecer con seguridad en el área de la salud.",
           "submitText": "Solicitar diagnóstico gratuito",
           "submitMicrocopy": "Respuesta garantizada en hasta 24h hábiles",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-6-1766164719719"
         }
       ]
     }

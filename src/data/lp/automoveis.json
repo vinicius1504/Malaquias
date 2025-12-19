@@ -48,6 +48,49 @@
       },
       "sections": [
         {
+          "type": "carouselCards",
+          "tag": "ATENDIMENTO POR PERFIL",
+          "title": "Soluções para diferentes operações do setor automotivo",
+          "titleHighlight": "setor automotivo",
+          "description": "Atendemos operações com perfis diferentes, sempre ajustando contabilidade, fiscal e gestão à realidade do seu negócio.",
+          "ctaText": "Falar com um especialista do seu perfil",
+          "ctaLink": "/contato?segmento=concessionarias-mecanicas",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
+              "title": "Concessionárias",
+              "subtitle": "Vendas e pós-venda",
+              "ctaText": "Soluções para concessionárias",
+              "ctaLink": "/contato?perfil=concessionarias"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
+              "title": "Oficinas Mecânicas",
+              "subtitle": "Serviços e manutenção",
+              "ctaText": "Assessoria para oficinas",
+              "ctaLink": "/contato?perfil=oficinas"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+              "title": "Centros Automotivos",
+              "subtitle": "Serviços rápidos",
+              "ctaText": "Gestão para centros",
+              "ctaLink": "/contato?perfil=centros-automotivos"
+            },
+            {
+              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
+              "title": "Autopeças e Distribuição",
+              "subtitle": "Estoque e giro",
+              "ctaText": "Atendimento especializado",
+              "ctaLink": "/contato?perfil=autopecas"
+            }
+          ],
+          "contentPosition": "left",
+          "speed": 30,
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-3-1766164696996"
+        },
+        {
           "type": "textImage",
           "tag": "NO DIA A DIA DO AUTOMOTIVO",
           "title": "Contabilidade consultiva para concessionárias, oficinas e centros automotivos",
@@ -62,7 +105,8 @@
           "image": "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg",
           "imageAlt": "Gestão de oficina e concessionária",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-0-1766164696996"
         },
         {
           "type": "carouselCards",
@@ -104,7 +148,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-1-1766164696996"
         },
         {
           "type": "textImage",
@@ -121,49 +166,8 @@
           "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
           "imageAlt": "Planejamento e crescimento no setor automotivo",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
-        },
-        {
-          "type": "carouselCards",
-          "tag": "ATENDIMENTO POR PERFIL",
-          "title": "Soluções para diferentes operações do setor automotivo",
-          "titleHighlight": "setor automotivo",
-          "description": "Atendemos operações com perfis diferentes, sempre ajustando contabilidade, fiscal e gestão à realidade do seu negócio.",
-          "ctaText": "Falar com um especialista do seu perfil",
-          "ctaLink": "/contato?segmento=concessionarias-mecanicas",
-          "cards": [
-            {
-              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
-              "title": "Concessionárias",
-              "subtitle": "Vendas e pós-venda",
-              "ctaText": "Soluções para concessionárias",
-              "ctaLink": "/contato?perfil=concessionarias"
-            },
-            {
-              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
-              "title": "Oficinas Mecânicas",
-              "subtitle": "Serviços e manutenção",
-              "ctaText": "Assessoria para oficinas",
-              "ctaLink": "/contato?perfil=oficinas"
-            },
-            {
-              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
-              "title": "Centros Automotivos",
-              "subtitle": "Serviços rápidos",
-              "ctaText": "Gestão para centros",
-              "ctaLink": "/contato?perfil=centros-automotivos"
-            },
-            {
-              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
-              "title": "Autopeças e Distribuição",
-              "subtitle": "Estoque e giro",
-              "ctaText": "Atendimento especializado",
-              "ctaLink": "/contato?perfil=autopecas"
-            }
-          ],
-          "contentPosition": "left",
-          "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-2-1766164696996"
         },
         {
           "type": "servicesTabs",
@@ -225,7 +229,8 @@
                 "Relatórios e recomendações para mitigação de riscos."
               ]
             }
-          ]
+          ],
+          "id": "section-pt-4-1766164696996"
         },
         {
           "type": "faq",
@@ -258,7 +263,8 @@
               "question": "A Malaquias atende operações com várias unidades?",
               "answer": "Sim. Apoiamos redes e grupos com padronização de rotinas, relatórios por unidade e estrutura societária para expansão."
             }
-          ]
+          ],
+          "id": "section-pt-5-1766164696996"
         },
         {
           "type": "cta",
@@ -268,7 +274,8 @@
           "description": "Solicite um diagnóstico gratuito e descubra como estruturar contabilidade, fiscal e gestão para crescer com previsibilidade no setor automotivo.",
           "submitText": "Solicitar diagnóstico gratuito",
           "submitMicrocopy": "Resposta garantida em até 24h úteis",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-6-1766164696996"
         }
       ]
     },
@@ -329,7 +336,8 @@
           "image": "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg",
           "imageAlt": "Auto shop and dealership management",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-0-1766164696996"
         },
         {
           "type": "textImage",
@@ -346,7 +354,8 @@
           "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
           "imageAlt": "Automotive business growth planning",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-1-1766164696996"
         },
         {
           "type": "carouselCards",
@@ -388,7 +397,8 @@
           ],
           "contentPosition": "left",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-2-1766164696996"
         },
         {
           "type": "carouselCards",
@@ -430,7 +440,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-3-1766164696996"
         },
         {
           "type": "servicesTabs",
@@ -492,7 +503,8 @@
                 "Risk mitigation reports and recommendations."
               ]
             }
-          ]
+          ],
+          "id": "section-en-4-1766164696996"
         },
         {
           "type": "faq",
@@ -525,7 +537,8 @@
               "question": "Do you support multi-unit operations?",
               "answer": "Yes. We support groups with standardized routines, unit-level reports and corporate structuring for expansion."
             }
-          ]
+          ],
+          "id": "section-en-5-1766164696996"
         },
         {
           "type": "cta",
@@ -535,7 +548,8 @@
           "description": "Request a free assessment and discover how to structure accounting, tax and management to scale predictably in the automotive sector.",
           "submitText": "Request a free assessment",
           "submitMicrocopy": "Guaranteed response within 24 business hours",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-6-1766164696996"
         }
       ]
     },
@@ -596,7 +610,8 @@
           "image": "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg",
           "imageAlt": "Gestión de taller y concesionaria",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-0-1766164696996"
         },
         {
           "type": "textImage",
@@ -613,7 +628,8 @@
           "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
           "imageAlt": "Planificación y crecimiento automotriz",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-1-1766164696996"
         },
         {
           "type": "carouselCards",
@@ -655,7 +671,8 @@
           ],
           "contentPosition": "left",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-2-1766164696996"
         },
         {
           "type": "carouselCards",
@@ -697,7 +714,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-3-1766164696996"
         },
         {
           "type": "servicesTabs",
@@ -759,7 +777,8 @@
                 "Informes y recomendaciones para mitigar riesgos."
               ]
             }
-          ]
+          ],
+          "id": "section-es-4-1766164696996"
         },
         {
           "type": "faq",
@@ -792,7 +811,8 @@
               "question": "¿Atienden operaciones con varias unidades?",
               "answer": "Sí. Apoyamos grupos con rutinas estandarizadas, informes por unidad y estructura societaria para expansión."
             }
-          ]
+          ],
+          "id": "section-es-5-1766164696996"
         },
         {
           "type": "cta",
@@ -802,7 +822,8 @@
           "description": "Solicite un diagnóstico gratuito y descubra cómo estructurar contabilidad, fiscalidad y gestión para crecer con previsibilidad en el sector automotriz.",
           "submitText": "Solicitar diagnóstico gratuito",
           "submitMicrocopy": "Respuesta garantizada en hasta 24h hábiles",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-6-1766164696996"
         }
       ]
     }
