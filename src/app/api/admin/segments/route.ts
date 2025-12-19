@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { title, image_url, video_url, is_active, display_order } = body
+    const { title, lp_slug, image_url, video_url, is_active, display_order } = body
 
     if (!title) {
       return NextResponse.json({ error: 'Título é obrigatório' }, { status: 400 })
@@ -78,6 +78,7 @@ export async function POST(request: NextRequest) {
       .from('segments')
       .insert({
         title,
+        lp_slug: lp_slug || null,
         image_url: image_url || null,
         video_url: video_url || null,
         is_active: is_active ?? true,

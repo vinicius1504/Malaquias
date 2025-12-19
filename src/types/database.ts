@@ -91,6 +91,7 @@ export interface TestimonialTranslation {
 export interface Segment {
   id: string
   title: string
+  lp_slug: string | null
   image_url: string | null
   video_url: string | null
   is_active: boolean

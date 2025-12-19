@@ -5,20 +5,6 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import type { Segment } from '@/types/database';
 
-// Mapeamento fixo: título do banco -> slug da LP
-const SEGMENT_SLUG_MAP: Record<string, string> = {
-  'Agronegócio': 'agronegocio',
-  'Varejo': 'varejo',
-  'Saúde': 'saude',
-  'Restaurantes': 'restaurantes',
-  'Automóveis': 'automoveis',
-  'Setores': 'setores',
-};
-
-function getSegmentSlug(title: string): string | null {
-  return SEGMENT_SLUG_MAP[title] || null;
-}
-
 export default function SegmentsCarousel() {
   const [segments, setSegments] = useState<Partial<Segment>[]>([]);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -68,10 +54,10 @@ export default function SegmentsCarousel() {
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Container que limita a 3 itens visíveis */}
-        <div className="w-full max-w-[1300px] overflow-hidden">
+        <div className="w-full max-w-[1300px] lg:max-w-[1550px] overflow-hidden">
           {/* Carousel Container - Animação Contínua */}
           <div
-            className="flex gap-6"
+            className="flex gap-10"
             style={{
               animation: 'scrollSegments 60s linear infinite',
               animationPlayState: isPaused ? 'paused' : 'running',
@@ -82,7 +68,7 @@ export default function SegmentsCarousel() {
               const segmentNumber = (segment.display_order !== undefined ? segment.display_order : idx % segments.length) + 1;
               const isHovered = hoveredId === `${segment.id}-${idx}`;
               const uniqueKey = `${segment.id}-${idx}`;
-              const segmentSlug = segment.title ? getSegmentSlug(segment.title) : null;
+              const segmentSlug = segment.lp_slug || null;
 
               const handleMouseEnter = () => {
                 setHoveredId(uniqueKey);
@@ -106,7 +92,7 @@ export default function SegmentsCarousel() {
               };
 
               const cardContent = (
-                <div className="relative w-[350px] h-[280px] md:w-[400px] md:h-[300px] rounded-xl overflow-hidden cursor-pointer">
+                <div className="relative w-[550px] h-[480px] md:w-[400px] md:h-[300px] lg:w-[720px] lg:h-[590px] rounded-2xl overflow-hidden cursor-pointer">
                   {/* Video ou Image */}
                   {segment.video_url ? (
                     <video

@@ -105,7 +105,7 @@ export default function LPHero({
   }, [currentVideoIndex, backgroundType, videos.length]);
 
   return (
-    <section className="relative min-h-screen py-32 flex justify-between">
+    <section className="relative min-h-screen py-20 md:py-32 flex flex-col justify-between">
       {/* Background Video ou Image */}
       <div className="absolute inset-0 overflow-hidden">
         {backgroundType === 'video' && videos.length > 0 ? (
@@ -167,9 +167,9 @@ export default function LPHero({
       </div>
 
       {/* Conteúdo */}
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-6 flex-1 flex flex-col">
         {/* Título e descrição */}
-        <div className="max-w-3xl pb-32 flex flex-col justify-between">
+        <div className="max-w-3xl pb-8 md:pb-32 flex flex-col justify-between flex-1">
           <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             style={{ color: accentColor }}
@@ -236,21 +236,21 @@ export default function LPHero({
           )}
         </div>
 
-        {/* Cards de destaque (inferior) */}
+        {/* Cards de destaque (inferior) - Mobile: relative, Desktop: absolute */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0"
+          className="relative md:absolute md:bottom-0 md:left-0 md:right-0 mt-8 md:mt-0"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="container mx-auto px-6 pb-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="md:container md:mx-auto md:px-6 pb-6 md:pb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {highlights.map((highlight, index) => (
                 <div
                   key={index}
-                  className="bg-[#0a0a0a]/60 backdrop-blur-sm border border-white/10 rounded-lg p-6"
+                  className="bg-[#0a0a0a]/60 backdrop-blur-sm border border-white/10 rounded-lg p-4 md:p-6"
                 >
-                  <p className="text-white/90 leading-relaxed">
+                  <p className="text-white/90 leading-relaxed text-sm md:text-base">
                     {highlight.emphasis ? (
                       <>
                         <span style={{ color: accentColor }} className="font-semibold">

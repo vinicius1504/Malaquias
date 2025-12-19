@@ -57,11 +57,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Validar tamanho (máx 15MB para imagens, 50MB para vídeos)
-    const maxSize = isVideo ? 50 * 1024 * 1024 : 15 * 1024 * 1024
+    // Validar tamanho (máx 25MB para todos os arquivos)
+    const maxSize = 25 * 1024 * 1024
     if (file.size > maxSize) {
       return NextResponse.json(
-        { error: `Arquivo muito grande. Máximo: ${isVideo ? '50MB' : '15MB'}` },
+        { error: 'Arquivo muito grande. Máximo: 25MB' },
         { status: 400 }
       )
     }
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
 
     // Verificar pasta de destino
     const folder = formData.get('folder') as string || 'news'
-    const allowedFolders = ['news', 'partners', 'testimonials', 'segments', 'segments/videos']
+    const allowedFolders = ['news', 'partners', 'testimonials', 'segments', 'segments/videos', 'gallery', 'gallery/images', 'gallery/videos']
     const finalFolder = allowedFolders.includes(folder) ? folder : 'news'
     const filePath = `${finalFolder}/${fileName}`
 

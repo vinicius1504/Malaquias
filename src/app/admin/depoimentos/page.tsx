@@ -438,7 +438,7 @@ export default function DepoimentosPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
+                          <h3 className="font-semibold text-lg text-gray-900">{testimonial.name}</h3>
                           <p className="text-sm text-gray-500">
                             {ptData.role}
                             {ptData.company && ` - ${ptData.company}`}

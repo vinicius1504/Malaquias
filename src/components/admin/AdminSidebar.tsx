@@ -14,6 +14,7 @@ import {
   Handshake,
   MessageSquareQuote,
   Layers,
+  PanelTop,
 } from 'lucide-react'
 import type { UserRole } from '@/types/database'
 
@@ -63,6 +64,12 @@ const menuItems = [
     roles: ['dev', 'admin'],
   },
   {
+    label: 'Landing Pages',
+    href: '/admin/landing-pages',
+    icon: PanelTop,
+    roles: ['dev', 'admin'],
+  },
+  {
     label: 'Usuários',
     href: '/admin/usuarios',
     icon: Users,
@@ -78,7 +85,7 @@ const menuItems = [
     label: 'Configurações',
     href: '/admin/config',
     icon: Settings,
-    roles: ['dev'],
+    roles: ['dev', 'admin'],
   },
 ]
 

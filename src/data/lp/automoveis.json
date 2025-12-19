@@ -9,7 +9,12 @@
       "seo": {
         "title": "Contabilidade para Concessionárias e Mecânicas | Malaquias Contabilidade",
         "description": "Contabilidade especializada para concessionárias, oficinas e centros automotivos. Gestão fiscal, tributária e financeira para controlar margem, estoque e crescer com segurança.",
-        "keywords": ["contabilidade para concessionárias", "contabilidade para oficinas", "gestão fiscal", "planejamento tributário automotivo"]
+        "keywords": [
+          "contabilidade para concessionárias",
+          "contabilidade para oficinas",
+          "gestão fiscal",
+          "planejamento tributário automotivo"
+        ]
       },
       "hero": {
         "title": "Contabilidade para Concessionárias e Mecânicas",
@@ -57,6 +62,48 @@
           "image": "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg",
           "imageAlt": "Gestão de oficina e concessionária",
           "imagePosition": "right",
+          "backgroundColor": "#ffffff"
+        },
+        {
+          "type": "carouselCards",
+          "tag": "EXPERTISE COMPROVADA",
+          "title": "Contabilidade que vira gestão: foco em margem, estoque e caixa",
+          "titleHighlight": "margem, estoque e caixa",
+          "description": "Transformamos números em ações: controles melhores, tributos organizados e decisões práticas para aumentar rentabilidade.",
+          "ctaText": "Conhecer nossos cases de sucesso",
+          "ctaLink": "/cases?segmento=concessionarias-mecanicas",
+          "cards": [
+            {
+              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
+              "title": "Concessionárias",
+              "subtitle": "",
+              "ctaText": "Ver cases de concessionárias",
+              "ctaLink": "/cases?perfil=concessionarias"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
+              "title": "Oficinas",
+              "subtitle": "",
+              "ctaText": "Ver cases de oficinas",
+              "ctaLink": "/cases?perfil=oficinas"
+            },
+            {
+              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
+              "title": "Centros Automotivos",
+              "subtitle": "",
+              "ctaText": "Ver cases de centros",
+              "ctaLink": "/cases?perfil=centros"
+            },
+            {
+              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
+              "title": "Autopeças",
+              "subtitle": "",
+              "ctaText": "Ver cases de autopeças",
+              "ctaLink": "/cases?perfil=autopecas"
+            }
+          ],
+          "contentPosition": "right",
+          "speed": 30,
           "backgroundColor": "#ffffff"
         },
         {
@@ -115,48 +162,6 @@
             }
           ],
           "contentPosition": "left",
-          "speed": 30,
-          "backgroundColor": "#ffffff"
-        },
-        {
-          "type": "carouselCards",
-          "tag": "EXPERTISE COMPROVADA",
-          "title": "Contabilidade que vira gestão: foco em margem, estoque e caixa",
-          "titleHighlight": "margem, estoque e caixa",
-          "description": "Transformamos números em ações: controles melhores, tributos organizados e decisões práticas para aumentar rentabilidade.",
-          "ctaText": "Conhecer nossos cases de sucesso",
-          "ctaLink": "/cases?segmento=concessionarias-mecanicas",
-          "cards": [
-            {
-              "image": "https://images.pexels.com/photos/6870305/pexels-photo-6870305.jpeg",
-              "title": "Concessionárias",
-              "subtitle": "",
-              "ctaText": "Ver cases de concessionárias",
-              "ctaLink": "/cases?perfil=concessionarias"
-            },
-            {
-              "image": "https://images.pexels.com/photos/4116220/pexels-photo-4116220.jpeg",
-              "title": "Oficinas",
-              "subtitle": "",
-              "ctaText": "Ver cases de oficinas",
-              "ctaLink": "/cases?perfil=oficinas"
-            },
-            {
-              "image": "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg",
-              "title": "Centros Automotivos",
-              "subtitle": "",
-              "ctaText": "Ver cases de centros",
-              "ctaLink": "/cases?perfil=centros"
-            },
-            {
-              "image": "https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg",
-              "title": "Autopeças",
-              "subtitle": "",
-              "ctaText": "Ver cases de autopeças",
-              "ctaLink": "/cases?perfil=autopecas"
-            }
-          ],
-          "contentPosition": "right",
           "speed": 30,
           "backgroundColor": "#ffffff"
         },
@@ -271,7 +276,12 @@
       "seo": {
         "title": "Accounting for Dealerships & Auto Repair Shops | Malaquias Accounting",
         "description": "Specialized accounting for car dealerships, repair shops and automotive service centers. Tax and financial management to control margin, inventory and scale safely.",
-        "keywords": ["dealership accounting", "auto repair accounting", "fiscal management", "automotive tax planning"]
+        "keywords": [
+          "dealership accounting",
+          "auto repair accounting",
+          "fiscal management",
+          "automotive tax planning"
+        ]
       },
       "hero": {
         "title": "Accounting for Dealerships & Auto Repair Shops",
@@ -533,7 +543,12 @@
       "seo": {
         "title": "Contabilidad para Concesionarias y Talleres | Malaquias Contabilidad",
         "description": "Contabilidad especializada para concesionarias, talleres y centros automotrices. Gestión fiscal, tributaria y financiera para controlar margen, inventario y crecer con seguridad.",
-        "keywords": ["contabilidad para concesionarias", "contabilidad para talleres", "gestión fiscal", "planificación tributaria automotriz"]
+        "keywords": [
+          "contabilidad para concesionarias",
+          "contabilidad para talleres",
+          "gestión fiscal",
+          "planificación tributaria automotriz"
+        ]
       },
       "hero": {
         "title": "Contabilidad para Concesionarias y Talleres",

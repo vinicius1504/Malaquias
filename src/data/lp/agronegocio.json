@@ -9,7 +9,12 @@
       "seo": {
         "title": "Contabilidade para o Agronegócio | Malaquias Contabilidade",
         "description": "Contabilidade especializada para o agronegócio brasileiro. Planejamento tributário, gestão fiscal e financeira para produtores rurais e empresas do agro.",
-        "keywords": ["contabilidade rural", "agronegócio", "gestão fiscal", "tributação rural"]
+        "keywords": [
+          "contabilidade rural",
+          "agronegócio",
+          "gestão fiscal",
+          "tributação rural"
+        ]
       },
       "hero": {
         "title": "Contabilidade para o Agronegócio",
@@ -57,7 +62,9 @@
           "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
           "imageAlt": "Trator no campo - Agronegócio",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-0-1766147452553",
+          "video": ""
         },
         {
           "type": "textImage",
@@ -74,7 +81,8 @@
           "image": "https://images.pexels.com/photos/8064065/pexels-photo-8064065.jpeg",
           "imageAlt": "Planejamento rural",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-1-1766147452553"
         },
         {
           "type": "carouselCards",
@@ -114,9 +122,10 @@
               "ctaLink": "/contato?perfil=cooperativa"
             }
           ],
-          "contentPosition": "left",
+          "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-2-1766147452553"
         },
         {
           "type": "carouselCards",
@@ -132,7 +141,9 @@
               "title": "Produtor Rural",
               "subtitle": "",
               "ctaText": "Cases de produtores",
-              "ctaLink": "/cases?perfil=produtor"
+              "ctaLink": "/cases?perfil=produtor",
+              "description": "teste",
+              "icon": "checkcircle"
             },
             {
               "image": "https://images.pexels.com/photos/14968005/pexels-photo-14968005.jpeg",
@@ -156,9 +167,10 @@
               "ctaLink": "/cases?perfil=agroindustria"
             }
           ],
-          "contentPosition": "right",
+          "contentPosition": "center",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-3-1766147452553"
         },
         {
           "type": "servicesTabs",
@@ -220,7 +232,8 @@
                 "Emissão de relatórios e pareceres técnicos."
               ]
             }
-          ]
+          ],
+          "id": "section-pt-4-1766147452553"
         },
         {
           "type": "faq",
@@ -253,7 +266,8 @@
               "question": "A Malaquias atende produtores de todo o Brasil?",
               "answer": "Sim. Atendemos clientes em todas as regiões do país, com atendimento remoto estruturado, seguro e eficiente."
             }
-          ]
+          ],
+          "id": "section-pt-5-1766147452553"
         },
         {
           "type": "cta",
@@ -263,7 +277,8 @@
           "description": "Solicite um diagnóstico gratuito e descubra como uma contabilidade estratégica pode transformar o seu agronegócio.",
           "submitText": "Solicitar diagnóstico gratuito",
           "submitMicrocopy": "Retorno garantido em até 24h úteis",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-pt-6-1766147452553"
         }
       ]
     },
@@ -271,7 +286,12 @@
       "seo": {
         "title": "Accounting for Agribusiness | Malaquias Accounting",
         "description": "Specialized accounting for Brazilian agribusiness. Tax planning, fiscal and financial management for rural producers and agro companies.",
-        "keywords": ["rural accounting", "agribusiness", "fiscal management", "rural taxation"]
+        "keywords": [
+          "rural accounting",
+          "agribusiness",
+          "fiscal management",
+          "rural taxation"
+        ]
       },
       "hero": {
         "title": "Accounting for Agribusiness",
@@ -319,7 +339,8 @@
           "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
           "imageAlt": "Tractor in the field - Agribusiness",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-0-1766147452553"
         },
         {
           "type": "textImage",
@@ -336,7 +357,8 @@
           "image": "https://images.pexels.com/photos/8064065/pexels-photo-8064065.jpeg",
           "imageAlt": "Rural planning",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-1-1766147452553"
         },
         {
           "type": "carouselCards",
@@ -378,7 +400,8 @@
           ],
           "contentPosition": "left",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-2-1766147452553"
         },
         {
           "type": "carouselCards",
@@ -420,7 +443,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-3-1766147452553"
         },
         {
           "type": "servicesTabs",
@@ -482,7 +506,8 @@
                 "Technical reports and opinions issuance."
               ]
             }
-          ]
+          ],
+          "id": "section-en-4-1766147452553"
         },
         {
           "type": "faq",
@@ -515,7 +540,8 @@
               "question": "Does Malaquias serve producers from all over Brazil?",
               "answer": "Yes. We serve clients in all regions of the country, with structured, secure and efficient remote service."
             }
-          ]
+          ],
+          "id": "section-en-5-1766147452553"
         },
         {
           "type": "cta",
@@ -525,7 +551,8 @@
           "description": "Request a free assessment and discover how strategic accounting can transform your agribusiness.",
           "submitText": "Request free assessment",
           "submitMicrocopy": "Guaranteed response within 24 business hours",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-en-6-1766147452553"
         }
       ]
     },
@@ -533,7 +560,12 @@
       "seo": {
         "title": "Contabilidad para el Agronegocio | Malaquias Contabilidad",
         "description": "Contabilidad especializada para el agronegocio brasileño. Planificación tributaria, gestión fiscal y financiera para productores rurales y empresas del agro.",
-        "keywords": ["contabilidad rural", "agronegocio", "gestión fiscal", "tributación rural"]
+        "keywords": [
+          "contabilidad rural",
+          "agronegocio",
+          "gestión fiscal",
+          "tributación rural"
+        ]
       },
       "hero": {
         "title": "Contabilidad para el Agronegocio",
@@ -581,7 +613,8 @@
           "image": "https://images.pexels.com/photos/31173020/pexels-photo-31173020.jpeg",
           "imageAlt": "Tractor en el campo - Agronegocio",
           "imagePosition": "right",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-0-1766147452553"
         },
         {
           "type": "textImage",
@@ -598,7 +631,8 @@
           "image": "https://images.pexels.com/photos/8064065/pexels-photo-8064065.jpeg",
           "imageAlt": "Planificación rural",
           "imagePosition": "left",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-1-1766147452553"
         },
         {
           "type": "carouselCards",
@@ -640,7 +674,8 @@
           ],
           "contentPosition": "left",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-2-1766147452553"
         },
         {
           "type": "carouselCards",
@@ -682,7 +717,8 @@
           ],
           "contentPosition": "right",
           "speed": 30,
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-3-1766147452553"
         },
         {
           "type": "servicesTabs",
@@ -744,7 +780,8 @@
                 "Emisión de informes y dictámenes técnicos."
               ]
             }
-          ]
+          ],
+          "id": "section-es-4-1766147452553"
         },
         {
           "type": "faq",
@@ -777,7 +814,8 @@
               "question": "¿Malaquias atiende productores de todo Brasil?",
               "answer": "Sí. Atendemos clientes en todas las regiones del país, con atención remota estructurada, segura y eficiente."
             }
-          ]
+          ],
+          "id": "section-es-5-1766147452553"
         },
         {
           "type": "cta",
@@ -787,7 +825,8 @@
           "description": "Solicite un diagnóstico gratuito y descubra cómo una contabilidad estratégica puede transformar su agronegocio.",
           "submitText": "Solicitar diagnóstico gratuito",
           "submitMicrocopy": "Respuesta garantizada en hasta 24h hábiles",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "id": "section-es-6-1766147452553"
         }
       ]
     }

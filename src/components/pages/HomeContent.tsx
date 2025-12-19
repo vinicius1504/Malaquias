@@ -37,11 +37,11 @@ export default function HomeContent() {
 
       {/* Áreas de Atuação */}
       <section id="areas" className="min-h-screen flex flex-col justify-center py-24 bg-[#f5f5f5] ">
-        <AnimatedSection className="container mx-auto px-6 mb-12 ">
+        <AnimatedSection className="container mx-auto px-6 mb-12 text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900 ">
             {sectionTitles.areas}
           </h2>
-          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4 mx-auto md:mx-0 max-w-[200px] md:max-w-none" />
         </AnimatedSection>
 
         <AreasCarousel />
@@ -50,14 +50,14 @@ export default function HomeContent() {
       {/* Por que a Malaquias Contabilidade? */}
       <section id="porque" className="min-h-screen relative bg-[#f5f5f5]">
         {/* Title - Fora da área azul */}
-        <AnimatedSection className="container mx-auto px-6 py-12">
+        <AnimatedSection className="container mx-auto px-6 py-12 text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {sectionTitles.whyPart1}
           </h2>
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-gold-500">
             {sectionTitles.whyPart2}
           </h2>
-          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4 mx-auto md:mx-0 max-w-[200px] md:max-w-none" />
         </AnimatedSection>
 
         {/* Área azul - ocupa o resto da seção */}
@@ -70,7 +70,7 @@ export default function HomeContent() {
             <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 items-center">
               {/* Left - 3D Logo */}
               <motion.div
-                className="relative h-[500px] w-[500px] flex items-center justify-center"
+                className="relative h-[280px] w-[280px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px] flex items-center justify-center mx-auto lg:mx-0"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: '-100px' }}
@@ -80,11 +80,11 @@ export default function HomeContent() {
               </motion.div>
 
               {/* Right - Benefits List */}
-              <div className="space-y-10 max-w-lg lg:ml-auto">
+              <div className="space-y-8 md:space-y-10 max-w-lg mx-auto lg:mx-0 lg:ml-auto text-center lg:text-left">
                 {whyMalaquias.items.map((item, index) => (
                   <motion.div
                     key={index}
-                    className={itemMargins[index] || ''}
+                    className={`lg:${itemMargins[index]}` || ''}
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: '-50px' }}
@@ -94,10 +94,10 @@ export default function HomeContent() {
                       ease: 'easeOut'
                     }}
                   >
-                    <h3 className="text-gold-500 font-semibold text-xl mb-3">
+                    <h3 className="text-gold-500 font-semibold text-lg md:text-xl mb-2 md:mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-white/80 text-base leading-relaxed">
+                    <p className="text-white/80 text-sm md:text-base leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
@@ -116,33 +116,33 @@ export default function HomeContent() {
 
       {/* Nossos Clientes */}
       <section id="clientes" className="min-h-screen flex flex-col justify-center py-20 bg-[#f5f5f5]">
-        <AnimatedSection className="container mx-auto px-6 mb-12">
+        <AnimatedSection className="container mx-auto px-6 mb-12 text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {sectionTitles.clients}
           </h2>
-          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4 mx-auto md:mx-0 max-w-[200px] md:max-w-none" />
         </AnimatedSection>
         <ClientsCarousel />
       </section>
 
       {/* Nossos Parceiros */}
       <section id="parceiros" className="py-44 bg-[#f5f5f5]">
-        <AnimatedSection className="container mx-auto px-6 mb-12">
+        <AnimatedSection className="container mx-auto px-6 mb-12 text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {sectionTitles.partners}
           </h2>
-          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4 mx-auto md:mx-0 max-w-[200px] md:max-w-none" />
         </AnimatedSection>
         <PartnersCarousel />
       </section>
 
       {/* Depoimentos - Title fora da área azul */}
       <section id="depoimentos" className="pt-24 bg-[#f5f5f5]">
-        <AnimatedSection className="container mx-auto px-6 pb-12">
+        <AnimatedSection className="container mx-auto px-6 pb-12 text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {sectionTitles.testimonials}
           </h2>
-          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4 mx-auto md:mx-0 max-w-[200px] md:max-w-none" />
         </AnimatedSection>
       </section>
 

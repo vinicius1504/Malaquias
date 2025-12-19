@@ -529,10 +529,10 @@ export default function TextosPage() {
           <div className="bg-white border border-gray-200 rounded-xl">
             {/* Content Header */}
             <div className="px-6 py-4 border-b border-gray-200">
-              <h2 className="font-semibold text-gray-900">
+              <h2 className="font-semibold text-2xl text-gray-900">
                 {FILE_NAMES[selectedFile] || selectedFile}
               </h2>
-              <p className="text-sm text-gray-500">
+              <p className="text-xs text-gray-500">
                 {LOCALE_NAMES[selectedLocale]} • {selectedFile}.json
               </p>
             </div>
@@ -552,7 +552,7 @@ export default function TextosPage() {
                       <div key={key} className="bg-white border border-gray-200 rounded-xl overflow-hidden">
                         {/* Section Header */}
                         <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
-                          <h3 className="font-semibold text-gray-800">
+                          <h3 className="font-semibold text-2xl text-gray-800">
                             {getFieldLabel(key)}
                           </h3>
                         </div>

@@ -65,7 +65,7 @@ export default function BlogSection({ title, readMore, viewAll }: BlogSectionPro
       <div className="container mx-auto px-6">
         {/* Title */}
         <motion.div
-          className="mb-12"
+          className="mb-12 text-center md:text-left"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -73,7 +73,7 @@ export default function BlogSection({ title, readMore, viewAll }: BlogSectionPro
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900">
             {title}
           </h2>
-          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4" />
+          <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mt-4 mx-auto md:mx-0 max-w-[200px] md:max-w-none" />
         </motion.div>
 
         {/* Loading State */}

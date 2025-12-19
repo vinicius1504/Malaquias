@@ -33,9 +33,22 @@ export default function SegmentosPage() {
 
   const [formData, setFormData] = useState({
     title: '',
+    lp_slug: '',
     image_url: '',
     video_url: '',
   })
+
+  // Função para gerar slug a partir do título
+  const generateSlug = (title: string): string => {
+    return title
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Remove acentos
+      .replace(/[^a-z0-9\s-]/g, '') // Remove caracteres especiais
+      .replace(/\s+/g, '-') // Substitui espaços por hífens
+      .replace(/-+/g, '-') // Remove hífens duplicados
+      .trim()
+  }
 
   useEffect(() => {
     fetchSegments()
@@ -60,6 +73,7 @@ export default function SegmentosPage() {
     setEditingSegment(null)
     setFormData({
       title: '',
+      lp_slug: '',
       image_url: '',
       video_url: '',
     })
@@ -70,6 +84,7 @@ export default function SegmentosPage() {
     setEditingSegment(segment)
     setFormData({
       title: segment.title,
+      lp_slug: segment.lp_slug || '',
       image_url: segment.image_url || '',
       video_url: segment.video_url || '',
     })
@@ -380,7 +395,7 @@ export default function SegmentosPage() {
                 {/* Info */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-gray-900">{segment.title}</h3>
+                    <h3 className="font-semibold text-lg text-gray-900">{segment.title}</h3>
                     {segment.video_url && (
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full">
                         <Video className="w-3 h-3" />
@@ -457,11 +472,42 @@ export default function SegmentosPage() {
                 <input
                   type="text"
                   value={formData.title}
-                  onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                  onChange={(e) => {
+                    const newTitle = e.target.value
+                    setFormData({
+                      ...formData,
+                      title: newTitle,
+                      lp_slug: generateSlug(newTitle),
+                    })
+                  }}
                   className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/50 text-black"
                   placeholder="Ex: Comércio, Indústria, Saúde..."
                   required
                 />
+              </div>
+
+              {/* Slug da LP (gerado automaticamente) */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Slug da Landing Page
+                </label>
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-500 text-sm">/segmentos/</span>
+                  <input
+                    type="text"
+                    value={formData.lp_slug}
+                    onChange={(e) => setFormData({ ...formData, lp_slug: generateSlug(e.target.value) })}
+                    className="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/50 text-black"
+                    placeholder="slug-da-pagina"
+                  />
+                </div>
+                <p className="text-xs text-gray-500 mt-1">
+                  {formData.lp_slug ? (
+                    <>Link: <span className="text-amber-600">/segmentos/{formData.lp_slug}</span></>
+                  ) : (
+                    'Gerado automaticamente do título. Deixe vazio se não tiver LP.'
+                  )}
+                </p>
               </div>
 
               {/* Imagem */}

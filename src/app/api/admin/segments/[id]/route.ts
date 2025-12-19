@@ -74,7 +74,7 @@ export async function PUT(
 
     const { id } = await params
     const body = await request.json()
-    const { title, image_url, video_url, is_active, display_order } = body
+    const { title, lp_slug, image_url, video_url, is_active, display_order } = body
 
     const supabase = await getSupabase()
 
@@ -87,6 +87,7 @@ export async function PUT(
 
     const updateData: Record<string, unknown> = {}
     if (title !== undefined) updateData.title = title
+    if (lp_slug !== undefined) updateData.lp_slug = lp_slug
     if (image_url !== undefined) updateData.image_url = image_url
     if (video_url !== undefined) updateData.video_url = video_url
     if (is_active !== undefined) updateData.is_active = is_active

@@ -86,19 +86,19 @@ export default function TestimonialsCarousel({ testimonials: fallbackTestimonial
 
   return (
     <div
-      className="relative max-w-4xl mx-auto px-6 min-h-[280px] flex items-center justify-center"
+      className="relative max-w-4xl mx-auto px-4 md:px-6 min-h-[320px] md:min-h-[280px] flex items-center justify-center"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* Testimonial Card */}
       <div
-        className={`flex items-center gap-6 transition-all duration-300 ${
+        className={`flex flex-col md:flex-row items-center gap-4 md:gap-6 transition-all duration-300 ${
           isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
         }`}
       >
         {/* Avatar */}
         <div className="flex-shrink-0">
-          <div className="w-20 h-20 rounded-full bg-gray-600 flex items-center justify-center overflow-hidden">
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-600 flex items-center justify-center overflow-hidden">
             {currentTestimonial.avatar ? (
               <Image
                 src={currentTestimonial.avatar}
@@ -109,7 +109,7 @@ export default function TestimonialsCarousel({ testimonials: fallbackTestimonial
               />
             ) : (
               <svg
-                className="w-12 h-12 text-gray-400"
+                className="w-10 h-10 md:w-12 md:h-12 text-gray-400"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -120,22 +120,29 @@ export default function TestimonialsCarousel({ testimonials: fallbackTestimonial
         </div>
 
         {/* Speech Bubble */}
-        <div className="relative flex-1">
-          {/* Arrow pointing to avatar */}
-          <div className="absolute left-0 top-6 -translate-x-full">
+        <div className="relative flex-1 w-full">
+          {/* Arrow pointing to avatar - hidden on mobile */}
+          <div className="hidden md:block absolute left-0 top-6 -translate-x-full">
             <div
               className="w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-r-[16px] border-r-[#D4A84B]"
             />
           </div>
 
+          {/* Arrow pointing up on mobile */}
+          <div className="md:hidden absolute left-1/2 -top-2 -translate-x-1/2 -translate-y-full">
+            <div
+              className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[16px] border-b-[#D4A84B]"
+            />
+          </div>
+
           {/* Bubble content */}
-          <div className="bg-gradient-to-br from-[#D4A84B] to-[#C9983A] rounded-2xl p-6 shadow-xl">
+          <div className="bg-gradient-to-br from-[#D4A84B] to-[#C9983A] rounded-2xl p-4 md:p-6 shadow-xl">
             {/* Stars */}
-            <div className="flex gap-1 mb-3">
+            <div className="flex gap-1 mb-2 md:mb-3 justify-center md:justify-start">
               {[...Array(5)].map((_, i) => (
                 <svg
                   key={i}
-                  className="w-5 h-5 text-[#1a1a2e]"
+                  className="w-4 h-4 md:w-5 md:h-5 text-[#1a1a2e]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -145,14 +152,14 @@ export default function TestimonialsCarousel({ testimonials: fallbackTestimonial
             </div>
 
             {/* Quote */}
-            <p className="text-[#1a1a2e] text-sm md:text-base leading-relaxed mb-4">
+            <p className="text-[#1a1a2e] text-sm md:text-base leading-relaxed mb-3 md:mb-4 text-center md:text-left">
               &ldquo;{currentTestimonial.content}&rdquo;
             </p>
 
             {/* Author info */}
-            <div className="text-[#1a1a2e]/80 text-sm">
+            <div className="text-[#1a1a2e]/80 text-xs md:text-sm text-center md:text-left">
               <span className="font-semibold">{currentTestimonial.name}</span>
-              <span className="mx-2">-</span>
+              <span className="mx-1 md:mx-2">-</span>
               <span>{currentTestimonial.role}{currentTestimonial.company ? `, ${currentTestimonial.company}` : ''}</span>
             </div>
           </div>

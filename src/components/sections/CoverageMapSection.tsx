@@ -15,6 +15,7 @@ export default function CoverageMapSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Esquerda - Texto */}
           <motion.div
+            className="text-center md:text-left"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -23,7 +24,7 @@ export default function CoverageMapSection() {
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-900 mb-6">
               Presença que Gera Confiança
             </h2>
-            <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mb-6" />
+            <div className="w-full h-[2px] bg-gradient-to-r from-gold-500 to-transparent mb-6 mx-auto md:mx-0 max-w-[200px] md:max-w-none" />
             <p className="text-dark-600 leading-relaxed mb-4">
               Estamos presentes nos principais estados do país, oferecendo soluções contábeis digitais com a mesma eficiência e qualidade em cada região.
             </p>
