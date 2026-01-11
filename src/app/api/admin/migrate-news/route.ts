@@ -116,8 +116,7 @@ export async function POST() {
             image_url: news.image_url,
             status: 'published',
             published_at: news.published_at,
-          },
-          'id'
+          }
         )
 
         if (!newsData) {
