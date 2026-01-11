@@ -243,7 +243,7 @@ export default function LPHero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="md:container md:mx-auto md:px-6 pb-6 md:pb-16">
+          <div className="md:container md:mx-auto md:px-6 pb-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {highlights.map((highlight, index) => (
                 <div
