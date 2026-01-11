@@ -162,13 +162,13 @@ export default function InactivityPopup() {
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="fixed inset-0 z-[10000] flex items-center justify-center p-4"
           >
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-[800px] max-h-[90vh]">
+            <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-[800px] max-h-[90vh]">
               {/* Botão Fechar */}
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 z-10 p-2 bg-white/80 hover:bg-white rounded-full shadow-md transition-colors"
+                className="absolute top-3 right-3 z-20 p-2 bg-gray-100 hover:bg-gray-200 rounded-full shadow-lg transition-colors"
               >
-                <X className="w-5 h-5 text-gray-600" />
+                <X className="w-6 h-6 text-gray-700" />
               </button>
 
               <div className="flex flex-col md:flex-row">
