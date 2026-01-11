@@ -156,13 +156,13 @@ export default function InactivityPopup() {
 
           {/* Popup */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[10000] w-[95vw] md:w-[800px] max-w-[800px] max-h-[90vh] overflow-hidden"
+            className="fixed inset-0 z-[10000] flex items-center justify-center p-4"
           >
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-[800px] max-h-[90vh]">
               {/* Botão Fechar */}
               <button
                 onClick={handleClose}
