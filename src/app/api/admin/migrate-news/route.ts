@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryOne, insert } from '@/lib/db/postgres'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
@@ -82,30 +81,6 @@ const newsFromJson = [
   },
 ]
 
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
-
 export async function POST() {
   try {
     const session = await auth()
@@ -113,7 +88,6 @@ export async function POST() {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
 
-    const supabase = await getSupabase()
     const results = {
       success: [] as string[],
       errors: [] as string[],
@@ -121,55 +95,57 @@ export async function POST() {
     }
 
     for (const news of newsFromJson) {
-      // Verificar se já existe
-      const { data: existing } = await supabase
-        .from('news')
-        .select('id')
-        .eq('slug', news.slug)
-        .single()
+      try {
+        // Verificar se já existe
+        const existing = await queryOne<{ id: string }>(
+          'SELECT id FROM news WHERE slug = $1',
+          [news.slug]
+        )
 
-      if (existing) {
-        results.skipped.push(news.slug)
-        continue
+        if (existing) {
+          results.skipped.push(news.slug)
+          continue
+        }
+
+        // Inserir notícia
+        const newsData = await insert<{ id: string }>(
+          'news',
+          {
+            slug: news.slug,
+            category: news.category,
+            image_url: news.image_url,
+            status: 'published',
+            published_at: news.published_at,
+          },
+          'id'
+        )
+
+        if (!newsData) {
+          results.errors.push(`${news.slug}: Erro ao inserir notícia`)
+          continue
+        }
+
+        // Inserir tradução PT
+        try {
+          await insert(
+            'news_translations',
+            {
+              news_id: newsData.id,
+              locale: 'pt',
+              title: news.title,
+              excerpt: news.excerpt,
+              content: news.content,
+            }
+          )
+          results.success.push(news.slug)
+        } catch (translationError) {
+          results.errors.push(`${news.slug} (translation): ${translationError}`)
+          // Deletar a notícia se a tradução falhou
+          await queryOne('DELETE FROM news WHERE id = $1', [newsData.id])
+        }
+      } catch (error) {
+        results.errors.push(`${news.slug}: ${error}`)
       }
-
-      // Inserir notícia
-      const { data: newsData, error: newsError } = await supabase
-        .from('news')
-        .insert({
-          slug: news.slug,
-          category: news.category,
-          image_url: news.image_url,
-          status: 'published',
-          published_at: news.published_at,
-        })
-        .select()
-        .single()
-
-      if (newsError) {
-        results.errors.push(`${news.slug}: ${newsError.message}`)
-        continue
-      }
-
-      // Inserir tradução PT
-      const { error: translationError } = await supabase
-        .from('news_translations')
-        .insert({
-          news_id: newsData.id,
-          locale: 'pt',
-          title: news.title,
-          excerpt: news.excerpt,
-          content: news.content,
-        })
-
-      if (translationError) {
-        results.errors.push(`${news.slug} (translation): ${translationError.message}`)
-        // Deletar a notícia se a tradução falhou
-        await supabase.from('news').delete().eq('id', newsData.id)
-        continue
-      }
-
-      results.success.push(news.slug)
     }
 
     return NextResponse.json({

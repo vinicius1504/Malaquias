@@ -1,18 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createClient } from '@supabase/supabase-js'
+import { uploadFile, getPublicUrl } from '@/lib/storage/minio'
 import path from 'path'
 import fs from 'fs/promises'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
-
-// POST - Migrar imagem local para Supabase Storage
+// POST - Migrar imagem local para MinIO Storage
 export async function POST(request: NextRequest) {
   try {
     const session = await auth()
@@ -62,26 +57,14 @@ export async function POST(request: NextRequest) {
     const fileName = `${timestamp}-${randomId}${ext}`
     const filePath = `${folder}/${fileName}`
 
-    // Upload para Supabase Storage
-    const { error: uploadError } = await supabase.storage
-      .from('News-image-malaquias')
-      .upload(filePath, fileBuffer, {
-        contentType,
-        upsert: false,
-      })
-
-    if (uploadError) {
-      console.error('Erro no upload:', uploadError)
-      return NextResponse.json({ error: uploadError.message }, { status: 500 })
-    }
+    // Upload para MinIO Storage
+    await uploadFile(filePath, fileBuffer, contentType)
 
     // Gera URL pública
-    const { data: urlData } = supabase.storage
-      .from('News-image-malaquias')
-      .getPublicUrl(filePath)
+    const publicUrl = getPublicUrl(filePath)
 
     return NextResponse.json({
-      url: urlData.publicUrl,
+      url: publicUrl,
       originalPath: localPath,
       newPath: filePath,
       message: 'Imagem migrada com sucesso',

@@ -9,65 +9,73 @@ import {
   Handshake,
 } from 'lucide-react'
 import Link from 'next/link'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+import { queryOne, queryAll } from '@/lib/db/postgres'
 
 async function getStats() {
   // Buscar contagem de notícias
-  const { count: totalNews } = await supabase
-    .from('news')
-    .select('*', { count: 'exact', head: true })
+  const totalNewsResult = await queryOne<{ count: string }>(
+    'SELECT COUNT(*) as count FROM news'
+  )
+  const totalNews = parseInt(totalNewsResult?.count || '0')
 
-  const { count: publishedNews } = await supabase
-    .from('news')
-    .select('*', { count: 'exact', head: true })
-    .eq('is_published', true)
+  const publishedNewsResult = await queryOne<{ count: string }>(
+    "SELECT COUNT(*) as count FROM news WHERE status = 'published'"
+  )
+  const publishedNews = parseInt(publishedNewsResult?.count || '0')
 
   // Buscar contagem de depoimentos
-  const { count: totalTestimonials } = await supabase
-    .from('testimonials')
-    .select('*', { count: 'exact', head: true })
+  const totalTestimonialsResult = await queryOne<{ count: string }>(
+    'SELECT COUNT(*) as count FROM testimonials'
+  )
+  const totalTestimonials = parseInt(totalTestimonialsResult?.count || '0')
 
-  const { count: activeTestimonials } = await supabase
-    .from('testimonials')
-    .select('*', { count: 'exact', head: true })
-    .eq('is_active', true)
+  const activeTestimonialsResult = await queryOne<{ count: string }>(
+    'SELECT COUNT(*) as count FROM testimonials WHERE is_active = true'
+  )
+  const activeTestimonials = parseInt(activeTestimonialsResult?.count || '0')
 
   // Buscar contagem de parceiros/clientes
-  const { count: totalPartners } = await supabase
-    .from('partners')
-    .select('*', { count: 'exact', head: true })
+  const totalPartnersResult = await queryOne<{ count: string }>(
+    'SELECT COUNT(*) as count FROM partners'
+  )
+  const totalPartners = parseInt(totalPartnersResult?.count || '0')
 
-  const { count: activePartners } = await supabase
-    .from('partners')
-    .select('*', { count: 'exact', head: true })
-    .eq('is_active', true)
+  const activePartnersResult = await queryOne<{ count: string }>(
+    'SELECT COUNT(*) as count FROM partners WHERE is_active = true'
+  )
+  const activePartners = parseInt(activePartnersResult?.count || '0')
 
   // Buscar últimas notícias
-  const { data: recentNews } = await supabase
-    .from('news')
-    .select('id, slug, is_published, created_at, updated_at, news_translations!inner(title, locale)')
-    .eq('news_translations.locale', 'pt')
-    .order('updated_at', { ascending: false })
-    .limit(5)
+  const recentNews = await queryAll<{
+    id: string
+    slug: string
+    status: string
+    updated_at: string
+    title: string
+  }>(
+    `SELECT
+      n.id,
+      n.slug,
+      n.status,
+      n.updated_at,
+      nt.title
+    FROM news n
+    LEFT JOIN news_translations nt ON n.id = nt.news_id AND nt.locale = 'pt'
+    ORDER BY n.updated_at DESC
+    LIMIT 5`
+  )
 
   return {
-    news: { total: totalNews || 0, published: publishedNews || 0 },
-    testimonials: { total: totalTestimonials || 0, active: activeTestimonials || 0 },
-    partners: { total: totalPartners || 0, active: activePartners || 0 },
-    recentNews: recentNews?.map(n => ({
+    news: { total: totalNews, published: publishedNews },
+    testimonials: { total: totalTestimonials, active: activeTestimonials },
+    partners: { total: totalPartners, active: activePartners },
+    recentNews: recentNews.map(n => ({
       id: n.id,
       slug: n.slug,
-      title: Array.isArray(n.news_translations)
-        ? n.news_translations[0]?.title
-        : (n.news_translations as { title: string })?.title || 'Sem título',
-      is_published: n.is_published,
+      title: n.title || 'Sem título',
+      is_published: n.status === 'published',
       updated_at: n.updated_at,
-    })) || [],
+    })),
   }
 }
 
