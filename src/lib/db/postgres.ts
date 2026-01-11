@@ -1,4 +1,4 @@
-import { Pool, QueryResult } from 'pg'
+import { Pool, QueryResult, QueryResultRow } from 'pg'
 
 // Pool de conexões PostgreSQL
 const pool = new Pool({
@@ -9,7 +9,7 @@ const pool = new Pool({
 })
 
 // Função para executar queries
-export async function query<T = any>(
+export async function query<T extends QueryResultRow = QueryResultRow>(
   text: string,
   params?: any[]
 ): Promise<QueryResult<T>> {
