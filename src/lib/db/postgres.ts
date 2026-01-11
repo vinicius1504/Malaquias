@@ -22,7 +22,7 @@ export async function query<T extends QueryResultRow = QueryResultRow>(
 }
 
 // Função para executar uma única query e retornar o primeiro resultado
-export async function queryOne<T = any>(
+export async function queryOne<T extends QueryResultRow = QueryResultRow>(
   text: string,
   params?: any[]
 ): Promise<T | null> {
@@ -31,7 +31,7 @@ export async function queryOne<T = any>(
 }
 
 // Função para executar uma query e retornar todos os resultados
-export async function queryAll<T = any>(
+export async function queryAll<T extends QueryResultRow = QueryResultRow>(
   text: string,
   params?: any[]
 ): Promise<T[]> {
@@ -54,7 +54,7 @@ export async function count(
 }
 
 // Função para inserir e retornar o registro inserido
-export async function insert<T = any>(
+export async function insert<T extends QueryResultRow = QueryResultRow>(
   table: string,
   data: Record<string, any>
 ): Promise<T> {
@@ -71,7 +71,7 @@ export async function insert<T = any>(
 }
 
 // Função para atualizar registros
-export async function update<T = any>(
+export async function update<T extends QueryResultRow = QueryResultRow>(
   table: string,
   data: Record<string, any>,
   where: string,
@@ -107,7 +107,7 @@ export async function remove(
 }
 
 // Função para upsert (insert or update)
-export async function upsert<T = any>(
+export async function upsert<T extends QueryResultRow = QueryResultRow>(
   table: string,
   data: Record<string, any>,
   conflictColumns: string[]
