@@ -132,8 +132,11 @@ export default function ConfigPage() {
 
       const data = await response.json()
 
-      if (response.ok) {
-        toast.success('Upload realizado com sucesso!')
+      if (response.ok && data.url) {
+        // Copiar URL automaticamente para a área de transferência
+        navigator.clipboard.writeText(data.url)
+        toast.success(`Upload realizado! URL copiada para área de transferência`)
+        console.log('URL do arquivo:', data.url) // Log para debug
         fetchFiles()
       } else {
         toast.error(data.error || 'Erro no upload')
