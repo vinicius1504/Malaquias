@@ -169,7 +169,7 @@ export default function LPHero({
       {/* Conteúdo */}
       <div className="relative z-10 container mx-auto px-6 flex-1 flex flex-col">
         {/* Título e descrição */}
-        <div className="max-w-3xl pb-8 md:pb-32 flex flex-col justify-between flex-1">
+        <div className="max-w-3xl pb-8 md:pb-48 flex flex-col justify-between flex-1">
           <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             style={{ color: accentColor }}
@@ -238,12 +238,12 @@ export default function LPHero({
 
         {/* Cards de destaque (inferior) - Mobile: relative, Desktop: absolute */}
         <motion.div
-          className="relative md:absolute md:bottom-0 md:left-0 md:right-0 mt-8 md:mt-0"
+          className="relative md:absolute md:bottom-0 md:left-0 md:right-0 mt-12 md:mt-0"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="md:container md:mx-auto md:px-6 pb-6 md:pb-12">
+          <div className="md:container md:mx-auto md:px-6 pb-6 md:pb-16">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {highlights.map((highlight, index) => (
                 <div
