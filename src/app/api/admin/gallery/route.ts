@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
       if (type === 'all') return true
       const ext = file.name.split('.').pop()?.toLowerCase()
       if (type === 'images') {
-        return ['jpg', 'jpeg', 'png', 'webp', 'gif'].includes(ext || '')
+        return ['jpg', 'jpeg', 'jfif', 'png', 'webp', 'gif', 'svg', 'bmp', 'ico'].includes(ext || '')
       }
       if (type === 'videos') {
         return ['mp4', 'webm'].includes(ext || '')
