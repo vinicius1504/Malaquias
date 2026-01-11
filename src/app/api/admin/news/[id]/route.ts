@@ -80,16 +80,16 @@ export async function PUT(
       `UPDATE news SET
         slug = $1,
         category_id = $2,
-        status = $3,
+        status = $3::varchar,
         image_url = $4,
         image_banner = $5,
         published_at = CASE
-          WHEN $3 = 'published' AND published_at IS NULL THEN $6
+          WHEN $6::varchar = 'published' AND published_at IS NULL THEN $7
           ELSE published_at
         END,
         updated_at = NOW()
-      WHERE id = $7`,
-      [slug, category_id || null, status, image_url, image_banner, published_at || new Date().toISOString(), id]
+      WHERE id = $8`,
+      [slug, category_id || null, status, image_url, image_banner, status, published_at || new Date().toISOString(), id]
     )
 
     // Atualizar traduções para todos os idiomas

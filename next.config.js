@@ -52,7 +52,7 @@ const nextConfig = {
               "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: blob: https: https://www.facebook.com https://www.google-analytics.com",
+              "img-src 'self' data: blob: https: http://72.61.42.11:9000 https://www.facebook.com https://www.google-analytics.com",
               "media-src 'self' https://*.supabase.co https://*.pexels.com https://player.vimeo.com https://*.vimeocdn.com https://*.images.unsplash.com",
               "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://www.facebook.com",
               "frame-src https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com https://www.googletagmanager.com",
@@ -75,6 +75,12 @@ const nextConfig = {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '72.61.42.11',
+        port: '9000',
+        pathname: '/malaquias/**',
+      },
       {
         protocol: 'https',
         hostname: 'vfujqqdxgcuubiaqcvtm.supabase.co',
