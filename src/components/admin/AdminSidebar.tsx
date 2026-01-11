@@ -93,8 +93,11 @@ const menuItems = [
 export function AdminSidebar({ user }: AdminSidebarProps) {
   const pathname = usePathname()
 
+  // Proteção caso user.role seja undefined
+  const userRole = user?.role || 'admin'
+
   const filteredItems = menuItems.filter((item) =>
-    item.roles.includes(user.role)
+    item.roles.includes(userRole)
   )
 
   return (
@@ -126,7 +129,7 @@ export function AdminSidebar({ user }: AdminSidebarProps) {
             <div className="flex items-center gap-1.5">
               <Shield className="w-3 h-3 text-amber-600" />
               <span className="text-xs text-amber-600 uppercase font-medium">
-                {user.role}
+                {userRole}
               </span>
             </div>
           </div>

@@ -74,7 +74,9 @@ export function AdminHeader({ user }: AdminHeaderProps) {
   const [unreadCount, setUnreadCount] = useState(0)
   const [lastSeen, setLastSeen] = useState<string | null>(null)
 
-  const isDev = user.role === 'dev'
+  // Proteção caso user.role seja undefined
+  const userRole = user?.role || 'admin'
+  const isDev = userRole === 'dev'
   const pageTitle = pageTitles[pathname] || 'Admin'
 
   // Carregar lastSeen do localStorage
