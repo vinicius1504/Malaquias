@@ -1,34 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryAll, insert } from '@/lib/db/postgres'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 // GET - Listar parceiros/clientes
 export async function GET(request: NextRequest) {
@@ -41,24 +16,17 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
     const type = searchParams.get('type') // 'partner' | 'client' | null (todos)
 
-    const supabase = await getSupabase()
-
-    let query = supabase
-      .from('partners')
-      .select('*')
-      .order('display_order', { ascending: true })
-      .order('created_at', { ascending: false })
+    let query = 'SELECT * FROM partners'
+    const params: any[] = []
 
     if (type) {
-      query = query.eq('type', type)
+      query += ' WHERE type = $1'
+      params.push(type)
     }
 
-    const { data, error } = await query
+    query += ' ORDER BY display_order ASC, created_at DESC'
 
-    if (error) {
-      console.error('Erro ao buscar parceiros:', error)
-      return NextResponse.json({ error: 'Erro ao buscar parceiros' }, { status: 500 })
-    }
+    const data = await queryAll(query, params)
 
     return NextResponse.json({ partners: data })
   } catch (error) {
@@ -86,32 +54,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Tipo inválido' }, { status: 400 })
     }
 
-    const supabase = await getSupabase()
-
-    const { data: newPartner, error } = await supabase
-      .from('partners')
-      .insert({
-        name,
-        type,
-        logo_url: logo_url || null,
-        is_active: is_active ?? true,
-        display_order: display_order ?? 0,
-      })
-      .select()
-      .single()
-
-    if (error) {
-      console.error('Erro ao criar parceiro:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    const newPartner = await insert('partners', {
+      name,
+      type,
+      logo_url: logo_url || null,
+      is_active: is_active ?? true,
+      display_order: display_order ?? 0,
+    })
 
     // Log de auditoria
-    await supabase.from('audit_logs').insert({
+    await insert('audit_logs', {
       user_id: session.user.id,
       action: 'create',
       entity: 'partners',
       entity_id: newPartner.id,
-      new_value: { name, type },
+      new_value: JSON.stringify({ name, type }),
     })
 
     return NextResponse.json({ partner: newPartner, message: 'Parceiro criado com sucesso' })

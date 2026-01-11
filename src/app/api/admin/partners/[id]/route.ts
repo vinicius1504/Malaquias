@@ -1,34 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryOne, query, insert, remove } from '@/lib/db/postgres'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 // GET - Buscar parceiro por ID
 export async function GET(
@@ -42,16 +17,10 @@ export async function GET(
     }
 
     const { id } = await params
-    const supabase = await getSupabase()
 
-    const { data, error } = await supabase
-      .from('partners')
-      .select('*')
-      .eq('id', id)
-      .single()
+    const data = await queryOne('SELECT * FROM partners WHERE id = $1', [id])
 
-    if (error) {
-      console.error('Erro ao buscar parceiro:', error)
+    if (!data) {
       return NextResponse.json({ error: 'Parceiro não encontrado' }, { status: 404 })
     }
 
@@ -77,46 +46,55 @@ export async function PUT(
     const body = await request.json()
     const { name, type, logo_url, is_active, display_order } = body
 
-    const supabase = await getSupabase()
-
     // Buscar parceiro atual para log
-    const { data: oldPartner } = await supabase
-      .from('partners')
-      .select('*')
-      .eq('id', id)
-      .single()
+    const oldPartner = await queryOne('SELECT * FROM partners WHERE id = $1', [id])
 
     if (!oldPartner) {
       return NextResponse.json({ error: 'Parceiro não encontrado' }, { status: 404 })
     }
 
-    // Atualizar parceiro
-    const { data: updatedPartner, error } = await supabase
-      .from('partners')
-      .update({
-        ...(name !== undefined && { name }),
-        ...(type !== undefined && { type }),
-        ...(logo_url !== undefined && { logo_url }),
-        ...(is_active !== undefined && { is_active }),
-        ...(display_order !== undefined && { display_order }),
-      })
-      .eq('id', id)
-      .select()
-      .single()
+    const updateFields: string[] = ['updated_at = NOW()']
+    const updateValues: any[] = []
+    let paramIndex = 1
 
-    if (error) {
-      console.error('Erro ao atualizar parceiro:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
+    if (name !== undefined) {
+      updateFields.push(`name = $${paramIndex++}`)
+      updateValues.push(name)
+    }
+    if (type !== undefined) {
+      updateFields.push(`type = $${paramIndex++}`)
+      updateValues.push(type)
+    }
+    if (logo_url !== undefined) {
+      updateFields.push(`logo_url = $${paramIndex++}`)
+      updateValues.push(logo_url)
+    }
+    if (is_active !== undefined) {
+      updateFields.push(`is_active = $${paramIndex++}`)
+      updateValues.push(is_active)
+    }
+    if (display_order !== undefined) {
+      updateFields.push(`display_order = $${paramIndex++}`)
+      updateValues.push(display_order)
     }
 
+    updateValues.push(id)
+
+    const result = await query(
+      `UPDATE partners SET ${updateFields.join(', ')} WHERE id = $${paramIndex} RETURNING *`,
+      updateValues
+    )
+
+    const updatedPartner = result.rows[0]
+
     // Log de auditoria
-    await supabase.from('audit_logs').insert({
+    await insert('audit_logs', {
       user_id: session.user.id,
       action: 'update',
       entity: 'partners',
       entity_id: id,
-      old_value: { name: oldPartner.name, type: oldPartner.type },
-      new_value: { name: updatedPartner.name, type: updatedPartner.type },
+      old_value: JSON.stringify({ name: oldPartner.name, type: oldPartner.type }),
+      new_value: JSON.stringify({ name: updatedPartner.name, type: updatedPartner.type }),
     })
 
     return NextResponse.json({ partner: updatedPartner, message: 'Parceiro atualizado com sucesso' })
@@ -138,37 +116,23 @@ export async function DELETE(
     }
 
     const { id } = await params
-    const supabase = await getSupabase()
 
     // Buscar parceiro para log
-    const { data: partner } = await supabase
-      .from('partners')
-      .select('*')
-      .eq('id', id)
-      .single()
+    const partner = await queryOne('SELECT * FROM partners WHERE id = $1', [id])
 
     if (!partner) {
       return NextResponse.json({ error: 'Parceiro não encontrado' }, { status: 404 })
     }
 
-    // Deletar parceiro
-    const { error } = await supabase
-      .from('partners')
-      .delete()
-      .eq('id', id)
-
-    if (error) {
-      console.error('Erro ao deletar parceiro:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    await remove('partners', 'id = $1', [id])
 
     // Log de auditoria
-    await supabase.from('audit_logs').insert({
+    await insert('audit_logs', {
       user_id: session.user.id,
       action: 'delete',
       entity: 'partners',
       entity_id: id,
-      old_value: { name: partner.name, type: partner.type },
+      old_value: JSON.stringify({ name: partner.name, type: partner.type }),
     })
 
     return NextResponse.json({ message: 'Parceiro excluído com sucesso' })

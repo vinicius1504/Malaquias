@@ -2,8 +2,7 @@ import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
 import { z } from 'zod'
 import bcrypt from 'bcryptjs'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryOne, insert } from '@/lib/db/postgres'
 import type { UserRole } from '@/types/database'
 
 // Schema de validação do login
@@ -12,30 +11,13 @@ const loginSchema = z.object({
   password: z.string().min(6, 'Senha deve ter no mínimo 6 caracteres'),
 })
 
-// Função para criar cliente Supabase no auth
-async function getSupabaseClient() {
-  const cookieStore = await cookies()
-
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore em Server Components
-          }
-        },
-      },
-    }
-  )
+interface AdminUser {
+  id: string
+  email: string
+  name: string
+  password_hash: string
+  role: UserRole
+  is_active: boolean
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -59,17 +41,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           // Validar input
           const { email, password } = loginSchema.parse(credentials)
 
-          // Buscar usuário no Supabase
-          const supabase = await getSupabaseClient()
+          // Buscar usuário no PostgreSQL
+          const user = await queryOne<AdminUser>(
+            'SELECT * FROM admin_users WHERE email = $1 AND is_active = true',
+            [email]
+          )
 
-          const { data: user, error } = await supabase
-            .from('admin_users')
-            .select('*')
-            .eq('email', email)
-            .eq('is_active', true)
-            .single()
-
-          if (error || !user) {
+          if (!user) {
             console.log('Usuário não encontrado:', email)
             return null
           }
@@ -83,7 +61,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           }
 
           // Log de login
-          await supabase.from('audit_logs').insert({
+          await insert('audit_logs', {
             user_id: user.id,
             action: 'login',
             entity: 'admin_users',

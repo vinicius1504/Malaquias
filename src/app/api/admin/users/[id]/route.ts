@@ -1,35 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryOne, query, insert, remove } from '@/lib/db/postgres'
 import bcrypt from 'bcryptjs'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 // GET - Buscar usuário por ID
 export async function GET(
@@ -43,15 +18,13 @@ export async function GET(
     }
 
     const { id } = await params
-    const supabase = await getSupabase()
 
-    const { data, error } = await supabase
-      .from('admin_users')
-      .select('id, email, name, role, is_active, created_at, updated_at')
-      .eq('id', id)
-      .single()
+    const data = await queryOne(
+      'SELECT id, email, name, role, is_active, created_at, updated_at FROM admin_users WHERE id = $1',
+      [id]
+    )
 
-    if (error) {
+    if (!data) {
       return NextResponse.json({ error: 'Usuário não encontrado' }, { status: 404 })
     }
 
@@ -77,43 +50,57 @@ export async function PUT(
     const body = await request.json()
     const { name, email, password, role, is_active } = body
 
-    const supabase = await getSupabase()
-
     // Buscar usuário atual para log
-    const { data: oldUser } = await supabase
-      .from('admin_users')
-      .select('name, email, role, is_active')
-      .eq('id', id)
-      .single()
+    const oldUser = await queryOne(
+      'SELECT name, email, role, is_active FROM admin_users WHERE id = $1',
+      [id]
+    )
+
+    if (!oldUser) {
+      return NextResponse.json({ error: 'Usuário não encontrado' }, { status: 404 })
+    }
 
     // Preparar dados para atualização
-    const updateData: Record<string, unknown> = {}
-    if (name !== undefined) updateData.name = name
-    if (email !== undefined) updateData.email = email
-    if (role !== undefined) updateData.role = role
-    if (is_active !== undefined) updateData.is_active = is_active
+    const updateFields: string[] = ['updated_at = NOW()']
+    const updateValues: any[] = []
+    let paramIndex = 1
+
+    if (name !== undefined) {
+      updateFields.push(`name = $${paramIndex++}`)
+      updateValues.push(name)
+    }
+    if (email !== undefined) {
+      updateFields.push(`email = $${paramIndex++}`)
+      updateValues.push(email)
+    }
+    if (role !== undefined) {
+      updateFields.push(`role = $${paramIndex++}`)
+      updateValues.push(role)
+    }
+    if (is_active !== undefined) {
+      updateFields.push(`is_active = $${paramIndex++}`)
+      updateValues.push(is_active)
+    }
     if (password) {
-      updateData.password_hash = await bcrypt.hash(password, 12)
+      updateFields.push(`password_hash = $${paramIndex++}`)
+      updateValues.push(await bcrypt.hash(password, 12))
     }
 
-    const { error } = await supabase
-      .from('admin_users')
-      .update(updateData)
-      .eq('id', id)
+    updateValues.push(id)
 
-    if (error) {
-      console.error('Erro ao atualizar usuário:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    await query(
+      `UPDATE admin_users SET ${updateFields.join(', ')} WHERE id = $${paramIndex}`,
+      updateValues
+    )
 
     // Log de auditoria
-    await supabase.from('audit_logs').insert({
+    await insert('audit_logs', {
       user_id: session.user.id,
       action: 'update',
       entity: 'admin_users',
       entity_id: id,
-      old_value: oldUser,
-      new_value: { name, email, role, is_active },
+      old_value: JSON.stringify(oldUser),
+      new_value: JSON.stringify({ name, email, role, is_active }),
     })
 
     return NextResponse.json({ message: 'Usuário atualizado com sucesso' })
@@ -141,32 +128,25 @@ export async function DELETE(
       return NextResponse.json({ error: 'Não é possível excluir seu próprio usuário' }, { status: 400 })
     }
 
-    const supabase = await getSupabase()
-
     // Buscar usuário para log
-    const { data: user } = await supabase
-      .from('admin_users')
-      .select('name, email, role')
-      .eq('id', id)
-      .single()
+    const user = await queryOne(
+      'SELECT name, email, role FROM admin_users WHERE id = $1',
+      [id]
+    )
 
-    const { error } = await supabase
-      .from('admin_users')
-      .delete()
-      .eq('id', id)
-
-    if (error) {
-      console.error('Erro ao excluir usuário:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
+    if (!user) {
+      return NextResponse.json({ error: 'Usuário não encontrado' }, { status: 404 })
     }
 
+    await remove('admin_users', 'id = $1', [id])
+
     // Log de auditoria
-    await supabase.from('audit_logs').insert({
+    await insert('audit_logs', {
       user_id: session.user.id,
       action: 'delete',
       entity: 'admin_users',
       entity_id: id,
-      old_value: user,
+      old_value: JSON.stringify(user),
     })
 
     return NextResponse.json({ message: 'Usuário excluído com sucesso' })

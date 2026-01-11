@@ -1,34 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryOne, queryAll, insert, query, remove } from '@/lib/db/postgres'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 // GET - Buscar notícia por ID
 export async function GET(
@@ -42,23 +17,29 @@ export async function GET(
     }
 
     const { id } = await params
-    const supabase = await getSupabase()
 
-    const { data, error } = await supabase
-      .from('news')
-      .select(`
-        *,
-        news_translations(*)
-      `)
-      .eq('id', id)
-      .single()
+    // Buscar notícia
+    const news = await queryOne(
+      'SELECT * FROM news WHERE id = $1',
+      [id]
+    )
 
-    if (error) {
-      console.error('Erro ao buscar notícia:', error)
+    if (!news) {
       return NextResponse.json({ error: 'Notícia não encontrada' }, { status: 404 })
     }
 
-    return NextResponse.json({ news: data })
+    // Buscar traduções
+    const translations = await queryAll(
+      'SELECT * FROM news_translations WHERE news_id = $1',
+      [id]
+    )
+
+    return NextResponse.json({
+      news: {
+        ...news,
+        news_translations: translations,
+      },
+    })
   } catch (error) {
     console.error('Erro no GET /api/admin/news/[id]:', error)
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 })
@@ -80,14 +61,12 @@ export async function PUT(
     const body = await request.json()
     const { translations, slug, category_id, status, image_url, image_banner, published_at } = body
 
-    const supabase = await getSupabase()
-
     // Buscar notícia atual para log
-    const { data: oldNews } = await supabase
-      .from('news')
-      .select('*, news_translations(*)')
-      .eq('id', id)
-      .single()
+    const oldNews = await queryOne('SELECT * FROM news WHERE id = $1', [id])
+    const oldTranslations = await queryAll(
+      'SELECT * FROM news_translations WHERE news_id = $1',
+      [id]
+    )
 
     // Suporte ao formato antigo (title, excerpt, content direto no body)
     const ptTranslation = translations?.pt || {
@@ -97,24 +76,21 @@ export async function PUT(
     }
 
     // Atualizar notícia
-    const { error: newsError } = await supabase
-      .from('news')
-      .update({
-        slug,
-        category_id: category_id || null,
-        status,
-        image_url,
-        image_banner,
-        published_at: status === 'published' && !oldNews?.published_at
-          ? published_at || new Date().toISOString()
-          : oldNews?.published_at,
-      })
-      .eq('id', id)
-
-    if (newsError) {
-      console.error('Erro ao atualizar notícia:', newsError)
-      return NextResponse.json({ error: newsError.message }, { status: 500 })
-    }
+    await query(
+      `UPDATE news SET
+        slug = $1,
+        category_id = $2,
+        status = $3,
+        image_url = $4,
+        image_banner = $5,
+        published_at = CASE
+          WHEN $3 = 'published' AND published_at IS NULL THEN $6
+          ELSE published_at
+        END,
+        updated_at = NOW()
+      WHERE id = $7`,
+      [slug, category_id || null, status, image_url, image_banner, published_at || new Date().toISOString(), id]
+    )
 
     // Atualizar traduções para todos os idiomas
     const locales = ['pt', 'en', 'es'] as const
@@ -124,33 +100,26 @@ export async function PUT(
 
       // Só atualiza se tiver conteúdo
       if (translation?.title) {
-        const { error: translationError } = await supabase
-          .from('news_translations')
-          .upsert({
-            news_id: id,
-            locale,
-            title: translation.title,
-            excerpt: translation.excerpt || '',
-            content: translation.content || '',
-          }, {
-            onConflict: 'news_id,locale',
-          })
-
-        if (translationError) {
-          console.error(`Erro ao atualizar tradução ${locale}:`, translationError)
-          return NextResponse.json({ error: translationError.message }, { status: 500 })
-        }
+        await query(
+          `INSERT INTO news_translations (news_id, locale, title, excerpt, content)
+           VALUES ($1, $2, $3, $4, $5)
+           ON CONFLICT (news_id, locale) DO UPDATE SET
+             title = EXCLUDED.title,
+             excerpt = EXCLUDED.excerpt,
+             content = EXCLUDED.content`,
+          [id, locale, translation.title, translation.excerpt || '', translation.content || '']
+        )
       }
     }
 
     // Log de auditoria
-    await supabase.from('audit_logs').insert({
+    await insert('audit_logs', {
       user_id: session.user.id,
       action: 'update',
       entity: 'news',
       entity_id: id,
-      old_value: { title: oldNews?.news_translations?.[0]?.title, status: oldNews?.status },
-      new_value: { title: ptTranslation.title, status },
+      old_value: JSON.stringify({ title: oldTranslations?.[0]?.title, status: oldNews?.status }),
+      new_value: JSON.stringify({ title: ptTranslation.title, status }),
     })
 
     return NextResponse.json({ message: 'Notícia atualizada com sucesso' })
@@ -172,30 +141,27 @@ export async function DELETE(
     }
 
     const { id } = await params
-    const supabase = await getSupabase()
 
     // Buscar notícia para log
-    const { data: news } = await supabase
-      .from('news')
-      .select('*, news_translations(*)')
-      .eq('id', id)
-      .single()
+    const news = await queryOne('SELECT * FROM news WHERE id = $1', [id])
+    const translations = await queryAll(
+      'SELECT * FROM news_translations WHERE news_id = $1',
+      [id]
+    )
 
-    // Deletar notícia (cascade deleta traduções)
-    const { error } = await supabase.from('news').delete().eq('id', id)
+    // Deletar traduções primeiro
+    await remove('news_translations', 'news_id = $1', [id])
 
-    if (error) {
-      console.error('Erro ao deletar notícia:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    // Deletar notícia
+    await remove('news', 'id = $1', [id])
 
     // Log de auditoria
-    await supabase.from('audit_logs').insert({
+    await insert('audit_logs', {
       user_id: session.user.id,
       action: 'delete',
       entity: 'news',
       entity_id: id,
-      old_value: { title: news?.news_translations?.[0]?.title, slug: news?.slug },
+      old_value: JSON.stringify({ title: translations?.[0]?.title, slug: news?.slug }),
     })
 
     return NextResponse.json({ message: 'Notícia excluída com sucesso' })

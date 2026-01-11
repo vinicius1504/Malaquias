@@ -1,34 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryAll, queryOne, insert, remove } from '@/lib/db/postgres'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 // GET - Listar todos os depoimentos (admin)
 export async function GET() {
@@ -38,23 +13,26 @@ export async function GET() {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
 
-    const supabase = await getSupabase()
+    // Buscar depoimentos
+    const testimonials = await queryAll(
+      'SELECT * FROM testimonials ORDER BY display_order ASC, created_at DESC'
+    )
 
-    const { data, error } = await supabase
-      .from('testimonials')
-      .select(`
-        *,
-        testimonial_translations(*)
-      `)
-      .order('display_order', { ascending: true })
-      .order('created_at', { ascending: false })
+    // Buscar traduções para cada depoimento
+    const testimonialsWithTranslations = await Promise.all(
+      testimonials.map(async (testimonial) => {
+        const translations = await queryAll(
+          'SELECT * FROM testimonial_translations WHERE testimonial_id = $1',
+          [testimonial.id]
+        )
+        return {
+          ...testimonial,
+          testimonial_translations: translations,
+        }
+      })
+    )
 
-    if (error) {
-      console.error('Erro ao buscar depoimentos:', error)
-      return NextResponse.json({ error: 'Erro ao buscar dados' }, { status: 500 })
-    }
-
-    return NextResponse.json({ testimonials: data })
+    return NextResponse.json({ testimonials: testimonialsWithTranslations })
   } catch (error) {
     console.error('Erro no GET /api/admin/testimonials:', error)
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 })
@@ -86,56 +64,42 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const supabase = await getSupabase()
-
     // Criar o depoimento base
-    const { data: testimonial, error: testimonialError } = await supabase
-      .from('testimonials')
-      .insert({
-        name,
-        avatar_url: avatar_url || null,
-        is_active: is_active ?? true,
-        display_order: display_order ?? 0,
-      })
-      .select()
-      .single()
-
-    if (testimonialError) {
-      console.error('Erro ao criar depoimento:', testimonialError)
-      return NextResponse.json({ error: 'Erro ao criar depoimento' }, { status: 500 })
-    }
+    const testimonial = await insert('testimonials', {
+      name,
+      avatar_url: avatar_url || null,
+      is_active: is_active ?? true,
+      display_order: display_order ?? 0,
+    })
 
     // Criar traduções para todos os idiomas fornecidos
     const locales = ['pt', 'en', 'es'] as const
-    const translationsToInsert = locales
-      .filter(locale => translations?.[locale]?.content || locale === 'pt')
-      .map(locale => ({
-        testimonial_id: testimonial.id,
-        locale,
-        role: translations?.[locale]?.role || ptTranslation.role,
-        company: translations?.[locale]?.company || ptTranslation.company || null,
-        content: translations?.[locale]?.content || ptTranslation.content,
-      }))
 
-    const { error: translationError } = await supabase
-      .from('testimonial_translations')
-      .insert(translationsToInsert)
-
-    if (translationError) {
-      // Rollback - deletar o depoimento
-      await supabase.from('testimonials').delete().eq('id', testimonial.id)
-      console.error('Erro ao criar tradução:', translationError)
-      return NextResponse.json({ error: translationError.message }, { status: 500 })
+    for (const locale of locales) {
+      const translation = locale === 'pt' ? ptTranslation : translations?.[locale]
+      if (translation?.content || locale === 'pt') {
+        await insert('testimonial_translations', {
+          testimonial_id: testimonial.id,
+          locale,
+          role: translation?.role || ptTranslation.role,
+          company: translation?.company || ptTranslation.company || null,
+          content: translation?.content || ptTranslation.content,
+        })
+      }
     }
 
     // Buscar depoimento completo com traduções
-    const { data: fullTestimonial } = await supabase
-      .from('testimonials')
-      .select(`*, testimonial_translations(*)`)
-      .eq('id', testimonial.id)
-      .single()
+    const testimonialTranslations = await queryAll(
+      'SELECT * FROM testimonial_translations WHERE testimonial_id = $1',
+      [testimonial.id]
+    )
 
-    return NextResponse.json({ testimonial: fullTestimonial }, { status: 201 })
+    return NextResponse.json({
+      testimonial: {
+        ...testimonial,
+        testimonial_translations: testimonialTranslations,
+      },
+    }, { status: 201 })
   } catch (error) {
     console.error('Erro no POST /api/admin/testimonials:', error)
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 })

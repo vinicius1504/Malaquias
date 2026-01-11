@@ -1,34 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryOne, queryAll, query, insert, remove } from '@/lib/db/postgres'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 // GET - Buscar um depoimento específico
 export async function GET(
@@ -42,23 +17,24 @@ export async function GET(
     }
 
     const { id } = await params
-    const supabase = await getSupabase()
 
-    const { data, error } = await supabase
-      .from('testimonials')
-      .select(`
-        *,
-        testimonial_translations(*)
-      `)
-      .eq('id', id)
-      .single()
+    const testimonial = await queryOne('SELECT * FROM testimonials WHERE id = $1', [id])
 
-    if (error) {
-      console.error('Erro ao buscar depoimento:', error)
+    if (!testimonial) {
       return NextResponse.json({ error: 'Depoimento não encontrado' }, { status: 404 })
     }
 
-    return NextResponse.json({ testimonial: data })
+    const translations = await queryAll(
+      'SELECT * FROM testimonial_translations WHERE testimonial_id = $1',
+      [id]
+    )
+
+    return NextResponse.json({
+      testimonial: {
+        ...testimonial,
+        testimonial_translations: translations,
+      },
+    })
   } catch (error) {
     console.error('Erro no GET /api/admin/testimonials/[id]:', error)
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 })
@@ -80,27 +56,34 @@ export async function PUT(
     const body = await request.json()
     const { name, avatar_url, is_active, display_order, translations } = body
 
-    const supabase = await getSupabase()
-
     // Atualizar dados base
-    const updateData: Record<string, unknown> = {
-      updated_at: new Date().toISOString(),
+    const updateFields: string[] = ['updated_at = NOW()']
+    const updateValues: any[] = []
+    let paramIndex = 1
+
+    if (name !== undefined) {
+      updateFields.push(`name = $${paramIndex++}`)
+      updateValues.push(name)
+    }
+    if (avatar_url !== undefined) {
+      updateFields.push(`avatar_url = $${paramIndex++}`)
+      updateValues.push(avatar_url || null)
+    }
+    if (is_active !== undefined) {
+      updateFields.push(`is_active = $${paramIndex++}`)
+      updateValues.push(is_active)
+    }
+    if (display_order !== undefined) {
+      updateFields.push(`display_order = $${paramIndex++}`)
+      updateValues.push(display_order)
     }
 
-    if (name !== undefined) updateData.name = name
-    if (avatar_url !== undefined) updateData.avatar_url = avatar_url || null
-    if (is_active !== undefined) updateData.is_active = is_active
-    if (display_order !== undefined) updateData.display_order = display_order
+    updateValues.push(id)
 
-    const { error: testimonialError } = await supabase
-      .from('testimonials')
-      .update(updateData)
-      .eq('id', id)
-
-    if (testimonialError) {
-      console.error('Erro ao atualizar depoimento:', testimonialError)
-      return NextResponse.json({ error: 'Erro ao atualizar depoimento' }, { status: 500 })
-    }
+    await query(
+      `UPDATE testimonials SET ${updateFields.join(', ')} WHERE id = $${paramIndex}`,
+      updateValues
+    )
 
     // Atualizar traduções se fornecidas
     if (translations) {
@@ -110,44 +93,32 @@ export async function PUT(
         if (translations[locale]) {
           const { role, company, content } = translations[locale]
 
-          // Verificar se já existe tradução para este locale
-          const { data: existing } = await supabase
-            .from('testimonial_translations')
-            .select('id')
-            .eq('testimonial_id', id)
-            .eq('locale', locale)
-            .single()
-
-          if (existing) {
-            // Atualizar
-            await supabase
-              .from('testimonial_translations')
-              .update({ role, company: company || null, content })
-              .eq('id', existing.id)
-          } else {
-            // Inserir
-            await supabase
-              .from('testimonial_translations')
-              .insert({
-                testimonial_id: id,
-                locale,
-                role,
-                company: company || null,
-                content,
-              })
-          }
+          await query(
+            `INSERT INTO testimonial_translations (testimonial_id, locale, role, company, content)
+             VALUES ($1, $2, $3, $4, $5)
+             ON CONFLICT (testimonial_id, locale) DO UPDATE SET
+               role = EXCLUDED.role,
+               company = EXCLUDED.company,
+               content = EXCLUDED.content`,
+            [id, locale, role, company || null, content]
+          )
         }
       }
     }
 
     // Buscar depoimento atualizado
-    const { data: fullTestimonial } = await supabase
-      .from('testimonials')
-      .select(`*, testimonial_translations(*)`)
-      .eq('id', id)
-      .single()
+    const testimonial = await queryOne('SELECT * FROM testimonials WHERE id = $1', [id])
+    const testimonialTranslations = await queryAll(
+      'SELECT * FROM testimonial_translations WHERE testimonial_id = $1',
+      [id]
+    )
 
-    return NextResponse.json({ testimonial: fullTestimonial })
+    return NextResponse.json({
+      testimonial: {
+        ...testimonial,
+        testimonial_translations: testimonialTranslations,
+      },
+    })
   } catch (error) {
     console.error('Erro no PUT /api/admin/testimonials/[id]:', error)
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 })
@@ -166,24 +137,12 @@ export async function DELETE(
     }
 
     const { id } = await params
-    const supabase = await getSupabase()
 
-    // Deletar traduções primeiro (mesmo com ON DELETE CASCADE, é mais seguro)
-    await supabase
-      .from('testimonial_translations')
-      .delete()
-      .eq('testimonial_id', id)
+    // Deletar traduções primeiro
+    await remove('testimonial_translations', 'testimonial_id = $1', [id])
 
     // Deletar depoimento
-    const { error } = await supabase
-      .from('testimonials')
-      .delete()
-      .eq('id', id)
-
-    if (error) {
-      console.error('Erro ao deletar depoimento:', error)
-      return NextResponse.json({ error: 'Erro ao deletar depoimento' }, { status: 500 })
-    }
+    await remove('testimonials', 'id = $1', [id])
 
     return NextResponse.json({ success: true })
   } catch (error) {

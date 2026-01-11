@@ -1,34 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryAll, queryOne } from '@/lib/db/postgres'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 // GET - Listar logs
 export async function GET(request: NextRequest) {
@@ -45,47 +20,59 @@ export async function GET(request: NextRequest) {
     const entity = searchParams.get('entity')
     const userId = searchParams.get('user_id')
 
-    const supabase = await getSupabase()
-
-    let query = supabase
-      .from('audit_logs')
-      .select(`
-        *,
-        admin_users:user_id (
-          id,
-          name,
-          email
-        )
-      `, { count: 'exact' })
-      .order('created_at', { ascending: false })
+    let whereClause = '1=1'
+    const params: any[] = []
+    let paramIndex = 1
 
     if (action) {
-      query = query.eq('action', action)
+      whereClause += ` AND al.action = $${paramIndex++}`
+      params.push(action)
     }
     if (entity) {
-      query = query.eq('entity', entity)
+      whereClause += ` AND al.entity = $${paramIndex++}`
+      params.push(entity)
     }
     if (userId) {
-      query = query.eq('user_id', userId)
+      whereClause += ` AND al.user_id = $${paramIndex++}`
+      params.push(userId)
     }
 
     const offset = (page - 1) * limit
-    query = query.range(offset, offset + limit - 1)
 
-    const { data, error, count } = await query
+    // Buscar logs com dados do usuário
+    const logsQuery = `
+      SELECT
+        al.*,
+        jsonb_build_object(
+          'id', au.id,
+          'name', au.name,
+          'email', au.email
+        ) as admin_users
+      FROM audit_logs al
+      LEFT JOIN admin_users au ON al.user_id = au.id
+      WHERE ${whereClause}
+      ORDER BY al.created_at DESC
+      LIMIT $${paramIndex++} OFFSET $${paramIndex}
+    `
 
-    if (error) {
-      console.error('Erro ao buscar logs:', error)
-      return NextResponse.json({ error: 'Erro ao buscar logs' }, { status: 500 })
-    }
+    params.push(limit, offset)
+
+    const data = await queryAll(logsQuery, params)
+
+    // Contar total
+    const countResult = await queryOne<{ total: string }>(
+      `SELECT COUNT(*) as total FROM audit_logs al WHERE ${whereClause}`,
+      params.slice(0, -2)
+    )
+    const total = parseInt(countResult?.total || '0')
 
     return NextResponse.json({
       logs: data,
       pagination: {
         page,
         limit,
-        total: count || 0,
-        totalPages: Math.ceil((count || 0) / limit),
+        total,
+        totalPages: Math.ceil(total / limit),
       },
     })
   } catch (error) {

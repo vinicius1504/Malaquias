@@ -1,49 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryAll, queryOne, insert } from '@/lib/db/postgres'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
 
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
-
 // GET - Listar categorias
 export async function GET() {
   try {
-    const supabase = await getSupabase()
-
-    const { data: categories, error } = await supabase
-      .from('news_categories')
-      .select('*')
-      .order('name_pt', { ascending: true })
-
-    if (error) {
-      console.error('Erro ao buscar categorias:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    const categories = await queryAll(
+      'SELECT * FROM news_categories ORDER BY name_pt ASC'
+    )
 
     return NextResponse.json({ categories })
   } catch (error) {
@@ -79,14 +46,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const supabase = await getSupabase()
-
     // Verificar se slug já existe
-    const { data: existing } = await supabase
-      .from('news_categories')
-      .select('id')
-      .eq('slug', slug)
-      .single()
+    const existing = await queryOne(
+      'SELECT id FROM news_categories WHERE slug = $1',
+      [slug]
+    )
 
     if (existing) {
       return NextResponse.json(
@@ -95,22 +59,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const { data: category, error } = await supabase
-      .from('news_categories')
-      .insert({
-        slug,
-        name_pt,
-        name_en: name_en || null,
-        name_es: name_es || null,
-        color: color || '#C9983A',
-      })
-      .select()
-      .single()
-
-    if (error) {
-      console.error('Erro ao criar categoria:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    const category = await insert('news_categories', {
+      slug,
+      name_pt,
+      name_en: name_en || null,
+      name_es: name_es || null,
+      color: color || '#C9983A',
+    })
 
     return NextResponse.json({ category, message: 'Categoria criada com sucesso' })
   } catch (error) {

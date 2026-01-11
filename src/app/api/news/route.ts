@@ -1,33 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryOne, queryAll } from '@/lib/db/postgres'
 
 // Força rota dinâmica (não pode ser estática por usar request.url)
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 export async function GET(request: NextRequest) {
   try {
@@ -38,27 +13,26 @@ export async function GET(request: NextRequest) {
     const page = parseInt(searchParams.get('page') || '1')
     const limit = parseInt(searchParams.get('limit') || '10')
     const slug = searchParams.get('slug')
-
-    const supabase = await getSupabase()
+    const offset = (page - 1) * limit
 
     // Se slug foi passado, buscar uma notícia específica
     if (slug) {
-      const { data: news, error } = await supabase
-        .from('news')
-        .select(`
-          *,
-          news_translations!inner(*)
-        `)
-        .eq('slug', slug)
-        .eq('status', 'published')
-        .eq('news_translations.locale', locale)
-        .single()
+      const news = await queryOne(
+        `SELECT
+          n.*,
+          nt.title,
+          nt.excerpt,
+          nt.content
+        FROM news n
+        INNER JOIN news_translations nt ON n.id = nt.news_id
+        WHERE n.slug = $1 AND n.status = 'published' AND nt.locale = $2`,
+        [slug, locale]
+      )
 
-      if (error || !news) {
+      if (!news) {
         return NextResponse.json({ error: 'Notícia não encontrada' }, { status: 404 })
       }
 
-      const translation = news.news_translations[0]
       return NextResponse.json({
         news: {
           id: news.id,
@@ -67,62 +41,76 @@ export async function GET(request: NextRequest) {
           image_url: news.image_url,
           image_banner: news.image_banner,
           published_at: news.published_at,
-          title: translation?.title || '',
-          excerpt: translation?.excerpt || '',
-          content: translation?.content || '',
+          title: news.title || '',
+          excerpt: news.excerpt || '',
+          content: news.content || '',
         },
       })
     }
 
     // Listar notícias publicadas
-    let query = supabase
-      .from('news')
-      .select(`
-        *,
-        news_translations!inner(*)
-      `, { count: 'exact' })
-      .eq('status', 'published')
-      .eq('news_translations.locale', locale)
-      .order('published_at', { ascending: false })
+    let whereClause = "n.status = 'published' AND nt.locale = $1"
+    const params: any[] = [locale]
+    let paramIndex = 2
 
     if (category && category !== 'all') {
-      query = query.eq('category', category)
+      whereClause += ` AND n.category = $${paramIndex++}`
+      params.push(category)
     }
 
     if (search && search.trim()) {
-      query = query.or(`title.ilike.%${search}%,excerpt.ilike.%${search}%`, { referencedTable: 'news_translations' })
+      whereClause += ` AND (nt.title ILIKE $${paramIndex} OR nt.excerpt ILIKE $${paramIndex})`
+      params.push(`%${search}%`)
+      paramIndex++
     }
 
-    const offset = (page - 1) * limit
-    query = query.range(offset, offset + limit - 1)
+    // Buscar notícias
+    const newsQuery = `
+      SELECT
+        n.id,
+        n.slug,
+        n.category,
+        n.image_url,
+        n.published_at,
+        nt.title,
+        nt.excerpt
+      FROM news n
+      INNER JOIN news_translations nt ON n.id = nt.news_id
+      WHERE ${whereClause}
+      ORDER BY n.published_at DESC
+      LIMIT $${paramIndex++} OFFSET $${paramIndex}
+    `
+    params.push(limit, offset)
 
-    const { data: newsList, error, count } = await query
+    const newsList = await queryAll(newsQuery, params)
 
-    if (error) {
-      console.error('Erro ao buscar notícias:', error)
-      return NextResponse.json({ error: 'Erro ao buscar notícias' }, { status: 500 })
-    }
+    // Contar total
+    const countQuery = `
+      SELECT COUNT(*) as total
+      FROM news n
+      INNER JOIN news_translations nt ON n.id = nt.news_id
+      WHERE ${whereClause}
+    `
+    const countResult = await queryOne<{ total: string }>(countQuery, params.slice(0, -2))
+    const total = parseInt(countResult?.total || '0')
 
-    const formattedNews = newsList?.map((news) => {
-      const translation = news.news_translations[0]
-      return {
-        id: news.id,
-        slug: news.slug,
-        category: news.category,
-        image_url: news.image_url,
-        published_at: news.published_at,
-        title: translation?.title || '',
-        excerpt: translation?.excerpt || '',
-      }
-    }) || []
+    const formattedNews = newsList.map((news) => ({
+      id: news.id,
+      slug: news.slug,
+      category: news.category,
+      image_url: news.image_url,
+      published_at: news.published_at,
+      title: news.title || '',
+      excerpt: news.excerpt || '',
+    }))
 
     return NextResponse.json({
       news: formattedNews,
       pagination: {
         page,
         limit,
-        total: count || 0,
-        totalPages: Math.ceil((count || 0) / limit),
+        total,
+        totalPages: Math.ceil(total / limit),
       },
     })
   } catch (error) {

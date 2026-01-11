@@ -1,33 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { queryOne, query, insert, remove } from '@/lib/db/postgres'
 
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 // GET - Buscar segmento específico
 export async function GET(
@@ -41,16 +16,10 @@ export async function GET(
     }
 
     const { id } = await params
-    const supabase = await getSupabase()
 
-    const { data, error } = await supabase
-      .from('segments')
-      .select('*')
-      .eq('id', id)
-      .single()
+    const data = await queryOne('SELECT * FROM segments WHERE id = $1', [id])
 
-    if (error) {
-      console.error('Erro ao buscar segmento:', error)
+    if (!data) {
       return NextResponse.json({ error: 'Segmento não encontrado' }, { status: 404 })
     }
 
@@ -76,43 +45,56 @@ export async function PUT(
     const body = await request.json()
     const { title, lp_slug, image_url, video_url, is_active, display_order } = body
 
-    const supabase = await getSupabase()
-
     // Buscar dados antigos para log
-    const { data: oldData } = await supabase
-      .from('segments')
-      .select('*')
-      .eq('id', id)
-      .single()
+    const oldData = await queryOne('SELECT * FROM segments WHERE id = $1', [id])
 
-    const updateData: Record<string, unknown> = {}
-    if (title !== undefined) updateData.title = title
-    if (lp_slug !== undefined) updateData.lp_slug = lp_slug
-    if (image_url !== undefined) updateData.image_url = image_url
-    if (video_url !== undefined) updateData.video_url = video_url
-    if (is_active !== undefined) updateData.is_active = is_active
-    if (display_order !== undefined) updateData.display_order = display_order
+    const updateFields: string[] = []
+    const updateValues: any[] = []
+    let paramIndex = 1
 
-    const { data: updatedSegment, error } = await supabase
-      .from('segments')
-      .update(updateData)
-      .eq('id', id)
-      .select()
-      .single()
-
-    if (error) {
-      console.error('Erro ao atualizar segmento:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
+    if (title !== undefined) {
+      updateFields.push(`title = $${paramIndex++}`)
+      updateValues.push(title)
+    }
+    if (lp_slug !== undefined) {
+      updateFields.push(`lp_slug = $${paramIndex++}`)
+      updateValues.push(lp_slug)
+    }
+    if (image_url !== undefined) {
+      updateFields.push(`image_url = $${paramIndex++}`)
+      updateValues.push(image_url)
+    }
+    if (video_url !== undefined) {
+      updateFields.push(`video_url = $${paramIndex++}`)
+      updateValues.push(video_url)
+    }
+    if (is_active !== undefined) {
+      updateFields.push(`is_active = $${paramIndex++}`)
+      updateValues.push(is_active)
+    }
+    if (display_order !== undefined) {
+      updateFields.push(`display_order = $${paramIndex++}`)
+      updateValues.push(display_order)
     }
 
+    updateFields.push('updated_at = NOW()')
+    updateValues.push(id)
+
+    const result = await query(
+      `UPDATE segments SET ${updateFields.join(', ')} WHERE id = $${paramIndex} RETURNING *`,
+      updateValues
+    )
+
+    const updatedSegment = result.rows[0]
+
     // Log de auditoria
-    await supabase.from('audit_logs').insert({
+    await insert('audit_logs', {
       user_id: session.user.id,
       action: 'update',
       entity: 'segments',
       entity_id: id,
-      old_value: oldData,
-      new_value: updateData,
+      old_value: JSON.stringify(oldData),
+      new_value: JSON.stringify({ title, lp_slug, image_url, video_url, is_active, display_order }),
     })
 
     return NextResponse.json({ segment: updatedSegment, message: 'Segmento atualizado com sucesso' })
@@ -134,32 +116,19 @@ export async function DELETE(
     }
 
     const { id } = await params
-    const supabase = await getSupabase()
 
     // Buscar dados antigos para log
-    const { data: oldData } = await supabase
-      .from('segments')
-      .select('*')
-      .eq('id', id)
-      .single()
+    const oldData = await queryOne('SELECT * FROM segments WHERE id = $1', [id])
 
-    const { error } = await supabase
-      .from('segments')
-      .delete()
-      .eq('id', id)
-
-    if (error) {
-      console.error('Erro ao excluir segmento:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    await remove('segments', 'id = $1', [id])
 
     // Log de auditoria
-    await supabase.from('audit_logs').insert({
+    await insert('audit_logs', {
       user_id: session.user.id,
       action: 'delete',
       entity: 'segments',
       entity_id: id,
-      old_value: oldData,
+      old_value: JSON.stringify(oldData),
     })
 
     return NextResponse.json({ message: 'Segmento excluído com sucesso' })

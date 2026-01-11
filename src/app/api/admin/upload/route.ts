@@ -1,34 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { uploadFile } from '@/lib/storage/minio'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
-
-async function getSupabase() {
-  const cookieStore = await cookies()
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Ignore
-          }
-        },
-      },
-    }
-  )
-}
 
 export async function POST(request: NextRequest) {
   try {
@@ -66,8 +41,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const supabase = await getSupabase()
-
     // Gerar nome único para o arquivo
     const fileExt = file.name.split('.').pop()
     const timestamp = Date.now()
@@ -80,31 +53,16 @@ export async function POST(request: NextRequest) {
     const finalFolder = allowedFolders.includes(folder) ? folder : 'news'
     const filePath = `${finalFolder}/${fileName}`
 
-    // Converter File para ArrayBuffer
+    // Converter File para Buffer
     const arrayBuffer = await file.arrayBuffer()
-    const buffer = new Uint8Array(arrayBuffer)
+    const buffer = Buffer.from(arrayBuffer)
 
-    // Upload para Supabase Storage
-    const { error: uploadError } = await supabase.storage
-      .from('News-image-malaquias')
-      .upload(filePath, buffer, {
-        contentType: file.type,
-        upsert: false,
-      })
-
-    if (uploadError) {
-      console.error('Erro no upload:', uploadError)
-      return NextResponse.json({ error: uploadError.message }, { status: 500 })
-    }
-
-    // Gerar URL pública
-    const { data: urlData } = supabase.storage
-      .from('News-image-malaquias')
-      .getPublicUrl(filePath)
+    // Upload para MinIO
+    const { url, path } = await uploadFile(filePath, buffer, file.type)
 
     return NextResponse.json({
-      url: urlData.publicUrl,
-      path: filePath,
+      url,
+      path,
       message: 'Upload realizado com sucesso',
     })
   } catch (error) {

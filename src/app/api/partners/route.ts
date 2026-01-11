@@ -1,14 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
+import { queryAll } from '@/lib/db/postgres'
 
 // Força rota dinâmica (não pode ser estática por usar request.url)
 export const dynamic = 'force-dynamic'
-
-// Usa service_role para bypass do RLS em API de servidor
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
 
 // GET - Buscar parceiros/clientes ativos (API pública)
 export async function GET(request: NextRequest) {
@@ -16,22 +10,17 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
     const type = searchParams.get('type') // 'partner' | 'client' | null (todos)
 
-    let query = supabase
-      .from('partners')
-      .select('id, name, logo_url, type')
-      .eq('is_active', true)
-      .order('display_order', { ascending: true })
+    let queryStr = 'SELECT id, name, logo_url, type FROM partners WHERE is_active = true'
+    const params: any[] = []
 
     if (type && ['partner', 'client'].includes(type)) {
-      query = query.eq('type', type)
+      queryStr += ' AND type = $1'
+      params.push(type)
     }
 
-    const { data, error } = await query
+    queryStr += ' ORDER BY display_order ASC'
 
-    if (error) {
-      console.error('Erro ao buscar parceiros:', error)
-      return NextResponse.json({ error: 'Erro ao buscar dados' }, { status: 500 })
-    }
+    const data = await queryAll(queryStr, params)
 
     return NextResponse.json({ partners: data })
   } catch (error) {
