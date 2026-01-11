@@ -21,6 +21,7 @@ interface AdminUser {
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  trustHost: true,
   pages: {
     signIn: '/admin/login',
     error: '/admin/login',
