@@ -61,6 +61,38 @@ const exportOptions: ExportData[] = [
   { name: 'Categorias', endpoint: '/api/admin/categories', icon: FolderOpen, color: 'orange', description: 'Categorias de notícias', folder: 'categorias' },
 ]
 
+// Função para copiar texto (funciona em HTTP)
+const copyToClipboard = async (text: string): Promise<boolean> => {
+  // Tentar usar a API moderna primeiro
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text)
+      return true
+    } catch {
+      // Fallback abaixo
+    }
+  }
+
+  // Fallback para contextos não seguros (HTTP)
+  const textArea = document.createElement('textarea')
+  textArea.value = text
+  textArea.style.position = 'fixed'
+  textArea.style.left = '-999999px'
+  textArea.style.top = '-999999px'
+  document.body.appendChild(textArea)
+  textArea.focus()
+  textArea.select()
+
+  try {
+    document.execCommand('copy')
+    document.body.removeChild(textArea)
+    return true
+  } catch {
+    document.body.removeChild(textArea)
+    return false
+  }
+}
+
 export default function ConfigPage() {
   const [files, setFiles] = useState<GalleryFile[]>([])
   const [loading, setLoading] = useState(true)
@@ -70,6 +102,7 @@ export default function ConfigPage() {
   const [previewFile, setPreviewFile] = useState<GalleryFile | null>(null)
   const [exporting, setExporting] = useState<string | null>(null)
   const [exportingAll, setExportingAll] = useState(false)
+  const [lastUploadedUrl, setLastUploadedUrl] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const confirm = useConfirm()
 
@@ -133,10 +166,14 @@ export default function ConfigPage() {
       const data = await response.json()
 
       if (response.ok && data.url) {
-        // Copiar URL automaticamente para a área de transferência
-        navigator.clipboard.writeText(data.url)
-        toast.success(`Upload realizado! URL copiada para área de transferência`)
-        console.log('URL do arquivo:', data.url) // Log para debug
+        // Salvar URL e copiar para área de transferência
+        setLastUploadedUrl(data.url)
+        const copied = await copyToClipboard(data.url)
+        if (copied) {
+          toast.success('Upload realizado! URL copiada.')
+        } else {
+          toast.success('Upload realizado! Veja a URL abaixo.')
+        }
         fetchFiles()
       } else {
         toast.error(data.error || 'Erro no upload')
@@ -152,11 +189,15 @@ export default function ConfigPage() {
     }
   }
 
-  const copyUrl = (url: string) => {
-    navigator.clipboard.writeText(url)
-    setCopiedUrl(url)
-    toast.success('URL copiada!')
-    setTimeout(() => setCopiedUrl(null), 2000)
+  const copyUrl = async (url: string) => {
+    const copied = await copyToClipboard(url)
+    if (copied) {
+      setCopiedUrl(url)
+      toast.success('URL copiada!')
+      setTimeout(() => setCopiedUrl(null), 2000)
+    } else {
+      toast.error('Não foi possível copiar. Selecione manualmente.')
+    }
   }
 
   const handleDelete = async (file: GalleryFile) => {
@@ -644,6 +685,35 @@ export default function ConfigPage() {
               )}
             </div>
           </div>
+
+          {/* Última URL copiada */}
+          {lastUploadedUrl && (
+            <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-6">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-medium text-green-800 mb-1">Último upload - URL do arquivo:</p>
+                  <code className="block text-xs bg-white p-2 rounded border border-green-200 text-green-700 break-all select-all">
+                    {lastUploadedUrl}
+                  </code>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => copyUrl(lastUploadedUrl)}
+                    className="flex items-center gap-1 px-3 py-2 bg-green-500 text-white rounded-lg text-sm font-medium hover:bg-green-600"
+                  >
+                    <Copy className="w-4 h-4" />
+                    Copiar
+                  </button>
+                  <button
+                    onClick={() => setLastUploadedUrl(null)}
+                    className="p-2 text-green-600 hover:bg-green-100 rounded-lg"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Gallery Grid */}
           <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
