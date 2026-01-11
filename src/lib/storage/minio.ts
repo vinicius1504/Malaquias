@@ -51,21 +51,33 @@ export async function listFiles(
 ): Promise<Array<{ name: string; size: number; lastModified: Date; url: string }>> {
   const files: Array<{ name: string; size: number; lastModified: Date; url: string }> = []
 
-  const stream = minioClient.listObjects(BUCKET_NAME, folder, true)
+  // Garantir que o prefixo termine com / para listar apenas arquivos da pasta
+  const prefix = folder.endsWith('/') ? folder : `${folder}/`
+
+  console.log('[MinIO listFiles] Bucket:', BUCKET_NAME, 'Prefix:', prefix)
+
+  const stream = minioClient.listObjects(BUCKET_NAME, prefix, true)
 
   return new Promise((resolve, reject) => {
     stream.on('data', (obj) => {
+      console.log('[MinIO listFiles] Objeto encontrado:', obj.name, 'size:', obj.size)
       if (obj.name && files.length < limit) {
         files.push({
-          name: obj.name.replace(`${folder}/`, ''),
+          name: obj.name.replace(prefix, ''),
           size: obj.size || 0,
           lastModified: obj.lastModified || new Date(),
           url: getPublicUrl(obj.name),
         })
       }
     })
-    stream.on('error', reject)
-    stream.on('end', () => resolve(files))
+    stream.on('error', (err) => {
+      console.error('[MinIO listFiles] Erro:', err)
+      reject(err)
+    })
+    stream.on('end', () => {
+      console.log('[MinIO listFiles] Finalizado. Total de arquivos:', files.length)
+      resolve(files)
+    })
   })
 }
 

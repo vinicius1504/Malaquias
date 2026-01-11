@@ -16,8 +16,11 @@ export async function GET(request: NextRequest) {
     const folder = searchParams.get('folder') || 'gallery'
     const type = searchParams.get('type') || 'all' // 'images', 'videos', 'all'
 
+    console.log('[Gallery API] Listando arquivos - folder:', folder, 'type:', type)
+
     // Listar arquivos do MinIO
     const files = await listFiles(folder, 100)
+    console.log('[Gallery API] Arquivos encontrados:', files.length, files.map(f => f.name))
 
     // Filtrar por tipo se necessário
     const filteredFiles = files.filter(file => {
