@@ -15,7 +15,7 @@ export async function GET() {
     }
 
     const data = await queryAll(
-      'SELECT id, email, name, role, is_active, created_at, updated_at FROM admin_users ORDER BY created_at DESC'
+      'SELECT id, email, name, role, permissions, is_active, created_at, updated_at FROM admin_users ORDER BY created_at DESC'
     )
 
     return NextResponse.json({ users: data })
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { name, email, password, role, sendEmail } = body
+    const { name, email, password, role, permissions, sendEmail } = body
 
     if (!name || !email || !password || !role) {
       return NextResponse.json({ error: 'Campos obrigatórios faltando' }, { status: 400 })
@@ -59,6 +59,7 @@ export async function POST(request: NextRequest) {
       email,
       password_hash,
       role,
+      permissions: JSON.stringify(permissions || []),
       is_active: true,
     })
 
@@ -68,7 +69,7 @@ export async function POST(request: NextRequest) {
       action: 'create',
       entity: 'admin_users',
       entity_id: newUser.id,
-      new_value: JSON.stringify({ name, email, role }),
+      new_value: JSON.stringify({ name, email, role, permissions }),
     })
 
     // Enviar email se solicitado
@@ -95,6 +96,7 @@ export async function POST(request: NextRequest) {
         email: newUser.email,
         name: newUser.name,
         role: newUser.role,
+        permissions: newUser.permissions,
         is_active: newUser.is_active,
         created_at: newUser.created_at,
       },

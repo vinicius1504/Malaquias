@@ -1,4 +1,4 @@
-import type { UserRole } from './database'
+import type { UserRole, AdminScreen } from './database'
 
 declare module 'next-auth' {
   interface User {
@@ -6,6 +6,7 @@ declare module 'next-auth' {
     email: string
     name: string
     role: UserRole
+    permissions: AdminScreen[]
   }
 
   interface Session {
@@ -14,6 +15,7 @@ declare module 'next-auth' {
       email: string
       name: string
       role: UserRole
+      permissions: AdminScreen[]
     }
   }
 }
@@ -22,5 +24,6 @@ declare module 'next-auth/jwt' {
   interface JWT {
     id: string
     role: UserRole
+    permissions: AdminScreen[]
   }
 }

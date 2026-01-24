@@ -20,7 +20,7 @@ export async function GET(
     const { id } = await params
 
     const data = await queryOne(
-      'SELECT id, email, name, role, is_active, created_at, updated_at FROM admin_users WHERE id = $1',
+      'SELECT id, email, name, role, permissions, is_active, created_at, updated_at FROM admin_users WHERE id = $1',
       [id]
     )
 
@@ -48,11 +48,11 @@ export async function PUT(
 
     const { id } = await params
     const body = await request.json()
-    const { name, email, password, role, is_active } = body
+    const { name, email, password, role, permissions, is_active } = body
 
     // Buscar usuário atual para log
     const oldUser = await queryOne(
-      'SELECT name, email, role, is_active FROM admin_users WHERE id = $1',
+      'SELECT name, email, role, permissions, is_active FROM admin_users WHERE id = $1',
       [id]
     )
 
@@ -81,6 +81,10 @@ export async function PUT(
       updateFields.push(`is_active = $${paramIndex++}`)
       updateValues.push(is_active)
     }
+    if (permissions !== undefined) {
+      updateFields.push(`permissions = $${paramIndex++}`)
+      updateValues.push(JSON.stringify(permissions))
+    }
     if (password) {
       updateFields.push(`password_hash = $${paramIndex++}`)
       updateValues.push(await bcrypt.hash(password, 12))
@@ -100,7 +104,7 @@ export async function PUT(
       entity: 'admin_users',
       entity_id: id,
       old_value: JSON.stringify(oldUser),
-      new_value: JSON.stringify({ name, email, role, is_active }),
+      new_value: JSON.stringify({ name, email, role, permissions, is_active }),
     })
 
     return NextResponse.json({ message: 'Usuário atualizado com sucesso' })

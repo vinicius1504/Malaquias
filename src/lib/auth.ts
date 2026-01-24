@@ -3,7 +3,7 @@ import Credentials from 'next-auth/providers/credentials'
 import { z } from 'zod'
 import bcrypt from 'bcryptjs'
 import { queryOne, insert } from '@/lib/db/postgres'
-import type { UserRole } from '@/types/database'
+import type { UserRole, AdminScreen } from '@/types/database'
 
 // Schema de validação do login
 const loginSchema = z.object({
@@ -17,6 +17,7 @@ interface AdminUser {
   name: string
   password_hash: string
   role: UserRole
+  permissions: AdminScreen[]
   is_active: boolean
 }
 
@@ -69,11 +70,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             entity_id: user.id,
           })
 
+          // Dev tem todas as permissões automaticamente
+          const permissions = user.role === 'dev'
+            ? ['dashboard', 'textos', 'noticias', 'parceiros', 'depoimentos', 'segmentos', 'landing-pages', 'config', 'usuarios', 'logs'] as AdminScreen[]
+            : (user.permissions || []) as AdminScreen[]
+
           return {
             id: user.id,
             email: user.email,
             name: user.name,
             role: user.role as UserRole,
+            permissions,
           }
         } catch (error) {
           console.error('Erro no authorize:', error)
@@ -87,6 +94,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       if (user) {
         token.id = user.id
         token.role = user.role
+        token.permissions = user.permissions
       }
       return token
     },
@@ -94,6 +102,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       if (session.user) {
         session.user.id = token.id as string
         session.user.role = token.role as UserRole
+        session.user.permissions = token.permissions as AdminScreen[]
       }
       return session
     },

@@ -24,6 +24,7 @@ interface User {
   email: string
   name: string
   role: 'dev' | 'admin'
+  permissions: string[]
   is_active: boolean
   created_at: string
   updated_at: string
@@ -33,6 +34,18 @@ const ROLE_LABELS: Record<string, string> = {
   dev: 'Desenvolvedor',
   admin: 'Administrador'
 }
+
+// Telas disponíveis para permissão
+const AVAILABLE_SCREENS = [
+  { id: 'dashboard', label: 'Dashboard', description: 'Página inicial do painel' },
+  { id: 'textos', label: 'Textos', description: 'Gerenciar textos do site' },
+  { id: 'noticias', label: 'Notícias', description: 'Gerenciar notícias e blog' },
+  { id: 'parceiros', label: 'Parceiros', description: 'Gerenciar parceiros e clientes' },
+  { id: 'depoimentos', label: 'Depoimentos', description: 'Gerenciar depoimentos' },
+  { id: 'segmentos', label: 'Segmentos', description: 'Gerenciar segmentos de atuação' },
+  { id: 'landing-pages', label: 'Landing Pages', description: 'Gerenciar landing pages' },
+  { id: 'config', label: 'Configurações', description: 'Configurações do sistema' },
+]
 
 export default function UsuariosPage() {
   const [users, setUsers] = useState<User[]>([])
@@ -51,6 +64,7 @@ export default function UsuariosPage() {
     email: '',
     password: '',
     role: 'admin' as 'dev' | 'admin',
+    permissions: [] as string[],
     sendEmail: true,
   })
 
@@ -89,6 +103,7 @@ export default function UsuariosPage() {
       email: '',
       password: '',
       role: 'admin',
+      permissions: ['dashboard'], // Dashboard por padrão
       sendEmail: true,
     })
     generatePassword()
@@ -102,6 +117,7 @@ export default function UsuariosPage() {
       email: user.email,
       password: '',
       role: user.role,
+      permissions: user.permissions || [],
       sendEmail: false,
     })
     setShowModal(true)
@@ -124,6 +140,7 @@ export default function UsuariosPage() {
             name: formData.name,
             email: formData.email,
             role: formData.role,
+            permissions: formData.permissions,
             ...(formData.password && { password: formData.password }),
           }
         : formData
@@ -476,9 +493,66 @@ export default function UsuariosPage() {
                   <option value="dev">Desenvolvedor</option>
                 </select>
                 <p className="text-xs text-gray-500 mt-1">
-                  Desenvolvedores têm acesso total. Administradores podem gerenciar textos e notícias.
+                  Desenvolvedores têm acesso total. Administradores só veem as telas selecionadas abaixo.
                 </p>
               </div>
+
+              {/* Permissões - só mostra se não for dev */}
+              {formData.role !== 'dev' && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Telas permitidas
+                  </label>
+                  <div className="border border-gray-200 rounded-lg p-3 max-h-48 overflow-y-auto space-y-2">
+                    {AVAILABLE_SCREENS.map((screen) => (
+                      <label
+                        key={screen.id}
+                        className="flex items-start gap-3 p-2 hover:bg-gray-50 rounded-lg cursor-pointer"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={formData.permissions.includes(screen.id)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setFormData({
+                                ...formData,
+                                permissions: [...formData.permissions, screen.id]
+                              })
+                            } else {
+                              setFormData({
+                                ...formData,
+                                permissions: formData.permissions.filter(p => p !== screen.id)
+                              })
+                            }
+                          }}
+                          className="w-4 h-4 text-amber-500 border-gray-300 rounded focus:ring-amber-500 mt-0.5"
+                        />
+                        <div>
+                          <span className="text-sm font-medium text-gray-900">{screen.label}</span>
+                          <p className="text-xs text-gray-500">{screen.description}</p>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+                  <div className="flex gap-2 mt-2">
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, permissions: AVAILABLE_SCREENS.map(s => s.id) })}
+                      className="text-xs text-amber-600 hover:text-amber-700"
+                    >
+                      Selecionar todas
+                    </button>
+                    <span className="text-gray-300">|</span>
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, permissions: [] })}
+                      className="text-xs text-gray-500 hover:text-gray-700"
+                    >
+                      Limpar seleção
+                    </button>
+                  </div>
+                </div>
+              )}
 
               {/* Enviar por email */}
               {!editingUser && (

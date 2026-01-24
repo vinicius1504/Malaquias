@@ -5,7 +5,10 @@
       "Bash(npm install:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nMigrar arquivos restantes de Supabase para PostgreSQL/MinIO\n\n- admin/page.tsx: usar queryOne/queryAll ao invés do Supabase client\n- migrate-image/route.ts: usar uploadFile/getPublicUrl do MinIO\n- migrate-news/route.ts: usar queryOne/insert do PostgreSQL\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(ssh root@76.13.81.103 \"apt update && apt upgrade -y\")",
+      "Bash(ssh root@76.13.81.103 \"rm -f /etc/apt/sources.list.d/monarx.list 2>/dev/null; apt update\")",
+      "Bash(ssh root@76.13.81.103 \"curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash\")"
     ]
   }
 }

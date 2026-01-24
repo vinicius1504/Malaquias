@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS admin_users (
   name VARCHAR(255) NOT NULL,
   password_hash TEXT NOT NULL,
   role VARCHAR(50) NOT NULL DEFAULT 'admin', -- 'dev', 'admin', 'editor'
+  permissions JSONB DEFAULT '[]'::jsonb, -- Array de telas permitidas: ["dashboard", "noticias", "parceiros", etc]
   is_active BOOLEAN DEFAULT true,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()

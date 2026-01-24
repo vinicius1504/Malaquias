@@ -1,11 +1,25 @@
 export type UserRole = 'dev' | 'admin'
 
+// Telas disponíveis para permissão
+export type AdminScreen =
+  | 'dashboard'
+  | 'textos'
+  | 'noticias'
+  | 'parceiros'
+  | 'depoimentos'
+  | 'segmentos'
+  | 'landing-pages'
+  | 'config'
+  | 'usuarios'
+  | 'logs'
+
 export interface AdminUser {
   id: string
   email: string
   password_hash: string
   name: string
   role: UserRole
+  permissions: AdminScreen[]
   is_active: boolean
   created_at: string
   updated_at: string

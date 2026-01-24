@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh root@76.13.81.103 \"sudo -u postgres psql -c \"\"CREATE USER malaquias_user WITH PASSWORD ''Contabilidade2026@'';\"\" && sudo -u postgres psql -c \"\"CREATE DATABASE malaquias OWNER malaquias_user;\"\" && sudo -u postgres psql -c \"\"GRANT ALL PRIVILEGES ON DATABASE malaquias TO malaquias_user;\"\"\")"
+    ]
+  }
+}

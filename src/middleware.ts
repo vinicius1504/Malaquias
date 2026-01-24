@@ -43,11 +43,31 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/admin', request.url));
     }
 
-    // Proteção de rotas por role (DEV only)
-    const devOnlyRoutes = ['/admin/usuarios', '/admin/logs', '/admin/config'];
-    if (token && devOnlyRoutes.some(route => pathname.startsWith(route))) {
-      if (token.role !== 'dev') {
-        return NextResponse.redirect(new URL('/admin', request.url));
+    // Mapeamento de rotas para permissões
+    const routePermissions: Record<string, string> = {
+      '/admin/textos': 'textos',
+      '/admin/noticias': 'noticias',
+      '/admin/parceiros': 'parceiros',
+      '/admin/depoimentos': 'depoimentos',
+      '/admin/segmentos': 'segmentos',
+      '/admin/landing-pages': 'landing-pages',
+      '/admin/config': 'config',
+      '/admin/usuarios': 'usuarios',
+      '/admin/logs': 'logs',
+    };
+
+    // Verifica permissões
+    if (token && token.role !== 'dev') {
+      const userPermissions = (token.permissions as string[]) || [];
+
+      for (const [route, permission] of Object.entries(routePermissions)) {
+        if (pathname.startsWith(route)) {
+          if (!userPermissions.includes(permission)) {
+            // Redireciona para dashboard se não tiver permissão
+            return NextResponse.redirect(new URL('/admin', request.url));
+          }
+          break;
+        }
       }
     }
   }

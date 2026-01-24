@@ -17,13 +17,14 @@ import {
   PanelTop,
   HelpCircle,
 } from 'lucide-react'
-import type { UserRole } from '@/types/database'
+import type { UserRole, AdminScreen } from '@/types/database'
 
 interface AdminSidebarProps {
   user: {
     name: string
     email: string
     role: UserRole
+    permissions?: AdminScreen[]
   }
 }
 
@@ -33,60 +34,70 @@ const menuItems = [
     href: '/admin',
     icon: LayoutDashboard,
     roles: ['dev', 'admin'],
+    permission: 'dashboard' as AdminScreen,
   },
   {
     label: 'Textos',
     href: '/admin/textos',
     icon: FileText,
     roles: ['dev', 'admin'],
+    permission: 'textos' as AdminScreen,
   },
   {
     label: 'Notícias',
     href: '/admin/noticias',
     icon: Newspaper,
     roles: ['dev', 'admin'],
+    permission: 'noticias' as AdminScreen,
   },
   {
     label: 'Parceiros',
     href: '/admin/parceiros',
     icon: Handshake,
     roles: ['dev', 'admin'],
+    permission: 'parceiros' as AdminScreen,
   },
   {
     label: 'Depoimentos',
     href: '/admin/depoimentos',
     icon: MessageSquareQuote,
     roles: ['dev', 'admin'],
+    permission: 'depoimentos' as AdminScreen,
   },
   {
     label: 'Segmentos',
     href: '/admin/segmentos',
     icon: Layers,
     roles: ['dev', 'admin'],
+    permission: 'segmentos' as AdminScreen,
   },
   {
     label: 'Landing Pages',
     href: '/admin/landing-pages',
     icon: PanelTop,
     roles: ['dev', 'admin'],
+    permission: 'landing-pages' as AdminScreen,
   },
   {
     label: 'Usuários',
     href: '/admin/usuarios',
     icon: Users,
     roles: ['dev'],
+    permission: 'usuarios' as AdminScreen,
   },
   {
     label: 'Logs',
     href: '/admin/logs',
     icon: History,
     roles: ['dev'],
+    permission: 'logs' as AdminScreen,
   },
   {
     label: 'Configurações',
     href: '/admin/config',
     icon: Settings,
     roles: ['dev', 'admin'],
+    permission: 'config' as AdminScreen,
   },
 ]
 
@@ -95,10 +106,19 @@ export function AdminSidebar({ user }: AdminSidebarProps) {
 
   // Proteção caso user.role seja undefined
   const userRole = user?.role || 'admin'
+  const userPermissions = user?.permissions || []
 
-  const filteredItems = menuItems.filter((item) =>
-    item.roles.includes(userRole)
-  )
+  // Dev tem acesso a tudo, admin só vê o que tem permissão
+  const filteredItems = menuItems.filter((item) => {
+    // Se não tem a role necessária, não mostra
+    if (!item.roles.includes(userRole)) return false
+
+    // Dev sempre pode ver tudo
+    if (userRole === 'dev') return true
+
+    // Admin só vê se tiver permissão
+    return userPermissions.includes(item.permission)
+  })
 
   return (
     <aside className="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 hidden lg:block shadow-sm">
