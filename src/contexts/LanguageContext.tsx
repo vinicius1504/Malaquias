@@ -1,8 +1,8 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 
-// Importa os arquivos de tradução
+// Imports estáticos como fallback (valores do build)
 import ptCommon from '@/locales/pt/common.json';
 import enCommon from '@/locales/en/common.json';
 import esCommon from '@/locales/es/common.json';
@@ -41,7 +41,8 @@ interface Translations {
   segments: typeof ptSegments;
 }
 
-const translations: Record<Locale, Translations> = {
+// Fallback estático (valores do build)
+const staticTranslations: Record<Locale, Translations> = {
   pt: { common: ptCommon, home: ptHome, services: ptServices, faq: ptFaq, contact: ptContact, about: ptAbout, news: ptNews, segments: ptSegments },
   en: { common: enCommon, home: enHome, services: enServices, faq: enFaq, contact: enContact, about: enAbout, news: enNews, segments: enSegments },
   es: { common: esCommon, home: esHome, services: esServices, faq: esFaq, contact: esContact, about: esAbout, news: esNews, segments: esSegments },
@@ -57,21 +58,45 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('pt');
+  const [liveTranslations, setLiveTranslations] = useState<Partial<Record<Locale, Translations>>>({});
+
+  // Carrega traduções em runtime da API
+  const fetchTranslations = useCallback(async (loc: Locale) => {
+    try {
+      const res = await fetch(`/api/translations?locale=${loc}`, {
+        cache: 'no-store',
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setLiveTranslations((prev: Partial<Record<Locale, Translations>>) => ({
+          ...prev,
+          [loc]: data as Translations,
+        }));
+      }
+    } catch {
+      // Falha silenciosa - usa fallback estático
+    }
+  }, []);
 
   useEffect(() => {
-    // Recupera o idioma salvo no localStorage
     const savedLocale = localStorage.getItem('locale') as Locale;
     if (savedLocale && (savedLocale === 'pt' || savedLocale === 'en' || savedLocale === 'es')) {
       setLocaleState(savedLocale);
     }
   }, []);
 
+  // Busca traduções atualizadas quando o locale muda
+  useEffect(() => {
+    fetchTranslations(locale);
+  }, [locale, fetchTranslations]);
+
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);
     localStorage.setItem('locale', newLocale);
   };
 
-  const t = translations[locale];
+  // Usa traduções da API se disponíveis, senão usa fallback estático
+  const t = liveTranslations[locale] || staticTranslations[locale];
 
   return (
     <LanguageContext.Provider value={{ locale, setLocale, t }}>
