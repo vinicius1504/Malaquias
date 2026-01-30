@@ -130,6 +130,20 @@ CREATE INDEX IF NOT EXISTS idx_partners_is_active ON partners(is_active);
 CREATE INDEX IF NOT EXISTS idx_audit_logs_user_id ON audit_logs(user_id);
 CREATE INDEX IF NOT EXISTS idx_audit_logs_created_at ON audit_logs(created_at);
 
+-- Tabela de traduções da UI (i18n)
+CREATE TABLE IF NOT EXISTS ui_translations (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  locale VARCHAR(5) NOT NULL,        -- 'pt', 'en', 'es'
+  namespace VARCHAR(50) NOT NULL,     -- 'common', 'home', 'services', 'faq', 'contact', 'about', 'news', 'segments'
+  content JSONB NOT NULL,             -- JSON inteiro do namespace
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  UNIQUE(locale, namespace)
+);
+
+-- Índices para traduções UI
+CREATE INDEX IF NOT EXISTS idx_ui_translations_locale ON ui_translations(locale);
+CREATE INDEX IF NOT EXISTS idx_ui_translations_locale_namespace ON ui_translations(locale, namespace);
+
 -- Inserir usuário admin padrão (senha: Admin123!)
 -- A senha está hasheada com bcrypt (12 rounds)
 INSERT INTO admin_users (email, name, password_hash, role)
