@@ -60,7 +60,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('pt');
   const [liveTranslations, setLiveTranslations] = useState<Partial<Record<Locale, Translations>>>({});
 
-  // Carrega traduções em runtime da API
+  // Carrega traduções em runtime da API e mescla com fallback estático
   const fetchTranslations = useCallback(async (loc: Locale) => {
     try {
       const res = await fetch(`/api/translations?locale=${loc}`, {
@@ -68,9 +68,23 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       });
       if (res.ok) {
         const data = await res.json();
+        const fallback = staticTranslations[loc];
+
+        // Mescla: para cada namespace, usa o do banco se existir, senão usa o estático
+        const merged: Translations = {
+          common: data.common || fallback.common,
+          home: data.home || fallback.home,
+          services: data.services || fallback.services,
+          faq: data.faq || fallback.faq,
+          contact: data.contact || fallback.contact,
+          about: data.about || fallback.about,
+          news: data.news || fallback.news,
+          segments: data.segments || fallback.segments,
+        };
+
         setLiveTranslations((prev: Partial<Record<Locale, Translations>>) => ({
           ...prev,
-          [loc]: data as Translations,
+          [loc]: merged,
         }));
       }
     } catch {
