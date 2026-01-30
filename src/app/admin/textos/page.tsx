@@ -12,7 +12,9 @@ import {
   Check,
   Download,
   Upload,
+  FolderDown,
 } from 'lucide-react'
+import JSZip from 'jszip'
 
 interface TranslationFile {
   locale: string
@@ -234,6 +236,46 @@ export default function TextosPage() {
     setTimeout(() => setSaveMessage(null), 3000)
   }
 
+  const handleExportAll = async () => {
+    try {
+      setSaveMessage({ type: 'success', text: 'Gerando ZIP com todos os arquivos...' })
+
+      const zip = new JSZip()
+      const locales = ['pt', 'en', 'es']
+
+      for (const locale of locales) {
+        const localeFiles = translations.find(t => t.locale === locale)?.files || []
+
+        for (const file of localeFiles) {
+          const res = await fetch(`/api/admin/translations?locale=${locale}&file=${file}`)
+          if (res.ok) {
+            const data = await res.json()
+            zip.file(
+              `locales/${locale}/${file}.json`,
+              JSON.stringify(data.content, null, 2)
+            )
+          }
+        }
+      }
+
+      const blob = await zip.generateAsync({ type: 'blob' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `locales_${new Date().toISOString().split('T')[0]}.zip`
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(url)
+
+      setSaveMessage({ type: 'success', text: 'ZIP exportado com sucesso!' })
+      setTimeout(() => setSaveMessage(null), 3000)
+    } catch (error) {
+      console.error('Erro ao exportar ZIP:', error)
+      setSaveMessage({ type: 'error', text: 'Erro ao gerar ZIP' })
+    }
+  }
+
   const handleImport = () => {
     const input = document.createElement('input')
     input.type = 'file'
@@ -419,9 +461,17 @@ export default function TextosPage() {
         {content && (
           <div className="flex items-center gap-2">
             <button
+              onClick={handleExportAll}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg font-medium transition-colors"
+              title="Exportar pasta locales completa como ZIP"
+            >
+              <FolderDown className="w-5 h-5" />
+              Exportar Tudo
+            </button>
+            <button
               onClick={handleExport}
               className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-medium transition-colors"
-              title="Exportar JSON para edição externa (ex: IA)"
+              title="Exportar apenas este arquivo JSON"
             >
               <Download className="w-5 h-5" />
               Exportar
