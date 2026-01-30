@@ -1,12 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { queryAll, queryOne, upsert } from '@/lib/db/postgres'
+import { queryOne, upsert } from '@/lib/db/postgres'
+import fs from 'fs/promises'
+import path from 'path'
 
 // Força rota dinâmica
 export const dynamic = 'force-dynamic'
 
 const VALID_LOCALES = ['pt', 'en', 'es']
 const VALID_NAMESPACES = ['common', 'home', 'services', 'faq', 'contact', 'about', 'news', 'segments']
+const LOCALES_DIR = path.join(process.cwd(), 'src', 'locales')
+
+// Fallback: lê do JSON estático no filesystem
+async function getStaticFile(locale: string, file: string): Promise<Record<string, unknown> | null> {
+  try {
+    const filePath = path.join(LOCALES_DIR, locale, `${file}.json`)
+    const content = await fs.readFile(filePath, 'utf-8')
+    return JSON.parse(content)
+  } catch {
+    return null
+  }
+}
 
 // GET - Listar namespaces de tradução ou buscar conteúdo de um namespace
 export async function GET(request: NextRequest) {
@@ -26,36 +40,30 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ error: 'Parâmetros inválidos' }, { status: 400 })
       }
 
+      // Tenta buscar do banco
       const row = await queryOne<{ content: Record<string, unknown> }>(
         'SELECT content FROM ui_translations WHERE locale = $1 AND namespace = $2',
         [locale, file]
       )
 
-      if (!row) {
-        return NextResponse.json({ error: 'Tradução não encontrada' }, { status: 404 })
+      if (row) {
+        return NextResponse.json({ content: row.content, locale, file })
       }
 
-      return NextResponse.json({
-        content: row.content,
-        locale,
-        file
-      })
+      // Fallback: lê do JSON estático
+      const staticContent = await getStaticFile(locale, file)
+      if (staticContent) {
+        return NextResponse.json({ content: staticContent, locale, file })
+      }
+
+      return NextResponse.json({ error: 'Tradução não encontrada' }, { status: 404 })
     }
 
-    // Lista todos os namespaces por locale
-    const translations: { locale: string; files: string[] }[] = []
-
-    for (const loc of VALID_LOCALES) {
-      const rows = await queryAll<{ namespace: string }>(
-        'SELECT namespace FROM ui_translations WHERE locale = $1 ORDER BY namespace',
-        [loc]
-      )
-
-      translations.push({
-        locale: loc,
-        files: rows.map(r => r.namespace)
-      })
-    }
+    // Lista todos os namespaces válidos para cada locale (sempre todos)
+    const translations = VALID_LOCALES.map(loc => ({
+      locale: loc,
+      files: [...VALID_NAMESPACES]
+    }))
 
     return NextResponse.json({ translations })
   } catch (error) {
